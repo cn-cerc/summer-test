@@ -2,7 +2,7 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>cn.cerc</groupId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.0</version>
 	<packaging>war</packaging>
 	<name>客制化项目范例</name>
 	<build>
@@ -51,7 +51,7 @@
 		<org.springframework.version>4.2.6.RELEASE</org.springframework.version>
 		<mysql-connector-java.version>5.1.38</mysql-connector-java.version>
 		<org.hibernate.version>4.3.5.Final</org.hibernate.version>
-		<cn.cerc.lib.version>1.2.2</cn.cerc.lib.version>
+		<cn.cerc.summer.version>1.0.0</cn.cerc.summer.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -70,21 +70,6 @@
 			<artifactId>javax.websocket-api</artifactId>
 			<version>1.1</version>
 			<scope>provided</scope>
-		</dependency>
-		<dependency>
-			<groupId>mysql</groupId>
-			<artifactId>mysql-connector-java</artifactId>
-			<version>${mysql-connector-java.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.hibernate</groupId>
-			<artifactId>hibernate-core</artifactId>
-			<version>${org.hibernate.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.hibernate</groupId>
-			<artifactId>hibernate-c3p0</artifactId>
-			<version>${org.hibernate.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.jboss.logging</groupId>
@@ -116,31 +101,6 @@
 			<artifactId>commons-pool</artifactId>
 			<version>1.5.6</version>
 		</dependency>
-		<!-- <dependency> -->
-		<!-- <groupId>other</groupId> -->
-		<!-- <artifactId>java_memcached</artifactId> -->
-		<!-- <version>release_2.6.6</version> -->
-		<!-- </dependency> -->
-		<!-- <dependency> -->
-		<!-- <groupId>alibaba</groupId> -->
-		<!-- <artifactId>services-api</artifactId> -->
-		<!-- <version>1.4.15</version> -->
-		<!-- </dependency> -->
-		<!-- <dependency> -->
-		<!-- <groupId>taobao</groupId> -->
-		<!-- <artifactId>sdk-java</artifactId> -->
-		<!-- <version>auto_1447355351010-20151113</version> -->
-		<!-- </dependency> -->
-		<!-- <dependency> -->
-		<!-- <groupId>taobao</groupId> -->
-		<!-- <artifactId>taobao-sdk-java</artifactId> -->
-		<!-- <version>auto_1435560246432-20150629</version> -->
-		<!-- </dependency> -->
-		<!-- <dependency> -->
-		<!-- <groupId>aliyun</groupId> -->
-		<!-- <artifactId>taobao-sdk-java</artifactId> -->
-		<!-- <version>auto_1429086946793-20150420</version> -->
-		<!-- </dependency> -->
 		<dependency>
 			<groupId>com.aliyun</groupId>
 			<artifactId>aliyun-java-sdk-core</artifactId>
@@ -150,27 +110,6 @@
 			<groupId>com.aliyun</groupId>
 			<artifactId>aliyun-java-sdk-slb</artifactId>
 			<version>2.0.0-rc1</version>
-		</dependency>
-		<!-- spring -->
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-core</artifactId>
-			<version>${org.springframework.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-beans</artifactId>
-			<version>${org.springframework.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-web</artifactId>
-			<version>${org.springframework.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-context</artifactId>
-			<version>${org.springframework.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>log4j</groupId>
@@ -248,28 +187,8 @@
 		</dependency>
 		<dependency>
 			<groupId>cn.cerc</groupId>
-			<artifactId>jdb</artifactId>
-			<version>${cn.cerc.lib.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>cn.cerc</groupId>
-			<artifactId>jbean</artifactId>
-			<version>${cn.cerc.lib.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>cn.cerc</groupId>
-			<artifactId>jexport</artifactId>
-			<version>${cn.cerc.lib.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>cn.cerc</groupId>
-			<artifactId>jimport</artifactId>
-			<version>${cn.cerc.lib.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>cn.cerc</groupId>
-			<artifactId>jmis</artifactId>
-			<version>${cn.cerc.lib.version}</version>
+			<artifactId>summer-mis</artifactId>
+			<version>${cn.cerc.summer.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>com.aliyun.openservices</groupId>
@@ -294,4 +213,5 @@
 		</dependency>
 	</dependencies>
 	<artifactId>sample</artifactId>
+	<url>https://github.com/cn-cerc/summer-sample</url>
 </project>
