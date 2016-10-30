@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:include schemaLocation="app-versions.xsd"></xs:include>
+	<xs:element name="html" type="MenuFile" />
+	<xs:complexType name="MenuFile">
+		<xs:sequence>
+			<xs:element name="head" type="MenuHead" />
+			<xs:element name="body" type="MenuBody" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="MenuHead">
+		<xs:sequence>
+			<xs:element name="title" type="xs:string" />
+			<!-- <xs:element name="system" type="MenuSystem" /> -->
+			<!-- <xs:element name="security" type="ProcItem" minOccurs="0" maxOccurs="unbounded" /> -->
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="MenuBody">
+		<xs:sequence>
+			<xs:element name="item" type="MenuItem" minOccurs="0" maxOccurs="unbounded" />
+			<!-- <xs:element name="section" type="MenuSection" maxOccurs="unbounded" /> -->
+		</xs:sequence>
+		<!-- <xs:attribute name="mapfile" type="xs:string" use="required" /> -->
+	</xs:complexType>
+	<xs:complexType name="MenuItem">
+		<xs:sequence>
+			<xs:element name="web" type="WebPage" minOccurs="0" />
+			<xs:element name="remark" type="xs:string" minOccurs="0" />
+			<xs:element name="access" type="MenuAccess" />
+			<xs:element name="rework" type="xs:string" minOccurs="0" />
+		</xs:sequence>
+		<xs:attribute name="code" type="xs:string" use="required" />
+		<xs:attribute name="name" type="xs:string" use="required" />
+		<xs:attribute name="level" type="xs:integer" use="optional" />
+		<xs:attribute name="link" type="xs:boolean" use="optional" default="false" />
+		<xs:attribute name="delete" type="xs:boolean" use="optional" default="false" />
+		<xs:attribute name="qcdate" type="xs:date" use="optional" />
+		<xs:attribute name="hide" type="xs:boolean" use="optional" default="false" />
+		<xs:attribute name="security" type="xs:boolean" use="optional" default="true" />
+		<xs:attribute name="database" type="xs:string" use="optional" />
+		<xs:attribute name="author" type="xs:string" use="optional" />
+		<xs:attribute name="docid" type="xs:string" use="optional" />
+		<xs:attribute name="proccode" type="ProcCode" use="required" />
+		<xs:attribute name="folder" type="xs:boolean" use="optional" />
+		<xs:attribute name="parent" type="xs:string" use="required" />
+		<xs:attribute name="custom" type="xs:boolean" use="optional" />
+	</xs:complexType>
+	<xs:complexType name="WebPage">
+		<xs:attribute name="pageno" type="xs:integer" use="required" />
+		<xs:attribute name="class" type="xs:string" use="optional" />
+		<xs:attribute name="image" type="xs:string" use="optional" />
+		<xs:attribute name="process" type="WebProcess" use="required" />
+	</xs:complexType>
+	<xs:complexType name="MenuAccess">
+		<xs:attribute name="verlist" type="VerList" use="required" />
+	</xs:complexType>
+	<xs:simpleType name="WebProcess">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="none" />
+			<xs:enumeration value="test" />
+			<xs:enumeration value="beta" />
+			<xs:enumeration value="release" />
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

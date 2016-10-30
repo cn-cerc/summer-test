@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="app-menus.xsl"?>
+<html xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="app-menus.xsd">
+	<head>
+		<title>系统菜单定义</title>
+	</head>
+	<body>
+		<item code="Welcome" name="欢迎页" proccode="base.product.manage" parent="TBase" hide="true" security="false">
+			<web process="release" pageno="100" class="cn.cerc.sample.forms.Welcome" />
+			<access verlist="4,6,1,2,3,5,0," />
+		</item>
+		<item code="Default" name="首页" proccode="base.default" parent="" hide="true">
+			<web process="test" pageno="101" class="cn.cerc.sample.forms.Default" />
+			<access verlist="4,6,1,2,3,5,0," />
+		</item>
+	</body>
+</html>

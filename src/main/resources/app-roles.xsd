@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:include schemaLocation="app-versions.xsd"></xs:include>
+	<xs:element name="html" type="RoleFile" />
+	<xs:complexType name="RoleFile">
+		<xs:sequence>
+			<xs:element name="head" type="MenuHead" />
+			<xs:element name="body" type="RoleBody" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="MenuHead">
+		<xs:sequence>
+			<xs:element name="title" type="xs:string" />
+			<!-- <xs:element name="system" type="MenuSystem"/> -->
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="RoleBody">
+		<xs:sequence>
+			<xs:element name="security" type="ProcItem" minOccurs="0" maxOccurs="unbounded" />
+			<!-- <xs:element name="item" type="MenuItem" minOccurs="0" maxOccurs="unbounded"/> -->
+			<!-- <xs:element name="section" type="MenuSection" maxOccurs="unbounded"/> -->
+		</xs:sequence>
+		<!-- <xs:attribute name="mapfile" type="xs:string" use="required" /> -->
+	</xs:complexType>
+	<xs:complexType name="ProcAccess">
+		<xs:sequence>
+			<xs:element name="group" type="AccessGroup" minOccurs="0" maxOccurs="unbounded" />
+		</xs:sequence>
+		<xs:attribute name="verlist" type="VerList" use="required" />
+	</xs:complexType>
+	<xs:complexType name="AccessGroup">
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute name="code" type="GroupItem" />
+				<xs:attribute name="Execute" type="xs:boolean" />
+				<xs:attribute name="Final" type="xs:boolean" />
+				<xs:attribute name="Append" type="xs:boolean" />
+				<xs:attribute name="Modify" type="xs:boolean" />
+				<xs:attribute name="Delete" type="xs:boolean" />
+				<xs:attribute name="Print" type="xs:boolean" />
+				<xs:attribute name="PrintSet" type="xs:boolean" />
+				<xs:attribute name="Cancel" type="xs:boolean" />
+				<xs:attribute name="MoneyDisplay" type="xs:boolean" />
+				<xs:attribute name="MoneyModify" type="xs:boolean" />
+				<xs:attribute name="Output" type="xs:boolean" />
+				<xs:attribute name="FreeFlow" type="xs:boolean" />
+				<xs:attribute name="DownFile" type="xs:boolean" />
+				<xs:attribute name="ShareMyData" type="xs:boolean" />
+				<xs:attribute name="Recycle" type="xs:boolean" />
+				<xs:attribute name="ReadCED" type="xs:boolean" />
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:simpleType name="GroupItem">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="SCM101" />
+			<xs:enumeration value="SCM102" />
+			<xs:enumeration value="SCM103" />
+			<xs:enumeration value="SCM104" />
+			<xs:enumeration value="SCM105" />
+			<xs:enumeration value="SCM106" />
+			<xs:enumeration value="SCM107" />
+			<xs:enumeration value="SCM108" />
+			<xs:enumeration value="SCM199" />
+			<xs:enumeration value="SCM201" />
+			<xs:enumeration value="SCM202" />
+			<xs:enumeration value="SCM203" />
+			<xs:enumeration value="SCM204" />
+			<xs:enumeration value="SCM205" />
+			<xs:enumeration value="SCM299" />
+			<xs:enumeration value="SCM301" />
+			<xs:enumeration value="SCM302" />
+			<xs:enumeration value="SCM303" />
+			<xs:enumeration value="SCM399" />
+			<xs:enumeration value="SCM001" />
+			<xs:enumeration value="SCM002" />
+			<xs:enumeration value="SCM401" />
+			<xs:enumeration value="SCM402" />
+			<xs:enumeration value="SCM403" />
+			<xs:enumeration value="SCM404" />
+			<xs:enumeration value="SCM405" />
+			<xs:enumeration value="SCM406" />
+			<xs:enumeration value="SCM407" />
+			<xs:enumeration value="SCM408" />
+			<xs:enumeration value="SCM409" />
+			<xs:enumeration value="SCM410" />
+			<xs:enumeration value="SCM411" />
+			<xs:enumeration value="SCM412" />
+			<xs:enumeration value="SCM413" />
+			<xs:enumeration value="SCM499" />
+			<xs:enumeration value="SCM501" />
+			<xs:enumeration value="SCM601" />
+			<xs:enumeration value="SCM602" />
+			<xs:enumeration value="SCM603" />
+			<xs:enumeration value="SCM604" />
+			<xs:enumeration value="SCM699" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="ProcItem">
+		<xs:sequence>
+			<xs:element name="access" type="ProcAccess" />
+		</xs:sequence>
+		<xs:attribute name="code" type="ProcCode" use="required" />
+		<xs:attribute name="name" type="xs:string" use="required" />
+		<xs:attribute name="group" type="ProcGroup" use="required" />
+		<xs:attribute name="type" type="ProcType" use="required" />
+	</xs:complexType>
+	<xs:simpleType name="ProcGroup">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="service" />
+			<xs:enumeration value="base" />
+			<xs:enumeration value="purchase" />
+			<xs:enumeration value="sell" />
+			<xs:enumeration value="stock" />
+			<xs:enumeration value="acc" />
+			<xs:enumeration value="other" />
+			<xs:enumeration value="conn" />
+			<xs:enumeration value="make" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ProcType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="execute" />
+			<xs:enumeration value="report" />
+			<xs:enumeration value="record" />
+			<xs:enumeration value="form" />
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

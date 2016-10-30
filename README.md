@@ -1,2 +1,2 @@
-# summer-sample
-summer使用项目样例
+# jmis-sample
+Jmis使用样例
