@@ -9,7 +9,7 @@
 			<web process="release" pageno="100" class="cn.cerc.sample.forms.Welcome" />
 			<access verlist="4,6,1,2,3,5,0," />
 		</item>
-		<item code="Default" name="首页" proccode="base.default" parent="" hide="true">
+		<item code="Default" name="首页" proccode="base.default" parent="" hide="true" security="false">
 			<web process="test" pageno="101" class="cn.cerc.sample.forms.Default" />
 			<access verlist="4,6,1,2,3,5,0," />
 		</item>

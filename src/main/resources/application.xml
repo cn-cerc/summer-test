@@ -4,7 +4,7 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans  
            http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
 	<!-- 包含队列服务 -->
-	<import resource="classpath*:app-quartz.xml" />
+	<!-- <import resource="classpath*:app-quartz.xml" /> -->
 
 	<!-- 显示层配置对象 -->
 	<bean id="AppConfig" class="cn.cerc.jbean.core.AppConfig">

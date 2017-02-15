@@ -1,4 +1,4 @@
-package cn.cerc.sample.frame;
+package cn.cerc.sample.common;
 
 import cn.cerc.jbean.core.IPassport;
 import cn.cerc.jbean.rds.PassportRecord;
