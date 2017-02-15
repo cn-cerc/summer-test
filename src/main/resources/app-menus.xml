@@ -13,5 +13,9 @@
 			<web process="test" pageno="101" class="cn.cerc.sample.forms.Default" />
 			<access verlist="4,6,1,2,3,5,0," />
 		</item>
+		<item code="TFrmDataGrid" name="演示dataGrid表格" proccode="base.default" parent="" hide="true" security="false">
+			<web process="test" pageno="102" class="cn.cerc.sample.forms.TFrmDataGrid" />
+			<access verlist="4,6,1,2,3,5,0," />
+		</item>
 	</body>
 </html>
