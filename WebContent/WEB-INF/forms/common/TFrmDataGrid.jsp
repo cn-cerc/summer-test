@@ -14,7 +14,8 @@ margin:0 auto;
 <body>
 	<div style="text-align: center;">
 	<h1>演示dataGrid表格</h1>
-	${dg.html}
+	${dataGrid.html}
+	${page.html}
 	</div>
 </body>
 </html>
