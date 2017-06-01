@@ -74,7 +74,7 @@
 	</bean>
 	
 	<!-- 其它系统级通用对象定义 -->
-	<<!-- bean id="RightMenus" class="cn.cerc.jmis.page.RightMenus" scope="prototype">
+	<!-- bean id="RightMenus" class="cn.cerc.jmis.page.RightMenus" scope="prototype">
 		<property name="items">
 			<list>
 				未读讯息提示菜单
