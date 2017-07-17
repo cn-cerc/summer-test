@@ -7,4 +7,6 @@
 	</bean>
 	<bean id="Default" class="cn.cerc.sample.forms.Default" scope="prototype">
 	</bean>
+	<bean id="TFrmDataGrid" class="cn.cerc.sample.forms.TFrmDataGrid" scope="prototype">
+	</bean>
 </beans>
