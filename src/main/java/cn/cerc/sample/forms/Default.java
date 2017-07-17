@@ -8,8 +8,9 @@ public class Default extends AbstractForm {
 
 	@Override
 	public IPage execute() {
-		getJspView().setFile("common/default.jsp");
-		return getJspView().getPage();
+		JspPage jsp = new JspPage(this);
+		jsp.setJspFile("common/default.jsp");
+		return jsp;
 	}
 
 	public IPage hello() {

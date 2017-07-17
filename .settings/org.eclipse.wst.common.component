@@ -5,16 +5,13 @@
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
         <wb-resource deploy-path="/" source-path="/src/main/webapp"/>
-        <dependent-module archiveName="summer-mis-1.0.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/summer-mis/summer-mis">
+        <dependent-module archiveName="summer-db-1.2.1.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/summer-db/summer-db">
             <dependency-type>uses</dependency-type>
         </dependent-module>
-        <dependent-module archiveName="summer-db-1.0.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/summer-db/summer-db">
+        <dependent-module archiveName="summer-bean-1.2.1.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/summer-bean/summer-bean">
             <dependency-type>uses</dependency-type>
         </dependent-module>
-        <dependent-module archiveName="summer-bean-1.0.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/summer-bean/summer-bean">
-            <dependency-type>uses</dependency-type>
-        </dependent-module>
-        <dependent-module archiveName="summer-io-1.0.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/summer-io/summer-io">
+        <dependent-module archiveName="summer-mis-1.2.1.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/summer-mis/summer-mis">
             <dependency-type>uses</dependency-type>
         </dependent-module>
         <property name="java-output-path" value="/jcustom/build/classes"/>
