@@ -132,7 +132,7 @@ public class MenuFactory implements IAppMenus {
 
 	protected boolean passItem(MenuData item, String parentId, boolean security) {
 		// 不返回首页
-		if (item.getId().equals(Application.getConfig().getFormDefault()))
+		if (item.getId().equals(Application.getAppConfig().getFormDefault()))
 			return false;
 
 		// 不返回隐藏菜单
@@ -242,11 +242,11 @@ public class MenuFactory implements IAppMenus {
 		List<Record> records = svr.getDataOut().getRecords();
 		for(Record record : records){
 			MenuData menuData = new MenuData();
-			menuData.setId(record.getSafeString("Class_"));
-			menuData.setCaption(record.getSafeString("Name_"));
-			menuData.setParent(record.getSafeString("Parent_"));
-			menuData.setImage(record.getSafeString("Image_"));
-			menuData.setProccode(record.getSafeString("Code_"));
+			menuData.setId(record.getString("Class_"));
+			menuData.setCaption(record.getString("Name_"));
+			menuData.setParent(record.getString("Parent_"));
+			menuData.setImage(record.getString("Image_"));
+			menuData.setProccode(record.getString("Code_"));
 			menusList.add(menuData);
 			//menus.put(record.getSafeString("Code_"), menuData);
 		}
