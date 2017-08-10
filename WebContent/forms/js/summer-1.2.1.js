@@ -39,7 +39,7 @@ function AndroidProxy(){
 		if(!this.active)
 			return null;
 		try{
-			var dataOut = this.machine.send("PlayImage", JSON.stringify(this.req));
+			var dataOut = this.machine.send(kind, JSON.stringify(this.req));
 			this.resp = JSON.parse(dataOut);
 			return this.resp.result;
 		}catch(e){
