@@ -3,10 +3,14 @@
 	xmlns:aop="http://www.springframework.org/schema/aop"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans  
            http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
-	<bean id="Welcome" class="cn.cerc.sample.forms.Welcome" scope="prototype">
+	<bean id="Welcome" class="cn.cerc.sample.forms.FrmWelcome" scope="prototype">
 	</bean>
-	<bean id="Default" class="cn.cerc.sample.forms.Default" scope="prototype">
+	<bean id="FrmWelcome" class="cn.cerc.sample.forms.FrmWelcome" scope="prototype">
 	</bean>
-	<bean id="TFrmDataGrid" class="cn.cerc.sample.forms.TFrmDataGrid" scope="prototype">
+	<bean id="FrmDefault" class="cn.cerc.sample.forms.FrmDefault" scope="prototype">
+	</bean>
+	<bean id="FrmDataGrid" class="cn.cerc.sample.forms.FrmDataGrid" scope="prototype">
+	</bean>
+	<bean id="FrmClientTest" class="cn.cerc.sample.forms.FrmClientTest" scope="prototype">
 	</bean>
 </beans>

@@ -7,7 +7,8 @@
 </head>
 <body>
 	<div style="text-align: center; padding-top: 2em;">
-		<div>抱歉，此功能还在开发中</div>
+		<div>welcome use summer-smaple.</div>
+		<div><a href="FrmDefault">enter</a></div>
 	</div>
 </body>
 </html>

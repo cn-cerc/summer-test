@@ -29,7 +29,8 @@
 				<entry key="UserLogs" value="s_UserLogs" />
 				<entry key="AppServiceLogs" value="s_AppLogs" />
 				<entry key="WebPageLogs" value="s_PageLogs" />
-				<entry key="formWelcome" value="Default" />
+				<entry key="formWelcome" value="FrmWelcome" />
+				<entry key="formDefault" value="FrmDefault" />
 			</map>
 		</property>
 	</bean>
@@ -45,6 +46,7 @@
 			</map>
 		</property>
 	</bean>
+
 	<!-- 连接mysql -->
 	<bean id="SqlConnection" class="cn.cerc.jdb.mysql.SqlConnection">
 		<property name="config" ref="ServerConfig"></property>
@@ -68,20 +70,13 @@
 	<!-- 系统菜单定义表 -->
 	<bean id="AppMenus" class="cn.cerc.sample.common.MenuFactory" scope="prototype">
 	</bean>
-	
+
 	<!-- 系统登录对象 -->
 	<bean id="AppLogin" class="cn.cerc.sample.common.AppLoginPage" scope="prototype">
 	</bean>
-	
+
 	<!-- 其它系统级通用对象定义 -->
-	<!-- bean id="RightMenus" class="cn.cerc.jmis.page.RightMenus" scope="prototype">
-		<property name="items">
-			<list>
-				未读讯息提示菜单
-				<bean class="service.system.message.InstantMessage" />
-				购物车菜单
-				<bean class="forms.pur.shopping.Shopping" />
-			</list>
-		</property>
-	</bean> -->
+	<!-- bean id="RightMenus" class="cn.cerc.jmis.page.RightMenus" scope="prototype"> <property name="items"> <list> 未读讯息提示菜单 
+		<bean class="service.system.message.InstantMessage" /> 购物车菜单 <bean class="forms.pur.shopping.Shopping" /> </list> </property> 
+		</bean> -->
 </beans>

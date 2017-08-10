@@ -4,11 +4,11 @@ import cn.cerc.jbean.form.IPage;
 import cn.cerc.jmis.form.AbstractForm;
 import cn.cerc.jmis.page.JspPage;
 
-public class Welcome extends AbstractForm {
+public class FrmWelcome extends AbstractForm {
 
 	@Override
 	public IPage execute() {
-		return new JspPage(this, "common/welcome.jsp");
+		return new JspPage(this, "common/FrmWelcome.jsp");
 	}
 
 	@Override

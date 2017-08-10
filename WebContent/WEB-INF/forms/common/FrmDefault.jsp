@@ -7,7 +7,10 @@
 </head>
 <body>
 	<div style="text-align: center; padding-top: 2em;">
-		<div>抱歉，此功能还在开发中</div>
+		<div><a href="FrmDataGrid">演示dataGrid表格</a></div>
 	</div>
+	<div style="text-align: center; padding-top: 2em;">
+        <div><a href="FrmClientTest">原生App功能测试</a></div>
+    </div>
 </body>
 </html>

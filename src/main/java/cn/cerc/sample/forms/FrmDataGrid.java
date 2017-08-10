@@ -13,7 +13,7 @@ import cn.cerc.jpage.grid.AbstractGrid;
 import cn.cerc.jpage.grid.DataGrid;
 import cn.cerc.jpage.other.OperaPages;
 
-public class TFrmDataGrid extends AbstractForm {
+public class FrmDataGrid extends AbstractForm {
 
 	@Override
 	public IPage execute() {
