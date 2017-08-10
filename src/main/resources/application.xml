@@ -1,82 +1,82 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xmlns:aop="http://www.springframework.org/schema/aop"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans  
+    xmlns:aop="http://www.springframework.org/schema/aop"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans  
            http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
-	<!-- 包含队列服务 -->
-	<!-- <import resource="classpath*:app-quartz.xml" /> -->
+    <!-- 包含队列服务 -->
+    <!-- <import resource="classpath*:app-quartz.xml" /> -->
 
-	<!-- 显示层配置对象 -->
-	<bean id="AppConfig" class="cn.cerc.jbean.core.AppConfig">
-		<property name="params">
-			<map>
-				<entry key="configFile" value="vine.properties" />
-				<!-- System Table -->
-				<entry key="OurInfo" value="s_BookInfo" />
-				<entry key="VineOptions" value="s_BookOptions" />
-				<entry key="SysFormDef" value="s_AppMenus" />
-				<entry key="cusmenu" value="s_CustomMenus" />
-				<entry key="UserMenu" value="s_UserMenus" />
+    <!-- 显示层配置对象 -->
+    <bean id="AppConfig" class="cn.cerc.jbean.core.AppConfig">
+        <property name="params">
+            <map>
+                <entry key="configFile" value="vine.properties" />
+                <!-- System Table -->
+                <entry key="OurInfo" value="s_BookInfo" />
+                <entry key="VineOptions" value="s_BookOptions" />
+                <entry key="SysFormDef" value="s_AppMenus" />
+                <entry key="cusmenu" value="s_CustomMenus" />
+                <entry key="UserMenu" value="s_UserMenus" />
 
-				<entry key="Account" value="s_UserInfo" />
-				<entry key="UserOptions" value="s_UserOptions" />
-				<entry key="UserRoles" value="s_UserRoles" />
-				<entry key="RoleAccess" value="s_UserAccess" />
-				<entry key="AccountVerify" value="s_DeviceVerify" />
+                <entry key="Account" value="s_UserInfo" />
+                <entry key="UserOptions" value="s_UserOptions" />
+                <entry key="UserRoles" value="s_UserRoles" />
+                <entry key="RoleAccess" value="s_UserAccess" />
+                <entry key="AccountVerify" value="s_DeviceVerify" />
 
-				<entry key="CurrentUser" value="s_CurrentUser" />
-				<entry key="message_temp" value="s_UserMessages" />
-				<entry key="UserLogs" value="s_UserLogs" />
-				<entry key="AppServiceLogs" value="s_AppLogs" />
-				<entry key="WebPageLogs" value="s_PageLogs" />
-				<entry key="formWelcome" value="FrmWelcome" />
-				<entry key="formDefault" value="FrmDefault" />
-			</map>
-		</property>
-	</bean>
+                <entry key="CurrentUser" value="s_CurrentUser" />
+                <entry key="message_temp" value="s_UserMessages" />
+                <entry key="UserLogs" value="s_UserLogs" />
+                <entry key="AppServiceLogs" value="s_AppLogs" />
+                <entry key="WebPageLogs" value="s_PageLogs" />
+                <entry key="formWelcome" value="FrmWelcome" />
+                <entry key="formDefault" value="FrmDefault" />
+            </map>
+        </property>
+    </bean>
 
-	<!-- Handle实体 -->
-	<bean id="AppHandle" class="cn.cerc.jbean.core.CustomHandle" scope="prototype">
-		<property name="connections">
-			<map>
-				<!-- key定义于SqlQuery -->
-				<entry key="sqlSession" value-ref="SqlConnection" />
-				<entry key="cacheSession" value-ref="CacheConnection" />
-				<entry key="aliyunQueueSession" value-ref="QueueConnection" />
-			</map>
-		</property>
-	</bean>
+    <!-- Handle实体 -->
+    <bean id="AppHandle" class="cn.cerc.jbean.core.CustomHandle" scope="prototype">
+        <property name="connections">
+            <map>
+                <!-- key定义于SqlQuery -->
+                <entry key="sqlSession" value-ref="SqlConnection" />
+                <entry key="cacheSession" value-ref="CacheConnection" />
+                <entry key="aliyunQueueSession" value-ref="QueueConnection" />
+            </map>
+        </property>
+    </bean>
 
-	<!-- 连接mysql -->
-	<bean id="SqlConnection" class="cn.cerc.jdb.mysql.SqlConnection">
-		<property name="config" ref="ServerConfig"></property>
-	</bean>
-	<!-- 连接缓存 -->
-	<bean id="CacheConnection" class="cn.cerc.jdb.cache.CacheConnection">
-		<property name="config" ref="ServerConfig"></property>
-	</bean>
-	<!-- 连接队列 -->
-	<bean id="QueueConnection" class="cn.cerc.jdb.queue.QueueConnection">
-		<property name="config" ref="ServerConfig"></property>
-	</bean>
-	<!-- 读取本地配置文件 -->
-	<bean id="ServerConfig" class="cn.cerc.jbean.core.ServerConfig">
-	</bean>
+    <!-- 连接mysql -->
+    <bean id="SqlConnection" class="cn.cerc.jdb.mysql.SqlConnection">
+        <property name="config" ref="ServerConfig"></property>
+    </bean>
+    <!-- 连接缓存 -->
+    <bean id="CacheConnection" class="cn.cerc.jdb.cache.CacheConnection">
+        <property name="config" ref="ServerConfig"></property>
+    </bean>
+    <!-- 连接队列 -->
+    <bean id="QueueConnection" class="cn.cerc.jdb.queue.QueueConnection">
+        <property name="config" ref="ServerConfig"></property>
+    </bean>
+    <!-- 读取本地配置文件 -->
+    <bean id="ServerConfig" class="cn.cerc.jbean.core.ServerConfig">
+    </bean>
 
-	<!-- 权限检查 -->
-	<bean id="Passport" class="cn.cerc.sample.common.Passport" scope="prototype">
-	</bean>
+    <!-- 权限检查 -->
+    <bean id="Passport" class="cn.cerc.sample.common.Passport" scope="prototype">
+    </bean>
 
-	<!-- 系统菜单定义表 -->
-	<bean id="AppMenus" class="cn.cerc.sample.common.MenuFactory" scope="prototype">
-	</bean>
+    <!-- 系统菜单定义表 -->
+    <bean id="AppMenus" class="cn.cerc.sample.common.MenuFactory" scope="prototype">
+    </bean>
 
-	<!-- 系统登录对象 -->
-	<bean id="AppLogin" class="cn.cerc.sample.common.AppLoginPage" scope="prototype">
-	</bean>
+    <!-- 系统登录对象 -->
+    <bean id="AppLogin" class="cn.cerc.sample.common.AppLoginPage" scope="prototype">
+    </bean>
 
-	<!-- 其它系统级通用对象定义 -->
-	<!-- bean id="RightMenus" class="cn.cerc.jmis.page.RightMenus" scope="prototype"> <property name="items"> <list> 未读讯息提示菜单 
-		<bean class="service.system.message.InstantMessage" /> 购物车菜单 <bean class="forms.pur.shopping.Shopping" /> </list> </property> 
-		</bean> -->
+    <!-- 其它系统级通用对象定义 -->
+    <!-- bean id="RightMenus" class="cn.cerc.jmis.page.RightMenus" scope="prototype"> <property name="items"> <list> 未读讯息提示菜单 
+        <bean class="service.system.message.InstantMessage" /> 购物车菜单 <bean class="forms.pur.shopping.Shopping" /> </list> </property> 
+        </bean> -->
 </beans>

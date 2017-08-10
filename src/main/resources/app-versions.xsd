@@ -1,103 +1,103 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
-	<!-- 版本组合列表 -->
-	<xs:simpleType name="VerList">
-		<xs:restriction base="xs:string">
-			<xs:enumeration value="0," />
-			<xs:enumeration value="4," />
-			<xs:enumeration value="4,6," />
-			<xs:enumeration value="4,6,1," />
-			<xs:enumeration value="4,6,1,2," />
-			<xs:enumeration value="4,6,1,2,3," />
-			<xs:enumeration value="4,6,1,2,3,5," />
-			<xs:enumeration value="4,6,1,2,3,0," />
-			<xs:enumeration value="4,6,1,2,3,5,0," />
-			<xs:enumeration value="4,6,1,2," />
-			<xs:enumeration value="5," />
-		</xs:restriction>
-	</xs:simpleType>
-	<!-- 权限代码 -->
-	<xs:simpleType name="ProcCode">
-		<xs:restriction base="xs:string">
-			<xs:enumeration value="service.base.options" />
-			<xs:enumeration value="service.book.manage" />
-			<xs:enumeration value="service.charge.manage" />
-			<xs:enumeration value="service.data.backup" />
-			<xs:enumeration value="service.data.manage" />
-			<xs:enumeration value="service.run.view" />
-			<xs:enumeration value="base.default" />
-			<xs:enumeration value="base.account.update" />
-			<xs:enumeration value="base.account.manage" />
-			<xs:enumeration value="base.product.manage" />
-			<xs:enumeration value="purchase.base.manage" />
-			<xs:enumeration value="purchase.discount.manage" />
-			<xs:enumeration value="purchase.order" />
-			<xs:enumeration value="purchase.stock.in" />
-			<xs:enumeration value="purchase.stock.return" />
-			<xs:enumeration value="purchase.report.process" />
-			<xs:enumeration value="purchase.report.total" />
-			<xs:enumeration value="sell.base.manage" />
-			<xs:enumeration value="sell.discount.manage" />
-			<xs:enumeration value="sell.order.wholesale" />
-			<xs:enumeration value="sell.report.process" />
-			<xs:enumeration value="sell.report.total" />
-			<xs:enumeration value="sell.stock.out.retail" />
-			<xs:enumeration value="sell.stock.out.scanner" />
-			<xs:enumeration value="sell.stock.out.wholesale" />
-			<xs:enumeration value="sell.stock.return" />
-			<xs:enumeration value="sell.associator.use" />
-			<xs:enumeration value="sell.associator.manage" />
-			<xs:enumeration value="stock.tran.ad" />
-			<xs:enumeration value="stock.tran.ah" />
-			<xs:enumeration value="stock.tran.al" />
-			<xs:enumeration value="stock.tran.ba" />
-			<xs:enumeration value="stock.tran.ha" />
-			<xs:enumeration value="stock.report.inout" />
-			<xs:enumeration value="stock.report.total" />
-			<xs:enumeration value="stock.report.balance" />
-			<xs:enumeration value="acc.ap.manage" />
-			<xs:enumeration value="acc.ar.manage" />
-			<xs:enumeration value="acc.base.manage" />
-			<xs:enumeration value="acc.data.init" />
-			<xs:enumeration value="acc.data.input" />
-			<xs:enumeration value="acc.data.report" />
-			<xs:enumeration value="acc.data.report2" />
-			<xs:enumeration value="acc.ar.consignment" />
-			<xs:enumeration value="other.addressbook" />
-			<xs:enumeration value="other.product.repair" />
-			<xs:enumeration value="other.system.backup" />
-			<xs:enumeration value="other.system.logs" />
-			<xs:enumeration value="other.warning.early" />
-			<xs:enumeration value="other.vipcard.manage" />
-			<xs:enumeration value="conn.base.manage" />
-			<xs:enumeration value="conn.cus.manage" />
-			<xs:enumeration value="conn.sup.manage" />
-			<xs:enumeration value="conn.cus.report" />
-			<xs:enumeration value="make.base.data" />
-			<xs:enumeration value="make.stdcost.material" />
-			<xs:enumeration value="make.stdcost.other" />
-			<xs:enumeration value="make.purchase.manage" />
-			<xs:enumeration value="make.plan.manage" />
-			<xs:enumeration value="make.process.record" />
-			<xs:enumeration value="make.product.cost" />
-		</xs:restriction>
-	</xs:simpleType>
-	<!-- <xs:complexType name="MenuSystem"> -->
-	<!-- <xs:simpleContent> -->
-	<!-- <xs:extension base="xs:string"> -->
-	<!-- <xs:attribute name="id" type="xs:string"/> -->
-	<!-- <xs:attribute name="code" type="xs:string"/> -->
-	<!-- <xs:attribute name="index" type="xs:integer"/> -->
-	<!-- </xs:extension> -->
-	<!-- </xs:simpleContent> -->
-	<!-- </xs:complexType> -->
-	<!-- <xs:complexType name="MenuSection"> -->
-	<!-- <xs:sequence> -->
-	<!-- <xs:element name="item" type="MenuItem" minOccurs="0" maxOccurs="unbounded" /> -->
-	<!-- </xs:sequence> -->
-	<!-- <xs:attribute name="caption" type="xs:string" use="required" /> -->
-	<!-- <xs:attribute name="mapfile" type="xs:string" /> -->
-	<!-- <xs:attribute name="delete" type="xs:boolean" use="optional" default="false" /> -->
-	<!-- <xs:attribute name="hide" type="xs:boolean" use="optional" default="false" /> -->
-	<!-- </xs:complexType> -->
+    <!-- 版本组合列表 -->
+    <xs:simpleType name="VerList">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="0," />
+            <xs:enumeration value="4," />
+            <xs:enumeration value="4,6," />
+            <xs:enumeration value="4,6,1," />
+            <xs:enumeration value="4,6,1,2," />
+            <xs:enumeration value="4,6,1,2,3," />
+            <xs:enumeration value="4,6,1,2,3,5," />
+            <xs:enumeration value="4,6,1,2,3,0," />
+            <xs:enumeration value="4,6,1,2,3,5,0," />
+            <xs:enumeration value="4,6,1,2," />
+            <xs:enumeration value="5," />
+        </xs:restriction>
+    </xs:simpleType>
+    <!-- 权限代码 -->
+    <xs:simpleType name="ProcCode">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="service.base.options" />
+            <xs:enumeration value="service.book.manage" />
+            <xs:enumeration value="service.charge.manage" />
+            <xs:enumeration value="service.data.backup" />
+            <xs:enumeration value="service.data.manage" />
+            <xs:enumeration value="service.run.view" />
+            <xs:enumeration value="base.default" />
+            <xs:enumeration value="base.account.update" />
+            <xs:enumeration value="base.account.manage" />
+            <xs:enumeration value="base.product.manage" />
+            <xs:enumeration value="purchase.base.manage" />
+            <xs:enumeration value="purchase.discount.manage" />
+            <xs:enumeration value="purchase.order" />
+            <xs:enumeration value="purchase.stock.in" />
+            <xs:enumeration value="purchase.stock.return" />
+            <xs:enumeration value="purchase.report.process" />
+            <xs:enumeration value="purchase.report.total" />
+            <xs:enumeration value="sell.base.manage" />
+            <xs:enumeration value="sell.discount.manage" />
+            <xs:enumeration value="sell.order.wholesale" />
+            <xs:enumeration value="sell.report.process" />
+            <xs:enumeration value="sell.report.total" />
+            <xs:enumeration value="sell.stock.out.retail" />
+            <xs:enumeration value="sell.stock.out.scanner" />
+            <xs:enumeration value="sell.stock.out.wholesale" />
+            <xs:enumeration value="sell.stock.return" />
+            <xs:enumeration value="sell.associator.use" />
+            <xs:enumeration value="sell.associator.manage" />
+            <xs:enumeration value="stock.tran.ad" />
+            <xs:enumeration value="stock.tran.ah" />
+            <xs:enumeration value="stock.tran.al" />
+            <xs:enumeration value="stock.tran.ba" />
+            <xs:enumeration value="stock.tran.ha" />
+            <xs:enumeration value="stock.report.inout" />
+            <xs:enumeration value="stock.report.total" />
+            <xs:enumeration value="stock.report.balance" />
+            <xs:enumeration value="acc.ap.manage" />
+            <xs:enumeration value="acc.ar.manage" />
+            <xs:enumeration value="acc.base.manage" />
+            <xs:enumeration value="acc.data.init" />
+            <xs:enumeration value="acc.data.input" />
+            <xs:enumeration value="acc.data.report" />
+            <xs:enumeration value="acc.data.report2" />
+            <xs:enumeration value="acc.ar.consignment" />
+            <xs:enumeration value="other.addressbook" />
+            <xs:enumeration value="other.product.repair" />
+            <xs:enumeration value="other.system.backup" />
+            <xs:enumeration value="other.system.logs" />
+            <xs:enumeration value="other.warning.early" />
+            <xs:enumeration value="other.vipcard.manage" />
+            <xs:enumeration value="conn.base.manage" />
+            <xs:enumeration value="conn.cus.manage" />
+            <xs:enumeration value="conn.sup.manage" />
+            <xs:enumeration value="conn.cus.report" />
+            <xs:enumeration value="make.base.data" />
+            <xs:enumeration value="make.stdcost.material" />
+            <xs:enumeration value="make.stdcost.other" />
+            <xs:enumeration value="make.purchase.manage" />
+            <xs:enumeration value="make.plan.manage" />
+            <xs:enumeration value="make.process.record" />
+            <xs:enumeration value="make.product.cost" />
+        </xs:restriction>
+    </xs:simpleType>
+    <!-- <xs:complexType name="MenuSystem"> -->
+    <!-- <xs:simpleContent> -->
+    <!-- <xs:extension base="xs:string"> -->
+    <!-- <xs:attribute name="id" type="xs:string"/> -->
+    <!-- <xs:attribute name="code" type="xs:string"/> -->
+    <!-- <xs:attribute name="index" type="xs:integer"/> -->
+    <!-- </xs:extension> -->
+    <!-- </xs:simpleContent> -->
+    <!-- </xs:complexType> -->
+    <!-- <xs:complexType name="MenuSection"> -->
+    <!-- <xs:sequence> -->
+    <!-- <xs:element name="item" type="MenuItem" minOccurs="0" maxOccurs="unbounded" /> -->
+    <!-- </xs:sequence> -->
+    <!-- <xs:attribute name="caption" type="xs:string" use="required" /> -->
+    <!-- <xs:attribute name="mapfile" type="xs:string" /> -->
+    <!-- <xs:attribute name="delete" type="xs:boolean" use="optional" default="false" /> -->
+    <!-- <xs:attribute name="hide" type="xs:boolean" use="optional" default="false" /> -->
+    <!-- </xs:complexType> -->
 </xs:schema>

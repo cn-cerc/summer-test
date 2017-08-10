@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xmlns:aop="http://www.springframework.org/schema/aop"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans  
+    xmlns:aop="http://www.springframework.org/schema/aop"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans  
            http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
-	<bean id="Welcome" class="cn.cerc.sample.forms.FrmWelcome" scope="prototype">
-	</bean>
-	<bean id="FrmWelcome" class="cn.cerc.sample.forms.FrmWelcome" scope="prototype">
-	</bean>
-	<bean id="FrmDefault" class="cn.cerc.sample.forms.FrmDefault" scope="prototype">
-	</bean>
-	<bean id="FrmDataGrid" class="cn.cerc.sample.forms.FrmDataGrid" scope="prototype">
-	</bean>
-	<bean id="FrmClientTest" class="cn.cerc.sample.forms.FrmClientTest" scope="prototype">
-	</bean>
+    <bean id="Welcome" class="cn.cerc.sample.forms.FrmWelcome" scope="prototype">
+    </bean>
+    <bean id="FrmWelcome" class="cn.cerc.sample.forms.FrmWelcome" scope="prototype">
+    </bean>
+    <bean id="FrmDefault" class="cn.cerc.sample.forms.FrmDefault" scope="prototype">
+    </bean>
+    <bean id="FrmDataGrid" class="cn.cerc.sample.forms.FrmDataGrid" scope="prototype">
+    </bean>
+    <bean id="FrmClientTest" class="cn.cerc.sample.forms.FrmClientTest" scope="prototype">
+    </bean>
 </beans>
