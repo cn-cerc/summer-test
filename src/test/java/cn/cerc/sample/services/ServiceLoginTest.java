@@ -10,16 +10,16 @@ import cn.cerc.jdb.core.Record;
 
 public class ServiceLoginTest {
 
-	private StubHandle handle = new StubHandle();
+    private StubHandle handle = new StubHandle();
 
-	@Test
-	public void testExecute() {
-		LocalService app = new LocalService(handle, "ServiceLogin");
-		Record headIn = app.getDataIn().getHead();
-		headIn.setField("userCode", "admin");
-		headIn.setField("password", "admin");
-		assertTrue(app.exec());
-		System.out.println(app.getDataOut());
-	}
+    @Test
+    public void testExecute() {
+        LocalService app = new LocalService(handle, "ServiceLogin");
+        Record headIn = app.getDataIn().getHead();
+        headIn.setField("userCode", "admin");
+        headIn.setField("password", "admin");
+        assertTrue(app.exec());
+        System.out.println(app.getDataOut());
+    }
 
 }

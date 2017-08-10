@@ -7,9 +7,9 @@ import cn.cerc.jdb.core.DataSet;
 
 public class ServiceUserList extends AbstractService {
 
-	@Override
-	public IStatus execute(DataSet dataIn, DataSet dataOut) throws ServiceException {
-		return this.success();
-	}
+    @Override
+    public IStatus execute(DataSet dataIn, DataSet dataOut) throws ServiceException {
+        return this.success();
+    }
 
 }

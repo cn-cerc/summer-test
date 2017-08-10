@@ -1,989 +1,989 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <html xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="app-roles.xsd">
-	<head>
-		<title>地藤系统菜单库</title>
-	</head>
-	<body>
-		<security code="service.base.options" name="系统运行选项设置" type="record" group="service">
-			<access verlist="0,">
-				<group code="SCM001" Append="true" Modify="true" Print="true">服务商管理员</group>
-			</access>
-		</security>
-		<security code="service.book.manage" name="帐套建立与管理" type="record" group="service">
-			<access verlist="0,">
-				<group code="SCM001" Append="true" Modify="true" Print="true">服务商管理员</group>
-			</access>
-		</security>
-		<security code="service.charge.manage" name="藤币充值管理" type="record" group="service">
-			<access verlist="0,">
-				<group code="SCM001" Append="true" Modify="true" Print="true">服务商管理员</group>
-			</access>
-		</security>
-		<security code="service.data.backup" name="资料备份与还原" type="execute" group="service">
-			<access verlist="0,">
-				<group code="SCM001" Append="true" Modify="true" Print="true">服务商管理员</group>
-			</access>
-		</security>
-		<security code="service.data.manage" name="系统数据结构管理" type="record" group="service">
-			<access verlist="0,">
-				<group code="SCM001" Append="true" Modify="true" Print="true">服务商管理员</group>
-			</access>
-		</security>
-		<security code="service.run.view" name="系统运行状态查询" type="report" group="service">
-			<access verlist="0,">
-				<group code="SCM001" Append="true" Modify="true" Print="true">服务商管理员</group>
-			</access>
-		</security>
-		<security code="base.default" name="系统默认导航及其它功能" type="execute" group="base">
-			<access verlist="4,6,1,2,3,5,0,">
-				<group code="SCM001">服务商管理员</group>
-				<group code="SCM101">总经理</group>
-				<group code="SCM102">资料录入员</group>
-				<group code="SCM103">业务经理</group>
-				<group code="SCM104">区域经理</group>
-				<group code="SCM105">业务员</group>
-				<group code="SCM106">采购员</group>
-				<group code="SCM107">仓管员</group>
-				<group code="SCM108">财务</group>
-				<group code="SCM199">网店会员</group>
-				<group code="SCM201">老板</group>
-				<group code="SCM202">店长</group>
-				<group code="SCM203">销售员</group>
-				<group code="SCM204">仓管员</group>
-				<group code="SCM299">网店会员</group>
-				<group code="SCM301">老板</group>
-				<group code="SCM302">店长</group>
-				<group code="SCM303">店员</group>
-				<group code="SCM399">网店会员</group>
-				<group code="SCM401">老板</group>
-				<group code="SCM402">财务</group>
-				<group code="SCM403">仓管</group>
-				<group code="SCM404">总经理</group>
-				<group code="SCM405">资料录入员</group>
-				<group code="SCM406">业务经理</group>
-				<group code="SCM407">区域经理</group>
-				<group code="SCM408">业务</group>
-				<group code="SCM409">采购</group>
-				<group code="SCM410">生管</group>
-				<group code="SCM411">物管</group>
-				<group code="SCM412">研发</group>
-				<group code="SCM413">生产部</group>
-				<group code="SCM499">网店会员</group>
-				<group code="SCM501">老板</group>
-				<group code="SCM601">老板</group>
-				<group code="SCM602">总经理</group>
-				<group code="SCM603">业务经理</group>
-				<group code="SCM604">业务员</group>
-				<group code="SCM699">网店会员</group>
-			</access>
-		</security>
-		<security code="base.account.update" type="record" name="更改我的密码" group="base">
-			<access verlist="4,6,1,2,3,5,0,">
-				<group code="SCM001">服务商管理员</group>
-				<group code="SCM101">总经理</group>
-				<group code="SCM102">资料录入员</group>
-				<group code="SCM103">业务经理</group>
-				<group code="SCM104">区域经理</group>
-				<group code="SCM105">业务员</group>
-				<group code="SCM106">采购员</group>
-				<group code="SCM107">仓管员</group>
-				<group code="SCM108">财务</group>
-				<group code="SCM199">网店会员</group>
-				<group code="SCM201">老板</group>
-				<group code="SCM202">店长</group>
-				<group code="SCM203">销售员</group>
-				<group code="SCM204">仓管员</group>
-				<group code="SCM299">网店会员</group>
-				<group code="SCM301">老板</group>
-				<group code="SCM302">店长</group>
-				<group code="SCM303">店员</group>
-				<group code="SCM399">网店会员</group>
-				<group code="SCM401">老板</group>
-				<group code="SCM402">财务</group>
-				<group code="SCM403">仓管</group>
-				<group code="SCM404">总经理</group>
-				<group code="SCM405">资料录入员</group>
-				<group code="SCM406">业务经理</group>
-				<group code="SCM407">区域经理</group>
-				<group code="SCM408">业务</group>
-				<group code="SCM409">采购</group>
-				<group code="SCM410">生管</group>
-				<group code="SCM411">物管</group>
-				<group code="SCM412">研发</group>
-				<group code="SCM413">生产部</group>
-				<group code="SCM499">网店会员</group>
-				<group code="SCM501">老板</group>
-				<group code="SCM601">老板</group>
-				<group code="SCM602">总经理</group>
-				<group code="SCM603">业务经理</group>
-				<group code="SCM604">业务员</group>
-				<group code="SCM699">网店会员</group>
-			</access>
-		</security>
-		<security code="base.account.manage" type="record" name="用户帐号管理" group="base">
-			<access verlist="4,6,1,2,3,5,0,">
-				<group code="SCM001" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">服务商管理员</group>
-				<group code="SCM101" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">总经理</group>
-				<group code="SCM201" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
-				<group code="SCM301" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
-				<group code="SCM401" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
-				<group code="SCM501" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
-				<group code="SCM601" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
-			</access>
-		</security>
-		<security code="base.product.manage" name="商品基本资料与库存管理" type="record" group="base">
-			<access verlist="4,6,1,2,3,5,">
-				<group code="SCM101" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">总经理</group>
-				<group code="SCM102" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">资料录入员</group>
-				<group code="SCM103">业务经理</group>
-				<group code="SCM104">区域经理</group>
-				<group code="SCM105">业务员</group>
-				<group code="SCM106">采购员</group>
-				<group code="SCM107">仓管员</group>
-				<group code="SCM108">财务</group>
-				<group code="SCM201" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
-				<group code="SCM202" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">店长</group>
-				<group code="SCM203">销售员</group>
-				<group code="SCM204">仓管员</group>
-				<group code="SCM205">财务专员</group>
-				<group code="SCM301" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
-				<group code="SCM302" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">店长</group>
-				<group code="SCM303" Modify="true">店员</group>
-				<group code="SCM401" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
-				<group code="SCM402" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">财务</group>
-				<group code="SCM403" Modify="true">仓管</group>
-				<group code="SCM404">总经理</group>
-				<group code="SCM405" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">资料录入员</group>
-				<group code="SCM406">业务经理</group>
-				<group code="SCM407">区域经理</group>
-				<group code="SCM408">业务</group>
-				<group code="SCM409">采购</group>
-				<group code="SCM410">生管</group>
-				<group code="SCM411">物管</group>
-				<group code="SCM412" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">研发</group>
-				<group code="SCM413">生产部</group>
-				<group code="SCM501" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
-			</access>
-		</security>
-		<security code="purchase.base.manage" name="厂商及采购基本资料设置" type="record" group="purchase">
-			<access verlist="4,6,1,2,3,5,">
-				<group code="SCM101" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">总经理</group>
-				<group code="SCM106" Append="true" Modify="true" Print="true">采购员</group>
-				<group code="SCM108">财务</group>
-				<group code="SCM201" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
-				<group code="SCM202" Append="true" Modify="true" Print="true">店长</group>
-				<group code="SCM301" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
-				<group code="SCM302" Append="true" Modify="true" Print="true">店长</group>
-				<group code="SCM303">店员</group>
-				<group code="SCM401" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
-				<group code="SCM402" Append="true" Modify="true" Print="true">财务</group>
-				<group code="SCM404">总经理</group>
-				<group code="SCM405" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">资料录入员</group>
-				<group code="SCM409" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">采购</group>
-				<group code="SCM501" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
-			</access>
-		</security>
-		<security code="purchase.discount.manage" name="进货返点与商品促销" type="record" group="purchase">
-			<access verlist="4,6,1,2,3,">
-				<group code="SCM101" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">总经理</group>
-				<group code="SCM102" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">资料录入员</group>
-				<group code="SCM106">采购员</group>
-				<group code="SCM108">财务</group>
-				<group code="SCM201" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
-				<group code="SCM202" Append="true" Modify="true" Print="true">店长</group>
-				<group code="SCM301" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
-				<group code="SCM302" Append="true" Modify="true" Print="true">店长</group>
-				<group code="SCM303">店员</group>
-				<group code="SCM401" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
-				<group code="SCM402">财务</group>
-				<group code="SCM404">总经理</group>
-				<group code="SCM405" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">资料录入员</group>
-				<group code="SCM409" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">采购</group>
-			</access>
-		</security>
-		<security code="purchase.order" name="采购进货订单登记" type="form" group="purchase">
-			<access verlist="4,6,1,2,3,5,">
-				<group code="SCM101" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">总经理</group>
-				<group code="SCM102">资料录入员</group>
-				<group code="SCM106" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">采购员</group>
-				<group code="SCM201" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
-				<group code="SCM202" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">店长</group>
-				<group code="SCM301" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
-				<group code="SCM302" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">店长</group>
-				<group code="SCM401" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
-				<group code="SCM402" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">财务</group>
-				<group code="SCM404">总经理</group>
-				<group code="SCM405" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">资料录入员</group>
-				<group code="SCM409" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">采购</group>
-				<group code="SCM501" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
-			</access>
-		</security>
-		<security code="purchase.stock.in" name="商品入库登记" type="form" group="purchase">
-			<access verlist="4,6,1,2,3,5,">
-				<group code="SCM101" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">总经理</group>
-				<group code="SCM102">资料录入员</group>
-				<group code="SCM106">采购员</group>
-				<group code="SCM107" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">仓管员</group>
-				<group code="SCM201" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
-				<group code="SCM202" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">店长</group>
-				<group code="SCM203" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">销售员</group>
-				<group code="SCM204" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">仓管员</group>
-				<group code="SCM301" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
-				<group code="SCM302" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">店长</group>
-				<group code="SCM303" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">店员</group>
-				<group code="SCM401" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
-				<group code="SCM402" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">财务</group>
-				<group code="SCM403" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">仓管</group>
-				<group code="SCM404">总经理</group>
-				<group code="SCM409">采购</group>
-				<group code="SCM501" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
-			</access>
-		</security>
-		<security code="purchase.stock.return" name="商品进货退回登记" type="form" group="purchase">
-			<access verlist="4,6,1,2,3,5,">
-				<group code="SCM101" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">总经理</group>
-				<group code="SCM102">资料录入员</group>
-				<group code="SCM106">采购员</group>
-				<group code="SCM107" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">仓管员</group>
-				<group code="SCM201" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
-				<group code="SCM202" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">店长</group>
-				<group code="SCM203" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">销售员</group>
-				<group code="SCM301" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
-				<group code="SCM302" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">店长</group>
-				<group code="SCM303" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">店员</group>
-				<group code="SCM401" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
-				<group code="SCM402" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">财务</group>
-				<group code="SCM403" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">仓管</group>
-				<group code="SCM404">总经理</group>
-				<group code="SCM409">采购</group>
-				<group code="SCM501" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
-			</access>
-		</security>
-		<security code="purchase.report.process" name="采购进度统计报表" type="report" group="purchase">
-			<access verlist="4,6,1,2,3,5,">
-				<group code="SCM101">总经理</group>
-				<group code="SCM102">资料录入员</group>
-				<group code="SCM106">采购员</group>
-				<group code="SCM107">仓管员</group>
-				<group code="SCM201">老板</group>
-				<group code="SCM202">店长</group>
-				<group code="SCM301">老板</group>
-				<group code="SCM302">店长</group>
-				<group code="SCM303">店员</group>
-				<group code="SCM401">老板</group>
-				<group code="SCM402">财务</group>
-				<group code="SCM403">仓管</group>
-				<group code="SCM404">总经理</group>
-				<group code="SCM409">采购</group>
-				<group code="SCM501" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
-			</access>
-		</security>
-		<security code="purchase.report.total" name="采购记录统计报表" type="report" group="purchase">
-			<access verlist="4,6,1,2,3,5,">
-				<group code="SCM101">总经理</group>
-				<group code="SCM102">资料录入员</group>
-				<group code="SCM106">采购员</group>
-				<group code="SCM107">仓管员</group>
-				<group code="SCM201">老板</group>
-				<group code="SCM202">店长</group>
-				<group code="SCM301">老板</group>
-				<group code="SCM302">店长</group>
-				<group code="SCM303">店员</group>
-				<group code="SCM401">老板</group>
-				<group code="SCM402">财务</group>
-				<group code="SCM403">仓管</group>
-				<group code="SCM404">总经理</group>
-				<group code="SCM409">采购</group>
-				<group code="SCM501">老板</group>
-			</access>
-		</security>
-		<security code="sell.base.manage" name="客户及相关资料管理" type="record" group="sell">
-			<access verlist="4,6,1,2,3,">
-				<group code="SCM101" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">总经理</group>
-				<group code="SCM102" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">资料录入员</group>
-				<group code="SCM103" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">业务经理</group>
-				<group code="SCM104" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">区域经理</group>
-				<group code="SCM105" Append="true" Modify="true">业务员</group>
-				<group code="SCM108" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">财务</group>
-				<group code="SCM201" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
-				<group code="SCM202" Append="true" Modify="true" Print="true">店长</group>
-				<group code="SCM203" Append="true" Modify="true" Print="true">销售员</group>
-				<group code="SCM301" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
-				<group code="SCM302" Append="true" Modify="true" Print="true">店长</group>
-				<group code="SCM303">店员</group>
-				<group code="SCM401" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
-				<group code="SCM402">财务</group>
-				<group code="SCM404">总经理</group>
-				<group code="SCM405" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">资料录入员</group>
-				<group code="SCM406" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">业务经理</group>
-				<group code="SCM407" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">区域经理</group>
-				<group code="SCM408" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">业务</group>
-				<group code="SCM601" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
-				<group code="SCM602" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">总经理</group>
-				<group code="SCM603" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">业务经理</group>
-				<group code="SCM604" Append="true" Modify="true">业务员</group>
-			</access>
-		</security>
-		<security code="sell.discount.manage" name="销货返点与促销管理" type="record" group="sell">
-			<access verlist="4,6,1,2,3,">
-				<group code="SCM101" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">总经理</group>
-				<group code="SCM102" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">资料录入员</group>
-				<group code="SCM103">业务经理</group>
-				<group code="SCM104">区域经理</group>
-				<group code="SCM105">业务员</group>
-				<group code="SCM201" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
-				<group code="SCM202" Append="true" Modify="true" Print="true">店长</group>
-				<group code="SCM203">销售员</group>
-				<group code="SCM301" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
-				<group code="SCM302" Append="true" Modify="true" Print="true">店长</group>
-				<group code="SCM303">店员</group>
-				<group code="SCM401" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
-				<group code="SCM402" Append="true" Modify="true" Print="true">财务</group>
-				<group code="SCM404">总经理</group>
-				<group code="SCM405" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">资料录入员</group>
-				<group code="SCM406" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">业务经理</group>
-				<group code="SCM407" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">区域经理</group>
-				<group code="SCM408" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">业务</group>
-			</access>
-		</security>
-		<security code="sell.order.wholesale" name="批发订单登记" type="form" group="sell">
-			<access verlist="4,6,1,2,3,">
-				<group code="SCM101" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">总经理</group>
-				<group code="SCM102" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">资料录入员</group>
-				<group code="SCM103" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">业务经理</group>
-				<group code="SCM104" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">区域经理</group>
-				<group code="SCM105" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">业务员</group>
-				<group code="SCM201" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
-				<group code="SCM202" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">店长</group>
-				<group code="SCM203" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">销售员</group>
-				<group code="SCM301" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
-				<group code="SCM302" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">店长</group>
-				<group code="SCM303">店员</group>
-				<group code="SCM401" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
-				<group code="SCM402" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">财务</group>
-				<group code="SCM403">仓管</group>
-				<group code="SCM404">总经理</group>
-				<group code="SCM405" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">资料录入员</group>
-				<group code="SCM406" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">业务经理</group>
-				<group code="SCM407" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">区域经理</group>
-				<group code="SCM408" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">业务</group>
-			</access>
-		</security>
-		<security code="sell.report.process" name="订单完成进度报表" type="report" group="sell">
-			<access verlist="4,6,1,2,3,">
-				<group code="SCM101" Print="true" Output="true">总经理</group>
-				<group code="SCM102">资料录入员</group>
-				<group code="SCM103" Print="true" Output="true">业务经理</group>
-				<group code="SCM104" Print="true" Output="true">区域经理</group>
-				<group code="SCM105" Print="true" Output="true">业务员</group>
-				<group code="SCM201" Print="true" Output="true">老板</group>
-				<group code="SCM202" Print="true" Output="true">店长</group>
-				<group code="SCM203" Print="true" Output="true">销售员</group>
-				<group code="SCM301" Print="true" Output="true">老板</group>
-				<group code="SCM302" Print="true" Output="true">店长</group>
-				<group code="SCM303">店员</group>
-				<group code="SCM401" Print="true" Output="true">老板</group>
-				<group code="SCM402" Print="true" Output="true">财务</group>
-				<group code="SCM404" Print="true" Output="true">总经理</group>
-				<group code="SCM406" Print="true" Output="true">业务经理</group>
-				<group code="SCM407" Print="true" Output="true">区域经理</group>
-				<group code="SCM408" Print="true" Output="true">业务</group>
-			</access>
-		</security>
-		<security code="sell.report.total" name="销售统计报表" type="report" group="sell">
-			<access verlist="4,6,1,2,3,">
-				<group code="SCM101" Print="true" Output="true">总经理</group>
-				<group code="SCM102">资料录入员</group>
-				<group code="SCM103" Print="true" Output="true">业务经理</group>
-				<group code="SCM104" Print="true" Output="true">区域经理</group>
-				<group code="SCM105" Print="true" Output="true">业务员</group>
-				<group code="SCM201" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
-				<group code="SCM202" Print="true" Output="true">店长</group>
-				<group code="SCM203" Print="true" Output="true">销售员</group>
-				<group code="SCM301" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
-				<group code="SCM302" Print="true" Output="true">店长</group>
-				<group code="SCM401" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
-				<group code="SCM402" Print="true" Output="true">财务</group>
-				<group code="SCM404" Print="true" Output="true">总经理</group>
-				<group code="SCM406" Print="true" Output="true">业务经理</group>
-				<group code="SCM407" Print="true" Output="true">区域经理</group>
-				<group code="SCM408" Print="true" Output="true">业务</group>
-				<group code="SCM601" Print="true" Output="true">老板</group>
-				<group code="SCM602" Print="true">总经理</group>
-				<group code="SCM603">业务经理</group>
-				<group code="SCM604">业务员</group>
-			</access>
-		</security>
-		<security code="sell.stock.out.retail" name="零售出货登记" type="form" group="sell">
-			<access verlist="4,6,1,2,3,">
-				<group code="SCM101" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">总经理</group>
-				<group code="SCM102" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">资料录入员</group>
-				<group code="SCM103" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">业务经理</group>
-				<group code="SCM104" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">区域经理</group>
-				<group code="SCM105" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">业务员</group>
-				<group code="SCM107" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">仓管员</group>
-				<group code="SCM201" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
-				<group code="SCM202" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">店长</group>
-				<group code="SCM203" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">销售员</group>
-				<group code="SCM301" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
-				<group code="SCM302" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">店长</group>
-				<group code="SCM303" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">店员</group>
-				<group code="SCM401" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
-				<group code="SCM402">财务</group>
-				<group code="SCM404">总经理</group>
-				<group code="SCM406" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">业务经理</group>
-				<group code="SCM407" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">区域经理</group>
-				<group code="SCM408" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">业务</group>
-			</access>
-		</security>
-		<security code="sell.stock.out.scanner" name="备货扫描登记作业管理" type="form" group="sell">
-			<access verlist="4,6,1,2,">
-				<group code="SCM101" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">总经理</group>
-				<group code="SCM107" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">仓管员</group>
-				<group code="SCM201" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
-				<group code="SCM202" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">店长</group>
-				<group code="SCM203" Append="true" Modify="true" Print="true">销售员</group>
-				<group code="SCM204">仓管员</group>
-				<group code="SCM401" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
-				<group code="SCM403" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">仓管</group>
-			</access>
-		</security>
-		<security code="sell.stock.out.wholesale" name="批发出货登记" type="form" group="sell">
-			<access verlist="4,6,1,2,3,">
-				<group code="SCM101" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">总经理</group>
-				<group code="SCM102" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">资料录入员</group>
-				<group code="SCM103" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">业务经理</group>
-				<group code="SCM104" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">区域经理</group>
-				<group code="SCM105" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">业务员</group>
-				<group code="SCM107" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">仓管员</group>
-				<group code="SCM201" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
-				<group code="SCM202" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">店长</group>
-				<group code="SCM203" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">销售员</group>
-				<group code="SCM301" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
-				<group code="SCM302" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">店长</group>
-				<group code="SCM303">店员</group>
-				<group code="SCM401" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
-				<group code="SCM402">财务</group>
-				<group code="SCM403" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">仓管</group>
-				<group code="SCM404">总经理</group>
-				<group code="SCM406" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">业务经理</group>
-				<group code="SCM407" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">区域经理</group>
-				<group code="SCM408" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">业务</group>
-				<group code="SCM602" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">总经理</group>
-			</access>
-		</security>
-		<security code="sell.stock.return" name="出货退回登记" type="form" group="sell">
-			<access verlist="4,6,1,2,3,">
-				<group code="SCM101" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">总经理</group>
-				<group code="SCM102" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">资料录入员</group>
-				<group code="SCM103" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">业务经理</group>
-				<group code="SCM104" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">区域经理</group>
-				<group code="SCM105" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">业务员</group>
-				<group code="SCM107" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">仓管员</group>
-				<group code="SCM201" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
-				<group code="SCM202" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">店长</group>
-				<group code="SCM203" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">销售员</group>
-				<group code="SCM301" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
-				<group code="SCM302" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">店长</group>
-				<group code="SCM303">店员</group>
-				<group code="SCM401" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
-				<group code="SCM402">财务</group>
-				<group code="SCM403" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">仓管</group>
-				<group code="SCM404">总经理</group>
-				<group code="SCM406" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">业务经理</group>
-				<group code="SCM407" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">区域经理</group>
-				<group code="SCM408" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">业务</group>
-				<group code="SCM601" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">总经理</group>
-			</access>
-		</security>
-		<security code="sell.associator.use" name="网店会员操作" type="form" group="sell">
-			<access verlist="4,6,1,2,3,">
-				<group code="SCM199">网店会员</group>
-				<group code="SCM299">网店会员</group>
-				<group code="SCM399">网店会员</group>
-				<group code="SCM499">网店会员</group>
-				<group code="SCM699">网店会员</group>
-			</access>
-		</security>
-		<security code="sell.associator.manage" name="网店设置与管理" type="form" group="sell">
-			<access verlist="4,6,1,2,3,">
-				<group code="SCM101" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">总经理</group>
-				<group code="SCM201" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
-				<group code="SCM301" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
-				<group code="SCM401" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
-				<group code="SCM601" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">总经理</group>
-				<group code="SCM199">网店会员</group>
-				<group code="SCM299">网店会员</group>
-				<group code="SCM399">网店会员</group>
-				<group code="SCM499">网店会员</group>
-				<group code="SCM699">网店会员</group>
-			</access>
-		</security>
-		<security code="stock.tran.ad" name="完工入库单登记" type="form" group="stock">
-			<access verlist="4,">
-				<group code="SCM401" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
-				<group code="SCM402" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">财务</group>
-				<group code="SCM403" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">仓管</group>
-				<group code="SCM404">总经理</group>
-				<group code="SCM413" Append="true" Modify="true" Print="true">生产部</group>
-			</access>
-		</security>
-		<security code="stock.tran.ah" name="库别调拔单登记" type="form" group="stock">
-			<access verlist="4,6,1,2,3,5,">
-				<group code="SCM101" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">总经理</group>
-				<group code="SCM102" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">资料录入员</group>
-				<group code="SCM107" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">仓管员</group>
-				<group code="SCM201" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
-				<group code="SCM202" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">店长</group>
-				<group code="SCM204" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">仓管员</group>
-				<group code="SCM301" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
-				<group code="SCM302" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">店长</group>
-				<group code="SCM401" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
-				<group code="SCM402" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">财务</group>
-				<group code="SCM403" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">仓管</group>
-				<group code="SCM501" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
-			</access>
-		</security>
-		<security code="stock.tran.al" name="商品拆装单登记" type="form" group="stock">
-			<access verlist="4,6,1,2,3,5,">
-				<group code="SCM101" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">总经理</group>
-				<group code="SCM102" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">资料录入员 </group>
-				<group code="SCM107" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">仓管员</group>
-				<group code="SCM201" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
-				<group code="SCM202" Append="true" Modify="true" Print="true">店长</group>
-				<group code="SCM204" Append="true" Modify="true" Print="true">仓管员</group>
-				<group code="SCM301" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
-				<group code="SCM302" Append="true" Modify="true" Print="true">店长</group>
-				<group code="SCM303" Append="true" Modify="true" Print="true">店员</group>
-				<group code="SCM401" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
-				<group code="SCM403" Append="true" Modify="true" Print="true">仓管</group>
-				<group code="SCM501" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
-			</access>
-		</security>
-		<security code="stock.tran.ba" name="生产领料单登记" type="form" group="stock">
-			<access verlist="4,">
-				<group code="SCM401" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
-				<group code="SCM402" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">财务</group>
-				<group code="SCM403" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">仓管</group>
-				<group code="SCM404">总经理</group>
-				<group code="SCM413" Append="true" Modify="true" Print="true">生产部</group>
-			</access>
-		</security>
-		<security code="stock.tran.ha" name="库存盘点单登记" type="form" group="stock">
-			<access verlist="4,6,1,2,3,5,">
-				<group code="SCM101" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">总经理</group>
-				<group code="SCM102" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">资料录入员</group>
-				<group code="SCM107" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">仓管员</group>
-				<group code="SCM108" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">财务</group>
-				<group code="SCM201" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
-				<group code="SCM202" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">店长</group>
-				<group code="SCM204" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">仓管员</group>
-				<group code="SCM301" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
-				<group code="SCM302" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">店长</group>
-				<group code="SCM401" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
-				<group code="SCM402" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">财务</group>
-				<group code="SCM403" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">仓管</group>
-				<group code="SCM501" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
-			</access>
-		</security>
-		<security code="stock.report.inout" name="商品出入库记录查询" type="report" group="stock">
-			<access verlist="4,6,1,2,3,5,">
-				<group code="SCM101">总经理</group>
-				<group code="SCM102">资料录入员</group>
-				<group code="SCM103">业务经理</group>
-				<group code="SCM104">区域经理</group>
-				<group code="SCM105">业务员</group>
-				<group code="SCM106">采购员</group>
-				<group code="SCM107">仓管员</group>
-				<group code="SCM201">老板</group>
-				<group code="SCM202">店长</group>
-				<group code="SCM203">销售员</group>
-				<group code="SCM204">仓管员</group>
-				<group code="SCM205">财务专员</group>
-				<group code="SCM301">老板</group>
-				<group code="SCM302">店长</group>
-				<group code="SCM303">店员</group>
-				<group code="SCM401">老板</group>
-				<group code="SCM402">财务</group>
-				<group code="SCM403">仓管</group>
-				<group code="SCM404">总经理</group>
-				<group code="SCM501" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
-			</access>
-		</security>
-		<security code="stock.report.total" name="商品资产统计报表" type="report" group="stock">
-			<access verlist="4,6,1,2,3,5,">
-				<group code="SCM101" Print="true">总经理</group>
-				<group code="SCM108" Print="true">财务</group>
-				<group code="SCM201" Print="true">老板</group>
-				<group code="SCM301" Print="true">老板</group>
-				<group code="SCM401" Print="true">老板</group>
-				<group code="SCM402" Print="true">财务</group>
-				<group code="SCM501" Print="true">老板</group>
-			</access>
-		</security>
-		<security code="stock.report.balance" name="库存供需平衡分析" type="report" group="stock">
-			<access verlist="4,6,1,2,3,5,">
-				<group code="SCM101" Print="true" Output="true">总经理</group>
-				<group code="SCM103" Print="true" Output="true">业务经理</group>
-				<group code="SCM106" Print="true" Output="true">采购员</group>
-				<group code="SCM201" Print="true" Output="true">老板</group>
-				<group code="SCM202" Print="true" Output="true">店长</group>
-				<group code="SCM205" Print="true" Output="true">财务专员</group>
-				<group code="SCM301" Print="true" Output="true">老板</group>
-				<group code="SCM302" Print="true" Output="true">店长</group>
-				<group code="SCM401" Print="true" Output="true">老板</group>
-				<group code="SCM402" Print="true" Output="true">财务</group>
-				<group code="SCM404" Print="true" Output="true">总经理</group>
-				<group code="SCM501" Print="true" Output="true">老板</group>
-			</access>
-		</security>
-		<security code="acc.ap.manage" name="应付帐款登记与管理" type="form" group="acc">
-			<access verlist="4,6,1,2,3,5,">
-				<group code="SCM101" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">总经理</group>
-				<group code="SCM108" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">财务</group>
-				<group code="SCM201" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
-				<group code="SCM202" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">店长</group>
-				<group code="SCM205" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">财务专员</group>
-				<group code="SCM301" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
-				<group code="SCM302" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">店长</group>
-				<group code="SCM401" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
-				<group code="SCM402" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">财务</group>
-				<group code="SCM501" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
-			</access>
-		</security>
-		<security code="acc.ar.manage" name="应收帐款登记与管理" type="form" group="acc">
-			<access verlist="4,6,1,2,3,5,">
-				<group code="SCM101" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">总经理</group>
-				<group code="SCM108" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">财务</group>
-				<group code="SCM201" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
-				<group code="SCM202" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">店长</group>
-				<group code="SCM205" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">财务专员</group>
-				<group code="SCM301" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
-				<group code="SCM302" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">店长</group>
-				<group code="SCM401" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
-				<group code="SCM402" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">财务</group>
-				<group code="SCM501" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
-			</access>
-		</security>
-		<security code="acc.ar.consignment" name="寄卖对账单" type="form" group="acc">
-			<access verlist="4,6,1,2,">
-				<group code="SCM101" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">总经理</group>
-				<group code="SCM108" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">财务</group>
-				<group code="SCM201" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
-				<group code="SCM202" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">店长</group>
-				<group code="SCM205" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">财务专员</group>
-				<group code="SCM301" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
-				<group code="SCM302" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">店长</group>
-				<group code="SCM401" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
-				<group code="SCM402" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">财务</group>
-				<group code="SCM501" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
-			</access>
-		</security>
-		<security code="acc.base.manage" name="财务基本资料设置" type="record" group="acc">
-			<access verlist="4,6,1,2,3,5,">
-				<group code="SCM101" Append="true" Modify="true" Print="true">总经理</group>
-				<group code="SCM108" Append="true" Modify="true" Print="true">财务</group>
-				<group code="SCM201" Append="true" Modify="true" Print="true">老板</group>
-				<group code="SCM301" Append="true" Modify="true" Print="true">老板</group>
-				<group code="SCM401" Append="true" Modify="true" Print="true">老板</group>
-				<group code="SCM501" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
-			</access>
-		</security>
-		<security code="acc.data.init" name="系统期初资料录入" type="record" group="acc">
-			<access verlist="4,6,1,2,3,5,">
-				<group code="SCM101" Append="true" Modify="true" Print="true">总经理</group>
-				<group code="SCM108" Append="true" Modify="true" Print="true">财务</group>
-				<group code="SCM401" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
-				<group code="SCM402" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">财务</group>
-				<group code="SCM501" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
-			</access>
-		</security>
-		<security code="acc.data.input" name="财务凭证录入与修改" type="form" group="acc">
-			<access verlist="4,6,1,2,3,5,">
-				<group code="SCM101" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">总经理</group>
-				<group code="SCM108" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">财务</group>
-				<group code="SCM201" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
-				<group code="SCM202" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">店长</group>
-				<group code="SCM205" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">财务专员</group>
-				<group code="SCM301" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
-				<group code="SCM302" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">店长</group>
-				<group code="SCM401" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
-				<group code="SCM402" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">财务</group>
-				<group code="SCM501" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
-			</access>
-		</security>
-		<security code="acc.data.report" name="财务基础统计报表" type="report" group="acc">
-			<access verlist="4,6,1,2,3,5,">
-				<group code="SCM101" Print="true" Output="true">总经理</group>
-				<group code="SCM108" Print="true" Output="true">财务</group>
-				<group code="SCM201" Print="true" Output="true">老板</group>
-				<group code="SCM202" Print="true" Output="true">店长</group>
-				<group code="SCM205" Print="true" Output="true">财务专员</group>
-				<group code="SCM301" Print="true" Output="true">老板</group>
-				<group code="SCM401" Print="true" Output="true">老板</group>
-				<group code="SCM402" Print="true" Output="true">财务</group>
-				<group code="SCM501" Print="true" Output="true">老板</group>
-			</access>
-		</security>
-		<security code="acc.data.report2" name="企业经营管理报表" type="report" group="acc">
-			<access verlist="4,6,1,2,3,5,">
-				<group code="SCM101" Print="true" Output="true">总经理</group>
-				<group code="SCM201" Print="true" Output="true">老板</group>
-				<group code="SCM301" Print="true" Output="true">老板</group>
-				<group code="SCM401" Print="true" Output="true">老板</group>
-				<group code="SCM501" Print="true" Output="true">老板</group>
-			</access>
-		</security>
-		<security code="other.warning.early" type="record" name="系统库存预警报表" group="other">
-			<access verlist="4,6,1,2,3,5,">
-				<group code="SCM101">总经理</group>
-				<group code="SCM102">资料录入员</group>
-				<group code="SCM103">业务经理</group>
-				<group code="SCM106">采购员</group>
-				<group code="SCM107">仓管员</group>
-				<group code="SCM201">老板</group>
-				<group code="SCM202">店长</group>
-				<group code="SCM301">老板</group>
-				<group code="SCM302">店长</group>
-				<group code="SCM303">店员</group>
-				<group code="SCM401">老板</group>
-				<group code="SCM402">财务</group>
-				<group code="SCM403">仓管</group>
-				<group code="SCM404">总经理</group>
-				<group code="SCM501">老板</group>
-			</access>
-		</security>
-		<security code="other.vipcard.manage" type="record" name="会员优惠卡管理" group="other">
-			<access verlist="4,6,1,2,3,">
-				<group code="SCM101" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">总经理</group>
-				<group code="SCM102">资料录入员</group>
-				<group code="SCM103">业务经理</group>
-				<group code="SCM104">区域经理</group>
-				<group code="SCM105">业务员</group>
-				<group code="SCM201" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
-				<group code="SCM202" Append="true" Modify="true" Print="true">店长</group>
-				<group code="SCM203">销售员</group>
-				<group code="SCM301" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
-				<group code="SCM302" Append="true" Modify="true" Print="true">店长</group>
-				<group code="SCM303" Append="true" Modify="true" Print="true">店员</group>
-				<group code="SCM401" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
-				<group code="SCM402" Append="true" Modify="true" Print="true">财务</group>
-				<group code="SCM404" Append="true" Modify="true" Print="true">总经理</group>
-				<group code="SCM405" Append="true" Modify="true" Print="true">资料录入员</group>
-				<group code="SCM406" Append="true" Modify="true" Print="true">业务经理</group>
-				<group code="SCM407" Append="true" Modify="true" Print="true">区域经理</group>
-				<group code="SCM408" Append="true" Modify="true" Print="true">业务</group>
-				<group code="SCM601" Append="true" Modify="true" Print="true">老板</group>
-				<group code="SCM602" Append="true" Modify="true" Print="true">总经理</group>
-				<group code="SCM603" Append="true" Modify="true" Print="true">业务经理</group>
-				<group code="SCM604" Append="true" Modify="true" Print="true">业务员</group>
-			</access>
-		</security>
-		<security code="other.product.repair" type="form" name="产品维修进度管理" group="other">
-			<access verlist="4,6,1,2,3,">
-				<group code="SCM101" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">总经理</group>
-				<group code="SCM102">资料录入员</group>
-				<group code="SCM103">业务经理</group>
-				<group code="SCM104">区域经理</group>
-				<group code="SCM105">业务员</group>
-				<group code="SCM107">仓管员</group>
-				<group code="SCM201" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
-				<group code="SCM202">店长</group>
-				<group code="SCM203">销售员</group>
-				<group code="SCM204" Append="true" Modify="true" Print="true">仓管员</group>
-				<group code="SCM301" Append="true" Modify="true" Print="true" Output="true" Final="true" Cancel="true"
-					Recycle="true">老板</group>
-				<group code="SCM302">店长</group>
-				<group code="SCM303">店员</group>
-				<group code="SCM401" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
-				<group code="SCM402">财务</group>
-				<group code="SCM403">仓管</group>
-			</access>
-		</security>
-		<security code="other.addressbook" type="record" name="企业通讯录管理" group="other">
-			<access verlist="4,6,1,2,3,">
-				<group code="SCM101" Append="true" Modify="true" Print="true" Output="true" Final="true" Cancel="true"
-					Recycle="true">总经理</group>
-				<group code="SCM102" Append="true" Modify="true" Print="true" Output="true" Final="true" Cancel="true"
-					Recycle="true">资料录入员</group>
-				<group code="SCM103">业务经理</group>
-				<group code="SCM104">区域经理</group>
-				<group code="SCM105">业务员</group>
-				<group code="SCM106">采购员</group>
-				<group code="SCM107">仓管员</group>
-				<group code="SCM201" Append="true" Modify="true" Print="true" Output="true" Final="true" Cancel="true"
-					Recycle="true">老板</group>
-				<group code="SCM202">店长</group>
-				<group code="SCM203">销售员</group>
-				<group code="SCM204">仓管员</group>
-				<group code="SCM301" Append="true" Modify="true" Print="true" Output="true" Final="true" Cancel="true"
-					Recycle="true">老板</group>
-				<group code="SCM302">店长</group>
-				<group code="SCM303">店员</group>
-				<group code="SCM401" Append="true" Modify="true" Print="true" Output="true" Final="true" Cancel="true"
-					Recycle="true">老板</group>
-				<group code="SCM402">财务</group>
-				<group code="SCM404" Append="true" Modify="true" Print="true">总经理</group>
-				<group code="SCM405" Append="true" Modify="true" Print="true">资料录入员</group>
-				<group code="SCM406" Append="true" Modify="true" Print="true">业务经理</group>
-				<group code="SCM407" Append="true" Modify="true" Print="true">区域经理</group>
-				<group code="SCM408" Append="true" Modify="true" Print="true">业务</group>
-				<group code="SCM601" Append="true" Modify="true" Print="true" Output="true" Final="true" Cancel="true"
-					Recycle="true">老板</group>
-				<group code="SCM602">总经理</group>
-				<group code="SCM603">业务经理</group>
-				<group code="SCM604">业务员</group>
-			</access>
-		</security>
-		<security code="other.system.logs" type="report" name="用户登录历史记录" group="other">
-			<access verlist="4,6,1,2,3,5,0,">
-				<group code="SCM001">服务商管理员</group>
-				<group code="SCM101" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">总经理</group>
-				<group code="SCM102" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">资料录入员 </group>
-				<group code="SCM201" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
-				<group code="SCM202" Append="true" Modify="true" Print="true">店长</group>
-				<group code="SCM301" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
-				<group code="SCM302" Append="true" Modify="true" Print="true">店长</group>
-				<group code="SCM401">老板</group>
-				<group code="SCM402">财务</group>
-				<group code="SCM404">总经理</group>
-				<group code="SCM501" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
-				<group code="SCM601">老板</group>
-				<group code="SCM602">总经理</group>
-			</access>
-		</security>
-		<security code="other.system.backup" type="execute" name="系统数据备份与查看" group="other">
-			<access verlist="4,6,1,2,">
-				<group code="SCM001">服务商管理员</group>
-				<group code="SCM101">总经理</group>
-				<group code="SCM102">资料录入员 </group>
-				<group code="SCM201">老板</group>
-				<group code="SCM202">店长</group>
-				<group code="SCM301">老板</group>
-				<group code="SCM302">店长</group>
-				<group code="SCM401">老板</group>
-				<group code="SCM402">财务</group>
-				<group code="SCM404">总经理</group>
-				<group code="SCM601">老板</group>
-			</access>
-		</security>
-		<security code="conn.base.manage" name="基本资料设置" type="record" group="conn">
-			<access verlist="4,6,1,2,3,5,">
-				<group code="SCM101" Append="true" Modify="true" Print="true">总经理</group>
-				<group code="SCM108" Append="true" Modify="true" Print="true">财务</group>
-				<group code="SCM201" Append="true" Modify="true" Print="true">老板</group>
-				<group code="SCM301" Append="true" Modify="true" Print="true">老板</group>
-				<group code="SCM401" Append="true" Modify="true" Print="true">老板</group>
-				<group code="SCM404" Append="true" Modify="true" Print="true">总经理</group>
-				<group code="SCM501" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
-				<group code="SCM601" Append="true" Modify="true" Print="true">老板</group>
-				<group code="SCM602" Append="true" Modify="true" Print="true">总经理</group>
-			</access>
-		</security>
-		<security code="conn.sup.manage" name="管理上游厂家" type="record" group="conn">
-			<access verlist="4,6,1,2,3,5,">
-				<group code="SCM101" Append="true" Modify="true" Print="true">总经理</group>
-				<group code="SCM201" Append="true" Modify="true" Print="true">老板</group>
-				<group code="SCM301" Append="true" Modify="true" Print="true">老板</group>
-				<group code="SCM401" Append="true" Modify="true" Print="true">老板</group>
-				<group code="SCM405" Append="true" Modify="true" Print="true">资料录入员</group>
-				<group code="SCM409" Append="true" Modify="true" Print="true">采购</group>
-				<group code="SCM501" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
-				<group code="SCM601" Append="true" Modify="true" Print="true">老板</group>
-				<group code="SCM602" Append="true" Modify="true" Print="true">总经理</group>
-			</access>
-		</security>
-		<security code="conn.cus.manage" name="管理下游客户" type="record" group="conn">
-			<access verlist="4,6,1,2,3,">
-				<group code="SCM101" Append="true" Modify="true" Print="true">总经理</group>
-				<group code="SCM201" Append="true" Modify="true" Print="true">老板</group>
-				<group code="SCM301" Append="true" Modify="true" Print="true">老板</group>
-				<group code="SCM401" Append="true" Modify="true" Print="true">老板</group>
-				<group code="SCM404" Append="true" Modify="true" Print="true">总经理</group>
-				<group code="SCM405" Append="true" Modify="true" Print="true">资料录入员</group>
-				<group code="SCM406" Append="true" Modify="true" Print="true">业务经理</group>
-				<group code="SCM407" Append="true" Modify="true" Print="true">区域经理</group>
-				<group code="SCM408" Append="true" Modify="true" Print="true">业务</group>
-				<group code="SCM601" Append="true" Modify="true" Print="true">老板</group>
-				<group code="SCM602" Append="true" Modify="true" Print="true">总经理</group>
-			</access>
-		</security>
-		<security code="conn.cus.report" name="查询下游客户统计报表" type="record" group="conn">
-			<access verlist="4,6,1,2,3,">
-				<group code="SCM101" Append="true" Modify="true" Print="true">总经理</group>
-				<group code="SCM201" Append="true" Modify="true" Print="true">老板</group>
-				<group code="SCM301" Append="true" Modify="true" Print="true">老板</group>
-				<group code="SCM401" Append="true" Modify="true" Print="true">老板</group>
-				<group code="SCM404" Append="true" Modify="true" Print="true">总经理</group>
-				<group code="SCM601" Append="true" Modify="true" Print="true">老板</group>
-				<group code="SCM602" Append="true" Modify="true" Print="true">总经理</group>
-			</access>
-		</security>
-		<security code="make.base.data" name="产品BOM及制程资料维护" type="record" group="make">
-			<access verlist="4,">
-				<group code="SCM101" Append="true" Modify="true" Print="true">总经理</group>
-				<group code="SCM401" Append="true" Modify="true" Print="true">老板</group>
-				<group code="SCM404">总经理</group>
-				<group code="SCM405">资料录入员</group>
-				<group code="SCM412">研发</group>
-			</access>
-		</security>
-		<security code="make.stdcost.material" name="采购报价维护" type="record" group="make">
-			<access verlist="4,">
-				<group code="SCM101" Append="true" Modify="true" Print="true">总经理</group>
-				<group code="SCM401" Append="true" Modify="true" Print="true">老板</group>
-				<group code="SCM402">财务</group>
-				<group code="SCM404" Append="true" Modify="true" Print="true">总经理</group>
-				<group code="SCM405" Append="true" Modify="true" Print="true">资料录入员</group>
-				<group code="SCM409" Append="true" Modify="true" Print="true">采购</group>
-			</access>
-		</security>
-		<security code="make.stdcost.other" name="制程报价维护" type="record" group="make">
-			<access verlist="4,">
-				<group code="SCM101" Append="true" Modify="true" Print="true">总经理</group>
-				<group code="SCM401" Append="true" Modify="true" Print="true">老板</group>
-				<group code="SCM402">财务</group>
-				<group code="SCM404" Append="true" Modify="true" Print="true">总经理</group>
-				<group code="SCM405" Append="true" Modify="true" Print="true">资料录入员</group>
-				<group code="SCM409" Append="true" Modify="true" Print="true">采购</group>
-			</access>
-		</security>
-		<security code="make.purchase.manage" name="采购计划、请购管理" type="record" group="make">
-			<access verlist="4,">
-				<group code="SCM101" Append="true" Modify="true" Print="true">总经理</group>
-				<group code="SCM401" Append="true" Modify="true" Print="true">老板</group>
-				<group code="SCM404" Append="true" Modify="true" Print="true">总经理</group>
-				<group code="SCM410" Append="true" Modify="true" Print="true">生管</group>
-				<group code="SCM411" Append="true" Modify="true" Print="true">物管</group>
-			</access>
-		</security>
-		<security code="make.plan.manage" name="生产进度与进度查询" type="record" group="make">
-			<access verlist="4,">
-				<group code="SCM101" Append="true" Modify="true" Print="true">总经理</group>
-				<group code="SCM401" Append="true" Modify="true" Print="true">老板</group>
-				<group code="SCM404" Append="true" Modify="true" Print="true">总经理</group>
-				<group code="SCM410" Append="true" Modify="true" Print="true">生管</group>
-				<group code="SCM411" Append="true" Modify="true" Print="true">物管</group>
-			</access>
-		</security>
-		<security code="make.process.record" name="生产报工单登记" type="record" group="make">
-			<access verlist="4,">
-				<group code="SCM101" Append="true" Modify="true" Print="true">总经理</group>
-				<group code="SCM401" Append="true" Modify="true" Print="true">老板</group>
-				<group code="SCM402" Append="true" Modify="true" Print="true">财务</group>
-				<group code="SCM403" Append="true" Modify="true" Print="true">仓管</group>
-				<group code="SCM404" Append="true" Modify="true" Print="true">总经理</group>
-				<group code="SCM409" Append="true" Modify="true" Print="true">采购</group>
-				<group code="SCM410" Append="true" Modify="true" Print="true">生管</group>
-				<group code="SCM413" Append="true" Modify="true" Print="true">生产部</group>
-			</access>
-		</security>
-		<security code="make.product.cost" name="生产成本报表" type="record" group="make">
-			<access verlist="4,">
-				<group code="SCM101" Append="true" Modify="true" Print="true">总经理</group>
-				<group code="SCM401" Append="true" Modify="true" Print="true">老板</group>
-				<group code="SCM402" Append="true" Modify="true" Print="true">财务</group>
-			</access>
-		</security>
-	</body>
+    <head>
+        <title>地藤系统菜单库</title>
+    </head>
+    <body>
+        <security code="service.base.options" name="系统运行选项设置" type="record" group="service">
+            <access verlist="0,">
+                <group code="SCM001" Append="true" Modify="true" Print="true">服务商管理员</group>
+            </access>
+        </security>
+        <security code="service.book.manage" name="帐套建立与管理" type="record" group="service">
+            <access verlist="0,">
+                <group code="SCM001" Append="true" Modify="true" Print="true">服务商管理员</group>
+            </access>
+        </security>
+        <security code="service.charge.manage" name="藤币充值管理" type="record" group="service">
+            <access verlist="0,">
+                <group code="SCM001" Append="true" Modify="true" Print="true">服务商管理员</group>
+            </access>
+        </security>
+        <security code="service.data.backup" name="资料备份与还原" type="execute" group="service">
+            <access verlist="0,">
+                <group code="SCM001" Append="true" Modify="true" Print="true">服务商管理员</group>
+            </access>
+        </security>
+        <security code="service.data.manage" name="系统数据结构管理" type="record" group="service">
+            <access verlist="0,">
+                <group code="SCM001" Append="true" Modify="true" Print="true">服务商管理员</group>
+            </access>
+        </security>
+        <security code="service.run.view" name="系统运行状态查询" type="report" group="service">
+            <access verlist="0,">
+                <group code="SCM001" Append="true" Modify="true" Print="true">服务商管理员</group>
+            </access>
+        </security>
+        <security code="base.default" name="系统默认导航及其它功能" type="execute" group="base">
+            <access verlist="4,6,1,2,3,5,0,">
+                <group code="SCM001">服务商管理员</group>
+                <group code="SCM101">总经理</group>
+                <group code="SCM102">资料录入员</group>
+                <group code="SCM103">业务经理</group>
+                <group code="SCM104">区域经理</group>
+                <group code="SCM105">业务员</group>
+                <group code="SCM106">采购员</group>
+                <group code="SCM107">仓管员</group>
+                <group code="SCM108">财务</group>
+                <group code="SCM199">网店会员</group>
+                <group code="SCM201">老板</group>
+                <group code="SCM202">店长</group>
+                <group code="SCM203">销售员</group>
+                <group code="SCM204">仓管员</group>
+                <group code="SCM299">网店会员</group>
+                <group code="SCM301">老板</group>
+                <group code="SCM302">店长</group>
+                <group code="SCM303">店员</group>
+                <group code="SCM399">网店会员</group>
+                <group code="SCM401">老板</group>
+                <group code="SCM402">财务</group>
+                <group code="SCM403">仓管</group>
+                <group code="SCM404">总经理</group>
+                <group code="SCM405">资料录入员</group>
+                <group code="SCM406">业务经理</group>
+                <group code="SCM407">区域经理</group>
+                <group code="SCM408">业务</group>
+                <group code="SCM409">采购</group>
+                <group code="SCM410">生管</group>
+                <group code="SCM411">物管</group>
+                <group code="SCM412">研发</group>
+                <group code="SCM413">生产部</group>
+                <group code="SCM499">网店会员</group>
+                <group code="SCM501">老板</group>
+                <group code="SCM601">老板</group>
+                <group code="SCM602">总经理</group>
+                <group code="SCM603">业务经理</group>
+                <group code="SCM604">业务员</group>
+                <group code="SCM699">网店会员</group>
+            </access>
+        </security>
+        <security code="base.account.update" type="record" name="更改我的密码" group="base">
+            <access verlist="4,6,1,2,3,5,0,">
+                <group code="SCM001">服务商管理员</group>
+                <group code="SCM101">总经理</group>
+                <group code="SCM102">资料录入员</group>
+                <group code="SCM103">业务经理</group>
+                <group code="SCM104">区域经理</group>
+                <group code="SCM105">业务员</group>
+                <group code="SCM106">采购员</group>
+                <group code="SCM107">仓管员</group>
+                <group code="SCM108">财务</group>
+                <group code="SCM199">网店会员</group>
+                <group code="SCM201">老板</group>
+                <group code="SCM202">店长</group>
+                <group code="SCM203">销售员</group>
+                <group code="SCM204">仓管员</group>
+                <group code="SCM299">网店会员</group>
+                <group code="SCM301">老板</group>
+                <group code="SCM302">店长</group>
+                <group code="SCM303">店员</group>
+                <group code="SCM399">网店会员</group>
+                <group code="SCM401">老板</group>
+                <group code="SCM402">财务</group>
+                <group code="SCM403">仓管</group>
+                <group code="SCM404">总经理</group>
+                <group code="SCM405">资料录入员</group>
+                <group code="SCM406">业务经理</group>
+                <group code="SCM407">区域经理</group>
+                <group code="SCM408">业务</group>
+                <group code="SCM409">采购</group>
+                <group code="SCM410">生管</group>
+                <group code="SCM411">物管</group>
+                <group code="SCM412">研发</group>
+                <group code="SCM413">生产部</group>
+                <group code="SCM499">网店会员</group>
+                <group code="SCM501">老板</group>
+                <group code="SCM601">老板</group>
+                <group code="SCM602">总经理</group>
+                <group code="SCM603">业务经理</group>
+                <group code="SCM604">业务员</group>
+                <group code="SCM699">网店会员</group>
+            </access>
+        </security>
+        <security code="base.account.manage" type="record" name="用户帐号管理" group="base">
+            <access verlist="4,6,1,2,3,5,0,">
+                <group code="SCM001" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">服务商管理员</group>
+                <group code="SCM101" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">总经理</group>
+                <group code="SCM201" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
+                <group code="SCM301" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
+                <group code="SCM401" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
+                <group code="SCM501" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
+                <group code="SCM601" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
+            </access>
+        </security>
+        <security code="base.product.manage" name="商品基本资料与库存管理" type="record" group="base">
+            <access verlist="4,6,1,2,3,5,">
+                <group code="SCM101" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">总经理</group>
+                <group code="SCM102" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">资料录入员</group>
+                <group code="SCM103">业务经理</group>
+                <group code="SCM104">区域经理</group>
+                <group code="SCM105">业务员</group>
+                <group code="SCM106">采购员</group>
+                <group code="SCM107">仓管员</group>
+                <group code="SCM108">财务</group>
+                <group code="SCM201" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
+                <group code="SCM202" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">店长</group>
+                <group code="SCM203">销售员</group>
+                <group code="SCM204">仓管员</group>
+                <group code="SCM205">财务专员</group>
+                <group code="SCM301" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
+                <group code="SCM302" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">店长</group>
+                <group code="SCM303" Modify="true">店员</group>
+                <group code="SCM401" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
+                <group code="SCM402" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">财务</group>
+                <group code="SCM403" Modify="true">仓管</group>
+                <group code="SCM404">总经理</group>
+                <group code="SCM405" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">资料录入员</group>
+                <group code="SCM406">业务经理</group>
+                <group code="SCM407">区域经理</group>
+                <group code="SCM408">业务</group>
+                <group code="SCM409">采购</group>
+                <group code="SCM410">生管</group>
+                <group code="SCM411">物管</group>
+                <group code="SCM412" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">研发</group>
+                <group code="SCM413">生产部</group>
+                <group code="SCM501" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
+            </access>
+        </security>
+        <security code="purchase.base.manage" name="厂商及采购基本资料设置" type="record" group="purchase">
+            <access verlist="4,6,1,2,3,5,">
+                <group code="SCM101" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">总经理</group>
+                <group code="SCM106" Append="true" Modify="true" Print="true">采购员</group>
+                <group code="SCM108">财务</group>
+                <group code="SCM201" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
+                <group code="SCM202" Append="true" Modify="true" Print="true">店长</group>
+                <group code="SCM301" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
+                <group code="SCM302" Append="true" Modify="true" Print="true">店长</group>
+                <group code="SCM303">店员</group>
+                <group code="SCM401" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
+                <group code="SCM402" Append="true" Modify="true" Print="true">财务</group>
+                <group code="SCM404">总经理</group>
+                <group code="SCM405" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">资料录入员</group>
+                <group code="SCM409" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">采购</group>
+                <group code="SCM501" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
+            </access>
+        </security>
+        <security code="purchase.discount.manage" name="进货返点与商品促销" type="record" group="purchase">
+            <access verlist="4,6,1,2,3,">
+                <group code="SCM101" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">总经理</group>
+                <group code="SCM102" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">资料录入员</group>
+                <group code="SCM106">采购员</group>
+                <group code="SCM108">财务</group>
+                <group code="SCM201" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
+                <group code="SCM202" Append="true" Modify="true" Print="true">店长</group>
+                <group code="SCM301" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
+                <group code="SCM302" Append="true" Modify="true" Print="true">店长</group>
+                <group code="SCM303">店员</group>
+                <group code="SCM401" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
+                <group code="SCM402">财务</group>
+                <group code="SCM404">总经理</group>
+                <group code="SCM405" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">资料录入员</group>
+                <group code="SCM409" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">采购</group>
+            </access>
+        </security>
+        <security code="purchase.order" name="采购进货订单登记" type="form" group="purchase">
+            <access verlist="4,6,1,2,3,5,">
+                <group code="SCM101" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">总经理</group>
+                <group code="SCM102">资料录入员</group>
+                <group code="SCM106" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">采购员</group>
+                <group code="SCM201" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
+                <group code="SCM202" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">店长</group>
+                <group code="SCM301" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
+                <group code="SCM302" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">店长</group>
+                <group code="SCM401" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
+                <group code="SCM402" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">财务</group>
+                <group code="SCM404">总经理</group>
+                <group code="SCM405" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">资料录入员</group>
+                <group code="SCM409" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">采购</group>
+                <group code="SCM501" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
+            </access>
+        </security>
+        <security code="purchase.stock.in" name="商品入库登记" type="form" group="purchase">
+            <access verlist="4,6,1,2,3,5,">
+                <group code="SCM101" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">总经理</group>
+                <group code="SCM102">资料录入员</group>
+                <group code="SCM106">采购员</group>
+                <group code="SCM107" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">仓管员</group>
+                <group code="SCM201" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
+                <group code="SCM202" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">店长</group>
+                <group code="SCM203" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">销售员</group>
+                <group code="SCM204" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">仓管员</group>
+                <group code="SCM301" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
+                <group code="SCM302" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">店长</group>
+                <group code="SCM303" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">店员</group>
+                <group code="SCM401" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
+                <group code="SCM402" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">财务</group>
+                <group code="SCM403" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">仓管</group>
+                <group code="SCM404">总经理</group>
+                <group code="SCM409">采购</group>
+                <group code="SCM501" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
+            </access>
+        </security>
+        <security code="purchase.stock.return" name="商品进货退回登记" type="form" group="purchase">
+            <access verlist="4,6,1,2,3,5,">
+                <group code="SCM101" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">总经理</group>
+                <group code="SCM102">资料录入员</group>
+                <group code="SCM106">采购员</group>
+                <group code="SCM107" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">仓管员</group>
+                <group code="SCM201" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
+                <group code="SCM202" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">店长</group>
+                <group code="SCM203" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">销售员</group>
+                <group code="SCM301" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
+                <group code="SCM302" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">店长</group>
+                <group code="SCM303" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">店员</group>
+                <group code="SCM401" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
+                <group code="SCM402" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">财务</group>
+                <group code="SCM403" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">仓管</group>
+                <group code="SCM404">总经理</group>
+                <group code="SCM409">采购</group>
+                <group code="SCM501" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
+            </access>
+        </security>
+        <security code="purchase.report.process" name="采购进度统计报表" type="report" group="purchase">
+            <access verlist="4,6,1,2,3,5,">
+                <group code="SCM101">总经理</group>
+                <group code="SCM102">资料录入员</group>
+                <group code="SCM106">采购员</group>
+                <group code="SCM107">仓管员</group>
+                <group code="SCM201">老板</group>
+                <group code="SCM202">店长</group>
+                <group code="SCM301">老板</group>
+                <group code="SCM302">店长</group>
+                <group code="SCM303">店员</group>
+                <group code="SCM401">老板</group>
+                <group code="SCM402">财务</group>
+                <group code="SCM403">仓管</group>
+                <group code="SCM404">总经理</group>
+                <group code="SCM409">采购</group>
+                <group code="SCM501" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
+            </access>
+        </security>
+        <security code="purchase.report.total" name="采购记录统计报表" type="report" group="purchase">
+            <access verlist="4,6,1,2,3,5,">
+                <group code="SCM101">总经理</group>
+                <group code="SCM102">资料录入员</group>
+                <group code="SCM106">采购员</group>
+                <group code="SCM107">仓管员</group>
+                <group code="SCM201">老板</group>
+                <group code="SCM202">店长</group>
+                <group code="SCM301">老板</group>
+                <group code="SCM302">店长</group>
+                <group code="SCM303">店员</group>
+                <group code="SCM401">老板</group>
+                <group code="SCM402">财务</group>
+                <group code="SCM403">仓管</group>
+                <group code="SCM404">总经理</group>
+                <group code="SCM409">采购</group>
+                <group code="SCM501">老板</group>
+            </access>
+        </security>
+        <security code="sell.base.manage" name="客户及相关资料管理" type="record" group="sell">
+            <access verlist="4,6,1,2,3,">
+                <group code="SCM101" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">总经理</group>
+                <group code="SCM102" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">资料录入员</group>
+                <group code="SCM103" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">业务经理</group>
+                <group code="SCM104" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">区域经理</group>
+                <group code="SCM105" Append="true" Modify="true">业务员</group>
+                <group code="SCM108" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">财务</group>
+                <group code="SCM201" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
+                <group code="SCM202" Append="true" Modify="true" Print="true">店长</group>
+                <group code="SCM203" Append="true" Modify="true" Print="true">销售员</group>
+                <group code="SCM301" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
+                <group code="SCM302" Append="true" Modify="true" Print="true">店长</group>
+                <group code="SCM303">店员</group>
+                <group code="SCM401" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
+                <group code="SCM402">财务</group>
+                <group code="SCM404">总经理</group>
+                <group code="SCM405" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">资料录入员</group>
+                <group code="SCM406" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">业务经理</group>
+                <group code="SCM407" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">区域经理</group>
+                <group code="SCM408" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">业务</group>
+                <group code="SCM601" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
+                <group code="SCM602" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">总经理</group>
+                <group code="SCM603" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">业务经理</group>
+                <group code="SCM604" Append="true" Modify="true">业务员</group>
+            </access>
+        </security>
+        <security code="sell.discount.manage" name="销货返点与促销管理" type="record" group="sell">
+            <access verlist="4,6,1,2,3,">
+                <group code="SCM101" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">总经理</group>
+                <group code="SCM102" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">资料录入员</group>
+                <group code="SCM103">业务经理</group>
+                <group code="SCM104">区域经理</group>
+                <group code="SCM105">业务员</group>
+                <group code="SCM201" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
+                <group code="SCM202" Append="true" Modify="true" Print="true">店长</group>
+                <group code="SCM203">销售员</group>
+                <group code="SCM301" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
+                <group code="SCM302" Append="true" Modify="true" Print="true">店长</group>
+                <group code="SCM303">店员</group>
+                <group code="SCM401" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
+                <group code="SCM402" Append="true" Modify="true" Print="true">财务</group>
+                <group code="SCM404">总经理</group>
+                <group code="SCM405" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">资料录入员</group>
+                <group code="SCM406" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">业务经理</group>
+                <group code="SCM407" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">区域经理</group>
+                <group code="SCM408" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">业务</group>
+            </access>
+        </security>
+        <security code="sell.order.wholesale" name="批发订单登记" type="form" group="sell">
+            <access verlist="4,6,1,2,3,">
+                <group code="SCM101" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">总经理</group>
+                <group code="SCM102" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">资料录入员</group>
+                <group code="SCM103" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">业务经理</group>
+                <group code="SCM104" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">区域经理</group>
+                <group code="SCM105" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">业务员</group>
+                <group code="SCM201" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
+                <group code="SCM202" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">店长</group>
+                <group code="SCM203" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">销售员</group>
+                <group code="SCM301" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
+                <group code="SCM302" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">店长</group>
+                <group code="SCM303">店员</group>
+                <group code="SCM401" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
+                <group code="SCM402" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">财务</group>
+                <group code="SCM403">仓管</group>
+                <group code="SCM404">总经理</group>
+                <group code="SCM405" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">资料录入员</group>
+                <group code="SCM406" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">业务经理</group>
+                <group code="SCM407" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">区域经理</group>
+                <group code="SCM408" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">业务</group>
+            </access>
+        </security>
+        <security code="sell.report.process" name="订单完成进度报表" type="report" group="sell">
+            <access verlist="4,6,1,2,3,">
+                <group code="SCM101" Print="true" Output="true">总经理</group>
+                <group code="SCM102">资料录入员</group>
+                <group code="SCM103" Print="true" Output="true">业务经理</group>
+                <group code="SCM104" Print="true" Output="true">区域经理</group>
+                <group code="SCM105" Print="true" Output="true">业务员</group>
+                <group code="SCM201" Print="true" Output="true">老板</group>
+                <group code="SCM202" Print="true" Output="true">店长</group>
+                <group code="SCM203" Print="true" Output="true">销售员</group>
+                <group code="SCM301" Print="true" Output="true">老板</group>
+                <group code="SCM302" Print="true" Output="true">店长</group>
+                <group code="SCM303">店员</group>
+                <group code="SCM401" Print="true" Output="true">老板</group>
+                <group code="SCM402" Print="true" Output="true">财务</group>
+                <group code="SCM404" Print="true" Output="true">总经理</group>
+                <group code="SCM406" Print="true" Output="true">业务经理</group>
+                <group code="SCM407" Print="true" Output="true">区域经理</group>
+                <group code="SCM408" Print="true" Output="true">业务</group>
+            </access>
+        </security>
+        <security code="sell.report.total" name="销售统计报表" type="report" group="sell">
+            <access verlist="4,6,1,2,3,">
+                <group code="SCM101" Print="true" Output="true">总经理</group>
+                <group code="SCM102">资料录入员</group>
+                <group code="SCM103" Print="true" Output="true">业务经理</group>
+                <group code="SCM104" Print="true" Output="true">区域经理</group>
+                <group code="SCM105" Print="true" Output="true">业务员</group>
+                <group code="SCM201" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
+                <group code="SCM202" Print="true" Output="true">店长</group>
+                <group code="SCM203" Print="true" Output="true">销售员</group>
+                <group code="SCM301" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
+                <group code="SCM302" Print="true" Output="true">店长</group>
+                <group code="SCM401" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
+                <group code="SCM402" Print="true" Output="true">财务</group>
+                <group code="SCM404" Print="true" Output="true">总经理</group>
+                <group code="SCM406" Print="true" Output="true">业务经理</group>
+                <group code="SCM407" Print="true" Output="true">区域经理</group>
+                <group code="SCM408" Print="true" Output="true">业务</group>
+                <group code="SCM601" Print="true" Output="true">老板</group>
+                <group code="SCM602" Print="true">总经理</group>
+                <group code="SCM603">业务经理</group>
+                <group code="SCM604">业务员</group>
+            </access>
+        </security>
+        <security code="sell.stock.out.retail" name="零售出货登记" type="form" group="sell">
+            <access verlist="4,6,1,2,3,">
+                <group code="SCM101" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">总经理</group>
+                <group code="SCM102" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">资料录入员</group>
+                <group code="SCM103" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">业务经理</group>
+                <group code="SCM104" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">区域经理</group>
+                <group code="SCM105" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">业务员</group>
+                <group code="SCM107" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">仓管员</group>
+                <group code="SCM201" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
+                <group code="SCM202" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">店长</group>
+                <group code="SCM203" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">销售员</group>
+                <group code="SCM301" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
+                <group code="SCM302" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">店长</group>
+                <group code="SCM303" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">店员</group>
+                <group code="SCM401" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
+                <group code="SCM402">财务</group>
+                <group code="SCM404">总经理</group>
+                <group code="SCM406" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">业务经理</group>
+                <group code="SCM407" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">区域经理</group>
+                <group code="SCM408" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">业务</group>
+            </access>
+        </security>
+        <security code="sell.stock.out.scanner" name="备货扫描登记作业管理" type="form" group="sell">
+            <access verlist="4,6,1,2,">
+                <group code="SCM101" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">总经理</group>
+                <group code="SCM107" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">仓管员</group>
+                <group code="SCM201" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
+                <group code="SCM202" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">店长</group>
+                <group code="SCM203" Append="true" Modify="true" Print="true">销售员</group>
+                <group code="SCM204">仓管员</group>
+                <group code="SCM401" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
+                <group code="SCM403" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">仓管</group>
+            </access>
+        </security>
+        <security code="sell.stock.out.wholesale" name="批发出货登记" type="form" group="sell">
+            <access verlist="4,6,1,2,3,">
+                <group code="SCM101" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">总经理</group>
+                <group code="SCM102" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">资料录入员</group>
+                <group code="SCM103" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">业务经理</group>
+                <group code="SCM104" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">区域经理</group>
+                <group code="SCM105" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">业务员</group>
+                <group code="SCM107" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">仓管员</group>
+                <group code="SCM201" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
+                <group code="SCM202" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">店长</group>
+                <group code="SCM203" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">销售员</group>
+                <group code="SCM301" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
+                <group code="SCM302" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">店长</group>
+                <group code="SCM303">店员</group>
+                <group code="SCM401" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
+                <group code="SCM402">财务</group>
+                <group code="SCM403" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">仓管</group>
+                <group code="SCM404">总经理</group>
+                <group code="SCM406" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">业务经理</group>
+                <group code="SCM407" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">区域经理</group>
+                <group code="SCM408" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">业务</group>
+                <group code="SCM602" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">总经理</group>
+            </access>
+        </security>
+        <security code="sell.stock.return" name="出货退回登记" type="form" group="sell">
+            <access verlist="4,6,1,2,3,">
+                <group code="SCM101" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">总经理</group>
+                <group code="SCM102" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">资料录入员</group>
+                <group code="SCM103" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">业务经理</group>
+                <group code="SCM104" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">区域经理</group>
+                <group code="SCM105" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">业务员</group>
+                <group code="SCM107" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">仓管员</group>
+                <group code="SCM201" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
+                <group code="SCM202" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">店长</group>
+                <group code="SCM203" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">销售员</group>
+                <group code="SCM301" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
+                <group code="SCM302" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">店长</group>
+                <group code="SCM303">店员</group>
+                <group code="SCM401" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
+                <group code="SCM402">财务</group>
+                <group code="SCM403" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">仓管</group>
+                <group code="SCM404">总经理</group>
+                <group code="SCM406" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">业务经理</group>
+                <group code="SCM407" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">区域经理</group>
+                <group code="SCM408" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">业务</group>
+                <group code="SCM601" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">总经理</group>
+            </access>
+        </security>
+        <security code="sell.associator.use" name="网店会员操作" type="form" group="sell">
+            <access verlist="4,6,1,2,3,">
+                <group code="SCM199">网店会员</group>
+                <group code="SCM299">网店会员</group>
+                <group code="SCM399">网店会员</group>
+                <group code="SCM499">网店会员</group>
+                <group code="SCM699">网店会员</group>
+            </access>
+        </security>
+        <security code="sell.associator.manage" name="网店设置与管理" type="form" group="sell">
+            <access verlist="4,6,1,2,3,">
+                <group code="SCM101" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">总经理</group>
+                <group code="SCM201" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
+                <group code="SCM301" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
+                <group code="SCM401" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
+                <group code="SCM601" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">总经理</group>
+                <group code="SCM199">网店会员</group>
+                <group code="SCM299">网店会员</group>
+                <group code="SCM399">网店会员</group>
+                <group code="SCM499">网店会员</group>
+                <group code="SCM699">网店会员</group>
+            </access>
+        </security>
+        <security code="stock.tran.ad" name="完工入库单登记" type="form" group="stock">
+            <access verlist="4,">
+                <group code="SCM401" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
+                <group code="SCM402" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">财务</group>
+                <group code="SCM403" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">仓管</group>
+                <group code="SCM404">总经理</group>
+                <group code="SCM413" Append="true" Modify="true" Print="true">生产部</group>
+            </access>
+        </security>
+        <security code="stock.tran.ah" name="库别调拔单登记" type="form" group="stock">
+            <access verlist="4,6,1,2,3,5,">
+                <group code="SCM101" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">总经理</group>
+                <group code="SCM102" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">资料录入员</group>
+                <group code="SCM107" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">仓管员</group>
+                <group code="SCM201" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
+                <group code="SCM202" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">店长</group>
+                <group code="SCM204" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">仓管员</group>
+                <group code="SCM301" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
+                <group code="SCM302" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">店长</group>
+                <group code="SCM401" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
+                <group code="SCM402" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">财务</group>
+                <group code="SCM403" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">仓管</group>
+                <group code="SCM501" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
+            </access>
+        </security>
+        <security code="stock.tran.al" name="商品拆装单登记" type="form" group="stock">
+            <access verlist="4,6,1,2,3,5,">
+                <group code="SCM101" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">总经理</group>
+                <group code="SCM102" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">资料录入员 </group>
+                <group code="SCM107" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">仓管员</group>
+                <group code="SCM201" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
+                <group code="SCM202" Append="true" Modify="true" Print="true">店长</group>
+                <group code="SCM204" Append="true" Modify="true" Print="true">仓管员</group>
+                <group code="SCM301" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
+                <group code="SCM302" Append="true" Modify="true" Print="true">店长</group>
+                <group code="SCM303" Append="true" Modify="true" Print="true">店员</group>
+                <group code="SCM401" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
+                <group code="SCM403" Append="true" Modify="true" Print="true">仓管</group>
+                <group code="SCM501" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
+            </access>
+        </security>
+        <security code="stock.tran.ba" name="生产领料单登记" type="form" group="stock">
+            <access verlist="4,">
+                <group code="SCM401" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
+                <group code="SCM402" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">财务</group>
+                <group code="SCM403" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">仓管</group>
+                <group code="SCM404">总经理</group>
+                <group code="SCM413" Append="true" Modify="true" Print="true">生产部</group>
+            </access>
+        </security>
+        <security code="stock.tran.ha" name="库存盘点单登记" type="form" group="stock">
+            <access verlist="4,6,1,2,3,5,">
+                <group code="SCM101" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">总经理</group>
+                <group code="SCM102" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">资料录入员</group>
+                <group code="SCM107" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">仓管员</group>
+                <group code="SCM108" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">财务</group>
+                <group code="SCM201" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
+                <group code="SCM202" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">店长</group>
+                <group code="SCM204" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">仓管员</group>
+                <group code="SCM301" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
+                <group code="SCM302" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">店长</group>
+                <group code="SCM401" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
+                <group code="SCM402" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">财务</group>
+                <group code="SCM403" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">仓管</group>
+                <group code="SCM501" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
+            </access>
+        </security>
+        <security code="stock.report.inout" name="商品出入库记录查询" type="report" group="stock">
+            <access verlist="4,6,1,2,3,5,">
+                <group code="SCM101">总经理</group>
+                <group code="SCM102">资料录入员</group>
+                <group code="SCM103">业务经理</group>
+                <group code="SCM104">区域经理</group>
+                <group code="SCM105">业务员</group>
+                <group code="SCM106">采购员</group>
+                <group code="SCM107">仓管员</group>
+                <group code="SCM201">老板</group>
+                <group code="SCM202">店长</group>
+                <group code="SCM203">销售员</group>
+                <group code="SCM204">仓管员</group>
+                <group code="SCM205">财务专员</group>
+                <group code="SCM301">老板</group>
+                <group code="SCM302">店长</group>
+                <group code="SCM303">店员</group>
+                <group code="SCM401">老板</group>
+                <group code="SCM402">财务</group>
+                <group code="SCM403">仓管</group>
+                <group code="SCM404">总经理</group>
+                <group code="SCM501" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
+            </access>
+        </security>
+        <security code="stock.report.total" name="商品资产统计报表" type="report" group="stock">
+            <access verlist="4,6,1,2,3,5,">
+                <group code="SCM101" Print="true">总经理</group>
+                <group code="SCM108" Print="true">财务</group>
+                <group code="SCM201" Print="true">老板</group>
+                <group code="SCM301" Print="true">老板</group>
+                <group code="SCM401" Print="true">老板</group>
+                <group code="SCM402" Print="true">财务</group>
+                <group code="SCM501" Print="true">老板</group>
+            </access>
+        </security>
+        <security code="stock.report.balance" name="库存供需平衡分析" type="report" group="stock">
+            <access verlist="4,6,1,2,3,5,">
+                <group code="SCM101" Print="true" Output="true">总经理</group>
+                <group code="SCM103" Print="true" Output="true">业务经理</group>
+                <group code="SCM106" Print="true" Output="true">采购员</group>
+                <group code="SCM201" Print="true" Output="true">老板</group>
+                <group code="SCM202" Print="true" Output="true">店长</group>
+                <group code="SCM205" Print="true" Output="true">财务专员</group>
+                <group code="SCM301" Print="true" Output="true">老板</group>
+                <group code="SCM302" Print="true" Output="true">店长</group>
+                <group code="SCM401" Print="true" Output="true">老板</group>
+                <group code="SCM402" Print="true" Output="true">财务</group>
+                <group code="SCM404" Print="true" Output="true">总经理</group>
+                <group code="SCM501" Print="true" Output="true">老板</group>
+            </access>
+        </security>
+        <security code="acc.ap.manage" name="应付帐款登记与管理" type="form" group="acc">
+            <access verlist="4,6,1,2,3,5,">
+                <group code="SCM101" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">总经理</group>
+                <group code="SCM108" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">财务</group>
+                <group code="SCM201" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
+                <group code="SCM202" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">店长</group>
+                <group code="SCM205" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">财务专员</group>
+                <group code="SCM301" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
+                <group code="SCM302" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">店长</group>
+                <group code="SCM401" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
+                <group code="SCM402" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">财务</group>
+                <group code="SCM501" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
+            </access>
+        </security>
+        <security code="acc.ar.manage" name="应收帐款登记与管理" type="form" group="acc">
+            <access verlist="4,6,1,2,3,5,">
+                <group code="SCM101" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">总经理</group>
+                <group code="SCM108" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">财务</group>
+                <group code="SCM201" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
+                <group code="SCM202" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">店长</group>
+                <group code="SCM205" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">财务专员</group>
+                <group code="SCM301" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
+                <group code="SCM302" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">店长</group>
+                <group code="SCM401" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
+                <group code="SCM402" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">财务</group>
+                <group code="SCM501" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
+            </access>
+        </security>
+        <security code="acc.ar.consignment" name="寄卖对账单" type="form" group="acc">
+            <access verlist="4,6,1,2,">
+                <group code="SCM101" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">总经理</group>
+                <group code="SCM108" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">财务</group>
+                <group code="SCM201" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
+                <group code="SCM202" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">店长</group>
+                <group code="SCM205" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">财务专员</group>
+                <group code="SCM301" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
+                <group code="SCM302" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">店长</group>
+                <group code="SCM401" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
+                <group code="SCM402" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">财务</group>
+                <group code="SCM501" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
+            </access>
+        </security>
+        <security code="acc.base.manage" name="财务基本资料设置" type="record" group="acc">
+            <access verlist="4,6,1,2,3,5,">
+                <group code="SCM101" Append="true" Modify="true" Print="true">总经理</group>
+                <group code="SCM108" Append="true" Modify="true" Print="true">财务</group>
+                <group code="SCM201" Append="true" Modify="true" Print="true">老板</group>
+                <group code="SCM301" Append="true" Modify="true" Print="true">老板</group>
+                <group code="SCM401" Append="true" Modify="true" Print="true">老板</group>
+                <group code="SCM501" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
+            </access>
+        </security>
+        <security code="acc.data.init" name="系统期初资料录入" type="record" group="acc">
+            <access verlist="4,6,1,2,3,5,">
+                <group code="SCM101" Append="true" Modify="true" Print="true">总经理</group>
+                <group code="SCM108" Append="true" Modify="true" Print="true">财务</group>
+                <group code="SCM401" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
+                <group code="SCM402" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">财务</group>
+                <group code="SCM501" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
+            </access>
+        </security>
+        <security code="acc.data.input" name="财务凭证录入与修改" type="form" group="acc">
+            <access verlist="4,6,1,2,3,5,">
+                <group code="SCM101" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">总经理</group>
+                <group code="SCM108" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">财务</group>
+                <group code="SCM201" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
+                <group code="SCM202" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">店长</group>
+                <group code="SCM205" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">财务专员</group>
+                <group code="SCM301" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
+                <group code="SCM302" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">店长</group>
+                <group code="SCM401" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
+                <group code="SCM402" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">财务</group>
+                <group code="SCM501" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
+            </access>
+        </security>
+        <security code="acc.data.report" name="财务基础统计报表" type="report" group="acc">
+            <access verlist="4,6,1,2,3,5,">
+                <group code="SCM101" Print="true" Output="true">总经理</group>
+                <group code="SCM108" Print="true" Output="true">财务</group>
+                <group code="SCM201" Print="true" Output="true">老板</group>
+                <group code="SCM202" Print="true" Output="true">店长</group>
+                <group code="SCM205" Print="true" Output="true">财务专员</group>
+                <group code="SCM301" Print="true" Output="true">老板</group>
+                <group code="SCM401" Print="true" Output="true">老板</group>
+                <group code="SCM402" Print="true" Output="true">财务</group>
+                <group code="SCM501" Print="true" Output="true">老板</group>
+            </access>
+        </security>
+        <security code="acc.data.report2" name="企业经营管理报表" type="report" group="acc">
+            <access verlist="4,6,1,2,3,5,">
+                <group code="SCM101" Print="true" Output="true">总经理</group>
+                <group code="SCM201" Print="true" Output="true">老板</group>
+                <group code="SCM301" Print="true" Output="true">老板</group>
+                <group code="SCM401" Print="true" Output="true">老板</group>
+                <group code="SCM501" Print="true" Output="true">老板</group>
+            </access>
+        </security>
+        <security code="other.warning.early" type="record" name="系统库存预警报表" group="other">
+            <access verlist="4,6,1,2,3,5,">
+                <group code="SCM101">总经理</group>
+                <group code="SCM102">资料录入员</group>
+                <group code="SCM103">业务经理</group>
+                <group code="SCM106">采购员</group>
+                <group code="SCM107">仓管员</group>
+                <group code="SCM201">老板</group>
+                <group code="SCM202">店长</group>
+                <group code="SCM301">老板</group>
+                <group code="SCM302">店长</group>
+                <group code="SCM303">店员</group>
+                <group code="SCM401">老板</group>
+                <group code="SCM402">财务</group>
+                <group code="SCM403">仓管</group>
+                <group code="SCM404">总经理</group>
+                <group code="SCM501">老板</group>
+            </access>
+        </security>
+        <security code="other.vipcard.manage" type="record" name="会员优惠卡管理" group="other">
+            <access verlist="4,6,1,2,3,">
+                <group code="SCM101" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">总经理</group>
+                <group code="SCM102">资料录入员</group>
+                <group code="SCM103">业务经理</group>
+                <group code="SCM104">区域经理</group>
+                <group code="SCM105">业务员</group>
+                <group code="SCM201" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
+                <group code="SCM202" Append="true" Modify="true" Print="true">店长</group>
+                <group code="SCM203">销售员</group>
+                <group code="SCM301" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
+                <group code="SCM302" Append="true" Modify="true" Print="true">店长</group>
+                <group code="SCM303" Append="true" Modify="true" Print="true">店员</group>
+                <group code="SCM401" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
+                <group code="SCM402" Append="true" Modify="true" Print="true">财务</group>
+                <group code="SCM404" Append="true" Modify="true" Print="true">总经理</group>
+                <group code="SCM405" Append="true" Modify="true" Print="true">资料录入员</group>
+                <group code="SCM406" Append="true" Modify="true" Print="true">业务经理</group>
+                <group code="SCM407" Append="true" Modify="true" Print="true">区域经理</group>
+                <group code="SCM408" Append="true" Modify="true" Print="true">业务</group>
+                <group code="SCM601" Append="true" Modify="true" Print="true">老板</group>
+                <group code="SCM602" Append="true" Modify="true" Print="true">总经理</group>
+                <group code="SCM603" Append="true" Modify="true" Print="true">业务经理</group>
+                <group code="SCM604" Append="true" Modify="true" Print="true">业务员</group>
+            </access>
+        </security>
+        <security code="other.product.repair" type="form" name="产品维修进度管理" group="other">
+            <access verlist="4,6,1,2,3,">
+                <group code="SCM101" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">总经理</group>
+                <group code="SCM102">资料录入员</group>
+                <group code="SCM103">业务经理</group>
+                <group code="SCM104">区域经理</group>
+                <group code="SCM105">业务员</group>
+                <group code="SCM107">仓管员</group>
+                <group code="SCM201" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
+                <group code="SCM202">店长</group>
+                <group code="SCM203">销售员</group>
+                <group code="SCM204" Append="true" Modify="true" Print="true">仓管员</group>
+                <group code="SCM301" Append="true" Modify="true" Print="true" Output="true" Final="true" Cancel="true"
+                    Recycle="true">老板</group>
+                <group code="SCM302">店长</group>
+                <group code="SCM303">店员</group>
+                <group code="SCM401" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
+                <group code="SCM402">财务</group>
+                <group code="SCM403">仓管</group>
+            </access>
+        </security>
+        <security code="other.addressbook" type="record" name="企业通讯录管理" group="other">
+            <access verlist="4,6,1,2,3,">
+                <group code="SCM101" Append="true" Modify="true" Print="true" Output="true" Final="true" Cancel="true"
+                    Recycle="true">总经理</group>
+                <group code="SCM102" Append="true" Modify="true" Print="true" Output="true" Final="true" Cancel="true"
+                    Recycle="true">资料录入员</group>
+                <group code="SCM103">业务经理</group>
+                <group code="SCM104">区域经理</group>
+                <group code="SCM105">业务员</group>
+                <group code="SCM106">采购员</group>
+                <group code="SCM107">仓管员</group>
+                <group code="SCM201" Append="true" Modify="true" Print="true" Output="true" Final="true" Cancel="true"
+                    Recycle="true">老板</group>
+                <group code="SCM202">店长</group>
+                <group code="SCM203">销售员</group>
+                <group code="SCM204">仓管员</group>
+                <group code="SCM301" Append="true" Modify="true" Print="true" Output="true" Final="true" Cancel="true"
+                    Recycle="true">老板</group>
+                <group code="SCM302">店长</group>
+                <group code="SCM303">店员</group>
+                <group code="SCM401" Append="true" Modify="true" Print="true" Output="true" Final="true" Cancel="true"
+                    Recycle="true">老板</group>
+                <group code="SCM402">财务</group>
+                <group code="SCM404" Append="true" Modify="true" Print="true">总经理</group>
+                <group code="SCM405" Append="true" Modify="true" Print="true">资料录入员</group>
+                <group code="SCM406" Append="true" Modify="true" Print="true">业务经理</group>
+                <group code="SCM407" Append="true" Modify="true" Print="true">区域经理</group>
+                <group code="SCM408" Append="true" Modify="true" Print="true">业务</group>
+                <group code="SCM601" Append="true" Modify="true" Print="true" Output="true" Final="true" Cancel="true"
+                    Recycle="true">老板</group>
+                <group code="SCM602">总经理</group>
+                <group code="SCM603">业务经理</group>
+                <group code="SCM604">业务员</group>
+            </access>
+        </security>
+        <security code="other.system.logs" type="report" name="用户登录历史记录" group="other">
+            <access verlist="4,6,1,2,3,5,0,">
+                <group code="SCM001">服务商管理员</group>
+                <group code="SCM101" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">总经理</group>
+                <group code="SCM102" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">资料录入员 </group>
+                <group code="SCM201" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
+                <group code="SCM202" Append="true" Modify="true" Print="true">店长</group>
+                <group code="SCM301" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
+                <group code="SCM302" Append="true" Modify="true" Print="true">店长</group>
+                <group code="SCM401">老板</group>
+                <group code="SCM402">财务</group>
+                <group code="SCM404">总经理</group>
+                <group code="SCM501" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
+                <group code="SCM601">老板</group>
+                <group code="SCM602">总经理</group>
+            </access>
+        </security>
+        <security code="other.system.backup" type="execute" name="系统数据备份与查看" group="other">
+            <access verlist="4,6,1,2,">
+                <group code="SCM001">服务商管理员</group>
+                <group code="SCM101">总经理</group>
+                <group code="SCM102">资料录入员 </group>
+                <group code="SCM201">老板</group>
+                <group code="SCM202">店长</group>
+                <group code="SCM301">老板</group>
+                <group code="SCM302">店长</group>
+                <group code="SCM401">老板</group>
+                <group code="SCM402">财务</group>
+                <group code="SCM404">总经理</group>
+                <group code="SCM601">老板</group>
+            </access>
+        </security>
+        <security code="conn.base.manage" name="基本资料设置" type="record" group="conn">
+            <access verlist="4,6,1,2,3,5,">
+                <group code="SCM101" Append="true" Modify="true" Print="true">总经理</group>
+                <group code="SCM108" Append="true" Modify="true" Print="true">财务</group>
+                <group code="SCM201" Append="true" Modify="true" Print="true">老板</group>
+                <group code="SCM301" Append="true" Modify="true" Print="true">老板</group>
+                <group code="SCM401" Append="true" Modify="true" Print="true">老板</group>
+                <group code="SCM404" Append="true" Modify="true" Print="true">总经理</group>
+                <group code="SCM501" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
+                <group code="SCM601" Append="true" Modify="true" Print="true">老板</group>
+                <group code="SCM602" Append="true" Modify="true" Print="true">总经理</group>
+            </access>
+        </security>
+        <security code="conn.sup.manage" name="管理上游厂家" type="record" group="conn">
+            <access verlist="4,6,1,2,3,5,">
+                <group code="SCM101" Append="true" Modify="true" Print="true">总经理</group>
+                <group code="SCM201" Append="true" Modify="true" Print="true">老板</group>
+                <group code="SCM301" Append="true" Modify="true" Print="true">老板</group>
+                <group code="SCM401" Append="true" Modify="true" Print="true">老板</group>
+                <group code="SCM405" Append="true" Modify="true" Print="true">资料录入员</group>
+                <group code="SCM409" Append="true" Modify="true" Print="true">采购</group>
+                <group code="SCM501" Append="true" Modify="true" Print="true" Final="true" Cancel="true" Recycle="true">老板</group>
+                <group code="SCM601" Append="true" Modify="true" Print="true">老板</group>
+                <group code="SCM602" Append="true" Modify="true" Print="true">总经理</group>
+            </access>
+        </security>
+        <security code="conn.cus.manage" name="管理下游客户" type="record" group="conn">
+            <access verlist="4,6,1,2,3,">
+                <group code="SCM101" Append="true" Modify="true" Print="true">总经理</group>
+                <group code="SCM201" Append="true" Modify="true" Print="true">老板</group>
+                <group code="SCM301" Append="true" Modify="true" Print="true">老板</group>
+                <group code="SCM401" Append="true" Modify="true" Print="true">老板</group>
+                <group code="SCM404" Append="true" Modify="true" Print="true">总经理</group>
+                <group code="SCM405" Append="true" Modify="true" Print="true">资料录入员</group>
+                <group code="SCM406" Append="true" Modify="true" Print="true">业务经理</group>
+                <group code="SCM407" Append="true" Modify="true" Print="true">区域经理</group>
+                <group code="SCM408" Append="true" Modify="true" Print="true">业务</group>
+                <group code="SCM601" Append="true" Modify="true" Print="true">老板</group>
+                <group code="SCM602" Append="true" Modify="true" Print="true">总经理</group>
+            </access>
+        </security>
+        <security code="conn.cus.report" name="查询下游客户统计报表" type="record" group="conn">
+            <access verlist="4,6,1,2,3,">
+                <group code="SCM101" Append="true" Modify="true" Print="true">总经理</group>
+                <group code="SCM201" Append="true" Modify="true" Print="true">老板</group>
+                <group code="SCM301" Append="true" Modify="true" Print="true">老板</group>
+                <group code="SCM401" Append="true" Modify="true" Print="true">老板</group>
+                <group code="SCM404" Append="true" Modify="true" Print="true">总经理</group>
+                <group code="SCM601" Append="true" Modify="true" Print="true">老板</group>
+                <group code="SCM602" Append="true" Modify="true" Print="true">总经理</group>
+            </access>
+        </security>
+        <security code="make.base.data" name="产品BOM及制程资料维护" type="record" group="make">
+            <access verlist="4,">
+                <group code="SCM101" Append="true" Modify="true" Print="true">总经理</group>
+                <group code="SCM401" Append="true" Modify="true" Print="true">老板</group>
+                <group code="SCM404">总经理</group>
+                <group code="SCM405">资料录入员</group>
+                <group code="SCM412">研发</group>
+            </access>
+        </security>
+        <security code="make.stdcost.material" name="采购报价维护" type="record" group="make">
+            <access verlist="4,">
+                <group code="SCM101" Append="true" Modify="true" Print="true">总经理</group>
+                <group code="SCM401" Append="true" Modify="true" Print="true">老板</group>
+                <group code="SCM402">财务</group>
+                <group code="SCM404" Append="true" Modify="true" Print="true">总经理</group>
+                <group code="SCM405" Append="true" Modify="true" Print="true">资料录入员</group>
+                <group code="SCM409" Append="true" Modify="true" Print="true">采购</group>
+            </access>
+        </security>
+        <security code="make.stdcost.other" name="制程报价维护" type="record" group="make">
+            <access verlist="4,">
+                <group code="SCM101" Append="true" Modify="true" Print="true">总经理</group>
+                <group code="SCM401" Append="true" Modify="true" Print="true">老板</group>
+                <group code="SCM402">财务</group>
+                <group code="SCM404" Append="true" Modify="true" Print="true">总经理</group>
+                <group code="SCM405" Append="true" Modify="true" Print="true">资料录入员</group>
+                <group code="SCM409" Append="true" Modify="true" Print="true">采购</group>
+            </access>
+        </security>
+        <security code="make.purchase.manage" name="采购计划、请购管理" type="record" group="make">
+            <access verlist="4,">
+                <group code="SCM101" Append="true" Modify="true" Print="true">总经理</group>
+                <group code="SCM401" Append="true" Modify="true" Print="true">老板</group>
+                <group code="SCM404" Append="true" Modify="true" Print="true">总经理</group>
+                <group code="SCM410" Append="true" Modify="true" Print="true">生管</group>
+                <group code="SCM411" Append="true" Modify="true" Print="true">物管</group>
+            </access>
+        </security>
+        <security code="make.plan.manage" name="生产进度与进度查询" type="record" group="make">
+            <access verlist="4,">
+                <group code="SCM101" Append="true" Modify="true" Print="true">总经理</group>
+                <group code="SCM401" Append="true" Modify="true" Print="true">老板</group>
+                <group code="SCM404" Append="true" Modify="true" Print="true">总经理</group>
+                <group code="SCM410" Append="true" Modify="true" Print="true">生管</group>
+                <group code="SCM411" Append="true" Modify="true" Print="true">物管</group>
+            </access>
+        </security>
+        <security code="make.process.record" name="生产报工单登记" type="record" group="make">
+            <access verlist="4,">
+                <group code="SCM101" Append="true" Modify="true" Print="true">总经理</group>
+                <group code="SCM401" Append="true" Modify="true" Print="true">老板</group>
+                <group code="SCM402" Append="true" Modify="true" Print="true">财务</group>
+                <group code="SCM403" Append="true" Modify="true" Print="true">仓管</group>
+                <group code="SCM404" Append="true" Modify="true" Print="true">总经理</group>
+                <group code="SCM409" Append="true" Modify="true" Print="true">采购</group>
+                <group code="SCM410" Append="true" Modify="true" Print="true">生管</group>
+                <group code="SCM413" Append="true" Modify="true" Print="true">生产部</group>
+            </access>
+        </security>
+        <security code="make.product.cost" name="生产成本报表" type="record" group="make">
+            <access verlist="4,">
+                <group code="SCM101" Append="true" Modify="true" Print="true">总经理</group>
+                <group code="SCM401" Append="true" Modify="true" Print="true">老板</group>
+                <group code="SCM402" Append="true" Modify="true" Print="true">财务</group>
+            </access>
+        </security>
+    </body>
 </html>

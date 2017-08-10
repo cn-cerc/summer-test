@@ -9,21 +9,21 @@ import cn.cerc.jdb.core.Record;
 
 public class ServiceLogin extends AbstractService {
 
-	@Override
-	public IStatus execute(DataSet dataIn, DataSet dataOut) throws ServiceException {
-		Record headIn = dataIn.getHead();
-		String userCode = headIn.getString("userCode");
-		String password = headIn.getString("password");
-		if (!"admin".equals(userCode))
-			return fail("用户帐号不存在！");
-		if (!"admin".equals(password))
-			return fail("用户帐号不存在！");
-		dataOut.getHead().setField("token", "000000");
-		return this.success();
-	}
+    @Override
+    public IStatus execute(DataSet dataIn, DataSet dataOut) throws ServiceException {
+        Record headIn = dataIn.getHead();
+        String userCode = headIn.getString("userCode");
+        String password = headIn.getString("password");
+        if (!"admin".equals(userCode))
+            return fail("用户帐号不存在！");
+        if (!"admin".equals(password))
+            return fail("用户帐号不存在！");
+        dataOut.getHead().setField("token", "000000");
+        return this.success();
+    }
 
-	@Override
-	public boolean checkSecurity(IHandle handle) {
-		return true;
-	}
+    @Override
+    public boolean checkSecurity(IHandle handle) {
+        return true;
+    }
 }
