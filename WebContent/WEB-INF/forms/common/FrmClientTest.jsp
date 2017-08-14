@@ -6,7 +6,7 @@
 <script src="js/jquery.js"></script>
 <script src="js/summer-1.2.1.js"></script>
 <script>
-    var browser = null;
+    var browser = null; //android.webview
 
     function showMessage(data) {
         $("#error").text(data);
@@ -16,8 +16,9 @@
         if (browser == null)
             return;
 
-        if (browser.send("getClientVersion")) {
-            alert(browser.getData());
+        browser.req = {"url": "https://www.baidu.com/baidu.jpg"};
+        if (browser.send("PlayImage")) {
+            alert("PlayImage: " + browser.getData());
         } else {
             showMessage(browser.getMessage());
         }
@@ -26,7 +27,7 @@
     window.onload = function() {
         browser = getBrowser();
         if (browser == null) {
-            showMessage("then is not android or iphone.");
+            showMessage("this is not android or iphone.");
         }
     }
 </script>
@@ -48,7 +49,7 @@ h4 {
 }
 </style>
 </head>
-<body>
+<body style="font-size:2em;">
     <div style="text-align: center; padding-top: 2em;">
         <a href="javascript:onClick()">测试</a>
     </div>

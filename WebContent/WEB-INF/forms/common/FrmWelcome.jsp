@@ -5,7 +5,7 @@
 <head>
 <title>欢迎页</title>
 </head>
-<body>
+<body style="font-size:2em;">
 	<div style="text-align: center; padding-top: 2em;">
 		<div>welcome use summer-smaple.</div>
 		<div><a href="FrmDefault">enter</a></div>
