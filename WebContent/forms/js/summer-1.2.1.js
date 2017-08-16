@@ -50,6 +50,12 @@ function AndroidProxy() { // 安卓代理，对应android源码中的JavaScriptP
 			return this.resp.result;
 		}
 	}
+	
+	this.sync = function(classCode, resultFunction, resultParams){
+		this.req.resultFunction = resultFunction;
+		this.req.resultParams = resultParams;
+		return send();
+	}
 
 	this.getData = function() { // 取得执行后结果数据
 		if (this.resp.result)
