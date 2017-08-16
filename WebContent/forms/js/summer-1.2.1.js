@@ -65,7 +65,21 @@ function AndroidProxy() { // 安卓代理，对应android源码中的JavaScriptP
 
 // IPhone代理，对应IPhone源码中的JavaScriptProxy
 function IPhoneProxy() {
-	this.active = false;
+	this.active = false; // 标识为true时，表示当前为summer-iphone专用浏览器
+	this.req = {}; // 请求参数
+	this.resp = {}; // 返回参数
+	this.message = null; // 返回的消息
+
+	var ua = navigator.userAgent.toLowerCase();
+	if (/iphone|ipad|ipod/.test(ua)){
+		this.active = true;
+	}
+	
+	this.send = function(classCode){
+		this.req.classCode = classCode;
+		window.webkit.messageHandlers.nativeMethod.postMessage(this.req);
+		return "ok";
+	}
 }
 
 // 自动判断并返回summer-android或summer-ihone专用浏览器
