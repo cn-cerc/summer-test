@@ -13,11 +13,9 @@
 	    if (browser == null)
 		    return;
 
-	    browser.req = {
-		    "url" : "https://www.baidu.com/baidu.jpg"
-	    };
+	    browser.req = {"url":"http://pic.4j4j.cn/upload/pic/20130617/55695c3c95.jpg"};
 	    if (browser.send("PlayImage")) {
-		    alert("PlayImage: " + browser.getData());
+	    	$("#funcResult").text(browser.getData());
 	    } else {
 		    showMessage(browser.getMessage());
 	    }
