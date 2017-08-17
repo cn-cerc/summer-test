@@ -36,6 +36,16 @@
     function onClickTest(){
     	var classCode = $("#funcList").val();
     	if (browser) {
+    		var params = $("#params").val();
+    		if(params){
+    			console.log(params);
+    			try{
+    			  browser.req = JSON.parse(params);
+    			}catch(e){
+                    $("#funcResult").text(e.message);
+    				return;
+    			}
+    		}
             if(browser.send(classCode)){
                 $("#funcResult").text(browser.getData());
             }else{
@@ -85,7 +95,7 @@
 
 	<div style="font-size:1em">
 		<label>调用参数：</label><br/>
-		&nbsp;&nbsp;&nbsp;&nbsp;<textarea style="font-size:1em" rows="3" cols="40" placeholder="（函数接口需要的参数）"></textarea>
+		&nbsp;&nbsp;&nbsp;&nbsp;<textarea id="params" style="font-size:1em" rows="3" cols="40" placeholder="（函数接口需要的参数）"></textarea>
 	</div>
 
 	<div>
