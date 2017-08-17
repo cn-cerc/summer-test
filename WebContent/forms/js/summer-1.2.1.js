@@ -55,7 +55,7 @@ function AndroidProxy() { // 安卓代理，对应android源码中的JavaScriptP
 		} catch (e) {
 			this.resp = {
 			    "result" : true,
-			    "message" : e.getMessage()
+			    "message" : e.message
 			};
 			return this.resp.result;
 		}
