@@ -35,6 +35,16 @@ function AndroidProxy() { // 安卓代理，对应android源码中的JavaScriptP
 		}
 	}
 
+	this.list = function(){
+		if (!this.active)
+			return null;
+		var result = this.machine.list();
+		if(result)
+			return JSON.parse(result);
+		else
+			return null;
+	}
+	
 	this.send = function(classCode) {// 调用 android 中的功能函数，并立即返回
 		if (!this.active)
 			return null;
@@ -97,4 +107,8 @@ function getBrowser() {
 			return null;
 	}
 	return browser;
+}
+
+function showMessage(data) {
+    $("#message").text(data);
 }
