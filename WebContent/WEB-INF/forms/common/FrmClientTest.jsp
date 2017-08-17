@@ -48,6 +48,7 @@
 	    browser = getBrowser();
 	    if (browser == null) {
 		    showMessage("this is not android or iphone.");
+		    return;
 	    }
 	    var items = browser.list();
 	    if (items) {
