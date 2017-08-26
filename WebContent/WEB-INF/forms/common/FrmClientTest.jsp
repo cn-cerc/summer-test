@@ -79,7 +79,7 @@
 </head>
 <body style="font-size:2em">
 	<div>
-		<label>请选择要测试功能：</label>&nbsp;&nbsp;<a href="javascript:onClick()">其它</a><br/>
+		<label>请选择要测试功能：</label><br/>
 		&nbsp;&nbsp;&nbsp;&nbsp;<select id="funcList"  style="font-size:1em"
 			onchange="onSelectItem(this.options[this.options.selectedIndex].value)">
 		</select>

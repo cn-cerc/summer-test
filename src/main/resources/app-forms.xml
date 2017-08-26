@@ -13,4 +13,6 @@
     </bean>
     <bean id="FrmClientTest" class="cn.cerc.sample.forms.FrmClientTest" scope="prototype">
     </bean>
+    <bean id="FrmScanProduct" class="cn.cerc.sample.forms.FrmScanProduct" scope="prototype">
+    </bean>
 </beans>
