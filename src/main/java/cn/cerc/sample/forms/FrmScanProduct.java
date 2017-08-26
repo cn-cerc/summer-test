@@ -1,8 +1,13 @@
 package cn.cerc.sample.forms;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import cn.cerc.jbean.form.IPage;
 import cn.cerc.jmis.form.AbstractForm;
+import cn.cerc.jmis.page.JsonPage;
 import cn.cerc.jmis.page.JspPage;
+import cn.cerc.jmis.page.ResultMessage;
 
 public class FrmScanProduct extends AbstractForm {
 
@@ -26,10 +31,9 @@ public class FrmScanProduct extends AbstractForm {
     public IPage save() throws Exception {
         String barcode = this.getRequest().getParameter("barcode");
         String num = this.getRequest().getParameter("num");
-        JspPage jspPage = new JspPage(this);
-        jspPage.setJspFile("parts/FrmScanProduct.jsp");
-        jspPage.add("message", String.format("保存条码: %s, 数量：%s", barcode, num));
-        return jspPage;
+        ResultMessage rm = new ResultMessage(true, "FrmScanProudct ok");
+        System.out.println(String.format("FrmScanProudct ok, barcode: %s, num: %s", barcode, num));
+        return new JsonPage(this).setData(rm);
     }
 
     @Override
