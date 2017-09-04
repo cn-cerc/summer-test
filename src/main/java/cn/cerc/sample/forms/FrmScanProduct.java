@@ -1,8 +1,5 @@
 package cn.cerc.sample.forms;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import cn.cerc.jbean.form.IPage;
 import cn.cerc.jmis.form.AbstractForm;
 import cn.cerc.jmis.page.JsonPage;
