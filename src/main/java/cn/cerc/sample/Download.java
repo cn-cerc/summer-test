@@ -24,9 +24,16 @@ import cn.cerc.jmis.page.JsonPage;
  */
 public class Download extends HttpServlet {
     private static final long serialVersionUID = 1L;
+    private String ver = "master";
 
     public Download() {
         super();
+    }
+
+    @Override
+    public void init() {
+        String ver = this.getServletConfig().getInitParameter("version");
+        System.err.println("ver: " + ver);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
