@@ -24,7 +24,7 @@
         </init-param>
     </servlet>
     <servlet-mapping>
-        <servlet-name>StartServices</servlet-name>
+        <servlet-name>Download</servlet-name>
         <url-pattern>/miuzu/beta/user/u.html</url-pattern>
     </servlet-mapping>
     <welcome-file-list>
