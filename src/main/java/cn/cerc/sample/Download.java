@@ -22,7 +22,6 @@ import cn.cerc.jmis.page.JsonPage;
 /**
  * Servlet implementation class Download
  */
-@WebServlet("/Download")
 public class Download extends HttpServlet {
     private static final long serialVersionUID = 1L;
 

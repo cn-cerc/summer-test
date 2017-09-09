@@ -1,0 +1,63 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes" /> 
+		<script src="http://int.dpool.sina.com.cn/iplookup/iplookup.php?format=js"; charset="UTF-8" ></script>
+		<script type ="text/javascript" src="jquery-1.9.1.min.js"></script>
+        <title>二维码下载</title>   
+ 
+
+    </head>
+    <body>
+         <h1>   </h1>
+         <h1 id="id" style="text-align:center;font-size:20px;margin-top:50px" >如果您是微信用户，</h1>
+		 <h1 style="text-align:center;font-size:20px;">请点击右上角按钮通过浏览器打开网页</h1>
+		 
+		 <div class="phoneScan" style="text-align:center;">
+        <img style="width:35%;margin-top:50px;"  src="https://lucland.com/miuzu/beta/user/u.png" alt="" />
+		<div class="phoneScanTitle" style="margin-top:10px">（内测版）</div>
+        <!--<p>未受信任的企业级开发者? <a class="phoneScanSolve" href="/acate.html">解决>></a></p>-->
+    </div>
+    </body>
+	        <script type="text/javascript">
+            /*
+             * 智能机浏览器版本信息:
+             *
+             */
+			 var version = "";
+			 var w;
+            var browser = {
+                versions: function() {
+                    var u = navigator.userAgent, app = navigator.appVersion;
+					w = u;
+                    return {//移动终端浏览器版本信息
+                        trident: u.indexOf('Trident') > -1, //IE内核8-10
+                        MSIE : u.indexOf('MSIE')>-1,//ie 6-7
+                        presto: u.indexOf('Presto') > -1, //opera内核
+                        webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
+                        gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, //火狐内核
+                        mobile: !!u.match(/AppleWebKit.*Mobile.*/) || !!u.match(/AppleWebKit/), //是否为移动终端
+                        ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
+                        android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或者uc浏览器
+                        iPhone: u.indexOf('iPhone') > -1 || u.indexOf('Mac') > -1, //是否为iPhone或者QQHD浏览器
+                        iPad: u.indexOf('iPad') > -1, //是否iPad
+                        webApp: u.indexOf('Safari') == -1 ,//是否web应该程序，没有头部与底部
+                        360: u.indexOf('360') == -1,//是否360
+                        weixin : u.indexOf('MicroMessenger') > -1, //是否微信 （2015-01-22新增）
+                        qq : u.match(/\sQQ/i) == " qq" //是否QQ
+                    };
+                }(),
+                language: (navigator.browserLanguage || navigator.language).toLowerCase()
+            }
+            
+            if (browser.versions.ios || browser.versions.iPhone || browser.versions.iPad ) {
+                //window.location.href="https://lucland.com/miuzu/beta/user/u.html";
+            }
+            else if (browser.versions.android) {				
+				
+			   window.location.href="http://uzu-down-oss.oss-us-west-1.aliyuncs.com/beta/user/miuFamily.apk";
+				//window.location.href='https://lucland.com/miuzu/release/user/u.html';
+            }
+			
+        </script>
+</html>
