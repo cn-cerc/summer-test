@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html>
 <head>
@@ -77,29 +76,32 @@
 <style>
 </style>
 </head>
-<body style="font-size:2em">
-	<div>
-		<label>请选择要测试功能：</label><br/>
-		&nbsp;&nbsp;&nbsp;&nbsp;<select id="funcList"  style="font-size:1em"
-			onchange="onSelectItem(this.options[this.options.selectedIndex].value)">
-		</select>
-		<button style="font-size:1em" onclick="onClickTest()">执行</button>
-	</div>
+<body style="font-size: 2em">
+    <div>
+        <label>请选择要测试功能：</label>
+        <br /> &nbsp;&nbsp;&nbsp;&nbsp;<select id="funcList" style="font-size: 1em"
+            onchange="onSelectItem(this.options[this.options.selectedIndex].value)">
+        </select>
+        <button style="font-size: 1em" onclick="onClickTest()">执行</button>
+    </div>
 
-	<div>
-		<label>函数说明：</label><br/>
-		&nbsp;&nbsp;&nbsp;&nbsp;<label id="funcName"></label>
-	</div>
+    <div>
+        <label>函数说明：</label>
+        <br /> &nbsp;&nbsp;&nbsp;&nbsp;
+        <label id="funcName"></label>
+    </div>
 
-	<div style="font-size:1em">
-		<label>调用参数：</label><br/>
-		&nbsp;&nbsp;&nbsp;&nbsp;<textarea id="params" style="font-size:1em" rows="3" cols="40" placeholder="（函数接口需要的参数）"></textarea>
-	</div>
+    <div style="font-size: 1em">
+        <label>调用参数：</label>
+        <br /> &nbsp;&nbsp;&nbsp;&nbsp;
+        <textarea id="params" style="font-size: 1em" rows="3" cols="40" placeholder="（函数接口需要的参数）"></textarea>
+    </div>
 
-	<div>
-		<label>执行结果：</label><br/>
-		&nbsp;&nbsp;&nbsp;&nbsp;<label id="funcResult"></label>
-	</div>
+    <div>
+        <label>执行结果：</label>
+        <br /> &nbsp;&nbsp;&nbsp;&nbsp;
+        <label id="funcResult"></label>
+    </div>
     <div id="message" style="font-color: red"></div>
 </body>
 </html>

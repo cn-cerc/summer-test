@@ -10,7 +10,6 @@ public class FrmScanProduct extends AbstractForm {
 
     @Override
     public IPage execute() throws Exception {
-
         JspPage jspPage = new JspPage(this);
         jspPage.setJspFile("parts/FrmScanProduct.jsp");
         jspPage.add("message", "请进行扫描！");
