@@ -72,6 +72,10 @@
 		    }
 	    }
     }
+    
+    function zxingTest(data){
+        $("#funcResult").text(data);
+    }
 </script>
 <style>
 </style>
