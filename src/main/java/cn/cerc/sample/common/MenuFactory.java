@@ -14,7 +14,6 @@ import org.dom4j.io.SAXReader;
 import cn.cerc.jbean.client.LocalService;
 import cn.cerc.jbean.core.Application;
 import cn.cerc.jbean.core.IPassport;
-import cn.cerc.jbean.form.IMenu;
 import cn.cerc.jbean.other.BookOptions;
 import cn.cerc.jbean.other.SystemTable;
 import cn.cerc.jdb.core.DataSet;
@@ -98,7 +97,8 @@ public class MenuFactory implements IAppMenus {
         return menus.get(beanID);
     }
 
-    public IMenu getItem(String menuId) {
+    @Override
+    public MenuItem getItem(String menuId) {
         MenuData item = get(menuId);
         if (item == null)
             throw new RuntimeException(String.format("menu %s not find!", menuId));
