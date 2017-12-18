@@ -12,7 +12,7 @@
 <body>
     <div style="text-align: center;">
         <h1>演示dataGrid表格</h1>
-        ${dataGrid.html} ${page.html}
+        ${dataGrid} ${page}
     </div>
 </body>
 </html>
