@@ -58,7 +58,7 @@ public class FrmDataGrid extends AbstractForm {
         });
         grid.getPages().setPageSize(20);
         jspPage.add("dataGrid", grid);
-        this.getRequest().setAttribute("page", new OperaPages(this, grid.getPages()));
+        this.getRequest().setAttribute("page", new OperaPages(grid, this, grid.getPages()));
         return jspPage;
     }
 

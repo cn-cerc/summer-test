@@ -10,7 +10,9 @@
     <bean id="AppConfig" class="cn.cerc.jbean.core.AppConfig">
         <property name="params">
             <map>
-                <entry key="configFile" value="vine.properties" />
+                <entry key="configFile" value="classpath:application.properties" />
+                <entry key="pathForms" value="forms" />
+                <entry key="jspLoginFile" value="common/login.jsp"/>
                 <!-- System Table -->
                 <entry key="OurInfo" value="s_BookInfo" />
                 <entry key="VineOptions" value="s_BookOptions" />
