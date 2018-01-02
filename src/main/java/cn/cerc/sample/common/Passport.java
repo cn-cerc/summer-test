@@ -1,9 +1,10 @@
 package cn.cerc.sample.common;
 
+import cn.cerc.jbean.core.AbstractHandle;
 import cn.cerc.jbean.core.IPassport;
 import cn.cerc.jbean.rds.PassportRecord;
 
-public class Passport implements IPassport {
+public class Passport extends AbstractHandle implements IPassport {
 
     @Override
     public boolean passProc(String versions, String procCode) {
