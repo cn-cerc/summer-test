@@ -12,7 +12,7 @@
             <map>
                 <entry key="configFile" value="classpath:application.properties" />
                 <entry key="pathForms" value="forms" />
-                <entry key="jspLoginFile" value="common/login.jsp"/>
+                <entry key="jspLoginFile" value="common/Login.jsp"/>
                 <!-- System Table -->
                 <entry key="OurInfo" value="s_BookInfo" />
                 <entry key="VineOptions" value="s_BookOptions" />
