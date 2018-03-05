@@ -15,4 +15,8 @@
     </bean>
     <bean id="FrmScanProduct" class="cn.cerc.sample.forms.FrmScanProduct" scope="prototype">
     </bean>
+     <bean id="FrmProduct" class="cn.cerc.sample.forms.FrmProduct" scope="prototype">
+    </bean>
+     <bean id="FrmAction" class="cn.cerc.sample.forms.FrmAction" scope="prototype">
+    </bean>
 </beans>

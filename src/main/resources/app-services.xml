@@ -29,4 +29,7 @@
     <bean id="ServiceUserList" class="cn.cerc.sample.services.ServiceUserList" scope="prototype">
         <property name="restPath" value="get://*/public/users" />
     </bean>
+    <bean id="ProductService.search" class="cn.cerc.sample.services.ProductService" scope="prototype">
+        <property name="funcCode" value="search" />
+    </bean>
 </beans>
