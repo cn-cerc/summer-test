@@ -27,14 +27,15 @@ public class FrmPartInfoShow extends AbstractForm {
 			Product product=new Product();
 			product.setCode(dataSet.getString("Code_"));
 			product.setCorpNo(dataSet.getString("CorpNo_"));
-			product.setCode(dataSet.getString("Spec_"));
-			product.setCode(dataSet.getString("Unit_"));
-			product.setCode(dataSet.getString("Stock_"));
+			product.setDesc(dataSet.getString("Desc_"));
+			product.setSpec(dataSet.getString("Spec_"));
+			product.setUnit(dataSet.getString("Unit_"));
+			product.setStock(dataSet.getString("Stock_"));
 			list.add(product);
 			
 		}
+		System.out.println(list.size());
 		jspPage.add("item", list);
-		
 		return jspPage;
 	}
 	

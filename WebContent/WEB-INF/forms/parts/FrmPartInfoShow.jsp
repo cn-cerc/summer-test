@@ -8,20 +8,40 @@
 <title>商品详细信息</title>
 </head>
 <body>
-<table>
+
+
+<div style="text-align: center;">
+<table border="1" cellpadding="3" cellspacing="0" style="width: 60%;margin:auto">
+	<caption align="top">商品信息</caption>
+
+
 	<tr>
 		<td>商品编号</td>
 		<td>商品品名</td>
 		<td>商品规格</td>
 		<td>商品单位</td>
 		<td>商品库存</td>
+		<td>操作</td>
 	</tr>
-	<c:forEach items="item" var="i">
+
+	<c:forEach items="${item}" var="item">
 		<tr>
-			<td></td>
+			<td>${item.code }</td>
+			<td>${item.desc }</td>
+			<td>${item.spec }</td>
+			<td>${item.unit }</td>
+			<td>${item.stock }</td>
+			<td><a href="#">删除</a>/<a href="#">修改</a></td>
 		</tr>
 	</c:forEach>
-
+	
 </table>
+</div>
+<div>
+	<a href="#">增加商品</a>
+</div>
+<div>
+	<a href="#">返回</a>
+</div>
 </body>
 </html>

@@ -10,8 +10,9 @@ public class ServicePartInfo extends CustomService {
 	public boolean search() {
 		SqlQuery sqlQuery=new SqlQuery(this);
 		sqlQuery.add("select * from %s",BaseConfig.PRODUCT);
-		sqlQuery.add("where corpNo=%s",BaseConfig.CorpNo);
+		//sqlQuery.add("where CorpNo_='%s'",BaseConfig.CorpNo);
 		sqlQuery.open();
+		getDataOut().appendDataSet(sqlQuery);
 		
 		return true;
 	}
