@@ -29,4 +29,8 @@
     <bean id="ServiceUserList" class="cn.cerc.sample.services.ServiceUserList" scope="prototype">
         <property name="restPath" value="get://*/public/users" />
     </bean>
+    <bean id="svrPartinfo.sch" class="cn.cerc.sample.services.part.svrPartinfo" scope="prototype">
+        <property name="funcCode" value="sch" />
+    </bean>
+    
 </beans>

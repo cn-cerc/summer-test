@@ -17,4 +17,8 @@
     </bean>
     <bean id="FrmInvoicing" class="cn.cerc.sample.forms.FrmInvoicing" scope="prototype">
     </bean>
+    <bean id="FrmPartinfo" class="cn.cerc.sample.forms.part.FrmPartinfo" scope="prototype">
+    </bean>
+    <bean id="PartInfo_Record" class="cn.cerc.sample.forms.part.PartInfo_Record" scope="prototype">
+    </bean>
 </beans>

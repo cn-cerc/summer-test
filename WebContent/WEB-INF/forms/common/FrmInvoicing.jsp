@@ -8,7 +8,7 @@
 </head>
 <body>
   <div>
-    <a href="#">商品资料维护</a>
+    <a href="FrmPartinfo">商品资料维护</a>
   </div>
   <div>
     <a href="#">进货单</a>
