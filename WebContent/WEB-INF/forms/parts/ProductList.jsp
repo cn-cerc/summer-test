@@ -28,11 +28,12 @@ td {
 				<td>说明</td>
 				<td>单位</td>
 			</tr>
-			<c:forEach var="item" items="${List}">
+			<c:forEach var="item" items="${item}">
 				<tr>
-					<td>${item.artictitle}</td>
-					<td>${item.artictime}</td>
-					<td><a href="#">删除</a>|<a href="#">xiuga</a></td>
+					<td>${item.corpNo}</td>
+					<td>${item.code}</td>
+					<td>${item.unit}</td>
+					<td><a href="#">删除</a>|<a href="#">更改</a></td>
 				<tr>
 			</c:forEach>
 		</table>

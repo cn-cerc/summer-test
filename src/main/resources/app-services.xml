@@ -38,6 +38,6 @@
 	</bean>
 	<bean id="SrvProductInfo.getData" class="cn.cerc.sample.services.SrvProductInfo"
 		scope="prototype">
-		<property name="restPath" value="getData" />
+		<property name="funcCode" value="getData" />
 	</bean>
 </beans>
