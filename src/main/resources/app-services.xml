@@ -41,4 +41,7 @@
     <bean id="SvrPartInfo.delete" class="cn.cerc.sample.services.part.SvrPartInfo" scope="prototype">
         <property name="funcCode" value="delete" />
     </bean>
+    <bean id="SvrPartInfo.searchSingle" class="cn.cerc.sample.services.part.SvrPartInfo" scope="prototype">
+        <property name="funcCode" value="searchSingle" />
+    </bean>
 </beans>

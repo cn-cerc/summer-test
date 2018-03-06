@@ -6,8 +6,10 @@ import java.util.List;
 import cn.cerc.jbean.client.LocalService;
 import cn.cerc.jbean.form.IPage;
 import cn.cerc.jdb.core.DataSet;
+import cn.cerc.jdb.core.Record;
 import cn.cerc.jmis.form.AbstractForm;
 import cn.cerc.jmis.page.JspPage;
+import cn.cerc.jmis.page.RedirectPage;
 
 public class FrmPartInfo extends AbstractForm {
     @Override
@@ -33,6 +35,22 @@ public class FrmPartInfo extends AbstractForm {
         }
         jspPage.add("items", items);
         return jspPage;
+    }
+
+    public IPage delete() {
+        JspPage jspPage = new JspPage(this, "part/FrmPartInfo.jsp");
+        LocalService svr = new LocalService(this);
+        svr.setService("SvrPartInfo.delete");
+        String code = this.getRequest().getParameter("code");
+        Record headIn = svr.getDataIn().getHead();
+        headIn.setField("Code_", code);
+
+        if (!svr.exec()) {
+            jspPage.setMessage(svr.getMessage());
+            return jspPage;
+        }
+        // return jspPage;
+        return new RedirectPage(this, "FrmPartInfo");
     }
 
     @Override

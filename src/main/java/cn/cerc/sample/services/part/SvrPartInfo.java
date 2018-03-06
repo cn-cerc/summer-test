@@ -8,11 +8,21 @@ import cn.cerc.sample.common.BaseConfig;
 public class SvrPartInfo extends CustomService {
     public boolean search() {
         SqlQuery ds = new SqlQuery(this);
-        ds.add("select * from %s", BaseConfig.Product);
+        ds.add("select * from %s ", BaseConfig.Product);
         ds.add("Where CorpNo_='%s' ", BaseConfig.CorpNo);
         ds.open();
+        getDataOut().appendDataSet(ds);
+        return true;
+    }
 
-        // 返回forms
+    public boolean searchSingle() {
+        Record headIn = getDataIn().getHead();
+        String code = headIn.getString("Code_");
+
+        SqlQuery ds = new SqlQuery(this);
+        ds.add("select * from %s ", BaseConfig.Product);
+        ds.add("Where CorpNo_='%s' and Code_='%s' ", BaseConfig.CorpNo, code);
+        ds.open();
         getDataOut().appendDataSet(ds);
         return true;
     }

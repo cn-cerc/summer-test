@@ -8,7 +8,14 @@ public class FrmWelcome extends AbstractForm {
 
     @Override
     public IPage execute() {
-        return new JspPage(this, "common/FrmWelcome.jsp");
+        JspPage jspPage = new JspPage(this);
+        jspPage.setJspFile("common/FrmWelcome.jsp");
+
+        return jspPage;
+    }
+
+    public IPage list() {
+        return null;
     }
 
     @Override

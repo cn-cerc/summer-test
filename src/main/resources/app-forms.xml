@@ -19,4 +19,8 @@
     </bean>
     <bean id="FrmPartInfo" class="cn.cerc.sample.forms.part.FrmPartInfo" scope="prototype">
     </bean>
+    <bean id="FrmPartAppend" class="cn.cerc.sample.forms.part.FrmPartAppend" scope="prototype">
+    </bean>
+    <bean id="FrmPartModify" class="cn.cerc.sample.forms.part.FrmPartModify" scope="prototype">
+    </bean>
 </beans>

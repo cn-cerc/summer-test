@@ -37,15 +37,23 @@
 </script>
 </head>
 <body style="font-size: 2em;">
+    <form action="FrmWelcome.onAppend" method="post">
+        <input name="aaa" value=""></input>
+        <input name="aaa2" value=""></input>
+        <input name="aaa3" value=""></input>
+        <button name="submit" value="append">append</button>
+        <button name="submit" value="delete">delete</button>
+    </form>
     <div style="text-align: center; padding-top: 2em;">
         <div>欢迎使用summer框架！</div>
         <div style="text-align: center; padding-top: 2em;">
-            <a href="FrmDefault">进入首页</a>
+            <a href="FrmDefault">进入首页,welcome ${name}</a>
         </div>
     </div>
     <div style="text-align: center; padding-top: 2em;">
         <div>
             <a href="FrmDataGrid">演示dataGrid表格</a>
+            <long:grid>${grid1}</long:grid>
         </div>
     </div>
     <div style="text-align: center; padding-top: 2em;">
@@ -58,6 +66,7 @@
             <a href="FrmInvoicing">进销存测试Martin</a>
         </div>
     </div>
+
     <div style="text-align: center; padding-top: 2em;">
         <a href="javascript:onTestClick()">临时测试</a><br />
     </div>

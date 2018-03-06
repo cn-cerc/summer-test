@@ -22,15 +22,15 @@
     <c:if test="${not empty items}">
     <c:forEach items="${items}" var="item">
     <tr>
-        <td>${item.code}</td>
-        <td>${item.desc}</td>
-        <td>${item.spec}</td>
-        <td>${item.unit}</td>
-        <td>${item.stock}</td>
-        <td>
-            <a href="FrmPartInfo.modify?code=${item.code}">修改</a> | 
+        <th>${item.code}</th>
+        <th>${item.desc}</th>
+        <th>${item.spec}</th>
+        <th>${item.unit}</th>
+        <th>${item.stock}</th>
+        <th>
+            <a href="FrmPartModify?code=${item.code}">修改</a> | 
             <a href="FrmPartInfo.delete?code=${item.code}">删除</a>
-        </td>
+        </th>
     </tr>
     </c:forEach>
     </c:if>
@@ -38,7 +38,7 @@
 </div>
 <div>${msg}</div>
 <div align="left">
-    <a href="FrmPartInfo.append">新增</a>
+    <a href="FrmPartAppend">新增</a>
     <a href="FrmInvoicing">返回</a>
 </div>
 </body>
