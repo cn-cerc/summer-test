@@ -45,4 +45,13 @@
 	 <bean id="FrmImportBill" class="cn.cerc.sample.forms.tran.FrmImportBill"
 		scope="prototype">
 	</bean>
+	 <bean id="FrmTrachAdd" class="cn.cerc.sample.forms.tran.FrmTranhAdd"
+		scope="prototype">
+	</bean>
+	 <bean id="FrmTranhAppend" class="cn.cerc.sample.forms.tran.FrmTranhAppend"
+		scope="prototype">
+	</bean>
+	 <bean id="FrmTran" class="cn.cerc.sample.forms.tran.FrmTran"
+		scope="prototype">
+	</bean>
 </beans>

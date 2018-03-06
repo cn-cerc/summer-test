@@ -21,7 +21,7 @@
 			</tr>
 			<c:forEach items="${tranhs}" var="tranh">
 				<tr>
-					<td>AB</td>
+					<td>${tranh.tb }</td>
 					<td><a href="">${tranh.tbNo }</a></td>
 					<td>${tranh.tbDate}</td>
 					<td>${tranh.supName}</td>

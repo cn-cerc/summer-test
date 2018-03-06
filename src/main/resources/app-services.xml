@@ -47,4 +47,10 @@
       <bean id="SvrTran.search" class="cn.cerc.sample.services.tran.SvrTran" scope="prototype">
         <property name="funcCode" value="search" />
     </bean>
+      <bean id="SvrTran.findByTbNo" class="cn.cerc.sample.services.tran.SvrTran" scope="prototype">
+        <property name="funcCode" value="findByTbNo" />
+    </bean>
+       <bean id="SvrTran.find" class="cn.cerc.sample.services.tran.SvrTran" scope="prototype">
+        <property name="funcCode" value="find" />
+    </bean>
 </beans>

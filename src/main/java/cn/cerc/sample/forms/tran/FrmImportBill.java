@@ -25,6 +25,7 @@ public class FrmImportBill extends AbstractForm {
 		List<TranH> list = new ArrayList<>();
 		while (dataOut.fetch()) {
 			TranH tranh = new TranH();
+			tranh.setTb(dataOut.getString("TB_"));
 			tranh.setAppDate(dataOut.getDateTime("AppDate_"));
 			tranh.setAppUser(dataOut.getString("AppUser_"));
 			tranh.setTbNo(dataOut.getString("TBNo_"));

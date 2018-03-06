@@ -8,12 +8,11 @@
 </head>
 <body>
 	<div>
-		<form action="FrmProductAppend">
+		<form action="FrmTranhAppend">
 			单号<input type="text" name="tbNo" value="" /> <br /> 
-			日期 <input type="text" name="tbDate" value="" /> <br /> 
+			日期 <input type="text" name="tbDate" value="${date}" /> <br /> 
 			厂商 <input type="text" name="superName" value="" /> <br /> 
 			建档人员 <input type="text" name="appUser" value="" /> <br /> 
-			建档时间 <input type="text" name="appDate" value="" /> <br /> 
 			<input type="submit" value="保存" />
 		</form>
 	</div>
