@@ -47,5 +47,8 @@
     <bean id="SvrTranABInfo.sch" class="cn.cerc.sample.services.TranAB.SvrTranABInfo" scope="prototype">
         <property name="funcCode" value="sch" />
     </bean>    
+    <bean id="SvrTranABInfo.append" class="cn.cerc.sample.services.TranAB.SvrTranABInfo" scope="prototype">
+        <property name="funcCode" value="append" />
+    </bean>    
       
 </beans>

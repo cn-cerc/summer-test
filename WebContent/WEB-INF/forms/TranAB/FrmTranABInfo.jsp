@@ -24,12 +24,12 @@
       <c:if test="${not empty items}">
       <c:forEach items="${items}" var="item">
       <tr>
-         <td>${item.Tbno}</td>
-         <td>${item.Tb}</td>
-         <td>${item.Tbdate}</td>
-         <td>${item.Supname}</td>
-         <td>${item.Appuser}</td>
-         <td>${item.Appdate}</td>
+         <td>${item.tbno}</td>
+         <td>${item.tb}</td>
+         <td>${item.tbdate}</td>
+         <td>${item.supname}</td>
+         <td>${item.appuser}</td>
+         <td>${item.appdate}</td>
       </tr>
       </c:forEach>
       </c:if>

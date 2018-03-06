@@ -13,9 +13,10 @@
       <form action="FrmTranABAppend" method="Post">
          <p>进货单号: <input type="text" name="TBNo" /></p>
          <p>厂商名称: <input type="text" name="SupName" /></p>
-         <p>单据日期: <input type="text" name="TBDate" readonly="readonly" value=""/></p>
+         <p>单据日期: <input type="text" name="TBDate" readonly="readonly" value="${TBDate}"/></p>
          <p>建档人员: <input type="text" name="AppUser" /></p>
          <input type="submit" name="submit" value="保存" />
+         ${msg}
       </form>
     </div>
   </div>
