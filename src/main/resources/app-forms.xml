@@ -21,4 +21,6 @@
     </bean>
     <bean id="PartInfo_Record" class="cn.cerc.sample.forms.part.PartInfo_Record" scope="prototype">
     </bean>
+    <bean id="FrmPartAppend" class="cn.cerc.sample.forms.part.FrmPartAppend" scope="prototype">
+    </bean>
 </beans>

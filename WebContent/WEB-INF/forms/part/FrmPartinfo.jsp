@@ -31,8 +31,8 @@
           <td>${item.unit}</td>
           <td>${item.stock}</td>
           <td>
-             <a href="FrmPartInfo.modify?code=${item.code}">修改</a> | 
-             <a href="FrmPartInfo.delete?code=${item.code}">删除</a>
+             <a href="FrmPartinfo.modify?code=${item.code}">修改</a> | 
+             <a href="FrmPartinfo.delete?code=${item.code}">删除</a>
         </td>
       </tr>
       </c:forEach>
@@ -40,7 +40,7 @@
     </table>
   </div>
   <div align="left">
-    <a >新增</a>
+    <a href="FrmPartAppend">新增</a>
     <a href="FrmInvoicing">返回</a>
 </div>
 </body>

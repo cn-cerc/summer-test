@@ -32,5 +32,14 @@
     <bean id="svrPartinfo.sch" class="cn.cerc.sample.services.part.svrPartinfo" scope="prototype">
         <property name="funcCode" value="sch" />
     </bean>
+    <bean id="svrPartinfo.modify" class="cn.cerc.sample.services.part.svrPartinfo" scope="prototype">
+        <property name="funcCode" value="modify" />
+    </bean>
+    <bean id="svrPartinfo.append" class="cn.cerc.sample.services.part.svrPartinfo" scope="prototype">
+        <property name="funcCode" value="append" />
+    </bean>
+    <bean id="svrPartinfo.delete" class="cn.cerc.sample.services.part.svrPartinfo" scope="prototype">
+        <property name="funcCode" value="delete" />
+    </bean>
     
 </beans>
