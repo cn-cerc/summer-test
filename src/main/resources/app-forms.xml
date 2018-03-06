@@ -42,4 +42,7 @@
     <bean id="FrmInvoicing" class="cn.cerc.sample.forms.FrmInvoicing"
 		scope="prototype">
 	</bean>
+	 <bean id="FrmImportBill" class="cn.cerc.sample.forms.tran.FrmImportBill"
+		scope="prototype">
+	</bean>
 </beans>
