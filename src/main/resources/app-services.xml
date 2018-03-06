@@ -43,5 +43,9 @@
     </bean>
     <bean id="svrPartinfo.modifysch" class="cn.cerc.sample.services.part.svrPartinfo" scope="prototype">
         <property name="funcCode" value="modifysch" />
+    </bean>  
+    <bean id="SvrTranABInfo.sch" class="cn.cerc.sample.services.TranAB.SvrTranABInfo" scope="prototype">
+        <property name="funcCode" value="sch" />
     </bean>    
+      
 </beans>

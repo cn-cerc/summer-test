@@ -25,4 +25,8 @@
     </bean>
     <bean id="FrmPartmodify" class="cn.cerc.sample.forms.part.FrmPartmodify" scope="prototype">
     </bean>
+    <bean id="FrmTranABInfo" class="cn.cerc.sample.forms.TranAB.FrmTranABInfo" scope="prototype">
+    </bean>
+    <bean id="FrmTranABAppend" class="cn.cerc.sample.forms.TranAB.FrmTranABAppend" scope="prototype">
+    </bean>
 </beans>

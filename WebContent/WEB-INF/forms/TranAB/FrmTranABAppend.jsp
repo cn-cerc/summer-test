@@ -4,23 +4,23 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>商品资料增加</title>
+<title>Insert title here</title>
 </head>
 <body>
   <div align="center">
     <div>
-      <h1>增加商品</h1>
-      <form action="FrmPartAppend" method="Post">
-         <p>商品料号: <input type="text" name="Code" /></p>
-         <p>商品品名: <input type="text" name="Desc" /></p>
-         <p>商品规格: <input type="text" name="Spec" /></p>
-         <p>商品单位: <input type="text" name="Unit" /></p>
+      <h1>增加进货单</h1>
+      <form action="FrmTranABAppend" method="Post">
+         <p>进货单号: <input type="text" name="TBNo" /></p>
+         <p>厂商名称: <input type="text" name="SupName" /></p>
+         <p>单据日期: <input type="text" name="TBDate" readonly="readonly" value=""/></p>
+         <p>建档人员: <input type="text" name="AppUser" /></p>
          <input type="submit" name="submit" value="保存" />
       </form>
     </div>
   </div>
   <div align="left">
-    <a href="FrmPartinfo">返回</a>
+    <a href="FrmTranABInfo">返回</a>
   </div>
 </body>
 </html>
