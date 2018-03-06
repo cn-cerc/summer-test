@@ -29,7 +29,19 @@
     <bean id="ServiceUserList" class="cn.cerc.sample.services.ServiceUserList" scope="prototype">
         <property name="restPath" value="get://*/public/users" />
     </bean>
-    <bean id="ProductService.search" class="cn.cerc.sample.services.ProductService" scope="prototype">
+    <bean id="SvrProduct.search" class="cn.cerc.sample.services.part.SvrProduct" scope="prototype">
         <property name="funcCode" value="search" />
+    </bean>
+     <bean id="SvrProduct.findById" class="cn.cerc.sample.services.part.SvrProduct" scope="prototype">
+        <property name="funcCode" value="findById" />
+    </bean>
+    <bean id="SvrProduct.add" class="cn.cerc.sample.services.part.SvrProduct" scope="prototype">
+        <property name="funcCode" value="add" />
+    </bean>
+    <bean id="SvrProduct.update" class="cn.cerc.sample.services.part.SvrProduct" scope="prototype">
+        <property name="funcCode" value="update" />
+    </bean>
+     <bean id="SvrProduct.delete" class="cn.cerc.sample.services.part.SvrProduct" scope="prototype">
+        <property name="funcCode" value="delete" />
     </bean>
 </beans>

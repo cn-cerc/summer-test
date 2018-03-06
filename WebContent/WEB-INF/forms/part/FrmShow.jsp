@@ -7,6 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>商品详细信息</title>
 </head>
+
 <body>
 
 	<div style="align-content: center">
@@ -17,27 +18,28 @@
 				<td>规格</td>
 				<td>单位</td>
 				<td>库存</td>
+				<td colspan="3">操作</td>
 			</tr>
-		<%-- 	<c:forEach items="item" var="i"> --%>
+			<c:forEach items="${items}" var="item">
 				<tr>
-					<td>${ item.code}</td>
-					<%-- <td>${ item.desc}</td>
-					<td>${ item.spec}</td>
-					<td>${ item.nuit}</td>
-					<td>${ item.stock}</td> --%>
+					<td>${item.code}</td>
+					<td>${item.desc}</td>
+					<td>${item.spec}</td>
+					<td>${item.unit}</td>
+					<td>${item.stock}</td>
+					<td><a href="FrmProductDelete?code=${item.code}">删除</a></td>
+					<td><a href="FrmProductModify?code=${item.code}">修改</a></td>
 				</tr>
-<%-- 
-			</c:forEach> --%>
+			</c:forEach>
 
 		</table>
 	</div>
 
-	<div style="align-content: left">
-		<a href="FrmProductModify"></a>
+	<div>
+		<a href="FrmProductAdd">增加</a>
 	</div>
-
 	<div style="padding: 0.5em;">
-		<a href="javascript:history.go(-1)">返回</a>
+		<a href="common/FrmInvoicing">返回</a>
 	</div>
 
 </body>

@@ -4,9 +4,17 @@ public class Product {
 
 	private String corpNo;
 	private String code;
+	private String desc;
 	private String spec;
-	private String uint;
+	private String unit;
 	private Double stock;
+	
+	public String getDesc() {
+		return desc;
+	}
+	public void setDesc(String desc) {
+		this.desc = desc;
+	}
 	public String getCorpNo() {
 		return corpNo;
 	}
@@ -25,17 +33,23 @@ public class Product {
 	public void setSpec(String spec) {
 		this.spec = spec;
 	}
-	public String getUint() {
-		return uint;
+	
+	public String getUnit() {
+		return unit;
 	}
-	public void setUint(String uint) {
-		this.uint = uint;
+	public void setUnit(String unit) {
+		this.unit = unit;
 	}
 	public Double getStock() {
 		return stock;
 	}
 	public void setStock(Double stock) {
 		this.stock = stock;
+	}
+	@Override
+	public String toString() {
+		return "Product [corpNo=" + corpNo + ", code=" + code + ", desc=" + desc + ", spec=" + spec + ", unit=" + unit
+				+ ", stock=" + stock + "]";
 	}
 	
 	
