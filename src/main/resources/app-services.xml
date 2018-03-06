@@ -6,7 +6,6 @@
     <import resource="classpath*:jbean-service.xml" />
     <import resource="classpath*:jmis-service.xml" />
 
-    <!-- rest 配置范例，仅供测试使用 -->
     <bean id="Hello1" class="cn.cerc.sample.services.HelloWorld" scope="prototype">
         <property name="restPath" value="get://*/hello" />
     </bean>
@@ -28,5 +27,8 @@
     </bean>
     <bean id="ServiceUserList" class="cn.cerc.sample.services.ServiceUserList" scope="prototype">
         <property name="restPath" value="get://*/public/users" />
+    </bean>
+    <bean id="ServicePartInfo.search" class="cn.cerc.sample.services.ServicePartInfo" scope="prototype">
+        <property name="funcCode" value="search" />
     </bean>
 </beans>
