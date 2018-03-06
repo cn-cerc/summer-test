@@ -24,7 +24,7 @@
 				<a href="">盘点单</a>
 			</div>
 			<div>
-				<a href="FrmAction">进出库查询</a>
+				<a href="">进出库查询</a>
 			</div>
 			<div style="padding: 0.5em;">
 				<a href="FrmWelcome">返回</a>

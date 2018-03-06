@@ -39,7 +39,7 @@
 		<a href="FrmProductAdd">增加</a>
 	</div>
 	<div style="padding: 0.5em;">
-		<a href="common/FrmInvoicing">返回</a>
+		<a href="FrmInvoicing">返回</a>
 	</div>
 
 </body>

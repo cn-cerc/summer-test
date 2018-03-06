@@ -8,15 +8,15 @@ public class FrmProductAdd extends AbstractForm {
 
 	@Override
 	public IPage execute() throws Exception {
-		
-		JspPage page = new JspPage(this,"part/FrmProductAdd.jsp");
-		
+
+		JspPage page = new JspPage(this, "part/FrmProductAdd.jsp");
+
 		return page;
 	}
 
 	@Override
 	public boolean logon() {
-		
+
 		return true;
 	}
 }

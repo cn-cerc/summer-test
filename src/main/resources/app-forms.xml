@@ -39,5 +39,7 @@
 	<bean id="FrmProductDelete" class="cn.cerc.sample.forms.part.FrmProductDelete"
 		scope="prototype">
 	</bean>
-
+    <bean id="FrmInvoicing" class="cn.cerc.sample.forms.FrmInvoicing"
+		scope="prototype">
+	</bean>
 </beans>

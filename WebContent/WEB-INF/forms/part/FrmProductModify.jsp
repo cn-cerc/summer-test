@@ -18,7 +18,7 @@
 		</form>
 	</div>
 	<div style="padding: 0.5em;">
-		<a href="FrmAction">返回</a>
+		<a href="FrmProduct">返回</a>
 	</div>
 
 </body>

@@ -16,7 +16,7 @@
 		</form>
 	</div>
 	<div style="padding: 0.5em;">
-		<a href="part/FrmProduct">返回</a>
+		<a href="FrmProduct">返回</a>
 	</div>
 	<div>${message}</div>
 </body>

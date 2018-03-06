@@ -5,7 +5,6 @@ import cn.cerc.jbean.form.IPage;
 import cn.cerc.jdb.core.DataSet;
 import cn.cerc.jmis.form.AbstractForm;
 import cn.cerc.jmis.page.JspPage;
-import cn.cerc.jmis.page.RedirectPage;
 import cn.cerc.sample.pojo.Product;
 
 public class FrmProductModify extends AbstractForm {
