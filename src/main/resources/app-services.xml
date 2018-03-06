@@ -41,5 +41,7 @@
     <bean id="svrPartinfo.delete" class="cn.cerc.sample.services.part.svrPartinfo" scope="prototype">
         <property name="funcCode" value="delete" />
     </bean>
-    
+    <bean id="svrPartinfo.modifysch" class="cn.cerc.sample.services.part.svrPartinfo" scope="prototype">
+        <property name="funcCode" value="modifysch" />
+    </bean>    
 </beans>

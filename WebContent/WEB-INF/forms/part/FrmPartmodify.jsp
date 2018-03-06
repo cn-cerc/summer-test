@@ -9,12 +9,12 @@
 <body>
   <div align="center">
     <div>
-      <h1>增加商品</h1>
-      <form action="FrmPartmodify" method="Post">
-         <p>商品料号: <input type="text" name="Code" readonly="true" /></p>
-         <p>商品品名: <input type="text" name="Desc" /></p>
-         <p>商品规格: <input type="text" name="Spec" /></p>
-         <p>商品单位: <input type="text" name="Unit" /></p>
+      <h1>修改商品资料</h1>
+      <form action="FrmPartmodify.modify" method="post">
+         <p>商品料号: <input type="text" name="Code" readonly="readonly" value="${item.code}"/></p>
+         <p>商品品名: <input type="text" name="Desc" value="${item.desc}"/></p>
+         <p>商品规格: <input type="text" name="Spec" value="${item.spec}"/></p>
+         <p>商品单位: <input type="text" name="Unit" value="${item.unit}"/></p>
          <input type="submit" name="submit" value="保存" />
       </form>
     </div>

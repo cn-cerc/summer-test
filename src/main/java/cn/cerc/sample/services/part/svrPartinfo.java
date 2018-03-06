@@ -22,7 +22,7 @@ public class svrPartinfo extends CustomService {
         ds.add("SELECT * FROM %s", BaseConfig.product);
         ds.add("WHERE CorpNo_='%s' and Code_='%s'", BaseConfig.CorpNo, code);
         ds.open();
-        if (!ds.eof()) {
+        if (ds.eof()) {
             throw new RuntimeException("此商品料号不存在，无法修改！");
         }
         ds.edit();
@@ -65,6 +65,17 @@ public class svrPartinfo extends CustomService {
             throw new RuntimeException("此商品料号不存在，无法删除！");
         }
         ds.delete();
+        return true;
+    }
+
+    public boolean modifysch() {
+        Record headIn = getDataIn().getHead();
+        String code = headIn.getString("Code_");
+        SqlQuery ds = new SqlQuery(this);
+        ds.add("SELECT *FROM %s ", BaseConfig.product);
+        ds.add("WHERE CorpNo_='%s' and Code_='%s'", BaseConfig.CorpNo, code);
+        ds.open();
+        getDataOut().appendDataSet(ds);
         return true;
     }
 }

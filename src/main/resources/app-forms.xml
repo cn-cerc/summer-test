@@ -23,4 +23,6 @@
     </bean>
     <bean id="FrmPartAppend" class="cn.cerc.sample.forms.part.FrmPartAppend" scope="prototype">
     </bean>
+    <bean id="FrmPartmodify" class="cn.cerc.sample.forms.part.FrmPartmodify" scope="prototype">
+    </bean>
 </beans>
