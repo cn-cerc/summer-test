@@ -43,6 +43,7 @@ public class FrmTranABbModify extends AbstractForm {
         String tbno = this.getRequest().getParameter("tbno");
         String it = this.getRequest().getParameter("It");
         String num = this.getRequest().getParameter("Num");
+        String code = this.getRequest().getParameter("Code");
         String submit = this.getRequest().getParameter("submit");
         if (submit != null) {
             LocalService svr = new LocalService(this);
@@ -50,6 +51,7 @@ public class FrmTranABbModify extends AbstractForm {
             Record headIn = svr.getDataIn().getHead();
             headIn.setField("TBNo_", tbno);
             headIn.setField("It_", it);
+            headIn.setField("Code_", code);
             headIn.setField("Num_", num);
             if (!svr.exec()) {
                 jspPage.add("msg", svr.getMessage());
@@ -65,6 +67,7 @@ public class FrmTranABbModify extends AbstractForm {
             Record headIn = svr.getDataIn().getHead();
             headIn.setField("TBNo_", tbno);
             headIn.setField("It_", it);
+            headIn.setField("Code_", code);
             headIn.setField("Num_", num);
             if (!svr.exec()) {
                 jspPage.add("msg", svr.getMessage());

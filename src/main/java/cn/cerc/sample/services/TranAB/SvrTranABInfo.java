@@ -180,10 +180,9 @@ public class SvrTranABInfo extends CustomService {
         ds.add("SELECT * FROM %s", BaseConfig.tranb);
         ds.add("WHERE CorpNo_='%s' and TBNo_='%s' and It_='%s' ", BaseConfig.CorpNo, tbno, it);
         ds.open();
-        if (ds.eof()) {
-            throw new RuntimeException("此单身资料不存在，无法删除！");
+        if (!ds.eof()) {
+            ds.delete();
         }
-        ds.delete();
 
         SqlQuery dsproduct = new SqlQuery(this);
         dsproduct.add("SELECT * FROM %s", BaseConfig.product);
