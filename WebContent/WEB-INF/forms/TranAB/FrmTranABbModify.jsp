@@ -12,6 +12,7 @@
       <h1>进货单单身修改</h1>
       <form action="FrmTranABbModify.TranBPost" method="Post">
             <input type="hidden" name="tbno" value="${tbno}"/>
+            <input type="hidden" name="oldnum" value="${item.num}"/>
          <p>进货单序: <input type="text" name="It" readonly="readonly" value="${item.it}"/></p>
          <p>商品编号: <input type="text" name="Code" readonly="readonly" value="${item.code}"/></p>
          <p>商品品名: <input type="text" name="Desc" readonly="readonly" value="${item.desc}"/></p>

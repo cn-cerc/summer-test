@@ -71,6 +71,7 @@ public class SvrTranABInfo extends CustomService {
         String tbno = headIn.getString("TBNo_");
         String code = headIn.getString("Code_");
         Double num = headIn.getDouble("Num_");
+
         String desc = "";
         String spec = "";
         String unit = "";
@@ -82,6 +83,8 @@ public class SvrTranABInfo extends CustomService {
             desc = ds.getString("Desc_");
             spec = ds.getString("Spec_");
             unit = ds.getString("Unit_");
+        } else {
+            throw new RuntimeException("此商品编号不存在，无法增加！");
         }
         int it = 1;
         SqlQuery dsTran = new SqlQuery(this);
@@ -91,29 +94,26 @@ public class SvrTranABInfo extends CustomService {
         if (!dsTran.eof()) {
             dsTran.first();
             it = dsTran.getInt("It_") + 1;
-
         }
-        dsTran.append();
-        dsTran.setField("CorpNo_", BaseConfig.CorpNo);
-        dsTran.setField("It_", it);
-        dsTran.setField("TBNo_", tbno);
-        dsTran.setField("Code_", code);
-        dsTran.setField("Desc_", desc);
-        dsTran.setField("Spec_", spec);
-        dsTran.setField("Unit_", unit);
-        dsTran.setField("Num_", num);
+        if (!dsTran.locate("Code_", code)) {
+            dsTran.append();
+            dsTran.setField("It_", it);
+            dsTran.setField("Num_", num);
+            dsTran.setField("CorpNo_", BaseConfig.CorpNo);
+            dsTran.setField("TBNo_", tbno);
+            dsTran.setField("Code_", code);
+            dsTran.setField("Desc_", desc);
+            dsTran.setField("Spec_", spec);
+            dsTran.setField("Unit_", unit);
+        } else {
+            dsTran.edit();
+            dsTran.setField("Num_", num + dsTran.getDouble("Num_"));
+        }
         dsTran.post();
-
-        SqlQuery dsproduct = new SqlQuery(this);
-        dsproduct.add("SELECT * FROM %s", BaseConfig.product);
-        dsproduct.add("WHERE CorpNo_='%s' and Code_='%s' ", BaseConfig.CorpNo, code);
-        dsproduct.open();
-        if (!dsproduct.eof()) {
-            double stock = dsproduct.getDouble("Stock_");
-            dsproduct.edit();
-            dsproduct.setField("Stock_", stock + num);
-            dsproduct.post();
-        }
+        double stock = ds.getDouble("Stock_");
+        ds.edit();
+        ds.setField("Stock_", stock + num);
+        ds.post();
         return true;
     }
 
@@ -153,6 +153,7 @@ public class SvrTranABInfo extends CustomService {
         if (ds.eof()) {
             throw new RuntimeException("此单身资料不存在，无法修改！");
         }
+        Double oldnum = ds.getDouble("Num_");
         ds.edit();
         ds.setField("Num_", num);
         ds.post();
@@ -163,8 +164,12 @@ public class SvrTranABInfo extends CustomService {
         dsproduct.open();
         if (!dsproduct.eof()) {
             double stock = dsproduct.getDouble("Stock_");
+
+            // if ( ((oldnum - num)-stock)<0 ) {
+            // throw new RuntimeException("库存不可为负数，无法修改！");
+            // }
             dsproduct.edit();
-            dsproduct.setField("Stock_", stock + num);
+            dsproduct.setField("Stock_", stock + (num - oldnum));
             dsproduct.post();
         }
         return true;
