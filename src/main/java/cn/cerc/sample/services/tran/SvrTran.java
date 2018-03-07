@@ -62,15 +62,183 @@ public class SvrTran extends CustomService {
 		return true;
 	}
 
-	public boolean findByTbNo() {
+	public boolean tranhFindByTbNo() {
 
 		String tbNo = getDataIn().getHead().getString("tbNo");
+		SqlQuery dsH = new SqlQuery(this);
+		dsH.add("select * from %s", BaseConfig.Tranh);
+		dsH.add("where CorpNo_ = %s", BaseConfig.CorpNo);
+		dsH.add("and TBNo_ = '%s'", tbNo);
+		dsH.open();
+		getDataOut().getHead().copyValues(dsH.getCurrent());
+
+		SqlQuery dsB = new SqlQuery(this);
+		dsB.add("select * from %s", BaseConfig.Tranb);
+		dsB.add("where CorpNo_ = %s", BaseConfig.CorpNo);
+		dsB.add("and TBNo_ = '%s'", tbNo);
+		dsB.open();
+		getDataOut().appendDataSet(dsB);
+
+		return true;
+	}
+
+	public boolean tranhModify() {
+		String tbNo = getDataIn().getHead().getString("tbNo");
+		String supName = getDataIn().getHead().getString("supName");
+		SqlQuery ds2 = new SqlQuery(this);
+		ds2.add("select * from %s", BaseConfig.Tranh);
+		ds2.add("where CorpNo_ = %s", BaseConfig.CorpNo);
+		ds2.add("and TBNo_ = '%s'", tbNo);
+		ds2.open();
+		ds2.edit();
+		ds2.setField("SupName_", supName);
+		ds2.post();
+		return true;
+	}
+
+	public boolean tranbAdd() {
+
+		String code = getDataIn().getHead().getString("code");
+		String tbNo = getDataIn().getHead().getString("tbNo");
+		Double stock = getDataIn().getHead().getDouble("stock");
+		SqlQuery dsPart = new SqlQuery(this);
+		dsPart.add("select * from %s", BaseConfig.Product);
+		dsPart.add("where CorpNo_ = '%s'", BaseConfig.CorpNo);
+		dsPart.add("and Code_ ='%s'", code);
+		dsPart.open();
+		dsPart.edit();
+		dsPart.setField("Stock_", dsPart.getDouble("Stock_") + stock);
+		dsPart.post();
+
+		SqlQuery dsB = new SqlQuery(this);
+		dsB.add("select * from %s", BaseConfig.Tranb);
+		dsB.add("where CorpNo_ = %s", BaseConfig.CorpNo);
+		dsB.add("and Code_ = '%s'", code);
+		dsB.add("and TBNo_ ='%s'", tbNo);
+		dsB.open();
+		if (dsB.eof()) {
+			dsB.append();
+			dsB.setField("CorpNo_", BaseConfig.CorpNo);
+			dsB.setField("TBNo_", tbNo);
+			dsB.setField("It_", getMaxIt(tbNo));
+			dsB.setField("Code_", code);
+			dsB.setField("Desc_", dsPart.getField("Desc_"));
+			dsB.setField("Spec_", dsPart.getField("Spec_"));
+			dsB.setField("Unit_", dsPart.getField("Unit_"));
+			dsB.setField("Num_", stock);
+			dsB.post();
+		} else {
+			dsB.edit();
+			dsB.setField("Num_", dsB.getDouble("Num_") + stock);
+			dsB.post();
+		}
+
+		/*
+		 * SqlQuery ds2 = new SqlQuery(this); ds2.add("select * from %s",
+		 * BaseConfig.Product); ds2.add("where CorpNo_ = %s", BaseConfig.CorpNo);
+		 * ds2.add("and Code_ = '%s'", code); ds2.open(); DataSet dataOut2 =
+		 * getDataOut().appendDataSet(ds2);
+		 * 
+		 * SqlQuery ds = new SqlQuery(this); ds.add("select * from %s",
+		 * BaseConfig.Tranb); ds.add("where CorpNo_ = %s", BaseConfig.CorpNo);
+		 * ds.add("and Code_ = '%s'", code); ds.open(); DataSet dataOut =
+		 * getDataOut().appendDataSet(ds); // 如果有的话库存增加 if (dataOut != null) {
+		 * ds2.edit(); ds2.setField("Num_", "Num_ +" + dataOut.getDouble("Num_"));
+		 * return true; } // 如果没有的话新增商品 ds.append();
+		 * 
+		 * while(dataOut2.fetch())
+		 * 
+		 * { ds.setField("CorpNo_", BaseConfig.CorpNo); ds.setField("TBNo_", tbNo);
+		 * ds.setField("It_", 1); ds.setField("Code_", dataOut2.getField("Code_"));
+		 * ds.setField("Desc_", dataOut2.getField("Desc_")); ds.setField("Spec_",
+		 * dataOut2.getField("Spec_")); ds.setField("Unit_",
+		 * dataOut2.getField("Unit_")); ds.setField("Num_", stock); }ds.post();
+		 */
+		return true;
+	}
+
+	private int getMaxIt(String tbNo) {
 		SqlQuery ds = new SqlQuery(this);
-		ds.add("select * from %s", BaseConfig.Tranh);
+		ds.add("select max(It_) as It_ from %s", BaseConfig.Tranb);
+		ds.add("where CorpNo_='%s' and TBNo_='%s'", BaseConfig.CorpNo, tbNo);
+		ds.open();
+		return ds.getInt("It_") + 1;
+	}
+
+	/*
+	 * public boolean tranbFindByTbNo() {
+	 * 
+	 * String tbNo = getDataIn().getHead().getString("tbNo"); SqlQuery ds = new
+	 * SqlQuery(this);
+	 * ds.add("select * from %s ,%s where %s.TBNo_ = %s.TBNo_ AND %s.TBNo_ = '%s' ",
+	 * BaseConfig.Tranb, BaseConfig.Tranh, BaseConfig.Tranb, BaseConfig.Tranh,
+	 * BaseConfig.Tranb, tbNo);
+	 * 
+	 * ds.open(); getDataOut().appendDataSet(ds);
+	 * 
+	 * return true; }
+	 */
+	public boolean tranbModify() {
+		String code = getDataIn().getHead().getString("code");
+		SqlQuery ds = new SqlQuery(this);
+		ds.add("select * from %s", BaseConfig.Tranb);
 		ds.add("where CorpNo_ = %s", BaseConfig.CorpNo);
-		ds.add("and TBNo_ = '%s'", tbNo);
+		ds.add("and Code_ = '%s'", code);
 		ds.open();
 		getDataOut().appendDataSet(ds);
+		return true;
+	}
+
+	public boolean tranbUpdate() {
+
+		SqlQuery dsB = new SqlQuery(this);
+		Double num = getDataIn().getHead().getDouble("num");
+		String code = getDataIn().getHead().getString("code");
+		String tbNo = getDataIn().getHead().getString("tbNo");
+		dsB.add("select * from %s", BaseConfig.Tranb);
+		dsB.add("where CorpNo_ = %s", BaseConfig.CorpNo);
+		dsB.add("and Code_ = '%s'", code);
+		dsB.add("and TBNo_ = '%s'", tbNo);
+		dsB.open();
+
+		dsB.edit();
+		dsB.setField("Num_", num);
+		dsB.post();
+
+		SqlQuery dsPart = new SqlQuery(this);
+		dsPart.add("select * from %s", BaseConfig.Product);
+		dsPart.add("where CorpNo_ = '%s'", BaseConfig.CorpNo);
+		dsPart.add("and Code_ ='%s'", code);
+		dsPart.open();
+		dsPart.edit();
+		dsPart.setField("Stock_", num);
+		dsPart.post();
+
+		return true;
+	}
+
+	public boolean tranbDelete() {
+
+		SqlQuery dsB = new SqlQuery(this);
+		Double num = getDataIn().getHead().getDouble("num");
+		String code = getDataIn().getHead().getString("code");
+		String tbNo = getDataIn().getHead().getString("tbNo");
+		dsB.add("select * from %s", BaseConfig.Tranb);
+		dsB.add("where CorpNo_ = %s", BaseConfig.CorpNo);
+		dsB.add("and Code_ = '%s'", code);
+		dsB.add("and TBNo_ = '%s'", tbNo);
+		dsB.open();
+
+		dsB.delete();
+
+		SqlQuery dsPart = new SqlQuery(this);
+		dsPart.add("select * from %s", BaseConfig.Product);
+		dsPart.add("where CorpNo_ = '%s'", BaseConfig.CorpNo);
+		dsPart.add("and Code_ ='%s'", code);
+		dsPart.open();
+		dsPart.edit();
+		dsPart.setField("Stock_", dsPart.getDouble("Stock_") - num);
+		dsPart.post();
 
 		return true;
 	}

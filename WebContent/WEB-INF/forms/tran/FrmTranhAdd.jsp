@@ -8,7 +8,7 @@
 </head>
 <body>
 	<div>
-		<form action="FrmTranhAppend">
+		<form action="FrmTranhAppend" method="post">
 			单号<input type="text" name="tbNo" value="" /> <br /> 
 			日期 <input type="text" name="tbDate" value="${date}" /> <br /> 
 			厂商 <input type="text" name="superName" value="" /> <br /> 
@@ -17,7 +17,7 @@
 		</form>
 	</div>
 	<div style="padding: 0.5em;">
-		<a href="">返回</a>
+		<a href="FrmImportBill">返回</a>
 	</div>
 	<div>${message}</div>
 </body>

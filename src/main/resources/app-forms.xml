@@ -23,7 +23,7 @@
 	<bean id="FrmProduct" class="cn.cerc.sample.forms.part.FrmProduct"
 		scope="prototype">
 	</bean>
-	
+
 	<bean id="FrmProductAdd" class="cn.cerc.sample.forms.part.FrmProductAdd"
 		scope="prototype">
 	</bean>
@@ -39,19 +39,37 @@
 	<bean id="FrmProductDelete" class="cn.cerc.sample.forms.part.FrmProductDelete"
 		scope="prototype">
 	</bean>
-    <bean id="FrmInvoicing" class="cn.cerc.sample.forms.FrmInvoicing"
+	<bean id="FrmInvoicing" class="cn.cerc.sample.forms.FrmInvoicing"
 		scope="prototype">
 	</bean>
-	 <bean id="FrmImportBill" class="cn.cerc.sample.forms.tran.FrmImportBill"
+	<bean id="FrmImportBill" class="cn.cerc.sample.forms.tran.FrmImportBill"
 		scope="prototype">
 	</bean>
-	 <bean id="FrmTrachAdd" class="cn.cerc.sample.forms.tran.FrmTranhAdd"
+	<bean id="FrmTrachAdd" class="cn.cerc.sample.forms.tran.FrmTranhAdd"
 		scope="prototype">
 	</bean>
-	 <bean id="FrmTranhAppend" class="cn.cerc.sample.forms.tran.FrmTranhAppend"
+	<bean id="FrmTranhAppend" class="cn.cerc.sample.forms.tran.FrmTranhAppend"
 		scope="prototype">
 	</bean>
-	 <bean id="FrmTran" class="cn.cerc.sample.forms.tran.FrmTran"
+	<bean id="FrmTran" class="cn.cerc.sample.forms.tran.FrmTran"
+		scope="prototype">
+	</bean>
+	<bean id="FrmTranbAdd" class="cn.cerc.sample.forms.tran.FrmTranbAdd"
+		scope="prototype">
+	</bean>
+	<bean id="FrmTranhModify" class="cn.cerc.sample.forms.tran.FrmTranhModify"
+		scope="prototype">
+	</bean>
+	<bean id="FrmTranbAppend" class="cn.cerc.sample.forms.tran.FrmTranbAppend"
+		scope="prototype">
+	</bean>
+	<bean id="FrmTranbModify" class="cn.cerc.sample.forms.tran.FrmTranbModify"
+		scope="prototype">
+	</bean>
+	<bean id="FrmTranbUpdate" class="cn.cerc.sample.forms.tran.FrmTranbUpdate"
+		scope="prototype">
+	</bean>
+	<bean id="FrmTranbDelete" class="cn.cerc.sample.forms.tran.FrmTranbDelete"
 		scope="prototype">
 	</bean>
 </beans>

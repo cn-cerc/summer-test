@@ -1,5 +1,8 @@
 package cn.cerc.sample.forms.tran;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import cn.cerc.jbean.client.LocalService;
 import cn.cerc.jbean.form.IPage;
 import cn.cerc.jmis.form.AbstractForm;
@@ -23,6 +26,10 @@ public class FrmTranhAppend extends AbstractForm {
 		svr.getDataIn().getHead().setField("supName", supName);
 		svr.getDataIn().getHead().setField("appUser", appUser);
 		if (!svr.exec()) {
+			SimpleDateFormat simple = new SimpleDateFormat("yyyy-MM-dd");
+			Date date = new Date();
+			String format = simple.format(date);
+			jspPage.add("date", format);
 			jspPage.add("message", svr.getMessage());
 			return jspPage;
 		}

@@ -22,7 +22,7 @@
 			<c:forEach items="${tranhs}" var="tranh">
 				<tr>
 					<td>${tranh.tb }</td>
-					<td><a href="">${tranh.tbNo }</a></td>
+					<td><a href="FrmTran?tbNo=${tranh.tbNo }">${tranh.tbNo }</a></td>
 					<td>${tranh.tbDate}</td>
 					<td>${tranh.supName}</td>
 					<td>${tranh.appUser}</td>
@@ -37,7 +37,7 @@
 		<a href="FrmTrachAdd">增加</a>
 	</div>
 	<div style="padding: 0.5em;">
-		<a href="">返回</a>
+		<a href="FrmInvoicing">返回</a>
 	</div>
 
 </body>

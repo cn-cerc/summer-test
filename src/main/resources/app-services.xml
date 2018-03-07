@@ -47,10 +47,28 @@
       <bean id="SvrTran.search" class="cn.cerc.sample.services.tran.SvrTran" scope="prototype">
         <property name="funcCode" value="search" />
     </bean>
-      <bean id="SvrTran.findByTbNo" class="cn.cerc.sample.services.tran.SvrTran" scope="prototype">
-        <property name="funcCode" value="findByTbNo" />
+      <bean id="SvrTran.tranhFindByTbNo" class="cn.cerc.sample.services.tran.SvrTran" scope="prototype">
+        <property name="funcCode" value="tranhFindByTbNo" />
     </bean>
        <bean id="SvrTran.find" class="cn.cerc.sample.services.tran.SvrTran" scope="prototype">
         <property name="funcCode" value="find" />
+    </bean>
+       <bean id="SvrTran.tranhModify" class="cn.cerc.sample.services.tran.SvrTran" scope="prototype">
+        <property name="funcCode" value="tranhModify" />
+    </bean>
+     <bean id="SvrTran.tranbAdd" class="cn.cerc.sample.services.tran.SvrTran" scope="prototype">
+        <property name="funcCode" value="tranbAdd" />
+    </bean>
+     <bean id="SvrTran.tranbFindByTbNo" class="cn.cerc.sample.services.tran.SvrTran" scope="prototype">
+        <property name="funcCode" value="tranbFindByTbNo" />
+    </bean>
+      <bean id="SvrTran.tranbModify" class="cn.cerc.sample.services.tran.SvrTran" scope="prototype">
+        <property name="funcCode" value="tranbModify" />
+    </bean>
+    <bean id="SvrTran.tranbUpdate" class="cn.cerc.sample.services.tran.SvrTran" scope="prototype">
+        <property name="funcCode" value="tranbUpdate" />
+    </bean>
+     <bean id="SvrTran.tranbDelete" class="cn.cerc.sample.services.tran.SvrTran" scope="prototype">
+        <property name="funcCode" value="tranbDelete" />
     </bean>
 </beans>
