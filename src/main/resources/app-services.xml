@@ -1,32 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:aop="http://www.springframework.org/schema/aop"
-    xsi:schemaLocation="http://www.springframework.org/schema/beans  
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans  
            http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
-    <import resource="classpath*:jbean-service.xml" />
-    <import resource="classpath*:jmis-service.xml" />
+	<import resource="classpath*:jbean-service.xml" />
+	<import resource="classpath*:jmis-service.xml" />
 
-    <!-- rest 配置范例，仅供测试使用 -->
-    <bean id="Hello1" class="cn.cerc.sample.services.HelloWorld" scope="prototype">
-        <property name="restPath" value="get://*/hello" />
-    </bean>
-    <bean id="Hello2" class="cn.cerc.sample.services.HelloWorld" scope="prototype">
-        <property name="restPath" value="get://*/hello?ordNo" />
-    </bean>
-    <bean id="Hello3" class="cn.cerc.sample.services.HelloWorld" scope="prototype">
-        <property name="restPath" value="get://*/hello?ordNo/status" />
-    </bean>
-    <bean id="Hello4" class="cn.cerc.sample.services.HelloWorld" scope="prototype">
-        <property name="restPath" value="get://*/hello?ordNo/status/remark" />
-    </bean>
-    <bean id="Hello5" class="cn.cerc.sample.services.HelloWorld" scope="prototype">
-        <property name="restPath" value="get://*/hello/world?ordNo/status/remark" />
-    </bean>
+	<!-- rest 配置范例，仅供测试使用 -->
+	<bean id="Hello1" class="cn.cerc.sample.services.HelloWorld"
+		scope="prototype">
+		<property name="restPath" value="get://*/hello" />
+	</bean>
+	<bean id="Hello2" class="cn.cerc.sample.services.HelloWorld"
+		scope="prototype">
+		<property name="restPath" value="get://*/hello?ordNo" />
+	</bean>
+	<bean id="Hello3" class="cn.cerc.sample.services.HelloWorld"
+		scope="prototype">
+		<property name="restPath" value="get://*/hello?ordNo/status" />
+	</bean>
+	<bean id="Hello4" class="cn.cerc.sample.services.HelloWorld"
+		scope="prototype">
+		<property name="restPath" value="get://*/hello?ordNo/status/remark" />
+	</bean>
+	<bean id="Hello5" class="cn.cerc.sample.services.HelloWorld"
+		scope="prototype">
+		<property name="restPath" value="get://*/hello/world?ordNo/status/remark" />
+	</bean>
 
-    <bean id="ServiceLogin" class="cn.cerc.sample.services.ServiceLogin" scope="prototype">
-        <property name="restPath" value="get://*/public/login" />
-    </bean>
-    <bean id="ServiceUserList" class="cn.cerc.sample.services.ServiceUserList" scope="prototype">
-        <property name="restPath" value="get://*/public/users" />
-    </bean>
+	<bean id="ServiceLogin" class="cn.cerc.sample.services.ServiceLogin"
+		scope="prototype">
+		<property name="restPath" value="get://*/public/login" />
+	</bean>
+	<bean id="ServiceUserList" class="cn.cerc.sample.services.ServiceUserList"
+		scope="prototype">
+		<property name="restPath" value="get://*/public/users" />
+	</bean>
+	<bean id="SrvProductInfo.getData" class="cn.cerc.sample.services.SrvProductInfo"
+		scope="prototype">
+		<property name="funcCode" value="getData" />
+	</bean>
 </beans>
