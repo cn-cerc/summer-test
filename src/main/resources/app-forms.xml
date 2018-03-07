@@ -23,4 +23,14 @@
     </bean>
     <bean id="FrmPartModify" class="cn.cerc.sample.forms.part.FrmPartModify" scope="prototype">
     </bean>
+    <bean id="FrmTranABS" class="cn.cerc.sample.forms.tran.FrmTranABS" scope="prototype">
+    </bean>
+    <bean id="FrmTranAB" class="cn.cerc.sample.forms.tran.FrmTranAB" scope="prototype">
+    </bean>
+    <bean id="FrmTranBAB" class="cn.cerc.sample.forms.tran.FrmTranBAB" scope="prototype">
+    </bean>
+    <bean id="FrmTranHAB" class="cn.cerc.sample.forms.tran.FrmTranHAB" scope="prototype">
+    </bean>
+    <bean id="FrmTranABdetail" class="cn.cerc.sample.forms.tran.FrmTranABdetail" scope="prototype">
+    </bean>
 </beans>

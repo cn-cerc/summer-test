@@ -11,7 +11,7 @@
     <a href="FrmPartInfo">商品资料维护</a>
 </div>
 <div>
-    <a href="#">进货单</a>
+    <a href="FrmTranABS">进货单</a>
 </div>
 <div>
     <a href="#">销售单</a>

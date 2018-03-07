@@ -44,4 +44,31 @@
     <bean id="SvrPartInfo.searchSingle" class="cn.cerc.sample.services.part.SvrPartInfo" scope="prototype">
         <property name="funcCode" value="searchSingle" />
     </bean>
+    <bean id="SvrTranAB.tranHsearch" class="cn.cerc.sample.services.tran.SvrTranAB" scope="prototype">
+        <property name="funcCode" value="tranHsearch" />
+    </bean>
+    <bean id="SvrTranAB.tranHsearchSingle" class="cn.cerc.sample.services.tran.SvrTranAB" scope="prototype">
+        <property name="funcCode" value="tranHsearchSingle" />
+    </bean>
+    <bean id="SvrTranAB.tranHappend" class="cn.cerc.sample.services.tran.SvrTranAB" scope="prototype">
+        <property name="funcCode" value="tranHappend" />
+    </bean>
+    <bean id="SvrTranAB.tranHdelete" class="cn.cerc.sample.services.tran.SvrTranAB" scope="prototype">
+        <property name="funcCode" value="tranHdelete" />
+    </bean>
+    <bean id="SvrTranAB.tranBsearch" class="cn.cerc.sample.services.tran.SvrTranAB" scope="prototype">
+        <property name="funcCode" value="tranBsearch" />
+    </bean>
+    <bean id="SvrTranAB.tranBsearchSingle" class="cn.cerc.sample.services.tran.SvrTranAB" scope="prototype">
+        <property name="funcCode" value="tranBsearchSingle" />
+    </bean>
+    <bean id="SvrTranAB.tranBsearDetail" class="cn.cerc.sample.services.tran.SvrTranAB" scope="prototype">
+        <property name="funcCode" value="tranBsearDetail" />
+    </bean>
+    <bean id="SvrTranAB.tranBappend" class="cn.cerc.sample.services.tran.SvrTranAB" scope="prototype">
+        <property name="funcCode" value="tranBappend" />
+    </bean>
+    <bean id="SvrTranAB.tranBdelete" class="cn.cerc.sample.services.tran.SvrTranAB" scope="prototype">
+        <property name="funcCode" value="tranBdelete" />
+    </bean>
 </beans>

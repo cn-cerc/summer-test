@@ -4,20 +4,21 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>增加商品资料</title>
+<title>增加进货单单身数据FrmTranBAB</title>
+</head>
 </head>
 <body>
 
 <div align="center">
     <div>
-        <h1>增加商品资料</h1>
-        <form action="FrmPartAppend" method="post">
+        <h1>增加进货单单身数据</h1>
+        <form action="FrmTranBAB.tranBappend" method="post">
+            <p>单据编号：<input type="text" name="TBNo" value="${item.tbno}"  readonly="readonly"></input></p>
+            <p>单身序号：<input type="text" name="It"></input></p>
             <p>商品编号：<input type="text" name="Code"></input></p>
-            <p>商品名称：<input type="text" name="Desc"></input></p>
-            <p>商品规格：<input type="text" name="Spec"></input></p>
-            <p>商品单位：<input type="text" name="Unit"></input></p>
+            <p>进货数量：<input type="text" name="Num"></input></p>
             <input type="submit" name="submit" value="保存"></input>
-            <p><a href="FrmPartInfo">返回</a></p>
+            <p><a href="FrmTranAB?tbno=${item.tbno}">返回</a></p>
         </form>
     </div>
 </div>
