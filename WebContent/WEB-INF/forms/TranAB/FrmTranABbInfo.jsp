@@ -12,22 +12,29 @@
     <div>
       <h1>进货单资料维护</h1>
     </div>
-      <form action="FrmTranABbInfo" method="Post">     
+      <form action="FrmTranABbInfo.submit" method="Post">     
       <table align="center" width="90%">   
    
          <tr>
            <th>          
              <p>进货单号: <input type="text" name="TBNo" readonly="readonly" value="${item.tbno}"/></p>
+           </th>
+           <th>
              <p>单据日期: <input type="text" name="TBDate" readonly="readonly" value="${item.tbdate}"/></p>
            </th>
-         <tr> 
+         </tr> 
+         <tr>
            <th>  
              <p>厂商名称: <input type="text" name="SupName" value="${item.supname}"/></p>       
+           </th>
+           <th>
              <p>建档人员: <input type="text" name="AppUser" readonly="readonly" value="${item.appuser}"/></p>   
            </th>       
          </tr>
-         <tr> 
-           <th>
+         <tr>
+            <th> 
+            </th>
+           <th align="center">
              <input type="submit" name="submit" value="保存" />
            </th>
          </tr> 
@@ -47,14 +54,14 @@
       <c:if test="${not empty items}">
       <c:forEach items="${items}" var="item">
       <tr>
-          <td>${item.it}</td>
-          <td>${item.code}</td>
-          <td>${item.desc}</td>
-          <td>${item.spec}</td>
-          <td>${item.unit}</td>
-          <td>${item.num}</td>
-          <td>
-             <a href="FrmPartmodify?it=${item.it}">内容</a> | 
+          <td align="center" >${item.it}</td>
+          <td align="center" >${item.code}</td>
+          <td align="center" >${item.desc}</td>
+          <td align="center" >${item.spec}</td>
+          <td align="center" >${item.unit}</td>
+          <td align="center" >${item.num}</td>
+          <td align="center" >
+             <a href="FrmTranABbModify?tbno=${item.tbno}&it=${item.it}">内容</a> | 
           </td>
       </tr>
       </c:forEach>

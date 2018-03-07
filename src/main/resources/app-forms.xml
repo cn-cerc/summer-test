@@ -33,4 +33,6 @@
     </bean>
     <bean id="FrmTranABbAppend" class="cn.cerc.sample.forms.TranAB.FrmTranABbAppend" scope="prototype">
     </bean>
+    <bean id="FrmTranABbModify" class="cn.cerc.sample.forms.TranAB.FrmTranABbModify" scope="prototype">
+    </bean>
 </beans>

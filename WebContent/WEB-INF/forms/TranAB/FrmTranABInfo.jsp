@@ -12,6 +12,7 @@
     <div>
       <h1>进货单维护</h1>
     </div>
+    <hr width=90% size=3 color=#5151A2 style="border:3 double green">
     <table align="center" width="100%">
       <tr>      
         <th>进货单号</th>
@@ -24,12 +25,12 @@
       <c:if test="${not empty items}">
       <c:forEach items="${items}" var="item">
       <tr>
-         <td><a href="FrmTranABbInfo?tbno=${item.tbno}">${item.tbno}</a></td>
-         <td>${item.tb}</td>
-         <td>${item.tbdate}</td>
-         <td>${item.supname}</td>
-         <td>${item.appuser}</td>
-         <td>${item.appdate}</td>
+         <td align="center"><a href="FrmTranABbInfo?tbno=${item.tbno}">${item.tbno}</a></td>
+         <td align="center">${item.tb}</td>
+         <td align="center">${item.tbdate}</td>
+         <td align="center">${item.supname}</td>
+         <td align="center">${item.appuser}</td>
+         <td align="center">${item.appdate}</td>
       </tr>
       </c:forEach>
       </c:if>

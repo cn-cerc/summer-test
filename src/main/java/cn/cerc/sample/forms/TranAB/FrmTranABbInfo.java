@@ -9,6 +9,7 @@ import cn.cerc.jdb.core.DataSet;
 import cn.cerc.jdb.core.Record;
 import cn.cerc.jmis.form.AbstractForm;
 import cn.cerc.jmis.page.JspPage;
+import cn.cerc.jmis.page.RedirectPage;
 
 public class FrmTranABbInfo extends AbstractForm {
     @Override
@@ -58,6 +59,28 @@ public class FrmTranABbInfo extends AbstractForm {
         jspPage.add("items", items);
 
         return jspPage;
+    }
+
+    public IPage submit() {
+        JspPage jspPage = new JspPage(this, "TranAB/FrmTranABbInfo.jsp");
+        String tbno = this.getRequest().getParameter("TBNo");
+        String submit = this.getRequest().getParameter("submit");
+        if (submit != null) {
+
+            String supname = this.getRequest().getParameter("SupName");
+            LocalService svr = new LocalService(this);
+            svr.setService("SvrTranABInfo.TranHmodify");
+            Record headIn = svr.getDataIn().getHead();
+            headIn.setField("TBNo_", tbno);
+            headIn.setField("SupName_", supname);
+            if (!svr.exec()) {
+                jspPage.add("msg", svr.getMessage());
+                return new RedirectPage(this, "FrmTranABbInfo?tbno=" + tbno);
+            }
+
+        }
+        return new RedirectPage(this, "FrmTranABbInfo?tbno=" + tbno);
+
     }
 
     @Override

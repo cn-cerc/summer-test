@@ -13,6 +13,7 @@
     <div>
       <h1>商品资料</h1>
     </div>
+    <hr width=90% size=3 color=#5151A2 style="border:3 double green">
     <table align="center" width="100%">
       <tr>      
         <th>商品料号</th>
@@ -25,12 +26,12 @@
       <c:if test="${not empty items}">
       <c:forEach items="${items}" var="item">
       <tr>
-          <td>${item.code}</td>
-          <td>${item.desc}</td>
-          <td>${item.spec}</td>
-          <td>${item.unit}</td>
-          <td>${item.stock}</td>
-          <td>
+          <td align="center" >${item.code}</td>
+          <td align="center" >${item.desc}</td>
+          <td align="center" >${item.spec}</td>
+          <td align="center" >${item.unit}</td>
+          <td align="center" >${item.stock}</td>
+          <td align="center">
              <a href="FrmPartmodify?code=${item.code}">修改</a> | 
              <a href="FrmPartinfo.delete?code=${item.code}">删除</a>
           </td>

@@ -13,6 +13,7 @@ public class FrmTranABbAppend extends AbstractForm {
         JspPage jspPage = new JspPage(this, "TranAB/FrmTranABbAppend.jsp");
         String tbno = this.getRequest().getParameter("tbno");
         jspPage.add("tbno", tbno);
+
         return jspPage;
     }
 

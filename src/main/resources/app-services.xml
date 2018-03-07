@@ -59,6 +59,17 @@
     <bean id="SvrTranABInfo.TranBappend" class="cn.cerc.sample.services.TranAB.SvrTranABInfo" scope="prototype">
         <property name="funcCode" value="TranBappend" />
     </bean>      
-    
-      
+    <bean id="SvrTranABInfo.TranHmodify" class="cn.cerc.sample.services.TranAB.SvrTranABInfo" scope="prototype">
+        <property name="funcCode" value="TranHmodify" />
+    </bean>   
+     <bean id="SvrTranABInfo.TranBmodify" class="cn.cerc.sample.services.TranAB.SvrTranABInfo" scope="prototype">
+        <property name="funcCode" value="TranBmodify" />
+    </bean> 
+     <bean id="SvrTranABInfo.TranBdelete" class="cn.cerc.sample.services.TranAB.SvrTranABInfo" scope="prototype">
+        <property name="funcCode" value="TranBdelete" />
+    </bean>  
+     <bean id="SvrTranABInfo.TranABItsch" class="cn.cerc.sample.services.TranAB.SvrTranABInfo" scope="prototype">
+        <property name="funcCode" value="TranABItsch" />
+    </bean>     
+         
 </beans>
