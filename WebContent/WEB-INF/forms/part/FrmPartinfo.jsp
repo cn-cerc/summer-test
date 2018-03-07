@@ -33,7 +33,7 @@
           <td>
              <a href="FrmPartmodify?code=${item.code}">修改</a> | 
              <a href="FrmPartinfo.delete?code=${item.code}">删除</a>
-        </td>
+          </td>
       </tr>
       </c:forEach>
       </c:if>

@@ -24,7 +24,7 @@
       <c:if test="${not empty items}">
       <c:forEach items="${items}" var="item">
       <tr>
-         <td>${item.tbno}</td>
+         <td><a href="FrmTranABbInfo?tbno=${item.tbno}">${item.tbno}</a></td>
          <td>${item.tb}</td>
          <td>${item.tbdate}</td>
          <td>${item.supname}</td>

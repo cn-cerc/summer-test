@@ -9,6 +9,61 @@ public class TranABInfo_Record {
     private String appuser;
     private String appdate;
 
+    private int it;
+    private String code;
+    private String desc;
+    private String spec;
+    private String unit;
+    private Double num;
+
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
+    }
+
+    public int getIt() {
+        return it;
+    }
+
+    public void setIt(int it) {
+        this.it = it;
+    }
+
+    public String getDesc() {
+        return desc;
+    }
+
+    public void setDesc(String desc) {
+        this.desc = desc;
+    }
+
+    public String getSpec() {
+        return spec;
+    }
+
+    public void setSpec(String spec) {
+        this.spec = spec;
+    }
+
+    public String getUnit() {
+        return unit;
+    }
+
+    public void setUnit(String unit) {
+        this.unit = unit;
+    }
+
+    public Double getNum() {
+        return num;
+    }
+
+    public void setNum(Double num) {
+        this.num = num;
+    }
+
     public String getUid() {
         return uid;
     }
