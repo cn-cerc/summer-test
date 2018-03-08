@@ -1,4 +1,4 @@
-package cn.cerc.sample.forms.TranAB;
+package cn.cerc.sample.forms.TranBC;
 
 import cn.cerc.jbean.client.LocalService;
 import cn.cerc.jbean.form.IPage;
@@ -7,17 +7,17 @@ import cn.cerc.jmis.form.AbstractForm;
 import cn.cerc.jmis.page.JspPage;
 import cn.cerc.jmis.page.RedirectPage;
 
-public class FrmTranABbAppend extends AbstractForm {
+public class FrmTranBCbAppend extends AbstractForm {
     @Override
     public IPage execute() throws Exception {
-        JspPage jspPage = new JspPage(this, "TranAB/FrmTranABbAppend.jsp");
+        JspPage jspPage = new JspPage(this, "TranBC/FrmTranBCbAppend.jsp");
         String tbno = this.getRequest().getParameter("tbno");
         jspPage.add("tbno", tbno);
         return jspPage;
     }
 
     public IPage TranBPost() {
-        JspPage jspPage = new JspPage(this, "TranAB/FrmTranABbAppend.jsp");
+        JspPage jspPage = new JspPage(this, "TranBC/FrmTranBCbAppend.jsp");
 
         String submit = this.getRequest().getParameter("submit");
         if (submit != null) {
@@ -34,7 +34,7 @@ public class FrmTranABbAppend extends AbstractForm {
                 jspPage.add("msg", svr.getMessage());
                 return jspPage;
             }
-            return new RedirectPage(this, "FrmTranABbInfo?tbno=" + tbno);
+            return new RedirectPage(this, "FrmTranBCbInfo?tbno=" + tbno);
 
         }
         return jspPage;

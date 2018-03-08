@@ -4,24 +4,27 @@ import cn.cerc.jbean.core.CustomService;
 import cn.cerc.jdb.core.Record;
 import cn.cerc.jdb.core.TDateTime;
 import cn.cerc.jdb.mysql.SqlQuery;
+import cn.cerc.jdb.other.utils;
 import cn.cerc.sample.common.BaseConfig;
 
-public class SvrTranABInfo extends CustomService {
+public class SvrTranInfo extends CustomService {
     public boolean sch() {
+        Record headIn = getDataIn().getHead();
+        String tb = headIn.getString("TB_");
         SqlQuery ds = new SqlQuery(this);
         ds.add("SELECT *FROM %s ", BaseConfig.tranh);
-        ds.add("where CorpNo_='%s' and TB_='AB'", BaseConfig.CorpNo);
+        ds.add("where CorpNo_='%s' and TB_='%s'", BaseConfig.CorpNo, tb);
         ds.open();
         getDataOut().appendDataSet(ds);
         return true;
     }
 
-    public boolean TranABHsch() {
+    public boolean TranHsch() {
         Record headIn = getDataIn().getHead();
         String tbno = headIn.getString("TBNo_");
         SqlQuery ds = new SqlQuery(this);
         ds.add("SELECT *FROM %s ", BaseConfig.tranh);
-        ds.add("where CorpNo_='%s' and TB_='AB' and TBNo_='%s' ", BaseConfig.CorpNo, tbno);
+        ds.add("where CorpNo_='%s' and TBNo_='%s' ", BaseConfig.CorpNo, tbno);
         ds.open();
         getDataOut().appendDataSet(ds);
         return true;
@@ -40,9 +43,10 @@ public class SvrTranABInfo extends CustomService {
         ds.append();
         ds.setField("CorpNo_", BaseConfig.CorpNo);
         ds.setField("TBNo_", headIn.getString("TBNo_"));
-        ds.setField("TB_", "AB");
+        ds.setField("TB_", utils.copy(tbno, 1, 2));
         ds.setField("TBDate_", headIn.getString("TBDate_"));
         ds.setField("SupName_", headIn.getString("SupName_"));
+        ds.setField("CusName_", headIn.getString("CusName_"));
         ds.setField("AppUser_", headIn.getString("AppUser_"));
         ds.setField("AppDate_", TDateTime.Now().getDate());
         ds.post();
@@ -52,7 +56,6 @@ public class SvrTranABInfo extends CustomService {
     public boolean TranHmodify() {
         Record headIn = getDataIn().getHead();
         String tbno = headIn.getString("TBNo_");
-        String supname = headIn.getString("SupName_");
         SqlQuery ds = new SqlQuery(this);
         ds.add("SELECT * FROM %s", BaseConfig.tranh);
         ds.add("WHERE CorpNo_='%s' and TBNo_='%s' ", BaseConfig.CorpNo, tbno);
@@ -61,7 +64,8 @@ public class SvrTranABInfo extends CustomService {
             throw new RuntimeException("此单号不存在，无法修改！");
         }
         ds.edit();
-        ds.setField("SupName_", supname);
+        ds.setField("SupName_", headIn.getString("SupName_"));
+        ds.setField("CusName_", headIn.getString("CusName_"));
         ds.post();
         return true;
     }
@@ -112,12 +116,17 @@ public class SvrTranABInfo extends CustomService {
         dsTran.post();
         double stock = ds.getDouble("Stock_");
         ds.edit();
-        ds.setField("Stock_", stock + num);
+        if (tbno.startsWith("AB")) {
+            ds.setField("Stock_", stock + num);
+        } else if (tbno.startsWith("BC")) {
+            ds.setField("Stock_", stock - num);
+        }
+
         ds.post();
         return true;
     }
 
-    public boolean TranABBsch() {
+    public boolean TranBsch() {
         Record headIn = getDataIn().getHead();
         String tbno = headIn.getString("TBNo_");
         SqlQuery ds = new SqlQuery(this);
@@ -128,7 +137,7 @@ public class SvrTranABInfo extends CustomService {
         return true;
     }
 
-    public boolean TranABItsch() {
+    public boolean TranItsch() {
         Record headIn = getDataIn().getHead();
         String tbno = headIn.getString("TBNo_");
         String it = headIn.getString("It_");
@@ -164,12 +173,14 @@ public class SvrTranABInfo extends CustomService {
         dsproduct.open();
         if (!dsproduct.eof()) {
             double stock = dsproduct.getDouble("Stock_");
-
-            // if ( ((oldnum - num)-stock)<0 ) {
-            // throw new RuntimeException("库存不可为负数，无法修改！");
-            // }
             dsproduct.edit();
-            dsproduct.setField("Stock_", stock + (num - oldnum));
+
+            if (tbno.startsWith("AB")) {
+                dsproduct.setField("Stock_", stock + (num - oldnum));
+            } else if (tbno.startsWith("BC")) {
+                dsproduct.setField("Stock_", stock - (num - oldnum));
+            }
+
             dsproduct.post();
         }
         return true;
@@ -180,14 +191,16 @@ public class SvrTranABInfo extends CustomService {
         String tbno = headIn.getString("TBNo_");
         String it = headIn.getString("It_");
         String code = headIn.getString("Code_");
-        Double num = headIn.getDouble("Num_");
+
         SqlQuery ds = new SqlQuery(this);
         ds.add("SELECT * FROM %s", BaseConfig.tranb);
         ds.add("WHERE CorpNo_='%s' and TBNo_='%s' and It_='%s' ", BaseConfig.CorpNo, tbno, it);
         ds.open();
-        if (!ds.eof()) {
-            ds.delete();
+        if (ds.eof()) {
+            throw new RuntimeException("此单身资料不存在，无法删除！");
         }
+        Double num = ds.getDouble("Num_");
+        ds.delete();
 
         SqlQuery dsproduct = new SqlQuery(this);
         dsproduct.add("SELECT * FROM %s", BaseConfig.product);
@@ -196,7 +209,11 @@ public class SvrTranABInfo extends CustomService {
         if (!dsproduct.eof()) {
             double stock = dsproduct.getDouble("Stock_");
             dsproduct.edit();
-            dsproduct.setField("Stock_", stock - num);
+            if (tbno.startsWith("AB")) {
+                dsproduct.setField("Stock_", stock - num);
+            } else if (tbno.startsWith("BC")) {
+                dsproduct.setField("Stock_", stock + num);
+            }
             dsproduct.post();
         }
         return true;

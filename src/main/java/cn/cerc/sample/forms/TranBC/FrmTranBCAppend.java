@@ -1,4 +1,4 @@
-package cn.cerc.sample.forms.TranAB;
+package cn.cerc.sample.forms.TranBC;
 
 import cn.cerc.jbean.client.LocalService;
 import cn.cerc.jbean.form.IPage;
@@ -8,12 +8,12 @@ import cn.cerc.jmis.form.AbstractForm;
 import cn.cerc.jmis.page.JspPage;
 import cn.cerc.jmis.page.RedirectPage;
 
-public class FrmTranABAppend extends AbstractForm {
+public class FrmTranBCAppend extends AbstractForm {
     @Override
     public IPage execute() throws Exception {
-        JspPage jspPage = new JspPage(this, "TranAB/FrmTranABAppend.jsp");
+        JspPage jspPage = new JspPage(this, "TranBC/FrmTranBCAppend.jsp");
         String tbno = this.getRequest().getParameter("TBNo");
-        String supname = this.getRequest().getParameter("SupName");
+        String cusname = this.getRequest().getParameter("CusName");
         String tbdate = this.getRequest().getParameter("TBDate");
         String appuser = this.getRequest().getParameter("AppUser");
         jspPage.add("TBDate", TDateTime.Now().getDate());
@@ -24,15 +24,14 @@ public class FrmTranABAppend extends AbstractForm {
             svr.setService("SvrTranInfo.TranHappend");
             Record headIn = svr.getDataIn().getHead();
             headIn.setField("TBNo_", tbno);
-            headIn.setField("SupName_", supname);
-            headIn.setField("CusName_", "");
+            headIn.setField("CusName_", cusname);
             headIn.setField("TBDate_", tbdate);
             headIn.setField("AppUser_", appuser);
             if (!svr.exec()) {
                 jspPage.add("msg", svr.getMessage());
                 return jspPage;
             }
-            return new RedirectPage(this, "FrmTranABbInfo?tbno=" + tbno);
+            return new RedirectPage(this, "FrmTranBCbInfo?tbno=" + tbno);
         }
 
         return jspPage;

@@ -1,4 +1,4 @@
-package cn.cerc.sample.forms.TranAB;
+package cn.cerc.sample.forms.TranBC;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,15 +9,16 @@ import cn.cerc.jdb.core.DataSet;
 import cn.cerc.jdb.core.Record;
 import cn.cerc.jmis.form.AbstractForm;
 import cn.cerc.jmis.page.JspPage;
+import cn.cerc.sample.forms.TranAB.TranABInfo_Record;
 
-public class FrmTranABInfo extends AbstractForm {
+public class FrmTranBCInfo extends AbstractForm {
     @Override
     public IPage execute() throws Exception {
-        JspPage jspPage = new JspPage(this, "TranAB/FrmTranABInfo.jsp");
+        JspPage jspPage = new JspPage(this, "TranBC/FrmTranBCInfo.jsp");
         LocalService svr = new LocalService(this);
         svr.setService("SvrTranInfo.sch");
         Record headIn = svr.getDataIn().getHead();
-        headIn.setField("TB_", "AB");
+        headIn.setField("TB_", "BC");
         if (!svr.exec()) {
             jspPage.setMessage(svr.getMessage());
             return jspPage;
@@ -29,7 +30,7 @@ public class FrmTranABInfo extends AbstractForm {
             item.setTbno(ds.getString("TBNo_"));
             item.setTb(ds.getString("TB_"));
             item.setTbdate(ds.getString("TBDate_"));
-            item.setSupname(ds.getString("SupName_"));
+            item.setCusname(ds.getString("CusName_"));
             item.setAppuser(ds.getString("AppUser_"));
             item.setAppdate(ds.getString("AppDate_"));
             items.add(item);

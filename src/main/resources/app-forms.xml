@@ -35,4 +35,16 @@
     </bean>
     <bean id="FrmTranABbModify" class="cn.cerc.sample.forms.TranAB.FrmTranABbModify" scope="prototype">
     </bean>
+    <bean id="FrmTranBCInfo" class="cn.cerc.sample.forms.TranBC.FrmTranBCInfo" scope="prototype">
+    </bean>
+    <bean id="FrmTranBCAppend" class="cn.cerc.sample.forms.TranBC.FrmTranBCAppend" scope="prototype">
+    </bean>    
+    <bean id="FrmTranBCbInfo" class="cn.cerc.sample.forms.TranBC.FrmTranBCbInfo" scope="prototype">
+    </bean> 
+    <bean id="FrmTranBCbAppend" class="cn.cerc.sample.forms.TranBC.FrmTranBCbAppend" scope="prototype">
+    </bean>   
+    <bean id="FrmTranBCbModify" class="cn.cerc.sample.forms.TranBC.FrmTranBCbModify" scope="prototype">
+    </bean>      
+      
+    
 </beans>

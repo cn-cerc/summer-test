@@ -14,7 +14,7 @@
     <a href="FrmTranABInfo">进货单</a>
   </div>  
   <div>
-    <a href="#">销售单</a>
+    <a href="FrmTranBCInfo">销售单</a>
   </div>
   <div>
     <a href="#">盘点单</a>

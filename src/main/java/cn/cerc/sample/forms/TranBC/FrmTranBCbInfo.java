@@ -1,4 +1,4 @@
-package cn.cerc.sample.forms.TranAB;
+package cn.cerc.sample.forms.TranBC;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,11 +10,12 @@ import cn.cerc.jdb.core.Record;
 import cn.cerc.jmis.form.AbstractForm;
 import cn.cerc.jmis.page.JspPage;
 import cn.cerc.jmis.page.RedirectPage;
+import cn.cerc.sample.forms.TranAB.TranABInfo_Record;
 
-public class FrmTranABbInfo extends AbstractForm {
+public class FrmTranBCbInfo extends AbstractForm {
     @Override
     public IPage execute() throws Exception {
-        JspPage jspPage = new JspPage(this, "TranAB/FrmTranABbInfo.jsp");
+        JspPage jspPage = new JspPage(this, "TranBC/FrmTranBCbInfo.jsp");
         String tbno = this.getRequest().getParameter("tbno");
         LocalService svr = new LocalService(this);
         svr.setService("SvrTranInfo.TranHsch");
@@ -28,7 +29,7 @@ public class FrmTranABbInfo extends AbstractForm {
         if (!ds.eof()) {
             TranABInfo_Record item = new TranABInfo_Record();
             item.setTbno(ds.getString("TBNo_"));
-            item.setSupname(ds.getString("SupName_"));
+            item.setCusname(ds.getString("CusName_"));
             item.setTbdate(ds.getString("TBDate_"));
             item.setAppuser(ds.getString("AppUser_"));
             jspPage.add("item", item);
@@ -67,20 +68,19 @@ public class FrmTranABbInfo extends AbstractForm {
         String submit = this.getRequest().getParameter("submit");
         if (submit != null) {
 
-            String supname = this.getRequest().getParameter("SupName");
+            String cusname = this.getRequest().getParameter("CusName");
             LocalService svr = new LocalService(this);
             svr.setService("SvrTranInfo.TranHmodify");
             Record headIn = svr.getDataIn().getHead();
             headIn.setField("TBNo_", tbno);
-            headIn.setField("SupName_", supname);
-            headIn.setField("CusName_", "");
+            headIn.setField("CusName_", cusname);
             if (!svr.exec()) {
                 jspPage.add("msg", svr.getMessage());
-                return new RedirectPage(this, "FrmTranABbInfo?tbno=" + tbno);
+                return new RedirectPage(this, "FrmTranBCbInfo?tbno=" + tbno);
             }
 
         }
-        return new RedirectPage(this, "FrmTranABbInfo?tbno=" + tbno);
+        return new RedirectPage(this, "FrmTranBCbInfo?tbno=" + tbno);
 
     }
 

@@ -1,4 +1,4 @@
-package cn.cerc.sample.forms.TranAB;
+package cn.cerc.sample.forms.TranBC;
 
 import cn.cerc.jbean.client.LocalService;
 import cn.cerc.jbean.form.IPage;
@@ -7,11 +7,12 @@ import cn.cerc.jdb.core.Record;
 import cn.cerc.jmis.form.AbstractForm;
 import cn.cerc.jmis.page.JspPage;
 import cn.cerc.jmis.page.RedirectPage;
+import cn.cerc.sample.forms.TranAB.TranABInfo_Record;
 
-public class FrmTranABbModify extends AbstractForm {
+public class FrmTranBCbModify extends AbstractForm {
     @Override
     public IPage execute() throws Exception {
-        JspPage jspPage = new JspPage(this, "TranAB/FrmTranABbModify.jsp");
+        JspPage jspPage = new JspPage(this, "TranBC/FrmTranBCbModify.jsp");
         String tbno = this.getRequest().getParameter("tbno");
         String it = this.getRequest().getParameter("it");
         jspPage.add("tbno", tbno);
@@ -39,7 +40,7 @@ public class FrmTranABbModify extends AbstractForm {
     }
 
     public IPage TranBPost() {
-        JspPage jspPage = new JspPage(this, "TranAB/FrmTranABbModify.jsp");
+        JspPage jspPage = new JspPage(this, "TranBC/FrmTranBCbModify.jsp");
         String tbno = this.getRequest().getParameter("tbno");
         String it = this.getRequest().getParameter("It");
         String num = this.getRequest().getParameter("Num");
@@ -57,7 +58,7 @@ public class FrmTranABbModify extends AbstractForm {
                 jspPage.add("msg", svr.getMessage());
                 return jspPage;
             }
-            return new RedirectPage(this, "FrmTranABbInfo?tbno=" + tbno);
+            return new RedirectPage(this, "FrmTranBCbInfo?tbno=" + tbno);
 
         }
         String delete = this.getRequest().getParameter("delete");
@@ -73,7 +74,7 @@ public class FrmTranABbModify extends AbstractForm {
                 jspPage.add("msg", svr.getMessage());
                 return jspPage;
             }
-            return new RedirectPage(this, "FrmTranABbInfo?tbno=" + tbno);
+            return new RedirectPage(this, "FrmTranBCbInfo?tbno=" + tbno);
 
         }
         return jspPage;

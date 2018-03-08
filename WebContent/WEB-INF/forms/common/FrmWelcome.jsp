@@ -55,7 +55,7 @@
     </div>
     <div style="text-align: center; padding-top: 2em;">
         <div>
-            <a href="FrmInvoicing">进货存测试</a>
+            <a href="FrmInvoicing">进销存测试</a>
         </div>
     </div>    
     <div style="text-align: center; padding-top: 2em;">

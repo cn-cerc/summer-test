@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -10,8 +9,8 @@
 <body>
   <div align="center">
     <div>
-      <h1>增加进货单单身</h1>
-      <form action="FrmTranABbAppend.TranBPost" method="Post">
+      <h1>增加销售单单身</h1>
+      <form action="FrmTranBCbAppend.TranBPost" method="Post">
             <input type="hidden" name="tbno" value="${tbno}"/>
          <p>商品编号: <input type="text" name="Code" /></p>
          <p>商品数量: <input type="text" name="Num" /></p>
@@ -21,7 +20,7 @@
     </div>
   </div>
   <div align="left">
-    <a href="FrmTranABbInfo?tbno=${item.tbno}">返回</a>
+    <a href="FrmTranBCbInfo?tbno=${item.tbno}">返回</a>
   </div>
 </body>
 </html>

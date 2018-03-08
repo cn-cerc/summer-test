@@ -6,6 +6,8 @@ public class TranABInfo_Record {
     private String tb;
     private String tbdate;
     private String supname;
+    private String cusname;
+
     private String appuser;
     private String appdate;
 
@@ -106,6 +108,14 @@ public class TranABInfo_Record {
 
     public String getAppuser() {
         return appuser;
+    }
+
+    public String getCusname() {
+        return cusname;
+    }
+
+    public void setCusname(String cusname) {
+        this.cusname = cusname;
     }
 
     public void setAppuser(String appuser) {
