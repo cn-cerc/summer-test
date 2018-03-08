@@ -21,7 +21,7 @@
 				<a href="FrmSalehList">销售单</a>
 			</div>
 			<div>
-				<a href="FrmCkeckList">盘点单</a>
+				<a href="FrmCheckhList">盘点单</a>
 			</div>
 			<div>
 				<a href="">进出库查询</a>

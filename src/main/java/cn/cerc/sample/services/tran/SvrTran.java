@@ -201,19 +201,18 @@ public class SvrTran extends CustomService {
 		dsB.add("and TBNo_ = '%s'", tbNo);
 		dsB.open();
 
-		dsB.edit();
-		dsB.setField("Num_", num);
-		dsB.post();
-
 		SqlQuery dsPart = new SqlQuery(this);
 		dsPart.add("select * from %s", BaseConfig.Product);
 		dsPart.add("where CorpNo_ = '%s'", BaseConfig.CorpNo);
 		dsPart.add("and Code_ ='%s'", code);
 		dsPart.open();
 		dsPart.edit();
-		dsPart.setField("Stock_", num);
+		dsPart.setField("Stock_", dsPart.getDouble("Stock_") - dsB.getDouble("Num_") + num);
 		dsPart.post();
 
+		dsB.edit();
+		dsB.setField("Num_", num);
+		dsB.post();
 		return true;
 	}
 

@@ -8,16 +8,16 @@
 </head>
 <body>
 	<div>
-		<form action="FrmSalehAppend" method="post">
-			单号<input type="text" name="tbNo" value="" /> <br />
-			日期 <input type="text" name="tbDate" value="${date}" /> <br /> 客户 <input
-				type="text" name="cusName" value="" /> <br />
-			建档人员 <input type="text" name="appUser" value="" />
+		<form action="FrmCheckhAppend" method="post">
+			单号<input type="text" name="tbNo" value="${ tbNo}" /> <br />
+			日期 <input type="text" name="tbDate" value="${date}" /> <br /> 部门 <input
+				type="text" name="deptName" value="${deptName }" /> <br />
+			建档人员 <input type="text" name="appUser" value="${appUser }" />
 			<br /> <input type="submit" value="保存" />
 		</form>
 	</div>
 	<div style="padding: 0.5em;">
-		<a href="FrmSalehList">返回</a>
+		<a href="FrmCheckhList">返回</a>
 	</div>
 	<div>${message}</div>
 </body>

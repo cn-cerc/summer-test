@@ -14,11 +14,11 @@
 </head>
 <body>
 	<div>
-		<form action="FrmSalebAppend" method="post">
+		<form action="FrmCheckbAppend" method="post">
 			商品编号<select name="code" id="ProductCode">
 				<option  >----请选择----</option>
-				<c:forEach items="${items}" var="item">
-				<option value="${item.code}">${item.code}--${item.desc}</option>
+				<c:forEach items="${items.records}" var="item">
+				<option value="${item.items.Code_}">${item.items.Code_}--${item.items.Code}</option>
 				</c:forEach>
 				
 			</select> <br /> 数量<input type="text" name="stock" value="" /> <br />
@@ -27,7 +27,7 @@
 	</div>
 	<div>${message}</div>
 	<div style="padding: 0.5em;">
-		<a href="FrmSaleList?tbNo=${tbNo}">返回</a>
+		<a href="FrmCheckList?tbNo=${tbNo}">返回</a>
 	</div>
 </body>
 </html>

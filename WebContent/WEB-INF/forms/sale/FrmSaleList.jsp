@@ -24,7 +24,7 @@
 				<td>品名</td>
 				<td>规格</td>
 				<td>单位</td>
-				<td>库存</td>
+				<td>数量</td>
 				<td>操作</td>
 			</tr>
 				<tr>
@@ -46,7 +46,7 @@
 		<a href="FrmSalebAdd?tbNo=${saleh.tbNo}">新增</a>
 	</div>
 	<div style="padding: 0.5em;">
-		<a href="FrmSalehAdd?tbNo=${saleh.tbNo}">返回</a>
+		<a href="FrmSalehList">返回</a>
 	</div>
 	<div>${message}</div>
 </body>

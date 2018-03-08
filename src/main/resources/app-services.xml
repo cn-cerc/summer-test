@@ -95,7 +95,15 @@
       <bean id="SvrSale.salehModify" class="cn.cerc.sample.services.sale.SvrSale" scope="prototype">
         <property name="funcCode" value="salehModify" />
     </bean>
-     <bean id="SvrSale.findSalehByThno" class="cn.cerc.sample.services.sale.SvrSale" scope="prototype">
-        <property name="funcCode" value="findSalehByThno" />
+      <bean id="SvrCheck.findCheckh" class="cn.cerc.sample.services.check.SvrCheck" scope="prototype">
+        <property name="funcCode" value="findCheckh" />
     </bean>
+      <bean id="SvrCheck.saveCheckh" class="cn.cerc.sample.services.check.SvrCheck" scope="prototype">
+        <property name="funcCode" value="saveCheckh" />
+    </bean>
+      <bean id="SvrCheck.findCheck" class="cn.cerc.sample.services.check.SvrCheck" scope="prototype">
+        <property name="funcCode" value="findCheck" />
+    </bean>
+    
+    
 </beans>

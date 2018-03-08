@@ -24,7 +24,7 @@
 				<td>品名</td>
 				<td>规格</td>
 				<td>单位</td>
-				<td>库存</td>
+				<td>数量</td>
 				<td>操作</td>
 			</tr>
 				<tr>

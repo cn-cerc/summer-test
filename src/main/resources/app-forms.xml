@@ -102,4 +102,36 @@
 	<bean id="FrmSalehAppend" class="cn.cerc.sample.forms.sale.FrmSalehAppend"
 		scope="prototype">
 	</bean>
+	
+	<bean id="FrmCheckhAppend" class="cn.cerc.sample.forms.check.FrmCheckhAppend"
+		scope="prototype">
+	</bean>
+	
+		<bean id="FrmCheckhList" class="cn.cerc.sample.forms.check.FrmCheckhList"
+		scope="prototype">
+	</bean>
+	<bean id="FrmCheckhModify" class="cn.cerc.sample.forms.check.FrmCheckhModify"
+		scope="prototype">
+	</bean>
+	<bean id="FrmCheckList" class="cn.cerc.sample.forms.check.FrmCheckList"
+		scope="prototype">
+	</bean>
+	<bean id="FrmCheckbAdd" class="cn.cerc.sample.forms.check.FrmCheckbAdd"
+		scope="prototype">
+	</bean>
+	<bean id="FrmCheckbAppend" class="cn.cerc.sample.forms.check.FrmCheckbAppend"
+		scope="prototype">
+	</bean>
+	<bean id="FrmCheckbDelete" class="cn.cerc.sample.forms.check.FrmCheckbDelete"
+		scope="prototype">
+	</bean>
+	<bean id="FrmCheckbModify" class="cn.cerc.sample.forms.check.FrmCheckbModify"
+		scope="prototype">
+	</bean>
+	<bean id="FrmCheckbUpdate" class="cn.cerc.sample.forms.check.FrmCheckbUpdate"
+		scope="prototype">
+	</bean>
+	<bean id="FrmCheckhAdd" class="cn.cerc.sample.forms.check.FrmCheckhAdd"
+		scope="prototype">
+	</bean>
 </beans>

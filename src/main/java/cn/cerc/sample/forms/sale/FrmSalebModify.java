@@ -18,7 +18,7 @@ public class FrmSalebModify extends AbstractForm {
 		svr.getDataIn().getHead().setField("code", code);
 
 		if (!svr.exec()) {
-			jspPage.setMessage(svr.getMessage());
+			jspPage.add("message", svr.getMessage());
 			return jspPage;
 		}
 		DataSet dataOut = svr.getDataOut();

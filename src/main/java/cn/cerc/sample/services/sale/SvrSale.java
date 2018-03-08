@@ -152,15 +152,16 @@ public class SvrSale extends CustomService {
 		dsPart.open();
 
 		if (dsPart.getDouble("Stock_") - num > 0) {
-			dsPart.edit();
-			dsPart.setField("Stock_", dsPart.getDouble("Stock_") - num);
-			dsPart.post();
 			SqlQuery dsB = new SqlQuery(this);
 			dsB.add("select * from %s", BaseConfig.Tranb);
 			dsB.add("where CorpNo_ = %s", BaseConfig.CorpNo);
 			dsB.add("and Code_ = '%s'", code);
 			dsB.add("and TBNo_ = '%s'", tbNo);
 			dsB.open();
+			dsPart.edit();
+			dsPart.setField("Stock_", dsPart.getDouble("Stock_") - num + dsB.getDouble("Num_"));
+			dsPart.post();
+
 			dsB.edit();
 			dsB.setField("Num_", num);
 			dsB.post();
@@ -211,14 +212,4 @@ public class SvrSale extends CustomService {
 		return true;
 	}
 
-	public boolean findSalehByThno() {
-		String tbNo = getDataIn().getHead().getString("tbNo");
-		SqlQuery ds2 = new SqlQuery(this);
-		ds2.add("select * from %s", BaseConfig.Tranh);
-		ds2.add("where CorpNo_ = %s", BaseConfig.CorpNo);
-		ds2.add("and TBNo_ = '%s'", tbNo);
-		ds2.open();
-		getDataOut().getHead().copyValues(ds2.getCurrent());
-		return true;
-	}
 }
