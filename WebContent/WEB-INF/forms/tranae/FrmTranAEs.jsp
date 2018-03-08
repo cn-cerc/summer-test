@@ -5,16 +5,15 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>进货单单据查询FrmTranABS</title>
+<title>Insert title here</title>
 </head>
 <body>
 <div align="center">
-<h2>进货单单据查询</h2>
+<h2>盘点单单据查询</h2>
 <table align="center" width="100%">
     <tr>
         <th>单据编号</th>
         <th>单据日期</th>
-        <th>厂商名称</th>
         <th>部门名称</th>
         <th>建档人员</th>
         <th>建档日期</th>
@@ -23,14 +22,13 @@
     <c:if test="${not empty items}">
     <c:forEach items="${items}" var="item">
     <tr>
-        <th><a href="FrmTranAB?tbno=${item.tbno}">${item.tbno}</a></th>
+        <th><a href="FrmTranAEInfo?tbno=${item.tbno}">${item.tbno}</a></th>
         <th>${item.tbDate}</th>
-        <th>${item.supName}</th>
         <th>${item.deptName}</th>
         <th>${item.appUser}</th>
         <th>${item.appDate}</th>
         <th>
-            <a href="FrmTranABS.delete?tbno=${item.tbno}">删除</a>
+            <a href="FrmTranAEs.delete?tbno=${item.tbno}">删除</a>
         </th>
     </tr>
     </c:forEach>
@@ -39,7 +37,7 @@
 </div>
 <div>${msg}</div>
 <div align="left">
-    <a href="FrmTranHAB">新增</a>
+    <a href="FrmTranAEh">新增</a>
     <a href="FrmInvoicing">返回</a>
 </div>
 </body>

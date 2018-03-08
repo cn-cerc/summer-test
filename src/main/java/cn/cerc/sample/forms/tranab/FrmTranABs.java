@@ -1,4 +1,4 @@
-package cn.cerc.sample.forms.tran;
+package cn.cerc.sample.forms.tranab;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,18 +6,18 @@ import java.util.List;
 import cn.cerc.jbean.client.LocalService;
 import cn.cerc.jbean.form.IPage;
 import cn.cerc.jdb.core.DataSet;
-import cn.cerc.jdb.core.Record;
 import cn.cerc.jmis.form.AbstractForm;
 import cn.cerc.jmis.page.JspPage;
 import cn.cerc.jmis.page.RedirectPage;
+import cn.cerc.sample.forms.tran.TranH_Record;
 
-public class FrmTranABS extends AbstractForm {
+public class FrmTranABs extends AbstractForm {
     @Override
     public IPage execute() {
-        JspPage jspPage = new JspPage(this, "tran/FrmTranABS.jsp");
+        JspPage jspPage = new JspPage(this, "tranab/FrmTranABs.jsp");
         // 查询AB单单头数据
         LocalService svr = new LocalService(this);
-        svr.setService("SvrTranAB.tranHsearch");
+        svr.setService("SvrTranAB.searchTranH");
         if (!svr.exec()) {
             jspPage.setMessage(svr.getMessage());
             return jspPage;
@@ -41,19 +41,18 @@ public class FrmTranABS extends AbstractForm {
     }
 
     public IPage delete() {
-        JspPage jspPage = new JspPage(this, "tran/FrmTranABS.jsp");
-        LocalService svr = new LocalService(this);
-        svr.setService("SvrTranAB.delete");
-        String tbno = this.getRequest().getParameter("tbno");
-        Record headIn = svr.getDataIn().getHead();
-        headIn.setField("TBNo_", tbno);
-
-        if (!svr.exec()) {
-            jspPage.setMessage(svr.getMessage());
-            return jspPage;
-        }
-        // return jspPage;
-        return new RedirectPage(this, "FrmTranABS");
+        JspPage jspPage = new JspPage(this, "tranab/FrmTranABs.jsp");
+        /*
+         * LocalService svr = new LocalService(this);
+         * svr.setService("SvrTranAB.delete"); String tbno =
+         * this.getRequest().getParameter("tbno"); Record headIn =
+         * svr.getDataIn().getHead(); headIn.setField("TBNo_", tbno);
+         * 
+         * if (!svr.exec()) { jspPage.setMessage(svr.getMessage()); return jspPage; } //
+         * return jspPage;
+         * 
+         */
+        return new RedirectPage(this, "FrmTranABs");
     }
 
     @Override

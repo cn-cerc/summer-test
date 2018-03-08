@@ -9,6 +9,7 @@ public class TranB_Record {
     private String spec;
     private String unit;
     private double num;
+    private double stock;
 
     public String getUid() {
         return uid;
@@ -74,4 +75,11 @@ public class TranB_Record {
         this.num = num;
     }
 
+    public double getStock() {
+        return stock;
+    }
+
+    public void setStock(double stock) {
+        this.stock = stock;
+    }
 }

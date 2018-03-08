@@ -11,16 +11,16 @@
     <a href="FrmPartInfo">商品资料维护</a>
 </div>
 <div>
-    <a href="FrmTranABS">进货单</a>
+    <a href="FrmTranABs">进货单</a>
 </div>
 <div>
-    <a href="#">销售单</a>
+    <a href="FrmTranBCs">销售单</a>
 </div>
 <div>
-    <a href="#">盘点单</a>
+    <a href="FrmTranAEs">盘点单</a>
 </div>
 <div>
-    <a href="#">进出库查询</a>
+    <a href="FrmPartInOut">进出库查询</a>
 </div>
 <div>
     <a href="FrmWelcome">返回</a>

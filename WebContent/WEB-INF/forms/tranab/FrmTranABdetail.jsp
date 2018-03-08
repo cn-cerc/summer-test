@@ -11,7 +11,7 @@
 <div align="center">
     <div>
         <h1>单身详细单笔数据</h1>
-        <form action="FrmTranABdetail" method="post">
+        <form action="FrmTranABdetail.modify" method="post">
             <p>单据编号：<input type="text" name="TBNo" value="${item.tbno}"  readonly="readonly"></input></p>
             <p>单身序号：<input type="text" name="It" value="${item.it}"  readonly="readonly"></input></p>
             <p>商品编号：<input type="text" name="Code" value="${item.code}"  readonly="readonly"></input></p>
@@ -21,7 +21,7 @@
             <p>进货数量：<input type="text" name="Num" value="${item.num}" ></input></p>
             <input type="submit" name="delete" value="删除"></input>
             <input type="submit" name="save" value="保存"></input>
-            <p><a href="FrmTranAB?tbno=${item.tbno}">返回</a></p>
+            <p><a href="FrmTranABInfo?tbno=${item.tbno}">返回</a></p>
         </form>
     </div>
 </div>

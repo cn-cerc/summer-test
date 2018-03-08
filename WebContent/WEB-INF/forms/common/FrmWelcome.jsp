@@ -37,13 +37,6 @@
 </script>
 </head>
 <body style="font-size: 2em;">
-    <form action="FrmWelcome.onAppend" method="post">
-        <input name="aaa" value=""></input>
-        <input name="aaa2" value=""></input>
-        <input name="aaa3" value=""></input>
-        <button name="submit" value="append">append</button>
-        <button name="submit" value="delete">delete</button>
-    </form>
     <div style="text-align: center; padding-top: 2em;">
         <div>欢迎使用summer框架！</div>
         <div style="text-align: center; padding-top: 2em;">

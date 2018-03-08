@@ -14,6 +14,7 @@
     <bean id="FrmClientTest" class="cn.cerc.sample.forms.FrmClientTest" scope="prototype">
     </bean>
     <bean id="FrmScanProduct" class="cn.cerc.sample.forms.FrmScanProduct" scope="prototype">
+    
     </bean>
     <bean id="FrmInvoicing" class="cn.cerc.sample.forms.FrmInvoicing" scope="prototype">
     </bean>
@@ -23,14 +24,40 @@
     </bean>
     <bean id="FrmPartModify" class="cn.cerc.sample.forms.part.FrmPartModify" scope="prototype">
     </bean>
-    <bean id="FrmTranABS" class="cn.cerc.sample.forms.tran.FrmTranABS" scope="prototype">
+    <bean id="FrmPartInOut" class="cn.cerc.sample.forms.part.FrmPartInOut" scope="prototype">
     </bean>
-    <bean id="FrmTranAB" class="cn.cerc.sample.forms.tran.FrmTranAB" scope="prototype">
+    
+    
+    <bean id="FrmTranABs" class="cn.cerc.sample.forms.tranab.FrmTranABs" scope="prototype">
     </bean>
-    <bean id="FrmTranBAB" class="cn.cerc.sample.forms.tran.FrmTranBAB" scope="prototype">
+    <bean id="FrmTranABInfo" class="cn.cerc.sample.forms.tranab.FrmTranABInfo" scope="prototype">
     </bean>
-    <bean id="FrmTranHAB" class="cn.cerc.sample.forms.tran.FrmTranHAB" scope="prototype">
+    <bean id="FrmTranABb" class="cn.cerc.sample.forms.tranab.FrmTranABb" scope="prototype">
     </bean>
-    <bean id="FrmTranABdetail" class="cn.cerc.sample.forms.tran.FrmTranABdetail" scope="prototype">
+    <bean id="FrmTranABh" class="cn.cerc.sample.forms.tranab.FrmTranABh" scope="prototype">
+    </bean>
+    <bean id="FrmTranABdetail" class="cn.cerc.sample.forms.tranab.FrmTranABdetail" scope="prototype">
+    </bean>
+    
+    <bean id="FrmTranBCs" class="cn.cerc.sample.forms.tranbc.FrmTranBCs" scope="prototype">
+    </bean>
+    <bean id="FrmTranBCInfo" class="cn.cerc.sample.forms.tranbc.FrmTranBCInfo" scope="prototype">
+    </bean>
+    <bean id="FrmTranBCb" class="cn.cerc.sample.forms.tranbc.FrmTranBCb" scope="prototype">
+    </bean>
+    <bean id="FrmTranBCh" class="cn.cerc.sample.forms.tranbc.FrmTranBCh" scope="prototype">
+    </bean>
+    <bean id="FrmTranBCdetail" class="cn.cerc.sample.forms.tranbc.FrmTranBCdetail" scope="prototype">
+    </bean>
+    
+    <bean id="FrmTranAEs" class="cn.cerc.sample.forms.tranae.FrmTranAEs" scope="prototype">
+    </bean>
+    <bean id="FrmTranAEInfo" class="cn.cerc.sample.forms.tranae.FrmTranAEInfo" scope="prototype">
+    </bean>
+    <bean id="FrmTranAEb" class="cn.cerc.sample.forms.tranae.FrmTranAEb" scope="prototype">
+    </bean>
+    <bean id="FrmTranAEh" class="cn.cerc.sample.forms.tranae.FrmTranAEh" scope="prototype">
+    </bean>
+    <bean id="FrmTranAEdetail" class="cn.cerc.sample.forms.tranae.FrmTranAEdetail" scope="prototype">
     </bean>
 </beans>

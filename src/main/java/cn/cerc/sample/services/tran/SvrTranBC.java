@@ -7,12 +7,12 @@ import cn.cerc.jdb.mysql.SqlQuery;
 import cn.cerc.jdb.mysql.Transaction;
 import cn.cerc.sample.common.BaseConfig;
 
-public class SvrTranAB extends CustomService {
+public class SvrTranBC extends CustomService {
 
     public boolean searchTranH() {
         SqlQuery ds = new SqlQuery(this);
         ds.add("select * from %s ", BaseConfig.TranH);
-        ds.add("Where CorpNo_='%s' and TB_='AB' ", BaseConfig.CorpNo);
+        ds.add("Where CorpNo_='%s' and TB_='BC' ", BaseConfig.CorpNo);
         ds.open();
         getDataOut().appendDataSet(ds);
         return true;
@@ -24,7 +24,7 @@ public class SvrTranAB extends CustomService {
 
         SqlQuery ds = new SqlQuery(this);
         ds.add("select * from %s ", BaseConfig.TranH);
-        ds.add("Where CorpNo_='%s' and TB_='AB' and TBNo_='%s' ", BaseConfig.CorpNo, tbno);
+        ds.add("Where CorpNo_='%s' and TB_='BC' and TBNo_='%s' ", BaseConfig.CorpNo, tbno);
         ds.open();
         getDataOut().appendDataSet(ds);
         return true;
@@ -36,9 +36,10 @@ public class SvrTranAB extends CustomService {
 
         SqlQuery ds = new SqlQuery(this);
         ds.add("select * from %s", BaseConfig.TranH);
-        ds.add("Where CorpNo_='%s' and TB_='AB' and TBNo_='%s' ", BaseConfig.CorpNo, tbno);
+        ds.add("Where CorpNo_='%s' and TB_='BC' and TBNo_='%s' ", BaseConfig.CorpNo, tbno);
         ds.open();
 
+        // 检查是否存在
         if (!ds.eof()) {
             throw new RuntimeException("该单据编号已存在，无法重复增加");
         }
@@ -46,10 +47,10 @@ public class SvrTranAB extends CustomService {
         ds.append();
 
         ds.setField("CorpNo_", BaseConfig.CorpNo);
-        ds.setField("TB_", "AB");
+        ds.setField("TB_", "BC");
         ds.setField("TBNo_", headIn.getString("TBNo_"));
         ds.setField("TBDate_", headIn.getString("TBDate_"));
-        ds.setField("SupName_", headIn.getString("SupName_"));
+        ds.setField("CusName_", headIn.getString("CusName_"));
         ds.setField("DeptName_", headIn.getString("DeptName_"));
         ds.setField("AppUser_", BaseConfig.AppUser);
         ds.setField("AppDate_", TDateTime.Now().getDate());
@@ -65,10 +66,11 @@ public class SvrTranAB extends CustomService {
          * headIn.getString("Code_");
          * 
          * SqlQuery ds = new SqlQuery(this); ds.add("select * from %s",
-         * BaseConfig.TranH); ds.add("Where CorpNo_='%s' and TB_='AB' and Code_='%s' ",
+         * BaseConfig.TranH);
+         * ds.add("Where CorpNo_='%s' and LEFT(TBNo_,2)='AB' and Code_='%s' ",
          * BaseConfig.CorpNo, code); ds.open();
          * 
-         * if (ds.eof()) { throw new RuntimeException("该商品料号不存在，无法删除"); }
+         * // 检查是否存在 if (ds.eof()) { throw new RuntimeException("该商品料号不存在，无法删除"); }
          * 
          * ds.delete();
          */
@@ -78,7 +80,7 @@ public class SvrTranAB extends CustomService {
     public boolean searchTranB() {
         SqlQuery ds = new SqlQuery(this);
         ds.add("select * from %s ", BaseConfig.TranB);
-        ds.add("Where CorpNo_='%s' and LEFT(TBNo_,2)='AB'  ", BaseConfig.CorpNo);
+        ds.add("Where CorpNo_='%s' and LEFT(TBNo_,2)='BC' ", BaseConfig.CorpNo);
         ds.open();
         getDataOut().appendDataSet(ds);
         return true;
@@ -90,7 +92,7 @@ public class SvrTranAB extends CustomService {
 
         SqlQuery ds = new SqlQuery(this);
         ds.add("select * from %s ", BaseConfig.TranB);
-        ds.add("Where CorpNo_='%s' and LEFT(TBNo_,2)='AB' and TBNo_='%s' Order By It_ ", BaseConfig.CorpNo, tbno);
+        ds.add("Where CorpNo_='%s' and LEFT(TBNo_,2)='BC' and TBNo_='%s' Order By It_ ", BaseConfig.CorpNo, tbno);
         ds.open();
         getDataOut().appendDataSet(ds);
         return true;
@@ -103,7 +105,7 @@ public class SvrTranAB extends CustomService {
 
         SqlQuery ds = new SqlQuery(this);
         ds.add("select * from %s ", BaseConfig.TranB);
-        ds.add("Where CorpNo_='%s' and LEFT(TBNo_,2)='AB' and TBNo_='%s' and It_='%s' Order By It_ ", BaseConfig.CorpNo,
+        ds.add("Where CorpNo_='%s' and LEFT(TBNo_,2)='BC' and TBNo_='%s' and It_='%s' Order By It_ ", BaseConfig.CorpNo,
                 tbno, it);
         ds.open();
         getDataOut().appendDataSet(ds);
@@ -133,7 +135,7 @@ public class SvrTranAB extends CustomService {
 
             SqlQuery dsTranB = new SqlQuery(this);
             dsTranB.add("select * from %s", BaseConfig.TranB);
-            dsTranB.add("Where CorpNo_='%s' and LEFT(TBNo_,2)='AB' and TBNo_='%s' ", BaseConfig.CorpNo, tbno);
+            dsTranB.add("Where CorpNo_='%s' and LEFT(TBNo_,2)='BC' and TBNo_='%s' ", BaseConfig.CorpNo, tbno);
             dsTranB.open();
 
             dsTranB.append();
@@ -154,11 +156,12 @@ public class SvrTranAB extends CustomService {
             if (!dsProduct.eof()) {
                 Double stock = dsProduct.getDouble("Stock_");
                 dsProduct.edit();
-                dsProduct.setField("Stock_", stock + num);
+                dsProduct.setField("Stock_", stock - num);
                 dsProduct.post();
             }
             tx.commit();
         }
+
         return true;
     }
 
@@ -168,13 +171,14 @@ public class SvrTranAB extends CustomService {
         String it = headIn.getString("It_");
         String code = headIn.getString("Code_");
         Double num = 0.0;
+
         try (Transaction tx = new Transaction(this)) {
             SqlQuery ds = new SqlQuery(this);
             ds.add("select * from %s", BaseConfig.TranB);
-            ds.add("Where CorpNo_='%s' and LEFT(TBNo_,2)='AB' and TBNo_='%s' and It_='%s' and Code_='%s' ",
+            ds.add("Where CorpNo_='%s' and LEFT(TBNo_,2)='BC' and TBNo_='%s' and It_='%s' and Code_='%s' ",
                     BaseConfig.CorpNo, tbno, it, code);
             ds.open();
-
+            // 检查是否存在
             if (!ds.eof()) {
                 num = ds.getDouble("Num_");
             }
@@ -187,11 +191,12 @@ public class SvrTranAB extends CustomService {
             if (!dsProduct.eof()) {
                 double stock = dsProduct.getDouble("Stock_");
                 dsProduct.edit();
-                dsProduct.setField("Stock_", stock - num);
+                dsProduct.setField("Stock_", stock + num);
                 dsProduct.post();
             }
             tx.commit();
         }
+
         return true;
     }
 
@@ -206,7 +211,7 @@ public class SvrTranAB extends CustomService {
         try (Transaction tx = new Transaction(this)) {
             SqlQuery ds = new SqlQuery(this);
             ds.add("select * from %s", BaseConfig.TranB);
-            ds.add("Where CorpNo_='%s' and LEFT(TBNo_,2)='AB'and TBNo_='%s' and It_='%s' and Code_='%s' ",
+            ds.add("Where CorpNo_='%s' and LEFT(TBNo_,2)='BC' and TBNo_='%s' and It_='%s' and Code_='%s' ",
                     BaseConfig.CorpNo, tbno, it, code);
             ds.open();
             if (!ds.eof()) {
@@ -223,11 +228,12 @@ public class SvrTranAB extends CustomService {
             if (!dsProduct.eof()) {
                 Double stock = dsProduct.getDouble("Stock_");
                 dsProduct.edit();
-                dsProduct.setField("Stock_", stock - oldnum + num);
+                dsProduct.setField("Stock_", stock + oldnum - num);
                 dsProduct.post();
             }
             tx.commit();
         }
+
         return true;
     }
 

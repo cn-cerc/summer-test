@@ -5,16 +5,16 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>进货单单据内容FrmTranAB</title>
+<title>BC销售单据</title>
 </head>
 <body>
 <div align="center">
-<h2>商品资料维</h2>
+<h2>销售单据维护</h2>
 <table align="center" width="100%">
     <tr>
-        <th><p>进货单号：<input type="text" name="TBNo" value="${item.tbno}"  readonly="readonly"></input></p></th>
+        <th><p>销售单号：<input type="text" name="TBNo" value="${item.tbno}"  readonly="readonly"></input></p></th>
         <th><p>单据日期：<input type="text" name="TBNo" value="${item.tbDate}"  readonly="readonly"></input></p></th>
-        <th><p>厂商名称：<input type="text" name="TBNo" value="${item.supName}"  readonly="readonly"></input></p></th>
+        <th><p>客户名称：<input type="text" name="TBNo" value="${item.cusName}"  readonly="readonly"></input></p></th>
     </tr>
     <tr>
         <th><p>部门名称：<input type="text" name="TBNo" value="${item.deptName}"  readonly="readonly"></input></p></th>
@@ -26,7 +26,7 @@
     <hr style="height:5px;border:none;border-top:5px ridge green;" />
 </div>
 <div align="center">
-<h2>进货单单身数据</h2>
+<h2>销售单单身数据</h2>
 <table align="center" width="100%">
     <tr>
         <th>序号</th>
@@ -48,14 +48,14 @@
         <th>${item.unit}</th>
         <th>${item.num}</th>
         <th>
-            <a href="FrmTranABdetail?tbno=${item.tbno}&it=${item.it}">内容</a>
+            <a href="FrmTranBCdetail?tbno=${item.tbno}&it=${item.it}">内容</a>
         </th>
     </tr>
     </c:forEach>
     </c:if>
         <tr>
 
-        <th><a href="FrmTranBAB?tbno=${item.tbno}">增加</a></th>
+        <th><a href="FrmTranBCb?tbno=${item.tbno}">增加</a></th>
         </tr>
 </table>
 </div>
@@ -64,7 +64,7 @@
 </div>
 <div>${msg}</div>
 <div align="left">
-    <a href="FrmTranABS">返回</a>
+    <a href="FrmTranBCs">返回</a>
 </div>
 </body>
 </html>

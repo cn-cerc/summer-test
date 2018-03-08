@@ -1,4 +1,4 @@
-package cn.cerc.sample.forms.tran;
+package cn.cerc.sample.forms.tranae;
 
 import cn.cerc.jbean.client.LocalService;
 import cn.cerc.jbean.form.IPage;
@@ -6,12 +6,13 @@ import cn.cerc.jdb.core.Record;
 import cn.cerc.jmis.form.AbstractForm;
 import cn.cerc.jmis.page.JspPage;
 import cn.cerc.jmis.page.RedirectPage;
+import cn.cerc.sample.forms.tran.TranB_Record;
 
-public class FrmTranBAB extends AbstractForm {
+public class FrmTranAEb extends AbstractForm {
     @Override
     public IPage execute() {
         // 新增加商品资料
-        JspPage jspPage = new JspPage(this, "tran/FrmTranBAB.jsp");
+        JspPage jspPage = new JspPage(this, "tranae/FrmTranAEb.jsp");
         String tbno = this.getRequest().getParameter("tbno");
 
         TranB_Record item = new TranB_Record();
@@ -21,9 +22,9 @@ public class FrmTranBAB extends AbstractForm {
         return jspPage;
     }
 
-    public IPage tranBappend() {
+    public IPage appendTranB() {
         // 新增加商品资料
-        JspPage jspPage = new JspPage(this, "tran/FrmTranBAB.jsp");
+        JspPage jspPage = new JspPage(this, "tranae/FrmTranAEb.jsp");
         String tbno = this.getRequest().getParameter("TBNo");
         String it = this.getRequest().getParameter("It");
         String code = this.getRequest().getParameter("Code");
@@ -33,7 +34,7 @@ public class FrmTranBAB extends AbstractForm {
 
         if (submit != null) {
             LocalService svr = new LocalService(this);
-            svr.setService("SvrTranAB.tranBappend");
+            svr.setService("SvrTranAE.appendTranB");
 
             Record headIn = svr.getDataIn().getHead();
             headIn.setField("TBNo_", tbno);
@@ -45,26 +46,25 @@ public class FrmTranBAB extends AbstractForm {
                 jspPage.setMessage(svr.getMessage());
                 return jspPage;
             }
-            return new RedirectPage(this, "FrmTranAB?tbno=" + tbno);
+            return new RedirectPage(this, "FrmTranAEInfo?tbno=" + tbno);
         }
 
         return jspPage;
     }
 
     public IPage delete() {
-        JspPage jspPage = new JspPage(this, "tran/FrmTranBAB.jsp");
-        LocalService svr = new LocalService(this);
-        svr.setService("SvrTranAB.delete");
-        String tbno = this.getRequest().getParameter("tbno");
-        Record headIn = svr.getDataIn().getHead();
-        headIn.setField("TBNo_", tbno);
-
-        if (!svr.exec()) {
-            jspPage.setMessage(svr.getMessage());
-            return jspPage;
-        }
-        // return jspPage;
-        return new RedirectPage(this, "FrmTranBAB");
+        JspPage jspPage = new JspPage(this, "tranae/FrmTranAEb.jsp");
+        /*
+         * LocalService svr = new LocalService(this);
+         * svr.setService("SvrTranAE.delete"); String tbno =
+         * this.getRequest().getParameter("tbno"); Record headIn =
+         * svr.getDataIn().getHead(); headIn.setField("TBNo_", tbno);
+         * 
+         * if (!svr.exec()) { jspPage.setMessage(svr.getMessage()); return jspPage; } //
+         * return jspPage;
+         * 
+         */
+        return new RedirectPage(this, "FrmTranAEb");
     }
 
     @Override
