@@ -3,14 +3,12 @@ package cn.cerc.sample.pojo;
 import cn.cerc.jdb.core.TDate;
 import cn.cerc.jdb.core.TDateTime;
 
-public class TranH {
-
+public class SaleH {
 	private String corpNo;
 	private String tb;
 	private String tbNo;
 	private TDate tbDate;
-	private String supName;
-
+	private String cusName;
 	private String appUser;
 	private TDateTime appDate;
 
@@ -46,20 +44,12 @@ public class TranH {
 		this.tbDate = tbDate;
 	}
 
-	public TDateTime getAppDate() {
-		return appDate;
+	public String getCusName() {
+		return cusName;
 	}
 
-	public void setAppDate(TDateTime appDate) {
-		this.appDate = appDate;
-	}
-
-	public String getSupName() {
-		return supName;
-	}
-
-	public void setSupName(String supName) {
-		this.supName = supName;
+	public void setCusName(String cusName) {
+		this.cusName = cusName;
 	}
 
 	public String getAppUser() {
@@ -68,6 +58,14 @@ public class TranH {
 
 	public void setAppUser(String appUser) {
 		this.appUser = appUser;
+	}
+
+	public TDateTime getAppDate() {
+		return appDate;
+	}
+
+	public void setAppDate(TDateTime appDate) {
+		this.appDate = appDate;
 	}
 
 }

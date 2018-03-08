@@ -10,11 +10,11 @@ import cn.cerc.jmis.form.AbstractForm;
 import cn.cerc.jmis.page.JspPage;
 import cn.cerc.sample.pojo.TranH;
 
-public class FrmImportBill extends AbstractForm {
+public class FrmTranhList extends AbstractForm {
 
 	@Override
 	public IPage execute() throws Exception {
-		JspPage jspPage = new JspPage(this, "tran/FrmImportBillShow.jsp");
+		JspPage jspPage = new JspPage(this, "tran/FrmTranhList.jsp");
 		LocalService svr = new LocalService(this);
 		svr.setService("SvrTran.search");
 		DataSet dataOut = svr.getDataOut();

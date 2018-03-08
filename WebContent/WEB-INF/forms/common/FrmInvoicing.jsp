@@ -15,13 +15,13 @@
 				<a href="FrmProduct">商品资料维护</a>
 			</div>
 			<div>
-				<a href="FrmImportBill">进货单</a>
+				<a href="FrmTranhList">进货单</a>
 			</div>
 			<div>
-				<a href="">销售单</a>
+				<a href="FrmSalehList">销售单</a>
 			</div>
 			<div>
-				<a href="">盘点单</a>
+				<a href="FrmCkeckList">盘点单</a>
 			</div>
 			<div>
 				<a href="">进出库查询</a>

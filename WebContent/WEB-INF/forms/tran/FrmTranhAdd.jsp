@@ -17,7 +17,7 @@
 		</form>
 	</div>
 	<div style="padding: 0.5em;">
-		<a href="FrmImportBill">返回</a>
+		<a href="FrmTranhList">返回</a>
 	</div>
 	<div>${message}</div>
 </body>

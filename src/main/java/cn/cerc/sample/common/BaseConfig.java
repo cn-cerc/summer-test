@@ -6,4 +6,5 @@ public class BaseConfig {
 	public static final String CorpNo = "913001";
 	public static final String Tranh = "TRANH";
 	public static final String Tranb = "TRANB";
+
 }

@@ -71,4 +71,31 @@
      <bean id="SvrTran.tranbDelete" class="cn.cerc.sample.services.tran.SvrTran" scope="prototype">
         <property name="funcCode" value="tranbDelete" />
     </bean>
+       <bean id="SvrSale.findSaleh" class="cn.cerc.sample.services.sale.SvrSale" scope="prototype">
+        <property name="funcCode" value="findSaleh" />
+    </bean>
+        <bean id="SvrSale.saveSaleh" class="cn.cerc.sample.services.sale.SvrSale" scope="prototype">
+        <property name="funcCode" value="saveSaleh" />
+    </bean>
+        <bean id="SvrSale.findSale" class="cn.cerc.sample.services.sale.SvrSale" scope="prototype">
+        <property name="funcCode" value="findSale" />
+    </bean>
+         <bean id="SvrSale.salebAdd" class="cn.cerc.sample.services.sale.SvrSale" scope="prototype">
+        <property name="funcCode" value="salebAdd" />
+    </bean>
+         <bean id="SvrSale.salebModify" class="cn.cerc.sample.services.sale.SvrSale" scope="prototype">
+        <property name="funcCode" value="salebModify" />
+    </bean>
+      <bean id="SvrSale.salebUpdate" class="cn.cerc.sample.services.sale.SvrSale" scope="prototype">
+        <property name="funcCode" value="salebUpdate" />
+    </bean>
+     <bean id="SvrSale.salebDelete" class="cn.cerc.sample.services.sale.SvrSale" scope="prototype">
+        <property name="funcCode" value="salebDelete" />
+    </bean>
+      <bean id="SvrSale.salehModify" class="cn.cerc.sample.services.sale.SvrSale" scope="prototype">
+        <property name="funcCode" value="salehModify" />
+    </bean>
+     <bean id="SvrSale.findSalehByThno" class="cn.cerc.sample.services.sale.SvrSale" scope="prototype">
+        <property name="funcCode" value="findSalehByThno" />
+    </bean>
 </beans>
