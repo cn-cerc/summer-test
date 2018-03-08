@@ -78,4 +78,5 @@ public class svrPartinfo extends CustomService {
         getDataOut().appendDataSet(ds);
         return true;
     }
+
 }

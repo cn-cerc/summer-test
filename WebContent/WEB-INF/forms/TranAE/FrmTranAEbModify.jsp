@@ -9,15 +9,16 @@
 <body>
   <div align="center">
     <div>
-      <h1>销售单单身修改</h1>
-      <form action="FrmTranBCbModify.TranBPost" method="Post">
+      <h1>盘点单单身修改</h1>
+      <form action="FrmTranAEbModify.TranBPost" method="Post">
             <input type="hidden" name="tbno" value="${tbno}"/>
-         <p>销售单序: <input type="text" name="It" readonly="readonly" value="${item.it}"/></p>
+         <p>盘点单序: <input type="text" name="It" readonly="readonly" value="${item.it}"/></p>
          <p>商品编号: <input type="text" name="Code" readonly="readonly" value="${item.code}"/></p>
          <p>商品品名: <input type="text" name="Desc" readonly="readonly" value="${item.desc}"/></p>
          <p>商品规格: <input type="text" name="Spec" readonly="readonly" value="${item.spec}"/></p>
          <p>商品单位: <input type="text" name="Unit" readonly="readonly" value="${item.unit}"/></p>
-         <p>商品数量: <input type="text" name="Num"  value="${item.num}"/></p>
+         <p>当前库存: <input type="text" name="stock" readonly="readonly" value="${item.stock}"/></p>
+         <p>实盘数量: <input type="text" name="Num"  value="${item.stock}"/></p>
          <input type="submit" name="submit" value="保存" />
          <input type="submit" name="delete" value="删除" />
          ${msg}
@@ -25,7 +26,7 @@
     </div>
   </div>
   <div align="left">
-    <a href="FrmTranBCbInfo?tbno=${item.tbno}">返回</a>
+    <a href="FrmTranAEbInfo?tbno=${item.tbno}">返回</a>
   </div>
 </body>
 </html>

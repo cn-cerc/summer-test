@@ -7,6 +7,7 @@ public class TranABInfo_Record {
     private String tbdate;
     private String supname;
     private String cusname;
+    private String deptname;
 
     private String appuser;
     private String appdate;
@@ -17,6 +18,23 @@ public class TranABInfo_Record {
     private String spec;
     private String unit;
     private Double num;
+    private Double Stock;
+
+    public String getDeptname() {
+        return deptname;
+    }
+
+    public void setDeptname(String deptname) {
+        this.deptname = deptname;
+    }
+
+    public Double getStock() {
+        return Stock;
+    }
+
+    public void setStock(Double stock) {
+        Stock = stock;
+    }
 
     public String getCode() {
         return code;

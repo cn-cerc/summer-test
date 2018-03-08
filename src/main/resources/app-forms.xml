@@ -45,6 +45,17 @@
     </bean>   
     <bean id="FrmTranBCbModify" class="cn.cerc.sample.forms.TranBC.FrmTranBCbModify" scope="prototype">
     </bean>      
-      
+    <bean id="FrmTranAEInfo" class="cn.cerc.sample.forms.TranAE.FrmTranAEInfo" scope="prototype">
+    </bean>    
+    <bean id="FrmTranAEAppend" class="cn.cerc.sample.forms.TranAE.FrmTranAEAppend" scope="prototype">
+    </bean>      
+    <bean id="FrmTranAEbInfo" class="cn.cerc.sample.forms.TranAE.FrmTranAEbInfo" scope="prototype">
+    </bean>       
+    <bean id="FrmTranAEbAppend" class="cn.cerc.sample.forms.TranAE.FrmTranAEbAppend" scope="prototype">
+    </bean>   
+    <bean id="FrmTranAEbModify" class="cn.cerc.sample.forms.TranAE.FrmTranAEbModify" scope="prototype">
+    </bean>     
+    <bean id="SchPartInOut" class="cn.cerc.sample.forms.part.SchPartInOut" scope="prototype">
+    </bean>  
     
 </beans>

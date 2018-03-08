@@ -17,10 +17,10 @@
     <a href="FrmTranBCInfo">销售单</a>
   </div>
   <div>
-    <a href="#">盘点单</a>
+    <a href="FrmTranAEInfo">盘点单</a>
   </div>
   <div>
-    <a href="#">进出库查询</a>
+    <a href="SchPartInOut">进出库查询</a>
   </div>
   <div>
     <a href="FrmWelcome">返回</a>

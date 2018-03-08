@@ -9,11 +9,11 @@
 <body>
   <div align="center">
     <div>
-      <h1>增加销售单</h1>
-      <form action="FrmTranBCAppend" method="Post">
-         <p>销售单号: <input type="text" name="TBNo" value="BC"/></p>
-         <p>客户名称: <input type="text" name="CusName" /></p>
+      <h1>增加盘点单</h1>
+      <form action="FrmTranAEAppend" method="Post">
+         <p>盘点单号: <input type="text" name="TBNo" value="AE" /></p>
          <p>单据日期: <input type="text" name="TBDate" readonly="readonly" value="${TBDate}"/></p>
+         <p>部门名称: <input type="text" name="DeptName" /></p>
          <p>建档人员: <input type="text" name="AppUser" /></p>
          <input type="submit" name="submit" value="保存" />
          ${msg}
@@ -21,7 +21,7 @@
     </div>
   </div>
   <div align="left">
-    <a href="FrmTranBCInfo">返回</a>
+    <a href="FrmTranAEInfo">返回</a>
   </div>
 </body>
 </html>
