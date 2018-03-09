@@ -4,18 +4,12 @@ import cn.cerc.jbean.form.IPage;
 import cn.cerc.jmis.form.AbstractForm;
 import cn.cerc.jmis.page.JspPage;
 
-public class FrmWelcome extends AbstractForm {
+public class FrmInvoicing extends AbstractForm {
 
     @Override
     public IPage execute() {
-        JspPage jspPage = new JspPage(this);
-        jspPage.setJspFile("common/FrmWelcome.jsp");
-
+        JspPage jspPage = new JspPage(this, "common/FrmInvoicing.jsp");
         return jspPage;
-    }
-
-    public IPage list() {
-        return null;
     }
 
     @Override

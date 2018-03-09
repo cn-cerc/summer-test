@@ -40,12 +40,13 @@
     <div style="text-align: center; padding-top: 2em;">
         <div>欢迎使用summer框架！</div>
         <div style="text-align: center; padding-top: 2em;">
-            <a href="FrmDefault">进入首页</a>
+            <a href="FrmDefault">进入首页,welcome ${name}</a>
         </div>
     </div>
     <div style="text-align: center; padding-top: 2em;">
         <div>
             <a href="FrmDataGrid">演示dataGrid表格</a>
+            <long:grid>${grid1}</long:grid>
         </div>
     </div>
     <div style="text-align: center; padding-top: 2em;">
@@ -53,6 +54,12 @@
             <a href="FrmClientTest">原生App功能测试</a>
         </div>
     </div>
+    <div style="text-align: center; padding-top: 2em;">
+        <div>
+            <a href="FrmInvoicing">进销存测试Martin</a>
+        </div>
+    </div>
+
     <div style="text-align: center; padding-top: 2em;">
         <a href="javascript:onTestClick()">临时测试</a><br />
     </div>
