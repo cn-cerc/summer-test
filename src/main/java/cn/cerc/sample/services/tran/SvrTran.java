@@ -181,12 +181,13 @@ public class SvrTran extends CustomService {
 	 */
 	public boolean tranbModify() {
 		String code = getDataIn().getHead().getString("code");
+		String tbNo = getDataIn().getHead().getString("tbNo");
 		SqlQuery ds = new SqlQuery(this);
 		ds.add("select * from %s", BaseConfig.Tranb);
 		ds.add("where CorpNo_ = %s", BaseConfig.CorpNo);
-		ds.add("and Code_ = '%s'", code);
+		ds.add("and Code_ = '%s' and TBNo_ = '%s'", code, tbNo);
 		ds.open();
-		getDataOut().appendDataSet(ds);
+		getDataOut().getHead().copyValues(ds.getCurrent());
 		return true;
 	}
 

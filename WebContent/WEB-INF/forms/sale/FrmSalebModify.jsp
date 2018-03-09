@@ -9,19 +9,19 @@
 <body>
 
 	<div>
-		<form action="FrmSalebUpdate" method="post">
-		商品编号<input type="text" name="code" value="${saleb.code}" readonly="readonly"/> <br />
-		 品名<input type="text" name="desc" value="${saleb.desc}" readonly="readonly"/> <br />
-		 规格<input type="text" name="spec" value="${saleb.spec}" readonly="readonly"/> <br /> 
-		 单位<input type="text" name="unit" value="${saleb.unit}" readonly="readonly"/> <br /> 
-		 数量<input type="text" name="num" value="${saleb.num}" /> <br /> 
-		 <input type="hidden" name="tbNo" value="${saleb.tbNo}" />
-		    <input type="submit" value="保存" />    <a href="FrmSalebDelete?code=${saleb.code }&num=${saleb.num}&tbNo=${saleb.tbNo}" >删除</a>
+		<form action="FrmSale.updateSaleb" method="post">
+		商品编号<input type="text" name="code" value="${saleb.items.Code_}" readonly="readonly"/> <br />
+		 品名<input type="text" name="desc" value="${saleb.items.Desc_}" readonly="readonly"/> <br />
+		 规格<input type="text" name="spec" value="${saleb.items.Spec_}" readonly="readonly"/> <br /> 
+		 单位<input type="text" name="unit" value="${saleb.items.Unit_}" readonly="readonly"/> <br /> 
+		 数量<input type="text" name="num" value="${saleb.items.Num_}" /> <br /> 
+		 <input type="hidden" name="tbNo" value="${saleb.items.TBNo_}" />
+		    <input type="submit" value="保存" />    <a href="FrmSale.deleteSaleb?code=${saleb.items.Code_ }&num=${saleb.items.Num_}&tbNo=${saleb.items.TBNo_}" >删除</a>
 		</form>
 	</div>
 	<div>${message }</div>
 	<div style="padding: 0.5em;">
-		<a href="FrmSaleList?tbNo=${saleb.tbNo}">返回</a>
+		<a href="FrmSale?tbNo=${saleb.items.TBNo_}">返回</a>
 	</div>
 
 </body>

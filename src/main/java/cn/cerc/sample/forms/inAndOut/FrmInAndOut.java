@@ -5,9 +5,22 @@ import cn.cerc.jbean.form.IPage;
 import cn.cerc.jmis.form.AbstractForm;
 import cn.cerc.jmis.page.JspPage;
 
-public class FrmInAndOutSearch extends AbstractForm {
+public class FrmInAndOut extends AbstractForm {
+
 	@Override
 	public IPage execute() throws Exception {
+		JspPage jspPage = new JspPage(this, "inAndOut/FrmInAndOutList.jsp");
+
+		return jspPage;
+	}
+
+	@Override
+	public boolean logon() {
+
+		return true;
+	}
+
+	public IPage search() {
 		JspPage jspPage = new JspPage(this, "inAndOut/FrmInAndOutList.jsp");
 		String tbNo = getRequest().getParameter("tbNo");
 		String productName = getRequest().getParameter("productName");
@@ -32,11 +45,5 @@ public class FrmInAndOutSearch extends AbstractForm {
 		jspPage.add("endTime", endTime);
 		jspPage.add("dataSet", svr.getDataOut().getRecords());
 		return jspPage;
-	}
-
-	@Override
-	public boolean logon() {
-
-		return true;
 	}
 }

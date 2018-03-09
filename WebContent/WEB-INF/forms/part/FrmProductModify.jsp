@@ -9,11 +9,11 @@
 <body>
 
 	<div>
-		<form action="FrmProductUpdate">
-		商品编号<input type="text" name="code" value="${product.code}" readonly="readonly"/> <br />
-		 品名<input type="text" name="desc" value="${product.desc}" /> <br />
-		 规格<input type="text" name="spec" value="${product.spec}" /> <br /> 
-		 单位<input type="text" name="unit" value="${product.unit}" /> <br /> 
+		<form action="FrmProduct.update">
+		商品编号<input type="text" name="code" value="${product.items.Code_}" readonly="readonly"/> <br />
+		 品名<input type="text" name="desc" value="${product.items.Desc_}" /> <br />
+		 规格<input type="text" name="spec" value="${product.items.Spec_}" /> <br /> 
+		 单位<input type="text" name="unit" value="${product.items.Unit_}" /> <br /> 
 		    <input type="submit" value="保存" />
 		</form>
 	</div>

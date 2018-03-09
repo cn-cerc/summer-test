@@ -15,16 +15,16 @@
 				<a href="FrmProduct">商品资料维护</a>
 			</div>
 			<div>
-				<a href="FrmTranhList">进货单</a>
+				<a href="FrmTran.listTranh">进货单</a>
 			</div>
 			<div>
-				<a href="FrmSalehList">销售单</a>
+				<a href="FrmSale.listSaleh">销售单</a>
 			</div>
 			<div>
-				<a href="FrmCheckhList">盘点单</a>
+				<a href="FrmCheck.listCheckh">盘点单</a>
 			</div>
 			<div>
-				<a href="FrmInAndOutList">进出库查询</a>
+				<a href="FrmInAndOut">进出库查询</a>
 			</div>
 			<div style="padding: 0.5em;">
 				<a href="FrmWelcome">返回</a>

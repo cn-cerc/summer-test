@@ -8,7 +8,7 @@
 </head>
 <body>
 	<div>
-		<form action="FrmCheckhAppend" method="post">
+		<form action="FrmCheck.appendCheckh" method="post">
 			单号<input type="text" name="tbNo" value="${ tbNo}" /> <br />
 			日期 <input type="text" name="tbDate" value="${date}" /> <br /> 部门 <input
 				type="text" name="deptName" value="${deptName }" /> <br />
@@ -17,7 +17,7 @@
 		</form>
 	</div>
 	<div style="padding: 0.5em;">
-		<a href="FrmCheckhList">返回</a>
+		<a href="FrmCheck.listCheckh">返回</a>
 	</div>
 	<div>${message}</div>
 </body>

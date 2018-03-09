@@ -24,119 +24,138 @@
 		scope="prototype">
 	</bean>
 
-	<bean id="FrmProductAdd" class="cn.cerc.sample.forms.part.FrmProductAdd"
+	<bean id="FrmProduct.add" class="cn.cerc.sample.forms.part.FrmProduct"
 		scope="prototype">
 	</bean>
-	<bean id="FrmProductModify" class="cn.cerc.sample.forms.part.FrmProductModify"
+	<bean id="FrmProduct.modify" class="cn.cerc.sample.forms.part.FrmProduct"
 		scope="prototype">
 	</bean>
-	<bean id="FrmProductAppend" class="cn.cerc.sample.forms.part.FrmProductAppend"
+	<bean id="FrmProduct.append" class="cn.cerc.sample.forms.part.FrmProduct"
 		scope="prototype">
 	</bean>
-	<bean id="FrmProductUpdate" class="cn.cerc.sample.forms.part.FrmProductUpdate"
+	<bean id="FrmProduct.update" class="cn.cerc.sample.forms.part.FrmProduct"
 		scope="prototype">
 	</bean>
-	<bean id="FrmProductDelete" class="cn.cerc.sample.forms.part.FrmProductDelete"
+	<bean id="FrmProduct.delete" class="cn.cerc.sample.forms.part.FrmProduct"
 		scope="prototype">
 	</bean>
+
+
+
 	<bean id="FrmInvoicing" class="cn.cerc.sample.forms.FrmInvoicing"
 		scope="prototype">
 	</bean>
-	<bean id="FrmTranhList" class="cn.cerc.sample.forms.tran.FrmTranhList"
+
+
+
+
+	<bean id="FrmTran.listTranh" class="cn.cerc.sample.forms.tran.FrmTran"
 		scope="prototype">
 	</bean>
-	<bean id="FrmTrachAdd" class="cn.cerc.sample.forms.tran.FrmTranhAdd"
+	<bean id="FrmTran.addTranh" class="cn.cerc.sample.forms.tran.FrmTran"
 		scope="prototype">
 	</bean>
-	<bean id="FrmTranhAppend" class="cn.cerc.sample.forms.tran.FrmTranhAppend"
+	<bean id="FrmTran.appendTranh" class="cn.cerc.sample.forms.tran.FrmTran"
 		scope="prototype">
 	</bean>
 	<bean id="FrmTran" class="cn.cerc.sample.forms.tran.FrmTran"
 		scope="prototype">
 	</bean>
-	<bean id="FrmTranbAdd" class="cn.cerc.sample.forms.tran.FrmTranbAdd"
+	<bean id="FrmTran.addTranb" class="cn.cerc.sample.forms.tran.FrmTran"
 		scope="prototype">
 	</bean>
-	<bean id="FrmTranhModify" class="cn.cerc.sample.forms.tran.FrmTranhModify"
+	<bean id="FrmTran.modifyTranh" class="cn.cerc.sample.forms.tran.FrmTran"
 		scope="prototype">
 	</bean>
-	<bean id="FrmTranbAppend" class="cn.cerc.sample.forms.tran.FrmTranbAppend"
+	<bean id="FrmTran.appendTranb" class="cn.cerc.sample.forms.tran.FrmTran"
 		scope="prototype">
 	</bean>
-	<bean id="FrmTranbModify" class="cn.cerc.sample.forms.tran.FrmTranbModify"
+	<bean id="FrmTran.modifyTranb" class="cn.cerc.sample.forms.tran.FrmTran"
 		scope="prototype">
 	</bean>
-	<bean id="FrmTranbUpdate" class="cn.cerc.sample.forms.tran.FrmTranbUpdate"
+	<bean id="FrmTran.updateTranb" class="cn.cerc.sample.forms.tran.FrmTran"
 		scope="prototype">
 	</bean>
-	<bean id="FrmTranbDelete" class="cn.cerc.sample.forms.tran.FrmTranbDelete"
+	<bean id="FrmTran.deleteTranb" class="cn.cerc.sample.forms.tran.FrmTran"
 		scope="prototype">
 	</bean>
-	<bean id="FrmSalehList" class="cn.cerc.sample.forms.sale.FrmSalehList"
+
+
+
+
+	<bean id="FrmSale.listSaleh" class="cn.cerc.sample.forms.sale.FrmSale"
 		scope="prototype">
 	</bean>
-	<bean id="FrmSalehModify" class="cn.cerc.sample.forms.sale.FrmSalehModify"
+	<bean id="FrmSale.modifySaleh" class="cn.cerc.sample.forms.sale.FrmSale"
 		scope="prototype">
 	</bean>
-	<bean id="FrmSaleList" class="cn.cerc.sample.forms.sale.FrmSaleList"
+	<bean id="FrmSale" class="cn.cerc.sample.forms.sale.FrmSale"
 		scope="prototype">
 	</bean>
-	<bean id="FrmSalebAdd" class="cn.cerc.sample.forms.sale.FrmSalebAdd"
+	<bean id="FrmSale.addSaleb" class="cn.cerc.sample.forms.sale.FrmSale"
 		scope="prototype">
 	</bean>
-	<bean id="FrmSalebAppend" class="cn.cerc.sample.forms.sale.FrmSalebAppend"
+	<bean id="FrmSale.appendSaleb" class="cn.cerc.sample.forms.sale.FrmSale"
 		scope="prototype">
 	</bean>
-	<bean id="FrmSalebDelete" class="cn.cerc.sample.forms.sale.FrmSalebDelete"
+	<bean id="FrmSale.deleteSaleb" class="cn.cerc.sample.forms.sale.FrmSale"
 		scope="prototype">
 	</bean>
-	<bean id="FrmSalebModify" class="cn.cerc.sample.forms.sale.FrmSalebModify"
+	<bean id="FrmSale.modifySaleb" class="cn.cerc.sample.forms.sale.FrmSale"
 		scope="prototype">
 	</bean>
-	<bean id="FrmSalebUpdate" class="cn.cerc.sample.forms.sale.FrmSalebUpdate"
+	<bean id="FrmSale.updateSaleb" class="cn.cerc.sample.forms.sale.FrmSale"
 		scope="prototype">
 	</bean>
-	<bean id="FrmSalehAdd" class="cn.cerc.sample.forms.sale.FrmSalehAdd"
+	<bean id="FrmSale.addSaleh" class="cn.cerc.sample.forms.sale.FrmSale"
 		scope="prototype">
 	</bean>
-	<bean id="FrmSalehAppend" class="cn.cerc.sample.forms.sale.FrmSalehAppend"
+	<bean id="FrmSale.appendSaleh" class="cn.cerc.sample.forms.sale.FrmSale"
 		scope="prototype">
 	</bean>
-	
-	<bean id="FrmCheckhAppend" class="cn.cerc.sample.forms.check.FrmCheckhAppend"
+
+
+
+
+
+	<bean id="FrmCheck.appendCheckh" class="cn.cerc.sample.forms.check.FrmCheck"
 		scope="prototype">
 	</bean>
-	
-		<bean id="FrmCheckhList" class="cn.cerc.sample.forms.check.FrmCheckhList"
+	<bean id="FrmCheck.listCheckh" class="cn.cerc.sample.forms.check.FrmCheck"
 		scope="prototype">
 	</bean>
-	<bean id="FrmCheckhModify" class="cn.cerc.sample.forms.check.FrmCheckhModify"
+	<bean id="FrmCheck.modifyCheckh" class="cn.cerc.sample.forms.check.FrmCheck"
 		scope="prototype">
 	</bean>
-	<bean id="FrmCheckList" class="cn.cerc.sample.forms.check.FrmCheckList"
+	<bean id="FrmCheck" class="cn.cerc.sample.forms.check.FrmCheck"
 		scope="prototype">
 	</bean>
-	<bean id="FrmCheckbAdd" class="cn.cerc.sample.forms.check.FrmCheckbAdd"
+	<bean id="FrmCheck.addCheckb" class="cn.cerc.sample.forms.check.FrmCheck"
 		scope="prototype">
 	</bean>
-	<bean id="FrmCheckbAppend" class="cn.cerc.sample.forms.check.FrmCheckbAppend"
+	<bean id="FrmCheck.appendCheckb" class="cn.cerc.sample.forms.check.FrmCheck"
 		scope="prototype">
 	</bean>
-	<bean id="FrmCheckbDelete" class="cn.cerc.sample.forms.check.FrmCheckbDelete"
+	<bean id="FrmCheck.deleteCheckb" class="cn.cerc.sample.forms.check.FrmCheck"
 		scope="prototype">
 	</bean>
-	<bean id="FrmCheckbModify" class="cn.cerc.sample.forms.check.FrmCheckbModify"
+	<bean id="FrmCheck.modifyCheckb" class="cn.cerc.sample.forms.check.FrmCheck"
 		scope="prototype">
 	</bean>
-	<bean id="FrmCheckbUpdate" class="cn.cerc.sample.forms.check.FrmCheckbUpdate"
+	<bean id="FrmCheck.updateCheckh" class="cn.cerc.sample.forms.check.FrmCheck"
 		scope="prototype">
 	</bean>
-	<bean id="FrmCheckhAdd" class="cn.cerc.sample.forms.check.FrmCheckhAdd"
+	<bean id="FrmCheck.addCheckh" class="cn.cerc.sample.forms.check.FrmCheck"
 		scope="prototype">
 	</bean>
-	<bean id="FrmInAndOutList" class="cn.cerc.sample.forms.inAndOut.FrmInAndOutList"
+
+
+
+
+	<bean id="FrmInAndOut" class="cn.cerc.sample.forms.inAndOut.FrmInAndOut"
 		scope="prototype">
-	</bean><bean id="FrmInAndOutSearch" class="cn.cerc.sample.forms.inAndOut.FrmInAndOutSearch"
+	</bean>
+	<bean id="FrmInAndOut.search" class="cn.cerc.sample.forms.inAndOut.FrmInAndOut"
 		scope="prototype">
 	</bean>
 </beans>

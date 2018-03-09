@@ -8,7 +8,7 @@
 </head>
 <body>
 	<div>
-		<form action="FrmTranhAppend" method="post">
+		<form action="FrmTran.appendTranh" method="post">
 			单号<input type="text" name="tbNo" value="" /> <br /> 
 			日期 <input type="text" name="tbDate" value="${date}" /> <br /> 
 			厂商 <input type="text" name="superName" value="" /> <br /> 
@@ -17,7 +17,7 @@
 		</form>
 	</div>
 	<div style="padding: 0.5em;">
-		<a href="FrmTranhList">返回</a>
+		<a href="FrmTran.listTranh">返回</a>
 	</div>
 	<div>${message}</div>
 </body>

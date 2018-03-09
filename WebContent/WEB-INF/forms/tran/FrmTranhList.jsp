@@ -21,12 +21,12 @@
 			</tr>
 			<c:forEach items="${tranhs}" var="tranh">
 				<tr>
-					<td>${tranh.tb }</td>
-					<td><a href="FrmTran?tbNo=${tranh.tbNo }">${tranh.tbNo }</a></td>
-					<td>${tranh.tbDate}</td>
-					<td>${tranh.supName}</td>
-					<td>${tranh.appUser}</td>
-					<td>${tranh.appDate}</td>
+					<td>${tranh.items.TB_ }</td>
+					<td><a href="FrmTran?tbNo=${tranh.items.TBNo_ }">${tranh.items.TBNo_ }</a></td>
+					<td>${tranh.items.TBDate_}</td>
+					<td>${tranh.items.SupName_}</td>
+					<td>${tranh.items.AppUser_}</td>
+					<td>${tranh.items.AppDate_}</td>
 				</tr>
 			</c:forEach>
 
@@ -34,7 +34,7 @@
 	</div>
 
 	<div>
-		<a href="FrmTrachAdd">增加</a>
+		<a href="FrmTran.addTranh">增加</a>
 	</div>
 	<div style="padding: 0.5em;">
 		<a href="FrmInvoicing">返回</a>

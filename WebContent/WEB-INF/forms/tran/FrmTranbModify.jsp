@@ -9,18 +9,18 @@
 <body>
 
 	<div>
-		<form action="FrmTranbUpdate" method="post">
-		商品编号<input type="text" name="code" value="${tranb.code}" readonly="readonly"/> <br />
-		 品名<input type="text" name="desc" value="${tranb.desc}" readonly="readonly"/> <br />
-		 规格<input type="text" name="spec" value="${tranb.spec}" readonly="readonly"/> <br /> 
-		 单位<input type="text" name="unit" value="${tranb.unit}" readonly="readonly"/> <br /> 
-		 数量<input type="text" name="num" value="${tranb.num}" /> <br /> 
-		 <input type="hidden" name="tbNo" value="${tranb.tbNo}" />
-		    <input type="submit" value="保存" />    <a href="FrmTranbDelete?code=${tranb.code }&num=${tranb.num}&tbNo=${tranb.tbNo}" >删除</a>
+		<form action="FrmTran.updateTranb" method="post">
+		商品编号<input type="text" name="code" value="${tranb.items.Code_}" readonly="readonly"/> <br />
+		 品名<input type="text" name="desc" value="${tranb.items.Desc_}" readonly="readonly"/> <br />
+		 规格<input type="text" name="spec" value="${tranb.items.Spec_}" readonly="readonly"/> <br /> 
+		 单位<input type="text" name="unit" value="${tranb.items.Unit_}" readonly="readonly"/> <br /> 
+		 数量<input type="text" name="num" value="${tranb.items.Num_}" /> <br /> 
+		 <input type="hidden" name="tbNo" value="${tranb.items.TBNo_}" />
+		    <input type="submit" value="保存" />    <a href="FrmTran.deleteTranb?code=${tranb.items.Code_ }&num=${tranb.items.Num_}&tbNo=${tranb.items.TBNo_}" >删除</a>
 		</form>
 	</div>
 	<div style="padding: 0.5em;">
-		<a href="FrmTran?tbNo=${tranb.tbNo}">返回</a>
+		<a href="FrmTran?tbNo=${tranb.items.TBNo_}">返回</a>
 	</div>
 
 </body>

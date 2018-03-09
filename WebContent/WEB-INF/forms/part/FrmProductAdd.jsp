@@ -8,7 +8,7 @@
 </head>
 <body>
 	<div>
-		<form action="FrmProductAppend">
+		<form action="FrmProduct.append">
 			商品编号<input type="text" name="code" value="" /> <br /> 品名 <input
 				type="text" name="desc" value="" /> <br /> 规格 <input type="text"
 				name="spec" value="" /> <br /> 单位 <input type="text" name="unit"

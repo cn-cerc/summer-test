@@ -9,10 +9,10 @@
 </head>
 <body>
 	<div>
-		<form action="FrmTranhModify" method="post">
-			单号<input type="text" name="tbNo" value="${tranh.tbNo }" readonly="readonly"/> 日期 <input type="text" name="tbDate" value="${tranh.tbDate }" readonly="readonly" /> <br /> 
-			厂商 <input type="text" name="supName" value="${tranh.supName }" /> 
-			建档人员 <input type="text" name="appUser" value="${tranh.appUser }" readonly="readonly"/> <br /> 
+		<form action="FrmTran.modifyTranh" method="post">
+			单号<input type="text" name="tbNo" value="${tranh.items.TBNo_ }" readonly="readonly"/> 日期 <input type="text" name="tbDate" value="${tranh.items.TBDate_ }" readonly="readonly" /> <br /> 
+			厂商 <input type="text" name="supName" value="${tranh.items.SupName_ }" /> 
+			建档人员 <input type="text" name="appUser" value="${tranh.items.AppUser_ }" readonly="readonly"/> <br /> 
 			<input type="submit" value="保存" />
 		</form>
 	</div>
@@ -29,13 +29,13 @@
 			</tr>
 				<tr>
 				<c:forEach items="${tranbs}" var="tranb">
-					<td>${tranb.it}</td>
-					<td>${tranb.code}</td>
-					<td>${tranb.desc}</td>
-					<td>${tranb.spec}</td>
-					<td>${tranb.unit}</td>
-					<td>${tranb.num}</td>		
-				<td><a href="FrmTranbModify?code=${tranb.code}&tbNo=${tranh.tbNo }">内容</a></td>
+					<td>${tranb.items.It_}</td>
+					<td>${tranb.items.Code_}</td>
+					<td>${tranb.items.Desc_}</td>
+					<td>${tranb.items.Spec_}</td>
+					<td>${tranb.items.Unit_}</td>
+					<td>${tranb.items.Num_}</td>		
+				<td><a href="FrmTran.modifyTranb?code=${tranb.items.Code_}&tbNo=${tranh.items.TBNo_ }">内容</a></td>
 				</c:forEach>
 				</tr>
 
@@ -43,10 +43,10 @@
 	</div>
 	
 	<div>
-		<a href="FrmTranbAdd?tbNo=${tranh.tbNo }">新增</a>
+		<a href="FrmTran.addTranb?tbNo=${tranh.items.TBNo_  }">新增</a>
 	</div>
 	<div style="padding: 0.5em;">
-		<a href="FrmTranhList">返回</a>
+		<a href="FrmTran.listTranh">返回</a>
 	</div>
 	<div>${message}</div>
 </body>

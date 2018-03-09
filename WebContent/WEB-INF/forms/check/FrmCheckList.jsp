@@ -9,7 +9,7 @@
 </head>
 <body>
 	<div>
-		<form action="FrmCheckhModify" method="post">
+		<form action="FrmCheck.modifyCheckh" method="post">
 			单号<input type="text" name="tbNo" value="${checkh.items.TBNo_ }" readonly="readonly"/> 日期 <input type="text" name="tbDate" value="${checkh.items.TBDate_}" readonly="readonly" /> <br /> 
 			部门<input type="text" name="deptName" value="${checkh.items.DeptName_ }" /> 
 			建档人员 <input type="text" name="appUser" value="${checkh.items.AppUser_ }" readonly="readonly"/> <br /> 
@@ -39,18 +39,17 @@
 					<td>${checkb.items.Num_}</td>
 					<td>${checkb.items.CurStock_}</td>	
 					<td>${checkb.items.NewStock_}</td>			
-				<td><a href="FrmCheckbModify?code=${checkb.items.Code_}&tbNo=${checkb.items.TBNo_}">内容</a></td>
+				<td><a href="FrmCheck.modifyCheckb?code=${checkb.items.Code_}&tbNo=${checkb.items.TBNo_}">内容</a></td>
 				</tr>
 				</c:forEach>
 
 		</table>
 	</div>
-	
 	<div>
-		<a href="FrmCheckbAdd?tbNo=${checkh.items.TBNo_ }">新增</a>
+		<a href="FrmCheck.addCheckb?tbNo=${checkh.items.TBNo_ }">新增</a>
 	</div>
 	<div style="padding: 0.5em;">
-		<a href="FrmCheckhList">返回</a>
+		<a href="FrmCheck.listCheckh">返回</a>
 	</div>
 	<div>${message}</div>
 </body>

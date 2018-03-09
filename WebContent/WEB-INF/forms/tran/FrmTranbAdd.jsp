@@ -14,11 +14,11 @@
 </head>
 <body>
 	<div>
-		<form action="FrmTranbAppend" method="post">
+		<form action="FrmTran.appendTranb" method="post">
 			商品编号<select name="code" id="ProductCode">
 				<option  >----请选择----</option>
 				<c:forEach items="${items}" var="item">
-				<option value="${item.code}">${item.code}--${item.desc}</option>
+				<option value="${item.items.Code_}">${item.items.Code_}--${item.items.Desc_}</option>
 				</c:forEach>
 				
 			</select> <br /> 数量<input type="text" name="stock" value="" /> <br />

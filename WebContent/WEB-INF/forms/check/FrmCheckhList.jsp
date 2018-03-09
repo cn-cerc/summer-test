@@ -23,7 +23,7 @@
 			<c:forEach items="${checkhs}" var="checkh">
 				<tr>
 					<td>${checkh.items.TB_ }</td>
-					<td><a href="FrmCheckList?tbNo=${checkh.items.TBNo_ }">${checkh.items.TBNo_ }</a></td>
+					<td><a href="FrmCheck?tbNo=${checkh.items.TBNo_ }">${checkh.items.TBNo_ }</a></td>
 					<td><fmt:formatDate value="${checkh.items.TBDate_}" pattern="yyyy-MM-dd "/></td>
 					<td>${checkh.items.DeptName_}</td>
 					<td>${checkh.items.AppUser_}</td>
@@ -35,7 +35,7 @@
 	</div>
 
 	<div>
-		<a href="FrmCheckhAdd">增加</a>
+		<a href="FrmCheck.addCheckh">增加</a>
 	</div>
 	<div style="padding: 0.5em;">
 		<a href="FrmInvoicing">返回</a>

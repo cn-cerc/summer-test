@@ -19,10 +19,10 @@
 				<td>建档人员</td>
 				<td>建档时间</td>
 			</tr>
-			<c:forEach items="${salehs.records}" var="saleh">
+			<c:forEach items="${salehs}" var="saleh">
 				<tr>
 					<td>${saleh.items.TB_ }</td>
-					<td><a href="FrmSaleList?tbNo=${saleh.items.TBNo_ }">${saleh.items.TBNo_ }</a></td>
+					<td><a href="FrmSale?tbNo=${saleh.items.TBNo_ }">${saleh.items.TBNo_ }</a></td>
 					<td>${saleh.items.TBDate_}</td>
 					<td>${saleh.items.CusName_}</td>
 					<td>${saleh.items.AppUser_}</td>
@@ -34,7 +34,7 @@
 	</div>
 
 	<div>
-		<a href="FrmSalehAdd">增加</a>
+		<a href="FrmSale.addSaleh">增加</a>
 	</div>
 	<div style="padding: 0.5em;">
 		<a href="FrmInvoicing">返回</a>

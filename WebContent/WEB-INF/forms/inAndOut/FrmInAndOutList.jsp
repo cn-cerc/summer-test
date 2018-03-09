@@ -10,7 +10,7 @@
 </head>
 <body>
 
-	<form action="FrmInAndOutSearch" method="post">
+	<form action="FrmInAndOut.search" method="post">
 		<div>
 			单号<input type="text" name="tbNo" value="${tbNo }" /> 商品搜索<input
 				type="text" name="productName" value="${productName }" />

@@ -22,20 +22,20 @@
 			</tr>
 			<c:forEach items="${items}" var="item">
 				<tr>
-					<td>${item.code}</td>
-					<td>${item.desc}</td>
-					<td>${item.spec}</td>
-					<td>${item.unit}</td>
-					<td>${item.stock}</td>
-					<td><a href="FrmProductDelete?code=${item.code}">删除</a></td>
-					<td><a href="FrmProductModify?code=${item.code}">修改</a></td>
+					<td>${item.items.Code_}</td>
+					<td>${item.items.Desc_}</td>
+					<td>${item.items.Spec_}</td>
+					<td>${item.items.Unit_}</td>
+					<td>${item.items.Stock_}</td>
+					<td><a href="FrmProduct.delete?code=${item.items.Code_}">删除</a></td>
+					<td><a href="FrmProduct.modify?code=${item.items.Code_}">修改</a></td>
 				</tr>
 			</c:forEach>
 		</table>
 	</div>
 
 	<div>
-		<a href="FrmProductAdd">增加</a>
+		<a href="FrmProduct.add">增加</a>
 	</div>
 	<div style="padding: 0.5em;">
 		<a href="FrmInvoicing">返回</a>

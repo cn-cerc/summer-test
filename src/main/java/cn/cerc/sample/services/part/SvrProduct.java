@@ -24,8 +24,7 @@ public class SvrProduct extends CustomService {
 		ds.add("where CorpNo_ = %s", BaseConfig.CorpNo);
 		ds.add("and Code_ = '%s'", code);
 		ds.open();
-		getDataOut().appendDataSet(ds);
-		/* getDataIn().getHead().copyValues(ds.getCurrent()); */
+		getDataOut().getHead().copyValues(ds.getCurrent());
 		return true;
 	}
 

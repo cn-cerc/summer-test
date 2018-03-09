@@ -8,7 +8,7 @@
 </head>
 <body>
 	<div>
-		<form action="FrmSalehAppend" method="post">
+		<form action="FrmSale.appendSaleh" method="post">
 			单号<input type="text" name="tbNo" value="" /> <br />
 			日期 <input type="text" name="tbDate" value="${date}" /> <br /> 客户 <input
 				type="text" name="cusName" value="" /> <br />
@@ -17,7 +17,7 @@
 		</form>
 	</div>
 	<div style="padding: 0.5em;">
-		<a href="FrmSalehList">返回</a>
+		<a href="FrmSale.listSaleh">返回</a>
 	</div>
 	<div>${message}</div>
 </body>

@@ -9,10 +9,10 @@
 </head>
 <body>
 	<div>
-		<form action="FrmSalehModify" method="post">
-			单号<input type="text" name="tbNo" value="${saleh.tbNo }" readonly="readonly"/> 日期 <input type="text" name="tbDate" value="${saleh.tbDate }" readonly="readonly" /> <br /> 
-			客户 <input type="text" name="cusName" value="${saleh.cusName }" /> 
-			建档人员 <input type="text" name="appUser" value="${saleh.appUser }" readonly="readonly"/> <br /> 
+		<form action="FrmSale.modifySaleh" method="post">
+			单号<input type="text" name="tbNo" value="${saleh.items.TBNo_ }" readonly="readonly"/> 日期 <input type="text" name="tbDate" value="${saleh.items.TBDate_ }" readonly="readonly" /> <br /> 
+			客户 <input type="text" name="cusName" value="${saleh.items.CusName_ }" /> 
+			建档人员 <input type="text" name="appUser" value="${saleh.items.AppUser_ }" readonly="readonly"/> <br /> 
 			<input type="submit" value="保存" />
 		</form>
 	</div>
@@ -29,13 +29,13 @@
 			</tr>
 				<tr>
 				<c:forEach items="${salebs}" var="saleb">
-					<td>${saleb.it}</td>
-					<td>${saleb.code}</td>
-					<td>${saleb.desc}</td>
-					<td>${saleb.spec}</td>
-					<td>${saleb.unit}</td>
-					<td>${saleb.num}</td>		
-				<td><a href="FrmSalebModify?code=${saleb.code}&tbNo=${saleb.tbNo }">内容</a></td>
+					<td>${saleb.items.It_}</td>
+					<td>${saleb.items.Code_}</td>
+					<td>${saleb.items.Desc_}</td>
+					<td>${saleb.items.Spec_}</td>
+					<td>${saleb.items.Unit_}</td>
+					<td>${saleb.items.Num_}</td>		
+				<td><a href="FrmSale.modifySaleb?code=${saleb.items.Code_}&tbNo=${saleb.items.TBNo_ }">内容</a></td>
 				</c:forEach>
 				</tr>
 
@@ -43,10 +43,10 @@
 	</div>
 	
 	<div>
-		<a href="FrmSalebAdd?tbNo=${saleh.tbNo}">新增</a>
+		<a href="FrmSale.addSaleb?tbNo=${saleh.items.TBNo_}">新增</a>
 	</div>
 	<div style="padding: 0.5em;">
-		<a href="FrmSalehList">返回</a>
+		<a href="FrmSale.listSaleh">返回</a>
 	</div>
 	<div>${message}</div>
 </body>
