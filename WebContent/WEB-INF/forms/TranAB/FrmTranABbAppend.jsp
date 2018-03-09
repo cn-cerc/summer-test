@@ -13,7 +13,7 @@
       <h1>增加进货单单身</h1>
       <form action="FrmTranABbAppend.TranBPost" method="Post">
             <input type="hidden" name="tbno" value="${tbno}"/>
-         <p>商品编号: <input type="text" name="Code" /></p>
+         <p>商品编号: <input type="text" name="Code" value="${code}"/></p>
          <p>商品数量: <input type="text" name="Num" /></p>
          <input type="submit" name="submit" value="保存" />
          ${msg}

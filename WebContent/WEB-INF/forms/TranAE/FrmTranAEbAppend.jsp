@@ -6,6 +6,18 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+<script src='js/jquery.js'></script>
+<script type="text/javascript">
+$(function(){
+	$('input[name=Code]').on('blur',function(){
+	    var param = {};
+	    param.Code = $(this).val();
+	    $.get("FrmTranAEbAppend.getStock",param,function(data){
+	        $('input[name=Stock]').val(data.stock);
+	    },'json');
+	});
+});
+</script>
 </head>
 <body>
   <div align="center">
@@ -14,6 +26,7 @@
       <form action="FrmTranAEbAppend.TranBPost" method="Post">
             <input type="hidden" name="tbno" value="${tbno}"/>
          <p>商品编号: <input type="text" name="Code" /></p>
+         <p>库存数量: <input type="text" name="Stock" /></p>
          <p>盘点数量: <input type="text" name="Num" /></p>
          <input type="submit" name="submit" value="保存" />
          ${msg}

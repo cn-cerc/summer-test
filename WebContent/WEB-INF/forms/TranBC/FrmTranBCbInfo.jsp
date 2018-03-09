@@ -17,7 +17,7 @@
    
          <tr>
            <th>          
-             <p>销售单号: <input type="text" name="TBNo" readonly="readonly" value="${item.tbno}"/></p>
+             <p>销售单号: <input type="text" name="TBNo" readonly="readonly" value="${items.tbno}"/></p>
            </th>
            <th>
              <p>单据日期: <input type="text" name="TBDate" readonly="readonly" value="${item.tbdate}"/></p>

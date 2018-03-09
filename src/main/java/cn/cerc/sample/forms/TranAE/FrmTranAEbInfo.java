@@ -2,12 +2,10 @@ package cn.cerc.sample.forms.TranAE;
 
 import cn.cerc.jbean.client.LocalService;
 import cn.cerc.jbean.form.IPage;
-import cn.cerc.jdb.core.DataSet;
 import cn.cerc.jdb.core.Record;
 import cn.cerc.jmis.form.AbstractForm;
 import cn.cerc.jmis.page.JspPage;
 import cn.cerc.jmis.page.RedirectPage;
-import cn.cerc.sample.forms.TranAB.TranABInfo_Record;
 
 public class FrmTranAEbInfo extends AbstractForm {
     @Override
@@ -22,16 +20,16 @@ public class FrmTranAEbInfo extends AbstractForm {
             jspPage.setMessage(svr.getMessage());
             return jspPage;
         }
+
         // jspPage.add("head", svr.getDataOut().getCurrent().getItems());
-        DataSet ds = svr.getDataOut();
-        if (!ds.eof()) {
-            TranABInfo_Record item = new TranABInfo_Record();
-            item.setTbno(ds.getString("TBNo_"));
-            item.setTbdate(ds.getString("TBDate_"));
-            item.setDeptname(ds.getString("DeptName_"));
-            item.setAppuser(ds.getString("AppUser_"));
-            jspPage.add("item", item);
-        }
+        jspPage.add("record", svr.getDataOut().getHead());
+        /*
+         * DataSet ds = svr.getDataOut(); if (!ds.eof()) { TranABInfo_Record item = new
+         * TranABInfo_Record(); item.setTbno(ds.getString("TBNo_"));
+         * item.setTbdate(ds.getString("TBDate_"));
+         * item.setDeptname(ds.getString("DeptName_"));
+         * item.setAppuser(ds.getString("AppUser_")); jspPage.add("item", item); }
+         */
         LocalService svr2 = new LocalService(this);
         svr2.setService("SvrTranInfo.TranBStocksch");
         Record headIn2 = svr2.getDataIn().getHead();

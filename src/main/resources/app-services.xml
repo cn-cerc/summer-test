@@ -74,12 +74,14 @@
     <bean id="SvrTranInfo.TranBStocksch" class="cn.cerc.sample.services.TranAB.SvrTranInfo" scope="prototype">
         <property name="funcCode" value="TranBStocksch" />
     </bean> 
-    <bean id="SvrTranInfo.TranItStrocksch" class="cn.cerc.sample.services.TranAB.SvrTranInfo" scope="prototype">
-        <property name="funcCode" value="TranItStrocksch" />
+    <bean id="SvrTranInfo.TranItStocksch" class="cn.cerc.sample.services.TranAB.SvrTranInfo" scope="prototype">
+        <property name="funcCode" value="TranItStocksch" />
     </bean> 
     <bean id="SvrTranInfo.schPartInOut" class="cn.cerc.sample.services.TranAB.SvrTranInfo" scope="prototype">
         <property name="funcCode" value="schPartInOut" />
     </bean>    
-      
+    <bean id="svrPartinfo.schProductStock" class="cn.cerc.sample.services.part.svrPartinfo" scope="prototype">
+        <property name="funcCode" value="schProductStock" />
+    </bean>        
         
 </beans>

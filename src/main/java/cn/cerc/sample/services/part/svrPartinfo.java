@@ -2,13 +2,14 @@ package cn.cerc.sample.services.part;
 
 import cn.cerc.jbean.core.CustomService;
 import cn.cerc.jdb.core.Record;
+import cn.cerc.jdb.core.Utils;
 import cn.cerc.jdb.mysql.SqlQuery;
 import cn.cerc.sample.common.BaseConfig;
 
 public class svrPartinfo extends CustomService {
     public boolean sch() {
         SqlQuery ds = new SqlQuery(this);
-        ds.add("SELECT *FROM %s ", BaseConfig.product);
+        ds.add("SELECT * FROM %s ", BaseConfig.product);
         ds.add("where CorpNo_='%s'", BaseConfig.CorpNo);
         ds.open();
         getDataOut().appendDataSet(ds);
@@ -72,7 +73,18 @@ public class svrPartinfo extends CustomService {
         Record headIn = getDataIn().getHead();
         String code = headIn.getString("Code_");
         SqlQuery ds = new SqlQuery(this);
-        ds.add("SELECT *FROM %s ", BaseConfig.product);
+        ds.add("SELECT * FROM %s ", BaseConfig.product);
+        ds.add("WHERE CorpNo_='%s' and Code_='%s'", BaseConfig.CorpNo, code);
+        ds.open();
+        getDataOut().appendDataSet(ds);
+        return true;
+    }
+
+    public boolean schProductStock() {
+        Record headIn = getDataIn().getHead();
+        String code = Utils.safeString(headIn.getString("Code_"));
+        SqlQuery ds = new SqlQuery(this);
+        ds.add("SELECT Stock_ FROM %s ", BaseConfig.product);
         ds.add("WHERE CorpNo_='%s' and Code_='%s'", BaseConfig.CorpNo, code);
         ds.open();
         getDataOut().appendDataSet(ds);

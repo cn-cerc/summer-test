@@ -18,18 +18,18 @@
    
          <tr>
            <th>          
-             <p>盘点单号: <input type="text" name="TBNo" readonly="readonly" value="${item.tbno}"/></p>
+             <p>盘点单号: <input type="text" name="TBNo" readonly="readonly" value="${record.items.TBNo_}"/></p>
            </th>
            <th>
-             <p>单据日期: <input type="text" name="TBDate" readonly="readonly" value="${item.tbdate}"/></p>
+             <p>单据日期: <input type="text" name="TBDate" readonly="readonly" value="${record.items.TBDate_}"/></p>
            </th>
          </tr> 
          <tr>
            <th>  
-             <p>部门名称: <input type="text" name="DeptName"  value="${item.deptname}"/></p>
+             <p>部门名称: <input type="text" name="DeptName"  value="${record.items.DeptName_}"/></p>
            </th>
            <th>
-             <p>建档人员: <input type="text" name="AppUser" readonly="readonly" value="${item.appuser}"/></p>   
+             <p>建档人员: <input type="text" name="AppUser" readonly="readonly" value="${record.items.AppUser_}"/></p>   
            </th>       
          </tr> 
          <tr>
@@ -76,7 +76,7 @@
     
   </div>
   <div align="left">
-    <a href="FrmTranAEbAppend?tbno=${item.tbno}">新增</a>
+    <a href="FrmTranAEbAppend?tbno="${record.items.TBNo_}>新增</a>
     <a href="FrmTranAEInfo">返回</a>
 </div>
 </body>

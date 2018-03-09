@@ -20,6 +20,8 @@ public class FrmPartAppend extends AbstractForm {
         if (submit != null) {
             LocalService svr = new LocalService(this);
             svr.setService("svrPartinfo.append");
+            // if(this.getCorpNo().equals("lc"))
+            // svr.setService("lc_svrPartinfo.append");
             Record headIn = svr.getDataIn().getHead();
             headIn.setField("Code_", code);
             headIn.setField("Desc_", desc);

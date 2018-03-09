@@ -17,7 +17,7 @@ public class FrmTranAEbModify extends AbstractForm {
         String it = this.getRequest().getParameter("it");
         jspPage.add("tbno", tbno);
         LocalService svr = new LocalService(this);
-        svr.setService("SvrTranInfo.TranItStrocksch");
+        svr.setService("SvrTranInfo.TranItStocksch");
         Record headIn = svr.getDataIn().getHead();
         headIn.setField("TBNo_", tbno);
         headIn.setField("It_", it);

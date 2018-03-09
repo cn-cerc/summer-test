@@ -3,6 +3,7 @@ package cn.cerc.sample.services.TranAB;
 import cn.cerc.jbean.core.CustomService;
 import cn.cerc.jdb.core.Record;
 import cn.cerc.jdb.core.TDateTime;
+import cn.cerc.jdb.core.Utils;
 import cn.cerc.jdb.mysql.BuildQuery;
 import cn.cerc.jdb.mysql.SqlQuery;
 import cn.cerc.jdb.other.utils;
@@ -11,9 +12,9 @@ import cn.cerc.sample.common.BaseConfig;
 public class SvrTranInfo extends CustomService {
     public boolean sch() {
         Record headIn = getDataIn().getHead();
-        String tb = headIn.getString("TB_");
+        String tb = Utils.safeString(headIn.getString("TB_"));
         SqlQuery ds = new SqlQuery(this);
-        ds.add("SELECT *FROM %s ", BaseConfig.tranh);
+        ds.add("SELECT * FROM %s ", BaseConfig.tranh);
         ds.add("where CorpNo_='%s' and TB_='%s'", BaseConfig.CorpNo, tb);
         ds.open();
         getDataOut().appendDataSet(ds);
@@ -22,13 +23,14 @@ public class SvrTranInfo extends CustomService {
 
     public boolean TranHsch() {
         Record headIn = getDataIn().getHead();
-        String tbno = headIn.getString("TBNo_");
+        String tbno = Utils.safeString(headIn.getString("TBNo_"));
         SqlQuery dsTranH = new SqlQuery(this);
-        dsTranH.add("SELECT *FROM %s ", BaseConfig.tranh);
-        dsTranH.add("where CorpNo_='%s' and TBNo_='%s' ", BaseConfig.CorpNo, tbno);
+        dsTranH.add("SELECT * FROM %s ", BaseConfig.tranh);
+        dsTranH.add("where CorpNo_='%s' and TBNo_='%s'", BaseConfig.CorpNo, tbno);
         dsTranH.open();
         getDataOut().appendDataSet(dsTranH);
         // getDataOut().getHead().copyValues(dsTranH.getCurrent());
+
         /*
          * SqlQuery dsTranB = new SqlQuery(this); dsTranB.add("SELECT *FROM %s ",
          * BaseConfig.tranb); dsTranB.add("where CorpNo_='%s' and TBNo_='%s' ",
@@ -40,7 +42,7 @@ public class SvrTranInfo extends CustomService {
 
     public boolean TranHappend() {
         Record headIn = getDataIn().getHead();
-        String tbno = headIn.getString("TBNo_");
+        String tbno = Utils.safeString(headIn.getString("TBNo_"));
         SqlQuery ds = new SqlQuery(this);
         ds.add("SELECT * FROM %s", BaseConfig.tranh);
         ds.add("WHERE CorpNo_='%s' and TBNo_='%s'", BaseConfig.CorpNo, tbno);
@@ -64,7 +66,7 @@ public class SvrTranInfo extends CustomService {
 
     public boolean TranHmodify() {
         Record headIn = getDataIn().getHead();
-        String tbno = headIn.getString("TBNo_");
+        String tbno = Utils.safeString(headIn.getString("TBNo_"));
         SqlQuery ds = new SqlQuery(this);
         ds.add("SELECT * FROM %s", BaseConfig.tranh);
         ds.add("WHERE CorpNo_='%s' and TBNo_='%s' ", BaseConfig.CorpNo, tbno);
@@ -82,8 +84,8 @@ public class SvrTranInfo extends CustomService {
 
     public boolean TranBappend() {
         Record headIn = getDataIn().getHead();
-        String tbno = headIn.getString("TBNo_");
-        String code = headIn.getString("Code_");
+        String tbno = Utils.safeString(headIn.getString("TBNo_"));
+        String code = Utils.safeString(headIn.getString("Code_"));
         Double num = headIn.getDouble("Num_");
 
         SqlQuery ds = new SqlQuery(this);
@@ -152,7 +154,7 @@ public class SvrTranInfo extends CustomService {
 
     public boolean TranBsch() {
         Record headIn = getDataIn().getHead();
-        String tbno = headIn.getString("TBNo_");
+        String tbno = Utils.safeString(headIn.getString("TBNo_"));
         SqlQuery ds = new SqlQuery(this);
         ds.add("SELECT * FROM %s", BaseConfig.tranb);
         ds.add("WHERE CorpNo_='%s' and TBNo_='%s' ORDER BY It_  ", BaseConfig.CorpNo, tbno);
@@ -163,10 +165,10 @@ public class SvrTranInfo extends CustomService {
 
     public boolean TranBStocksch() {
         Record headIn = getDataIn().getHead();
-        String tbno = headIn.getString("TBNo_");
+        String tbno = Utils.safeString(headIn.getString("TBNo_"));
         SqlQuery ds = new SqlQuery(this);
-        ds.add("SELECT *,(SELECT Stock_ FROM product WHERE Code_=tranb.Code_ AND CorpNo_=tranb.CorpNo_) AS Stock_ FROM %s",
-                BaseConfig.tranb);
+        ds.add("SELECT *,(SELECT Stock_ FROM %s ", BaseConfig.product);
+        ds.add("WHERE Code_=tranb.Code_ AND CorpNo_=tranb.CorpNo_) AS Stock_ FROM %s", BaseConfig.tranb);
         ds.add("WHERE CorpNo_='%s' and TBNo_='%s' ORDER BY It_  ", BaseConfig.CorpNo, tbno);
         ds.open();
         getDataOut().appendDataSet(ds);
@@ -175,7 +177,7 @@ public class SvrTranInfo extends CustomService {
 
     public boolean TranItsch() {
         Record headIn = getDataIn().getHead();
-        String tbno = headIn.getString("TBNo_");
+        String tbno = Utils.safeString(headIn.getString("TBNo_"));
         String it = headIn.getString("It_");
         SqlQuery ds = new SqlQuery(this);
         ds.add("SELECT * FROM %s", BaseConfig.tranb);
@@ -185,9 +187,9 @@ public class SvrTranInfo extends CustomService {
         return true;
     }
 
-    public boolean TranItStrocksch() {
+    public boolean TranItStocksch() {
         Record headIn = getDataIn().getHead();
-        String tbno = headIn.getString("TBNo_");
+        String tbno = Utils.safeString(headIn.getString("TBNo_"));
         String it = headIn.getString("It_");
         SqlQuery ds = new SqlQuery(this);
         ds.add("SELECT *,(SELECT Stock_ FROM product WHERE Code_=tranb.Code_ AND CorpNo_=tranb.CorpNo_) AS Stock_ FROM %s",
@@ -200,9 +202,9 @@ public class SvrTranInfo extends CustomService {
 
     public boolean TranBmodify() {
         Record headIn = getDataIn().getHead();
-        String tbno = headIn.getString("TBNo_");
+        String tbno = Utils.safeString(headIn.getString("TBNo_"));
         String it = headIn.getString("It_");
-        String code = headIn.getString("Code_");
+        String code = Utils.safeString(headIn.getString("Code_"));
         Double num = headIn.getDouble("Num_");
         SqlQuery ds = new SqlQuery(this);
         ds.add("SELECT * FROM %s", BaseConfig.tranb);
@@ -241,9 +243,9 @@ public class SvrTranInfo extends CustomService {
 
     public boolean TranBdelete() {
         Record headIn = getDataIn().getHead();
-        String tbno = headIn.getString("TBNo_");
-        String it = headIn.getString("It_");
-        String code = headIn.getString("Code_");
+        String tbno = Utils.safeString(headIn.getString("TBNo_"));
+        String it = Utils.safeString(headIn.getString("It_"));
+        String code = Utils.safeString(headIn.getString("Code_"));
 
         SqlQuery ds = new SqlQuery(this);
         ds.add("SELECT * FROM %s", BaseConfig.tranb);
@@ -277,10 +279,12 @@ public class SvrTranInfo extends CustomService {
         BuildQuery f = new BuildQuery(this);
         f.byField("h.CorpNo_", BaseConfig.CorpNo);
         if (headIn.hasValue("PartSchText_")) {
-            f.byLink(new String[] { "b.Code_", "b.Desc_", "b.Spec_", "b.Unit_" }, headIn.getString("PartSchText_"));
+            f.byLink(new String[] { "b.Code_", "b.Desc_", "b.Spec_", "b.Unit_" },
+                    Utils.safeString(headIn.getString("PartSchText_")));
         }
         if (headIn.hasValue("CusSupSchText_")) {
-            f.byLink(new String[] { "h.SupName_", "h.CusName_", "h.DeptName" }, headIn.getString("CuSupSchText_"));
+            f.byLink(new String[] { "h.SupName_", "h.CusName_", "h.DeptName" },
+                    Utils.safeString(headIn.getString("CuSupSchText_")));
         }
         if (headIn.hasValue("TBNo_")) {
             f.byField("h.TBNo_", headIn.getString("TBNo_"));
@@ -299,7 +303,7 @@ public class SvrTranInfo extends CustomService {
         f.add("inner join %s p on p.CorpNo_=b.CorpNo_ and p.Code_=b.Code_", BaseConfig.product);
         f.setOrderText("order by h.TBDate_ desc, b.It_ ");
         SqlQuery ds = f.open();
-        System.out.println(ds.getCommandText());
+        // System.out.println(ds.getCommandText());
 
         getDataOut().appendDataSet(ds);
         double totalInNum = 0;

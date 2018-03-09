@@ -13,12 +13,11 @@ public class FrmPartmodify extends AbstractForm {
     public IPage execute() throws Exception {
         JspPage jspPage = new JspPage(this, "part/FrmPartmodify.jsp");
         String code = this.getRequest().getParameter("code");
-        LocalService svr = new LocalService(this);
-        svr.setService("svrPartinfo.modifysch");
+        LocalService svr = new LocalService(this, "svrPartinfo.modifysch");
         // svr.getDataIn().getHead().setField("Code_", code);
-        Record headIn = svr.getDataIn().getHead();
-        headIn.setField("Code_", code);
-        if (!svr.exec()) {
+        // Record headIn = svr.getDataIn().getHead();
+        // headIn.setField("Code_", code);
+        if (!svr.exec("Code_", code)) {
             jspPage.setMessage(svr.getMessage());
             return jspPage;
         }
@@ -30,6 +29,7 @@ public class FrmPartmodify extends AbstractForm {
             item.setSpec(ds.getString("Spec_"));
             item.setUnit(ds.getString("Unit_"));
             item.setStock(ds.getDouble("Stock_"));
+
             jspPage.add("item", item);
         }
 
