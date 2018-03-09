@@ -31,7 +31,6 @@
 					<td><a href="FrmProductModify?code=${item.code}">修改</a></td>
 				</tr>
 			</c:forEach>
-
 		</table>
 	</div>
 

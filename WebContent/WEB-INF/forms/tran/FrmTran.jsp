@@ -46,7 +46,7 @@
 		<a href="FrmTranbAdd?tbNo=${tranh.tbNo }">新增</a>
 	</div>
 	<div style="padding: 0.5em;">
-		<a href="FrmTrachAdd?tbNo=${tranh.tbNo }">返回</a>
+		<a href="FrmTranhList">返回</a>
 	</div>
 	<div>${message}</div>
 </body>

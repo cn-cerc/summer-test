@@ -14,6 +14,7 @@ public class SvrTran extends CustomService {
 		SqlQuery ds = new SqlQuery(this);
 		ds.add("select * from  %s", BaseConfig.Tranh);
 		ds.add("where CorpNo_ = %s", BaseConfig.CorpNo);
+		ds.add("and SupName_ is not null");
 		ds.open();
 		getDataOut().appendDataSet(ds);
 		return true;

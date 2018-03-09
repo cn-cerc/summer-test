@@ -29,8 +29,8 @@
 				<td>实际库存</td>
 				<td>操作</td>
 			</tr>
+				<c:forEach items="${checkbs}" var="checkb">
 				<tr>
-				<c:forEach items="${Checkbs.records}" var="checkb">
 					<td>${checkb.items.It_}</td>
 					<td>${checkb.items.Code_}</td>
 					<td>${checkb.items.Desc_}</td>
@@ -40,8 +40,8 @@
 					<td>${checkb.items.CurStock_}</td>	
 					<td>${checkb.items.NewStock_}</td>			
 				<td><a href="FrmCheckbModify?code=${checkb.items.Code_}&tbNo=${checkb.items.TBNo_}">内容</a></td>
-				</c:forEach>
 				</tr>
+				</c:forEach>
 
 		</table>
 	</div>
@@ -50,7 +50,7 @@
 		<a href="FrmCheckbAdd?tbNo=${checkh.items.TBNo_ }">新增</a>
 	</div>
 	<div style="padding: 0.5em;">
-		<a href="FrmCheckhAdd?tbNo=${checkh.items.TBNo_ }">返回</a>
+		<a href="FrmCheckhList">返回</a>
 	</div>
 	<div>${message}</div>
 </body>

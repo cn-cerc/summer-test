@@ -104,6 +104,25 @@
       <bean id="SvrCheck.findCheck" class="cn.cerc.sample.services.check.SvrCheck" scope="prototype">
         <property name="funcCode" value="findCheck" />
     </bean>
-    
+      <bean id="SvrCheck.saveCheckb" class="cn.cerc.sample.services.check.SvrCheck" scope="prototype">
+        <property name="funcCode" value="saveCheckb" />
+    </bean>
+     <bean id="SvrCheck.checkhModify" class="cn.cerc.sample.services.check.SvrCheck" scope="prototype">
+        <property name="funcCode" value="checkhModify" />
+    </bean>
+     <bean id="SvrCheck.checkbModify" class="cn.cerc.sample.services.check.SvrCheck" scope="prototype">
+        <property name="funcCode" value="checkbModify" />
+    </bean>
+     <bean id="SvrCheck.checkbDelete" class="cn.cerc.sample.services.check.SvrCheck" scope="prototype">
+        <property name="funcCode" value="checkbDelete" />
+    </bean>
+     <bean id="SvrCheck.checkbUpdate" class="cn.cerc.sample.services.check.SvrCheck" scope="prototype">
+        <property name="funcCode" value="checkbUpdate" />
+    </bean>
+     <bean id="SvrInAndOut.search" class="cn.cerc.sample.services.inAndOut.SvrInAndOut" scope="prototype">
+        <property name="funcCode" value="search" />
+    </bean>
+  
+
     
 </beans>

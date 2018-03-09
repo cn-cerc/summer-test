@@ -23,7 +23,6 @@ public class FrmSalebDelete extends AbstractForm {
 			jspPage.add("message", svr.getMessage());
 			return jspPage;
 		}
-
 		return new RedirectPage(this, String.format("FrmSaleList?tbNo=%s", tbNo));
 	}
 

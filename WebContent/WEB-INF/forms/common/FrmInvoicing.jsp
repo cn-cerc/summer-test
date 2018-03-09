@@ -24,7 +24,7 @@
 				<a href="FrmCheckhList">盘点单</a>
 			</div>
 			<div>
-				<a href="">进出库查询</a>
+				<a href="FrmInAndOutList">进出库查询</a>
 			</div>
 			<div style="padding: 0.5em;">
 				<a href="FrmWelcome">返回</a>

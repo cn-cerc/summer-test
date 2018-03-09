@@ -134,4 +134,9 @@
 	<bean id="FrmCheckhAdd" class="cn.cerc.sample.forms.check.FrmCheckhAdd"
 		scope="prototype">
 	</bean>
+	<bean id="FrmInAndOutList" class="cn.cerc.sample.forms.inAndOut.FrmInAndOutList"
+		scope="prototype">
+	</bean><bean id="FrmInAndOutSearch" class="cn.cerc.sample.forms.inAndOut.FrmInAndOutSearch"
+		scope="prototype">
+	</bean>
 </beans>
