@@ -54,8 +54,14 @@
         </div>
     </div>
     <div style="text-align: center; padding-top: 2em;">
+        <div>
+            <a href="FrmInvoicing">进消存测试</a>
+        </div>
+    </div>
+    <div style="text-align: center; padding-top: 2em;">
         <a href="javascript:onTestClick()">临时测试</a><br />
     </div>
+   
     <div id="message" style="text-align: center; padding-top: 2em; font-color: red"></div>
 </body>
 </html>

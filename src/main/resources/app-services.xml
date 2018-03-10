@@ -29,4 +29,100 @@
     <bean id="ServiceUserList" class="cn.cerc.sample.services.ServiceUserList" scope="prototype">
         <property name="restPath" value="get://*/public/users" />
     </bean>
+    <bean id="SvrProduct.search" class="cn.cerc.sample.services.part.SvrProduct" scope="prototype">
+        <property name="funcCode" value="search" />
+    </bean>
+     <bean id="SvrProduct.findById" class="cn.cerc.sample.services.part.SvrProduct" scope="prototype">
+        <property name="funcCode" value="findById" />
+    </bean>
+    <bean id="SvrProduct.add" class="cn.cerc.sample.services.part.SvrProduct" scope="prototype">
+        <property name="funcCode" value="add" />
+    </bean>
+    <bean id="SvrProduct.update" class="cn.cerc.sample.services.part.SvrProduct" scope="prototype">
+        <property name="funcCode" value="update" />
+    </bean>
+     <bean id="SvrProduct.delete" class="cn.cerc.sample.services.part.SvrProduct" scope="prototype">
+        <property name="funcCode" value="delete" />
+    </bean>
+      <bean id="SvrTran.search" class="cn.cerc.sample.services.tran.SvrTran" scope="prototype">
+        <property name="funcCode" value="search" />
+    </bean>
+      <bean id="SvrTran.tranhFindByTbNo" class="cn.cerc.sample.services.tran.SvrTran" scope="prototype">
+        <property name="funcCode" value="tranhFindByTbNo" />
+    </bean>
+       <bean id="SvrTran.find" class="cn.cerc.sample.services.tran.SvrTran" scope="prototype">
+        <property name="funcCode" value="find" />
+    </bean>
+       <bean id="SvrTran.tranhModify" class="cn.cerc.sample.services.tran.SvrTran" scope="prototype">
+        <property name="funcCode" value="tranhModify" />
+    </bean>
+     <bean id="SvrTran.tranbAdd" class="cn.cerc.sample.services.tran.SvrTran" scope="prototype">
+        <property name="funcCode" value="tranbAdd" />
+    </bean>
+     <bean id="SvrTran.tranbFindByTbNo" class="cn.cerc.sample.services.tran.SvrTran" scope="prototype">
+        <property name="funcCode" value="tranbFindByTbNo" />
+    </bean>
+      <bean id="SvrTran.tranbModify" class="cn.cerc.sample.services.tran.SvrTran" scope="prototype">
+        <property name="funcCode" value="tranbModify" />
+    </bean>
+    <bean id="SvrTran.tranbUpdate" class="cn.cerc.sample.services.tran.SvrTran" scope="prototype">
+        <property name="funcCode" value="tranbUpdate" />
+    </bean>
+     <bean id="SvrTran.tranbDelete" class="cn.cerc.sample.services.tran.SvrTran" scope="prototype">
+        <property name="funcCode" value="tranbDelete" />
+    </bean>
+       <bean id="SvrSale.findSaleh" class="cn.cerc.sample.services.sale.SvrSale" scope="prototype">
+        <property name="funcCode" value="findSaleh" />
+    </bean>
+        <bean id="SvrSale.saveSaleh" class="cn.cerc.sample.services.sale.SvrSale" scope="prototype">
+        <property name="funcCode" value="saveSaleh" />
+    </bean>
+        <bean id="SvrSale.findSale" class="cn.cerc.sample.services.sale.SvrSale" scope="prototype">
+        <property name="funcCode" value="findSale" />
+    </bean>
+         <bean id="SvrSale.salebAdd" class="cn.cerc.sample.services.sale.SvrSale" scope="prototype">
+        <property name="funcCode" value="salebAdd" />
+    </bean>
+         <bean id="SvrSale.salebModify" class="cn.cerc.sample.services.sale.SvrSale" scope="prototype">
+        <property name="funcCode" value="salebModify" />
+    </bean>
+      <bean id="SvrSale.salebUpdate" class="cn.cerc.sample.services.sale.SvrSale" scope="prototype">
+        <property name="funcCode" value="salebUpdate" />
+    </bean>
+     <bean id="SvrSale.salebDelete" class="cn.cerc.sample.services.sale.SvrSale" scope="prototype">
+        <property name="funcCode" value="salebDelete" />
+    </bean>
+      <bean id="SvrSale.salehModify" class="cn.cerc.sample.services.sale.SvrSale" scope="prototype">
+        <property name="funcCode" value="salehModify" />
+    </bean>
+      <bean id="SvrCheck.findCheckh" class="cn.cerc.sample.services.check.SvrCheck" scope="prototype">
+        <property name="funcCode" value="findCheckh" />
+    </bean>
+      <bean id="SvrCheck.saveCheckh" class="cn.cerc.sample.services.check.SvrCheck" scope="prototype">
+        <property name="funcCode" value="saveCheckh" />
+    </bean>
+      <bean id="SvrCheck.findCheck" class="cn.cerc.sample.services.check.SvrCheck" scope="prototype">
+        <property name="funcCode" value="findCheck" />
+    </bean>
+      <bean id="SvrCheck.saveCheckb" class="cn.cerc.sample.services.check.SvrCheck" scope="prototype">
+        <property name="funcCode" value="saveCheckb" />
+    </bean>
+     <bean id="SvrCheck.checkhModify" class="cn.cerc.sample.services.check.SvrCheck" scope="prototype">
+        <property name="funcCode" value="checkhModify" />
+    </bean>
+     <bean id="SvrCheck.checkbModify" class="cn.cerc.sample.services.check.SvrCheck" scope="prototype">
+        <property name="funcCode" value="checkbModify" />
+    </bean>
+     <bean id="SvrCheck.checkbDelete" class="cn.cerc.sample.services.check.SvrCheck" scope="prototype">
+        <property name="funcCode" value="checkbDelete" />
+    </bean>
+     <bean id="SvrCheck.checkbUpdate" class="cn.cerc.sample.services.check.SvrCheck" scope="prototype">
+        <property name="funcCode" value="checkbUpdate" />
+    </bean>
+     <bean id="SvrInAndOut.search" class="cn.cerc.sample.services.inAndOut.SvrInAndOut" scope="prototype">
+        <property name="funcCode" value="search" />
+    </bean>
+  
+
+    
 </beans>

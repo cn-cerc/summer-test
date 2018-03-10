@@ -42,7 +42,6 @@ public class MenuFactory implements IAppMenus {
             File f = new File(filepath);
             SAXReader reader = new SAXReader();
             Document doc = reader.read(f);
-
             Element body = doc.getRootElement().element("body");
             if (body == null)
                 throw new RuntimeException(menuFile + " 格式不正确！");
