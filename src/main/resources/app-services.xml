@@ -29,4 +29,59 @@
     <bean id="ServiceUserList" class="cn.cerc.sample.services.ServiceUserList" scope="prototype">
         <property name="restPath" value="get://*/public/users" />
     </bean>
+    <bean id="svrPartinfo.sch" class="cn.cerc.sample.services.part.svrPartinfo" scope="prototype">
+        <property name="funcCode" value="sch" />
+    </bean>
+    <bean id="svrPartinfo.modify" class="cn.cerc.sample.services.part.svrPartinfo" scope="prototype">
+        <property name="funcCode" value="modify" />
+    </bean>
+    <bean id="svrPartinfo.append" class="cn.cerc.sample.services.part.svrPartinfo" scope="prototype">
+        <property name="funcCode" value="append" />
+    </bean>
+    <bean id="svrPartinfo.delete" class="cn.cerc.sample.services.part.svrPartinfo" scope="prototype">
+        <property name="funcCode" value="delete" />
+    </bean>
+    <bean id="svrPartinfo.modifysch" class="cn.cerc.sample.services.part.svrPartinfo" scope="prototype">
+        <property name="funcCode" value="modifysch" />
+    </bean>  
+    <bean id="SvrTranInfo.sch" class="cn.cerc.sample.services.TranAB.SvrTranInfo" scope="prototype">
+        <property name="funcCode" value="sch" />
+    </bean>    
+    <bean id="SvrTranInfo.TranHappend" class="cn.cerc.sample.services.TranAB.SvrTranInfo" scope="prototype">
+        <property name="funcCode" value="TranHappend" />
+    </bean>    
+    <bean id="SvrTranInfo.TranHsch" class="cn.cerc.sample.services.TranAB.SvrTranInfo" scope="prototype">
+        <property name="funcCode" value="TranHsch" />
+    </bean>    
+    <bean id="SvrTranInfo.TranBsch" class="cn.cerc.sample.services.TranAB.SvrTranInfo" scope="prototype">
+        <property name="funcCode" value="TranBsch" />
+    </bean>  
+    <bean id="SvrTranInfo.TranBappend" class="cn.cerc.sample.services.TranAB.SvrTranInfo" scope="prototype">
+        <property name="funcCode" value="TranBappend" />
+    </bean>      
+    <bean id="SvrTranInfo.TranHmodify" class="cn.cerc.sample.services.TranAB.SvrTranInfo" scope="prototype">
+        <property name="funcCode" value="TranHmodify" />
+    </bean>   
+    <bean id="SvrTranInfo.TranBmodify" class="cn.cerc.sample.services.TranAB.SvrTranInfo" scope="prototype">
+        <property name="funcCode" value="TranBmodify" />
+    </bean> 
+    <bean id="SvrTranInfo.TranBdelete" class="cn.cerc.sample.services.TranAB.SvrTranInfo" scope="prototype">
+        <property name="funcCode" value="TranBdelete" />
+    </bean>  
+     <bean id="SvrTranInfo.TranItsch" class="cn.cerc.sample.services.TranAB.SvrTranInfo" scope="prototype">
+        <property name="funcCode" value="TranItsch" />
+    </bean>      
+    <bean id="SvrTranInfo.TranBStocksch" class="cn.cerc.sample.services.TranAB.SvrTranInfo" scope="prototype">
+        <property name="funcCode" value="TranBStocksch" />
+    </bean> 
+    <bean id="SvrTranInfo.TranItStocksch" class="cn.cerc.sample.services.TranAB.SvrTranInfo" scope="prototype">
+        <property name="funcCode" value="TranItStocksch" />
+    </bean> 
+    <bean id="SvrTranInfo.schPartInOut" class="cn.cerc.sample.services.TranAB.SvrTranInfo" scope="prototype">
+        <property name="funcCode" value="schPartInOut" />
+    </bean>    
+    <bean id="svrPartinfo.schProductStock" class="cn.cerc.sample.services.part.svrPartinfo" scope="prototype">
+        <property name="funcCode" value="schProductStock" />
+    </bean>        
+        
 </beans>
