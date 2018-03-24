@@ -14,6 +14,10 @@
         <div>
             <a href="FrmClientTest">原生App功能测试</a>
         </div>
+    </div> <div style="text-align: center; padding-top: 2em;">
+        <div>
+            <a href="FrmSAPIDemo">聚安API功能演示</a>
+        </div>
     </div>
 </body>
 </html>
