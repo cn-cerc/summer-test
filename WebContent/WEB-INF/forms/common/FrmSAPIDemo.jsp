@@ -70,6 +70,13 @@ input {
 					value="sumbit" />
 			</form>
 		</li>
+		<li>检查当前环境是否安全（整合使用）
+			<form method="post" action="FrmSAPIDemo.check">
+				用户帐号：<input name="user" value="${user}" /> 用户设备Id：<input
+					name="deviceId" value="${deviceId}" /> <input type="submit"
+					value="sumbit" />
+			</form>
+		</li>
 	</ul>
 </body>
 </html>

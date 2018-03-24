@@ -13,7 +13,7 @@ public class FrmSAPIDemo extends AbstractForm {
     @Override
     public IPage execute() {
         JspPage page = new JspPage(this, "common/FrmSAPIDemo.jsp");
-        page.add("appKey", "test");
+        page.add("appKey", "ytgj");
         page.add("appSecret", "123456");
         page.add("mobile", "13828832477");
         page.add("user", "testUser");
@@ -92,6 +92,24 @@ public class FrmSAPIDemo extends AbstractForm {
         SAPISecurity sapi = new SAPISecurity(this.getRequest());
         page.setResultMessage(sapi.checkVerify(user, verifyCode), sapi.getMessage());
         return page;
+    }
+
+    // 检查当前环境是否安全（整合使用）
+    public IPage check() {
+        String user = this.getRequest().getParameter("user");
+        String deviceId = this.getRequest().getParameter("deviceId");
+        SAPISecurity sapi = new SAPISecurity(this.getRequest());
+        if (sapi.checkEnvironment(user)) {
+            JsonPage page = new JsonPage(this);
+            return page.setResultMessage(true, "当前环境安全");
+        } else {
+            JspPage jspPage = new JspPage(this);
+            jspPage.add("user", user);
+            jspPage.add("deviceId", deviceId);
+            jspPage.add("message", sapi.getMessage());
+            jspPage.setJspFile("common/FrmSAPIDemo_check.jsp");
+            return jspPage;
+        }
     }
 
     @Override
