@@ -1,21 +1,21 @@
 package cn.cerc.sample.forms;
 
 import cn.cerc.jbean.form.IPage;
-import cn.cerc.jbean.sapi.SAPIMessage;
-import cn.cerc.jbean.sapi.SAPISecurity;
-import cn.cerc.jbean.sapi.SAPIServer;
 import cn.cerc.jmis.form.AbstractForm;
 import cn.cerc.jmis.page.JsonPage;
 import cn.cerc.jmis.page.JspPage;
+import cn.cerc.security.sapi.SAPIMessage;
+import cn.cerc.security.sapi.SAPISecurity;
+import cn.cerc.security.sapi.SAPIServer;
 
 public class FrmSAPIDemo extends AbstractForm {
 
     @Override
     public IPage execute() {
         JspPage page = new JspPage(this, "common/FrmSAPIDemo.jsp");
-        page.add("appKey", "ytgj");
+        page.add("appKey", "test");
         page.add("appSecret", "123456");
-        page.add("mobile", "13828832477");
+        page.add("mobile", "18566767108");
         page.add("user", "testUser");
         page.add("deviceId", "abcd");
         return page;

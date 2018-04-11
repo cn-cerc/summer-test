@@ -157,6 +157,11 @@
         </dependency>
         <dependency>
             <groupId>cn.cerc</groupId>
+            <artifactId>summer-security</artifactId>
+            <version>${cn.cerc.summer.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>cn.cerc</groupId>
             <artifactId>summer-mis</artifactId>
             <version>${cn.cerc.summer.version}</version>
         </dependency>
