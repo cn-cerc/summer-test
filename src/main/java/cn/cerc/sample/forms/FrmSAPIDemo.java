@@ -4,9 +4,9 @@ import cn.cerc.jbean.form.IPage;
 import cn.cerc.jmis.form.AbstractForm;
 import cn.cerc.jmis.page.JsonPage;
 import cn.cerc.jmis.page.JspPage;
-import cn.cerc.security.sapi.SAPIMessage;
-import cn.cerc.security.sapi.SAPISecurity;
-import cn.cerc.security.sapi.SAPIServer;
+import cn.cerc.security.sapi.JayunMessage;
+import cn.cerc.security.sapi.JayunSecurity;
+import cn.cerc.security.sapi.JayunServer;
 
 public class FrmSAPIDemo extends AbstractForm {
 
@@ -26,8 +26,8 @@ public class FrmSAPIDemo extends AbstractForm {
         String appKey = this.getRequest().getParameter("appKey");
         String appSecret = this.getRequest().getParameter("appSecret");
         JsonPage page = new JsonPage(this);
-        SAPIServer sapi = new SAPIServer(this.getRequest());
-        page.setResultMessage(sapi.register(appKey, appSecret), sapi.getMessage());
+        JayunServer Jayun = new JayunServer(this.getRequest());
+        page.setResultMessage(Jayun.register(appKey, appSecret), Jayun.getMessage());
         return page;
     }
 
@@ -35,8 +35,8 @@ public class FrmSAPIDemo extends AbstractForm {
     public IPage requestRegister() {
         String mobile = this.getRequest().getParameter("mobile");
         JsonPage page = new JsonPage(this);
-        SAPIMessage sapi = new SAPIMessage(this.getRequest());
-        page.setResultMessage(sapi.requestRegister(mobile), sapi.getMessage());
+        JayunMessage Jayun = new JayunMessage(this.getRequest());
+        page.setResultMessage(Jayun.requestRegister(mobile), Jayun.getMessage());
         return page;
     }
 
@@ -45,8 +45,8 @@ public class FrmSAPIDemo extends AbstractForm {
         String mobile = this.getRequest().getParameter("mobile");
         String verifyCode = this.getRequest().getParameter("verifyCode");
         JsonPage page = new JsonPage(this);
-        SAPIMessage sapi = new SAPIMessage(this.getRequest());
-        page.setResultMessage(sapi.checkRegister(mobile, verifyCode), sapi.getMessage());
+        JayunMessage Jayun = new JayunMessage(this.getRequest());
+        page.setResultMessage(Jayun.checkRegister(mobile, verifyCode), Jayun.getMessage());
         return page;
     }
 
@@ -55,8 +55,8 @@ public class FrmSAPIDemo extends AbstractForm {
         String user = this.getRequest().getParameter("user");
         String mobile = this.getRequest().getParameter("mobile");
         JsonPage page = new JsonPage(this);
-        SAPISecurity sapi = new SAPISecurity(this.getRequest());
-        page.setResultMessage(sapi.register(user, mobile), sapi.getMessage());
+        JayunSecurity Jayun = new JayunSecurity(this.getRequest());
+        page.setResultMessage(Jayun.register(user, mobile), Jayun.getMessage());
         return page;
     }
 
@@ -66,8 +66,8 @@ public class FrmSAPIDemo extends AbstractForm {
         String deviceId = this.getRequest().getParameter("deviceId");
         this.getRequest().getSession().setAttribute("deviceId", deviceId);
         JsonPage page = new JsonPage(this);
-        SAPISecurity sapi = new SAPISecurity(this.getRequest());
-        page.setResultMessage(sapi.isSecurity(user), sapi.getMessage());
+        JayunSecurity Jayun = new JayunSecurity(this.getRequest());
+        page.setResultMessage(Jayun.isSecurity(user), Jayun.getMessage());
         return page;
     }
 
@@ -77,8 +77,8 @@ public class FrmSAPIDemo extends AbstractForm {
         String deviceId = this.getRequest().getParameter("deviceId");
         this.getRequest().getSession().setAttribute("deviceId", deviceId);
         JsonPage page = new JsonPage(this);
-        SAPISecurity sapi = new SAPISecurity(this.getRequest());
-        page.setResultMessage(sapi.requestVerify(user), sapi.getMessage());
+        JayunSecurity Jayun = new JayunSecurity(this.getRequest());
+        page.setResultMessage(Jayun.requestVerify(user), Jayun.getMessage());
         return page;
     }
 
@@ -89,8 +89,8 @@ public class FrmSAPIDemo extends AbstractForm {
         String deviceId = this.getRequest().getParameter("deviceId");
         this.getRequest().getSession().setAttribute("deviceId", deviceId);
         JsonPage page = new JsonPage(this);
-        SAPISecurity sapi = new SAPISecurity(this.getRequest());
-        page.setResultMessage(sapi.checkVerify(user, verifyCode), sapi.getMessage());
+        JayunSecurity Jayun = new JayunSecurity(this.getRequest());
+        page.setResultMessage(Jayun.checkVerify(user, verifyCode), Jayun.getMessage());
         return page;
     }
 
@@ -98,15 +98,15 @@ public class FrmSAPIDemo extends AbstractForm {
     public IPage check() {
         String user = this.getRequest().getParameter("user");
         String deviceId = this.getRequest().getParameter("deviceId");
-        SAPISecurity sapi = new SAPISecurity(this.getRequest());
-        if (sapi.checkEnvironment(user)) {
+        JayunSecurity Jayun = new JayunSecurity(this.getRequest());
+        if (Jayun.checkEnvironment(user)) {
             JsonPage page = new JsonPage(this);
             return page.setResultMessage(true, "当前环境安全");
         } else {
             JspPage jspPage = new JspPage(this);
             jspPage.add("user", user);
             jspPage.add("deviceId", deviceId);
-            jspPage.add("message", sapi.getMessage());
+            jspPage.add("message", Jayun.getMessage());
             jspPage.setJspFile("common/FrmSAPIDemo_check.jsp");
             return jspPage;
         }
