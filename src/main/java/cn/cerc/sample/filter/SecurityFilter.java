@@ -38,6 +38,8 @@ public class SecurityFilter implements Filter {
 
     public boolean filterIp(String ip) {
         Buffer buff = new Buffer("ip" + ip);
+        buff.setExpires(60);// 每1分钟重刷缓存
+
         if (buff.isNull()) {
             buff.setField("m", TDateTime.Now());
             buff.setField("mc", 1);
@@ -51,21 +53,27 @@ public class SecurityFilter implements Filter {
 
         TDateTime now = TDateTime.Now();
         TDateTime s = buff.getDateTime("s");
-        if (timeAllowed(now.toString(), s.toString())) {
-            if (buff.getInt("mc") >= MC) {
-                buff.setField("t", true);
-                buff.post();
-                saveToMysql(ip);
-                return true;
-            }
+        // 时差小于1秒做记录
+        if (minuteAllowed(now.toString(), s.toString())) {
             if (buff.getInt("sc") >= SC) {
                 buff.setField("t", true);
                 buff.post();
                 saveToMysql(ip);
                 return true;
             }
-            buff.setField("mc", buff.getInt("mc") + 1);
             buff.setField("sc", buff.getInt("sc") + 1);
+            buff.post();
+        }
+
+        // 时差小于1分钟做记录
+        if (minuteAllowed(now.toString(), s.toString())) {
+            if (buff.getInt("mc") >= MC) {
+                buff.setField("t", true);
+                buff.post();
+                saveToMysql(ip);
+                return true;
+            }
+            buff.setField("mc", buff.getInt("mc") + 1);
             buff.post();
         }
         buff.post();
@@ -87,7 +95,48 @@ public class SecurityFilter implements Filter {
         ds.post();
     }
 
-    public boolean timeAllowed(String startTime, String endTime) {
+    public static boolean minuteAllowed(String startTime, String endTime) {
+        // 生成指定时间对象
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+
+        // 一天的毫秒数
+        long nd = 1000 * 24 * 60 * 60;
+
+        // 一小时的毫秒数
+        long nh = 1000 * 60 * 60;
+
+        // 一分钟的毫秒数
+        long nm = 1000 * 60;
+
+        long diff;
+        long day = 0;
+        long hour = 0;
+        long min = 0;
+        try {
+            // 计算时间差
+            diff = dateFormat.parse(endTime).getTime() - dateFormat.parse(startTime).getTime();
+            day = diff / nd;// 计算差多少天
+            hour = diff % nd / nh + day * 24;// 计算差多少小时
+            min = diff % nd % nh / nm + day * 24 * 60;// 计算差多少分钟
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
+        // 天数
+        if (day > 0) {
+            return true;
+        }
+
+        // 小时
+        if (hour - day * 24 > 0) {
+            return true;
+        }
+
+        // 分
+        return min - day * 24 * 60 < 1;
+    }
+
+    public static boolean secondAllowed(String startTime, String endTime) {
         // 生成指定时间对象
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
@@ -130,12 +179,12 @@ public class SecurityFilter implements Filter {
         }
 
         // 分
-        if (min - day * 24 * 60 < 1) {
+        if (min - day * 24 * 60 > 0) {
             return true;
         }
 
         // 秒
-        return sec - day < 1;
+        return sec - day <= 1;
     }
 
     public int compareSecond(TDateTime dateFrom) {
@@ -151,4 +200,12 @@ public class SecurityFilter implements Filter {
     public void destroy() {
 
     }
+
+    public static void main(String[] args) {
+        String startTime = TDateTime.Now().incSecond(-59).toString();
+        String endTime = TDateTime.Now().toString();
+        System.out.println(minuteAllowed(startTime, endTime));
+        System.out.println(secondAllowed(startTime, endTime));
+    }
+
 }
