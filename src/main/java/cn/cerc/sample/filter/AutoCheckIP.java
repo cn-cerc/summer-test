@@ -14,7 +14,6 @@ public class AutoCheckIP implements Runnable {
     private QueueHandle handle;
 
     @Override
-    // 不管执行多久，执行后一定会休息1分钟启动
     @Scheduled(fixedRate = 5 * 1000)
     public void run() {
         SqlQuery ds = new SqlQuery(handle);
