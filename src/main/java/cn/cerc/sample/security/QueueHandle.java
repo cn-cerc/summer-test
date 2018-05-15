@@ -1,4 +1,4 @@
-package cn.cerc.sample.filter;
+package cn.cerc.sample.security;
 
 import org.springframework.stereotype.Component;
 

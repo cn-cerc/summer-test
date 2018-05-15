@@ -17,7 +17,7 @@
     <task:annotation-driven />
     <!-- <task:annotation-driven scheduler="myScheduler" /> <task:scheduler id="myScheduler" pool-size="10" /> -->
     <!-- 指定相关的包路径 -->
-    <context:component-scan base-package="cn.cerc.sample.filter" />
+    <context:component-scan base-package="cn.cerc.sample.security" />
 
     <!-- 显示层配置对象 -->
     <bean id="AppConfig" class="cn.cerc.jbean.core.AppConfig">

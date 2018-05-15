@@ -6,7 +6,7 @@
     <!-- dos过滤器 -->
     <filter>
         <filter-name>SecurityFilter</filter-name>
-        <filter-class>cn.cerc.sample.filter.SecurityFilter</filter-class>
+        <filter-class>cn.cerc.sample.security.SecurityFilter</filter-class>
     </filter>
     <filter-mapping>
         <filter-name>SecurityFilter</filter-name>
