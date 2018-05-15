@@ -1,10 +1,23 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:task="http://www.springframework.org/schema/task"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
     xmlns:aop="http://www.springframework.org/schema/aop"
     xsi:schemaLocation="http://www.springframework.org/schema/beans  
-           http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
+           http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+           http://www.springframework.org/schema/task  
+           http://www.springframework.org/schema/task/spring-task-4.0.xsd
+           http://www.springframework.org/schema/context  
+           http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+
     <!-- 包含队列服务 -->
     <!-- <import resource="classpath*:app-quartz.xml" /> -->
+
+   <!-- 开启注解 -->
+    <context:annotation-config />
+    <!-- 启动定时器 -->
+    <task:annotation-driven />
+    <!-- <task:annotation-driven scheduler="myScheduler" /> <task:scheduler id="myScheduler" pool-size="10" /> -->
+    <!-- 指定相关的包路径 -->
+    <context:component-scan base-package="cn.cerc.sample.filter" />
 
     <!-- 显示层配置对象 -->
     <bean id="AppConfig" class="cn.cerc.jbean.core.AppConfig">
