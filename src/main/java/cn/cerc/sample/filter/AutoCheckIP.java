@@ -14,7 +14,7 @@ public class AutoCheckIP implements Runnable {
     private QueueHandle handle;
 
     @Override
-    @Scheduled(fixedRate = 1 * 60 * 1000)
+    @Scheduled(fixedRate = 1 * 30 * 1000)
     public void run() {
         SqlQuery ds = new SqlQuery(handle);
         ds.add("select distinct ip_ from ip_blacklist");
