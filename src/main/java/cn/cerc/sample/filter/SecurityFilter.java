@@ -19,16 +19,10 @@ import cn.cerc.jdb.core.TDateTime;
 import cn.cerc.jdb.mysql.SqlQuery;
 import cn.cerc.jdb.other.utils;
 
-/**
- * Servlet Filter implementation class IPFilter
- */
 public class SecurityFilter implements Filter {
     private static int MC = 100;
     private static int SC = 10;
 
-    /**
-     * @see Filter#doFilter(ServletRequest, ServletResponse, FilterChain)
-     */
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
             throws IOException, ServletException {
@@ -148,17 +142,11 @@ public class SecurityFilter implements Filter {
         return 0;
     }
 
-    /**
-     * @see Filter#init(FilterConfig)
-     */
     @Override
     public void init(FilterConfig fConfig) throws ServletException {
 
     }
 
-    /**
-     * @see Filter#destroy()
-     */
     @Override
     public void destroy() {
 
