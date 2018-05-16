@@ -42,12 +42,14 @@ public class SecurityFilter implements Filter {
     public boolean filterIp(String ip) {
         Buffer buff = new Buffer("ip" + ip);
         buff.setExpires(60);// 每1分钟重刷缓存
+        buff.post();
 
         if (buff.isNull()) {
             buff.setField("m", TDateTime.Now());
             buff.setField("mc", 1);
             buff.setField("s", TDateTime.Now());
             buff.setField("sc", 1);
+            buff.post();
         }
 
         // 白名单
