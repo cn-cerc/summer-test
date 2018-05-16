@@ -13,6 +13,8 @@ import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.log4j.Logger;
+
 import cn.cerc.jbean.cache.Buffer;
 import cn.cerc.jbean.core.AppHandle;
 import cn.cerc.jdb.core.TDateTime;
@@ -20,8 +22,10 @@ import cn.cerc.jdb.mysql.SqlQuery;
 import cn.cerc.jdb.other.utils;
 
 public class SecurityFilter implements Filter {
+    private Logger log = Logger.getLogger(SecurityFilter.class);
+
     private static int MC = 100;
-    private static int SC = 10;
+    private static int SC = 20;
 
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
@@ -30,7 +34,7 @@ public class SecurityFilter implements Filter {
         HttpServletResponse resp = (HttpServletResponse) response;
         String ip = utils.getRemoteAddr(req);
         if (filterIp(ip)) {
-            resp.sendError(HttpServletResponse.SC_FORBIDDEN);
+            resp.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
             return;
         }
         chain.doFilter(request, response);
@@ -47,6 +51,11 @@ public class SecurityFilter implements Filter {
             buff.setField("sc", 1);
         }
 
+        // 白名单
+        if (buff.getBoolean("w")) {
+            return false;
+        }
+
         if (buff.getBoolean("t")) {
             return true;
         }
@@ -54,7 +63,7 @@ public class SecurityFilter implements Filter {
         TDateTime now = TDateTime.Now();
         TDateTime s = buff.getDateTime("s");
         // 时差小于1秒做记录
-        if (minuteAllowed(now.toString(), s.toString())) {
+        if (secondAllowed(now.toString(), s.toString())) {
             if (buff.getInt("sc") >= SC) {
                 buff.setField("t", true);
                 buff.post();
@@ -82,20 +91,26 @@ public class SecurityFilter implements Filter {
 
     private void saveToMysql(String ip) {
         AppHandle handle = new AppHandle();
-        SqlQuery ds = new SqlQuery(handle);
-        ds.add("select * from ip_blacklist where ip_='%s'", ip);
-        ds.open();
-        if (!ds.eof()) {
-            return;
-        }
+        try {
+            SqlQuery ds = new SqlQuery(handle);
+            ds.add("select * from ip_blacklist where ip_='%s'", ip);
+            ds.open();
+            if (!ds.eof()) {
+                return;
+            }
 
-        ds.append();
-        ds.setField("ip_", ip);
-        ds.setField("createTime_", TDateTime.Now());
-        ds.post();
+            ds.append();
+            ds.setField("ip_", ip);
+            ds.setField("createTime_", TDateTime.Now());
+            ds.post();
+        } catch (Exception e) {
+            log.error(String.format("ip(%s)在快速访问主机", ip));
+        } finally {
+            handle = null;
+        }
     }
 
-    public static boolean minuteAllowed(String startTime, String endTime) {
+    private boolean minuteAllowed(String startTime, String endTime) {
         // 生成指定时间对象
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
@@ -136,7 +151,7 @@ public class SecurityFilter implements Filter {
         return min - day * 24 * 60 < 1;
     }
 
-    public static boolean secondAllowed(String startTime, String endTime) {
+    private boolean secondAllowed(String startTime, String endTime) {
         // 生成指定时间对象
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
@@ -202,10 +217,10 @@ public class SecurityFilter implements Filter {
     }
 
     public static void main(String[] args) {
+        SecurityFilter filter = new SecurityFilter();
         String startTime = TDateTime.Now().incSecond(-59).toString();
         String endTime = TDateTime.Now().toString();
-        System.out.println(minuteAllowed(startTime, endTime));
-        System.out.println(secondAllowed(startTime, endTime));
+        System.out.println(filter.minuteAllowed(startTime, endTime));
+        System.out.println(filter.secondAllowed(startTime, endTime));
     }
-
 }

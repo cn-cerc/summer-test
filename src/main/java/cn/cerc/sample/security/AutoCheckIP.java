@@ -17,7 +17,7 @@ public class AutoCheckIP implements Runnable {
     @Scheduled(fixedRate = 1 * 30 * 1000)
     public void run() {
         SqlQuery ds = new SqlQuery(handle);
-        ds.add("select distinct ip_ from ip_blacklist");
+        ds.add("select ip_ from ip_blacklist");
         ds.open();
         while (ds.fetch()) {
             Buffer buff = new Buffer("ip" + ds.getString("ip"));
