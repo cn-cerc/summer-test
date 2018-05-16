@@ -98,15 +98,15 @@ public class FrmSAPIDemo extends AbstractForm {
     public IPage check() {
         String user = this.getRequest().getParameter("user");
         String deviceId = this.getRequest().getParameter("deviceId");
-        JayunSecurity Jayun = new JayunSecurity(this.getRequest());
-        if (Jayun.checkEnvironment(user)) {
+        JayunSecurity api = new JayunSecurity(this.getRequest());
+        if (api.checkEnvironment(user)) {
             JsonPage page = new JsonPage(this);
             return page.setResultMessage(true, "当前环境安全");
         } else {
             JspPage jspPage = new JspPage(this);
             jspPage.add("user", user);
             jspPage.add("deviceId", deviceId);
-            jspPage.add("message", Jayun.getMessage());
+            jspPage.add("message", api.getMessage());
             jspPage.setJspFile("common/FrmSAPIDemo_check.jsp");
             return jspPage;
         }
