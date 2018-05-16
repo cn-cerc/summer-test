@@ -16,7 +16,6 @@ import javax.servlet.http.HttpServletResponse;
 import org.apache.log4j.Logger;
 
 import cn.cerc.jbean.cache.Buffer;
-import cn.cerc.jbean.core.AppHandle;
 import cn.cerc.jdb.core.TDateTime;
 import cn.cerc.jdb.mysql.SqlQuery;
 import cn.cerc.jdb.other.utils;
@@ -90,7 +89,7 @@ public class SecurityFilter implements Filter {
     }
 
     private void saveToMysql(String ip) {
-        AppHandle handle = new AppHandle();
+        QueueHandle handle = new QueueHandle();
         try {
             SqlQuery ds = new SqlQuery(handle);
             ds.add("select * from ip_blacklist where ip_='%s'", ip);
