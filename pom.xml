@@ -4,8 +4,8 @@
     <groupId>cn.cerc</groupId>
     <artifactId>summer-sample</artifactId>
     <url>https://github.com/cn-cerc/summer-sample</url>
-    <version>1.4.0</version>
-    <name>summer 框架使用范例</name>
+    <version>1.4.2</version>
+    <name></name>
     <packaging>war</packaging>
     <build>
         <plugins>
@@ -51,7 +51,7 @@
         </plugins>
     </build>
     <properties>
-        <cn.cerc.summer.version>1.4.0</cn.cerc.summer.version>
+        <cn.cerc.summer.version>1.4.1</cn.cerc.summer.version>
     </properties>
     <dependencies>
         <dependency>
@@ -158,7 +158,7 @@
         <dependency>
             <groupId>cn.cerc</groupId>
             <artifactId>summer-security</artifactId>
-            <version>${cn.cerc.summer.version}</version>
+            <version>1.4.2</version>
         </dependency>
         <dependency>
             <groupId>cn.cerc</groupId>
