@@ -3,7 +3,7 @@ package cn.cerc.sample.security;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
-import cn.cerc.jbean.cache.Buffer;
+import cn.cerc.jdb.cache.Buffer;
 import cn.cerc.jdb.mysql.SqlQuery;
 
 @Component
@@ -12,7 +12,7 @@ public class AutoCheckIP implements Runnable {
     private QueueHandle handle;
 
     @Override
-    @Scheduled(fixedRate = 1 * 30 * 1000)
+    @Scheduled(fixedRate = 1 * 60 * 1000)
     public void run() {
         try {
             handle = new QueueHandle();

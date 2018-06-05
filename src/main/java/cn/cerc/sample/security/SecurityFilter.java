@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.apache.log4j.Logger;
 
-import cn.cerc.jbean.cache.Buffer;
+import cn.cerc.jdb.cache.Buffer;
 import cn.cerc.jdb.core.TDateTime;
 import cn.cerc.jdb.mysql.SqlQuery;
 import cn.cerc.jdb.other.utils;
@@ -102,6 +102,7 @@ public class SecurityFilter implements Filter {
 
             ds.append();
             ds.setField("ip_", ip);
+            ds.setField("white_", false);
             ds.setField("createTime_", TDateTime.Now());
             ds.post();
         } catch (Exception e) {

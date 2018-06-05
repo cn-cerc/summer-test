@@ -16,8 +16,8 @@ public class FrmSAPIDemo extends AbstractForm {
         page.add("appKey", "test");
         page.add("appSecret", "123456");
         page.add("mobile", "18566767108");
-        page.add("user", "testUser");
-        page.add("deviceId", "abcd");
+        page.add("user", "18566767108");
+        page.add("deviceId", "TEST");
         return page;
     }
 
