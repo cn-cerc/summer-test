@@ -2,16 +2,16 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html>
 <head>
-<title>首页</title>
+<title>Websocket 范例</title>
 <script type="text/javascript" src="js/jquery.js"></script>
 <script type="text/javascript" src="js/jquery.qrcode.min.js"></script>
 <!-- <script type="text/javascript" src="https://www.helloweba.net/demo/qrcode/jquery.qrcode.min.js"></script> -->
 
-<script type="text/javascript">
+<script>
     var websocket = null;
     //判断当前浏览器是否支持WebSocket
     if ('WebSocket' in window) {
-        websocket = new WebSocket("ws://192.168.9.132/websocket");
+        websocket = new WebSocket("ws://127.0.0.1/websocket");
     }
     else {
         alert('当前浏览器 Not support websocket')
@@ -61,18 +61,18 @@
       //生成二维码
       /* $('#qrcodeCanvas').qrcode("123456789"); */
          $('#qrcodeCanvas').qrcode({
-            width : 180, //宽度
-            height : 180, //高度
-            text : "http://192.168.9.131/forms/phone.getAppInfo"
-        //根据此串生成二维码 //公司内部版 
+            width : 250, //宽度
+            height : 250, //高度
+            text : "http://127.0.0.1:8080/forms/phone.getAppInfo?key=test&sessionID=${sessionID}"
+        //根据此串生成二维码
         });
     });
 </script>
 </head>
-<body style="font-size: 2em;">
+<body style="font-size: 2em;text-align: center;">
     <div id="qrcodeCanvas">
     </div>
-    Welcome<br/><input id="text" type="text"/>
+    请使用聚安App扫码<br/><input id="text" type="text"/>
     <button onclick="send()">发送消息</button>
     <hr/>
     <button onclick="closeWebSocket()">关闭WebSocket连接</button>
