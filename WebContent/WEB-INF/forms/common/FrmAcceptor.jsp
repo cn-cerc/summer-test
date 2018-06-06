@@ -11,6 +11,7 @@
     var websocket = null;
     //判断当前浏览器是否支持WebSocket
     if ('WebSocket' in window) {
+        //app服务器地址
         websocket = new WebSocket("ws://127.0.0.1/websocket");
     }
     else {
@@ -63,7 +64,8 @@
          $('#qrcodeCanvas').qrcode({
             width : 250, //宽度
             height : 250, //高度
-            text : "http://127.0.0.1:8080/forms/phone.getAppInfo?key=test&sessionID=${sessionID}"
+            // 聚安服务器地址
+            text : "http://127.0.0.1:8080/forms/phone.getAppInfo?key=test&sessionId=${sessionId}"
         //根据此串生成二维码
         });
     });

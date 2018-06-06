@@ -12,13 +12,13 @@ public class FrmAcceptor extends AbstractForm {
     @Override
     public IPage execute() throws Exception {
         JspPage page = new JspPage(this, "common/FrmAcceptor.jsp");
-        page.add("sessionID", getRequest().getSession().getId());
+        page.add("sessionId", getRequest().getSession().getId());
         return page;
     }
 
     public IPage login() throws Exception {
         JsonPage jspPage = new JsonPage(this);
-        String sessionId = getRequest().getParameter("id");
+        String sessionId = getRequest().getParameter("sessionId");
         WebSocket ws = WebSocket.getWebSocketSet().get(sessionId);
         if (ws == null) {
             jspPage.put("result", false);
@@ -36,20 +36,20 @@ public class FrmAcceptor extends AbstractForm {
     }
 
     public IPage scanQrCode() {
-        String sessionID = this.getRequest().getParameter("sessionID");
+        String sessionId = this.getRequest().getParameter("sessionId");
         JsonObject json = new JsonObject();
         json.addProperty("result", true);
         json.addProperty("message", "扫码成功");
-        WebSocket.getWebSocketSet().get(sessionID).sendMessage(json.toString());
+        WebSocket.getWebSocketSet().get(sessionId).sendMessage(json.toString());
         return new JsonPage(this).setResultMessage(true, "扫码成功");
     }
 
     public IPage acceptor() {
-        String sessionID = this.getRequest().getParameter("sessionID");
+        String sessionId = this.getRequest().getParameter("sessionId");
         JsonObject json = new JsonObject();
         json.addProperty("result", true);
         json.addProperty("message", "已确认");
-        WebSocket.getWebSocketSet().get(sessionID).sendMessage(json.toString());
+        WebSocket.getWebSocketSet().get(sessionId).sendMessage(json.toString());
         return new JsonPage(this).setResultMessage(true, "应用服务器处理自动登录");
     }
 
