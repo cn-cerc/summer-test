@@ -56,6 +56,9 @@
     <div style="text-align: center; padding-top: 2em;">
         <a href="javascript:onTestClick()">临时测试</a><br />
     </div>
+    <div style="text-align: center; padding-top: 2em;">
+        <a href="FrmClientTest.callCustomer">拨打客户</a><br/>
+    </div>
     <div id="message" style="text-align: center; padding-top: 2em; font-color: red"></div>
 </body>
 </html>
