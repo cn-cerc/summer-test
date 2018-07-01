@@ -71,14 +71,20 @@
     });
 </script>
 </head>
-<body style="font-size: 2em;text-align: center;">
-    <div id="qrcodeCanvas">
-    </div>
-    请使用聚安App扫码<br/><input id="text" type="text"/>
+<style>
+#qrcodeCanvas canvas{
+    border: 2px solid #fff;
+}
+</style>
+<body style="font-size: 2em; text-align: center;">
+    <div id="qrcodeCanvas"></div>
+    <label>请使用聚安App扫码</label>
+    <br />
+    <input id="text" type="text" />
     <button onclick="send()">发送消息</button>
-    <hr/>
+    <hr />
     <button onclick="closeWebSocket()">关闭WebSocket连接</button>
-    <hr/>
+    <hr />
     <div id="message"></div>
 </body>
 </html>

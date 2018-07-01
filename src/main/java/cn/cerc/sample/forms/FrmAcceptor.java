@@ -17,22 +17,22 @@ public class FrmAcceptor extends AbstractForm {
     }
 
     public IPage login() throws Exception {
-        JsonPage jspPage = new JsonPage(this);
+        JsonPage page = new JsonPage(this);
         String sessionId = getRequest().getParameter("sessionId");
         WebSocket ws = WebSocket.getWebSocketSet().get(sessionId);
         if (ws == null) {
-            jspPage.put("result", false);
-            jspPage.put("message", "没有找到相对应的客户端");
-            return jspPage;
+            page.put("result", false);
+            page.put("message", "没有找到相对应的客户端");
+            return page;
         }
         if (ws.sendMessage("登录成功！")) {
-            jspPage.put("result", true);
-            jspPage.put("message", "登录成功！");
+            page.put("result", true);
+            page.put("message", "登录成功！");
         } else {
-            jspPage.put("result", false);
-            jspPage.put("message", ws.getMessage());
+            page.put("result", false);
+            page.put("message", ws.getMessage());
         }
-        return jspPage;
+        return page;
     }
 
     public IPage scanQrCode() {
@@ -50,7 +50,7 @@ public class FrmAcceptor extends AbstractForm {
         json.addProperty("result", true);
         json.addProperty("message", "已确认");
         WebSocket.getWebSocketSet().get(sessionId).sendMessage(json.toString());
-        return new JsonPage(this).setResultMessage(true, "应用服务器处理自动登录");
+        return new JsonPage(this).setResultMessage(true, "已确认");
     }
 
     @Override
