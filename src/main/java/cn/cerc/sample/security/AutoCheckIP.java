@@ -3,7 +3,7 @@ package cn.cerc.sample.security;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
-import cn.cerc.jbean.cache.Buffer;
+import cn.cerc.jdb.cache.Buffer;
 import cn.cerc.jdb.mysql.SqlQuery;
 
 @Component
