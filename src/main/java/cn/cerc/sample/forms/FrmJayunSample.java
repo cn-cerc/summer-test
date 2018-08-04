@@ -8,16 +8,16 @@ import cn.cerc.security.sapi.JayunMessage;
 import cn.cerc.security.sapi.JayunSecurity;
 import cn.cerc.security.sapi.JayunServer;
 
-public class FrmSAPIDemo extends AbstractForm {
+public class FrmJayunSample extends AbstractForm {
 
     @Override
     public IPage execute() {
-        JspPage page = new JspPage(this, "common/FrmSAPIDemo.jsp");
-        page.add("appKey", "test");
-        page.add("appSecret", "123456");
-        page.add("mobile", "18566767108");
+        JspPage page = new JspPage(this, "common/FrmJayunSample.jsp");
+        page.add("appKey", "1r625g3wNX91");
+        page.add("appSecret", "532baeaef5544a34a5336fef19bc29b1");
+        page.add("mobile", "13927470636");
         page.add("user", "testUser");
-        page.add("deviceId", "abcd");
+        page.add("deviceId", "webclient");
         return page;
     }
 
@@ -107,9 +107,18 @@ public class FrmSAPIDemo extends AbstractForm {
             jspPage.add("user", user);
             jspPage.add("deviceId", deviceId);
             jspPage.add("message", api.getMessage());
-            jspPage.setJspFile("common/FrmSAPIDemo_check.jsp");
+            jspPage.setJspFile("common/FrmJayunSample_check.jsp");
             return jspPage;
         }
+    }
+
+    public IPage sendMessage() {
+        String user = this.getRequest().getParameter("user");
+        String templateId = this.getRequest().getParameter("templateId");
+        String[] args = this.getRequest().getParameter("args").split(",");
+
+        JayunSecurity api = new JayunSecurity(this.getRequest());
+        return new JsonPage(this).setResultMessage(api.sendMessage(user, templateId, args), api.getMessage());
     }
 
     @Override

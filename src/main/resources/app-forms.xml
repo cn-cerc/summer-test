@@ -17,7 +17,7 @@
     </bean>
     <bean id="ErpRegister" class="cn.cerc.sample.forms.FrmErpRegister" scope="prototype">
     </bean>
-    <bean id="FrmSAPIDemo" class="cn.cerc.sample.forms.FrmSAPIDemo" scope="prototype">
+    <bean id="FrmJayunSample" class="cn.cerc.sample.forms.FrmJayunSample" scope="prototype">
     </bean>
     <bean id="FrmAcceptor" class="cn.cerc.sample.forms.FrmAcceptor" scope="prototype">
     </bean>
