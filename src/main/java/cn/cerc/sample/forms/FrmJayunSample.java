@@ -117,7 +117,7 @@ public class FrmJayunSample extends AbstractForm {
         String templateId = this.getRequest().getParameter("templateId");
         String[] args = this.getRequest().getParameter("args").split(",");
 
-        JayunSecurity api = new JayunSecurity(this.getRequest());
+        JayunMessage api = new JayunMessage(this.getRequest());
         return new JsonPage(this).setResultMessage(api.sendMessage(user, templateId, args), api.getMessage());
     }
 
