@@ -18,7 +18,8 @@
       ">
 
     <!-- 包含队列服务 -->
-    <!-- <import resource="classpath*:app-quartz.xml" /> -->
+    <!-- <import resource="classpath:app-quartz.xml" /> -->
+    <import resource="classpath:app-forms.xml" />
 
     <!-- 开启注解 -->
     <context:annotation-config />
@@ -30,7 +31,7 @@
     <context:component-scan base-package="cn.cerc.jdb.mysql" />
     <context:component-scan base-package="cn.cerc.jdb.queue" />
     <context:component-scan base-package="cn.cerc.jbean.core" />
-    <context:component-scan base-package="cn.cerc.sample.security" />
+    <context:component-scan base-package="cn.cerc.sample" />
 
     <!-- 显示层配置对象 -->
     <bean id="AppConfig" class="cn.cerc.jbean.core.AppConfig">
