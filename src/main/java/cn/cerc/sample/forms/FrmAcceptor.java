@@ -6,6 +6,7 @@ import cn.cerc.jbean.form.IPage;
 import cn.cerc.jmis.form.AbstractForm;
 import cn.cerc.jmis.page.JsonPage;
 import cn.cerc.jmis.page.JspPage;
+import cn.cerc.jmis.page.qrcode.WebSocket;
 
 public class FrmAcceptor extends AbstractForm {
 

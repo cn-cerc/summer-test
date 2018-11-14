@@ -2,7 +2,7 @@ package cn.cerc.sample.security;
 
 import org.springframework.stereotype.Component;
 
-import cn.cerc.jbean.core.ServerConfig;
+import cn.cerc.jdb.core.ServerConfig;
 import cn.cerc.jdb.core.IConfig;
 import cn.cerc.jdb.core.IHandle;
 import cn.cerc.jdb.mysql.SqlConnection;
