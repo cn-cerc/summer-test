@@ -27,6 +27,9 @@
     <!-- <task:annotation-driven scheduler="myScheduler" /> <task:scheduler id="myScheduler" pool-size="10" /> -->
     <!-- 指定相关的包路径 -->
     <context:component-scan base-package="cn.cerc.jdb.core" />
+    <context:component-scan base-package="cn.cerc.jdb.mysql" />
+    <context:component-scan base-package="cn.cerc.jdb.queue" />
+    <context:component-scan base-package="cn.cerc.jbean.core" />
     <context:component-scan base-package="cn.cerc.sample.security" />
 
     <!-- 显示层配置对象 -->
@@ -65,41 +68,20 @@
         <property name="connections">
             <map>
                 <!-- key定义于SqlQuery -->
-                <entry key="sqlSession" value-ref="SqlConnection" />
-                <entry key="cacheSession" value-ref="CacheConnection" />
-                <entry key="aliyunQueueSession" value-ref="QueueConnection" />
+                <entry key="sqlSession" value-ref="sqlConnection" />
+                <entry key="aliyunQueueSession" value-ref="queueConnection" />
             </map>
         </property>
     </bean>
-
-    <!-- 连接mysql -->
-    <bean id="SqlConnection" class="cn.cerc.jdb.mysql.SqlConnection">
-        <property name="config" ref="ServerConfig"></property>
-    </bean>
-    <!-- 连接缓存 -->
-    <bean id="CacheConnection" class="cn.cerc.jdb.cache.CacheConnection">
-        <property name="config" ref="ServerConfig"></property>
-    </bean>
-    <!-- 连接队列 -->
-    <bean id="QueueConnection" class="cn.cerc.jdb.queue.QueueConnection">
-        <property name="config" ref="ServerConfig"></property>
-    </bean>
-    <!-- 读取本地配置文件 -->
-    <bean id="ServerConfig" class="cn.cerc.jbean.core.ServerConfig">
-    </bean>
-
     <!-- 权限检查 -->
     <bean id="Passport" class="cn.cerc.sample.common.Passport" scope="prototype">
     </bean>
-
     <!-- 系统菜单定义表 -->
     <bean id="AppMenus" class="cn.cerc.sample.common.MenuFactory" scope="prototype">
     </bean>
-
     <!-- 系统登录对象 -->
     <bean id="AppLogin" class="cn.cerc.sample.common.AppLoginPage" scope="prototype">
     </bean>
-
     <!-- 其它系统级通用对象定义 -->
     <bean id="RightMenus" class="cn.cerc.jui.parts.RightMenus" scope="prototype">
     </bean>
