@@ -3,7 +3,14 @@
     xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
     id="WebApp_ID" version="3.1">
     <display-name>app sample</display-name>
-    <!-- dos过滤器 -->
+    <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
+    <!-- 修改配置文件路径 -->
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>classpath:application.xml</param-value>
+    </context-param>
     <filter>
         <filter-name>SecurityFilter</filter-name>
         <filter-class>cn.cerc.sample.security.SecurityFilter</filter-class>
@@ -12,7 +19,6 @@
         <filter-name>SecurityFilter</filter-name>
         <url-pattern>/*</url-pattern>
     </filter-mapping>
-
     <filter>
         <filter-name>Set Character Encoding</filter-name>
         <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
@@ -25,7 +31,6 @@
         <filter-name>Set Character Encoding</filter-name>
         <url-pattern>/forms/*</url-pattern>
     </filter-mapping>
-
     <!-- 主入口，用于宣传页展示 -->
     <filter>
         <filter-name>StartApp</filter-name>
