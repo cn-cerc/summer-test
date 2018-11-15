@@ -21,6 +21,8 @@ import cn.cerc.jmis.form.AbstractForm;
 import cn.cerc.jmis.page.AbstractJspPage;
 
 public class AppLoginPage extends AbstractJspPage implements IAppLogin {
+    private static final Logger log = Logger.getLogger(AppLoginPage.class);
+
     public AppLoginPage() {
         super(null);
     }
@@ -29,7 +31,6 @@ public class AppLoginPage extends AbstractJspPage implements IAppLogin {
         super(form);
     }
 
-    private static final Logger log = Logger.getLogger(AppLoginPage.class);
 
     @Override
     public void init(IForm form) {

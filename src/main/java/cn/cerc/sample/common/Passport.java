@@ -1,9 +1,12 @@
 package cn.cerc.sample.common;
 
+import org.springframework.stereotype.Component;
+
 import cn.cerc.jbean.core.AbstractHandle;
 import cn.cerc.jbean.core.IPassport;
 import cn.cerc.jbean.rds.PassportRecord;
 
+@Component
 public class Passport extends AbstractHandle implements IPassport {
 
     @Override
