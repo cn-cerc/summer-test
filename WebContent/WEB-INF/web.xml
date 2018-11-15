@@ -63,7 +63,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>springmvc</servlet-name>
-        <url-pattern>/app/*</url-pattern>
+        <url-pattern>/</url-pattern>
     </servlet-mapping>
     <!-- 原生客户端直接调用时使用 -->
     <servlet>
