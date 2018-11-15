@@ -9,20 +9,6 @@
     <listener>
         <listener-class>org.springframework.web.context.request.RequestContextListener</listener-class>
     </listener>
-    <servlet>
-        <servlet-name>springmvc</servlet-name>
-        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
-        <init-param>
-            <param-name>contextConfigLocation</param-name>
-            <param-value>classpath:application.xml</param-value>
-        </init-param>
-        <load-on-startup>1</load-on-startup>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>springmvc</servlet-name>
-        <url-pattern>/*</url-pattern>
-    </servlet-mapping>
-
     <!-- 修改配置文件路径 -->
     <context-param>
         <param-name>contextConfigLocation</param-name>
@@ -66,6 +52,19 @@
         <filter-name>StartForms</filter-name>
         <url-pattern>/forms/*</url-pattern>
     </filter-mapping>
+    <servlet>
+        <servlet-name>springmvc</servlet-name>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        <init-param>
+            <param-name>contextConfigLocation</param-name>
+            <param-value>classpath:application.xml</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>springmvc</servlet-name>
+        <url-pattern>/app/*</url-pattern>
+    </servlet-mapping>
     <!-- 原生客户端直接调用时使用 -->
     <servlet>
         <servlet-name>StartServices</servlet-name>

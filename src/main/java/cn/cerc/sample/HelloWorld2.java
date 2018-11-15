@@ -9,7 +9,7 @@ import org.springframework.web.context.WebApplicationContext;
 
 @RestController
 @Scope(WebApplicationContext.SCOPE_REQUEST)
-@RequestMapping("/views")
+@RequestMapping("/app")
 public class HelloWorld2 {
 
     @RequestMapping("/FrmTest2.{func}")
