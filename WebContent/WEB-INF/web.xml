@@ -3,13 +3,13 @@
     xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
     id="WebApp_ID" version="3.1">
     <display-name>summer app sample</display-name>
+    <!-- spring mvc -->
     <listener>
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
     </listener>
     <listener>
         <listener-class>org.springframework.web.context.request.RequestContextListener</listener-class>
     </listener>
-    <!-- 修改配置文件路径 -->
     <context-param>
         <param-name>contextConfigLocation</param-name>
         <param-value>classpath:application.xml</param-value>

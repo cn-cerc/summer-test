@@ -42,7 +42,7 @@ public class AppLoginPage extends AbstractJspPage implements IAppLogin {
     }
 
     @Override
-    public boolean checkSecurity(String token) throws IOException, ServletException {
+    public String checkSecurity(String token) throws IOException, ServletException {
         IForm form = this.getForm();
         String password = null;
         String userCode = null;
@@ -51,8 +51,8 @@ public class AppLoginPage extends AbstractJspPage implements IAppLogin {
                 userCode = getRequest().getParameter("login_usr");
                 password = getRequest().getParameter("login_pwd");
                 String loginType = getRequest().getParameter("loginType");
-                boolean result = checkLogin(userCode, password, loginType);
-                if (result) { // 登录成功保存session
+                String result = checkLogin(userCode, password, loginType);
+                if (result == null) { // 登录成功保存session
                     getRequest().getSession().setAttribute("userCode", userCode);
                 }
                 return result;
@@ -60,23 +60,21 @@ public class AppLoginPage extends AbstractJspPage implements IAppLogin {
             log.debug(String.format("根据 token(%s) 创建 Session", token));
             IHandle sess = (IHandle) form.getHandle().getProperty(null);
             if (sess.init(token))
-                return true;
+                return null;
             if (form.logon())
-                return true;
+                return null;
         } catch (Exception e) {
             if (!e.getMessage().contains("</a>")) {
                 if (password == null || "".equals(password)) {
-                    getResponse().sendRedirect("TFrmEasyReg?phone=" + userCode);
-                    return false;
+                    return "redirect:TFrmEasyReg?phone=" + userCode;
                 }
             }
             this.add("loginMsg", e.getMessage());
         }
-        this.execute();
-        return false;
+        return this.execute();
     }
 
-    public boolean checkLogin(String userCode, String password, String loginType) throws ServletException, IOException {
+    public String checkLogin(String userCode, String password, String loginType) throws ServletException, IOException {
         IForm form = this.getForm();
         HttpServletRequest req = this.getRequest();
 
@@ -88,7 +86,6 @@ public class AppLoginPage extends AbstractJspPage implements IAppLogin {
         req.setAttribute("password", password);
         req.setAttribute("needVerify", "false");
 
-        boolean result = false;
         log.debug(String.format("进行用户帐号(%s)与密码认证", userCode));
         // 进行用户名、密码认证
         LocalService app;
@@ -103,7 +100,6 @@ public class AppLoginPage extends AbstractJspPage implements IAppLogin {
                 log.debug(String.format("认证成功，取得sid(%s)", sid));
                 req.setAttribute(RequestData.appSession_Key, sid);
                 req.getSession().setAttribute(RequestData.appSession_Key, sid);
-                result = true;
             }
         } else {
             // 登录验证失败，进行判断，手机号为空，则回到登录页，手机不为空，密码为空，则跳到发送验证码页面
@@ -111,8 +107,7 @@ public class AppLoginPage extends AbstractJspPage implements IAppLogin {
                 try (MemoryBuffer buffer = new MemoryBuffer(BufferType.getGrid, "userName")) {
                     buffer.setField("userName", userCode);
                 }
-                getResponse().sendRedirect("FrmFirstLogin");
-                return false;
+                return "redirect:FrmFirstLogin";
             }
             String mobile = Utils.safeString(app.getDataOut().getHead().getString("Mobile_"));
             if (mobile == null || "".equals(mobile)) {
@@ -120,20 +115,19 @@ public class AppLoginPage extends AbstractJspPage implements IAppLogin {
                 req.setAttribute("loginMsg", app.getMessage());
                 this.execute();
             } else if (password == null || "".equals(password)) {
-                getResponse().sendRedirect("TFrmEasyReg?phone=" + mobile);
-                return false;
+                return "redirect:TFrmEasyReg?phone=" + mobile;
             } else {
                 log.debug(String.format("用户帐号(%s)与密码认证失败", userCode));
                 req.setAttribute("loginMsg", app.getMessage());
-                this.execute();
+                return this.execute();
             }
         }
-        return result;
+        return null;
     }
 
     @Override
-    public boolean checkLogin(String userCode, String password) throws IOException, ServletException {
-        return false;
+    public String checkLogin(String userCode, String password) throws IOException, ServletException {
+        return null;
     }
 
 }
