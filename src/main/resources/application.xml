@@ -1,96 +1,70 @@
 <beans xmlns="http://www.springframework.org/schema/beans" xmlns:task="http://www.springframework.org/schema/task"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
-    xmlns:aop="http://www.springframework.org/schema/aop"
-    xsi:schemaLocation="http://www.springframework.org/schema/beans  
-           http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
-           http://www.springframework.org/schema/task  
-           http://www.springframework.org/schema/task/spring-task-4.0.xsd
-           http://www.springframework.org/schema/context  
-           http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+    xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+    xmlns:mvc="http://www.springframework.org/schema/mvc"
+
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+      http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+      http://www.springframework.org/schema/context
+      http://www.springframework.org/schema/context/spring-context-4.0.xsd
+      http://www.springframework.org/schema/aop
+      http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
+      http://www.springframework.org/schema/tx
+      http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
+      http://www.springframework.org/schema/task
+      http://www.springframework.org/schema/task/spring-task-4.0.xsd
+      http://www.springframework.org/schema/mvc
+      http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd
+      ">
 
     <!-- 包含队列服务 -->
-    <!-- <import resource="classpath*:app-quartz.xml" /> -->
+    <!-- <import resource="classpath:app-quartz.xml" /> -->
+    <import resource="classpath:app-forms.xml" />
 
-   <!-- 开启注解 -->
+    <mvc:annotation-driven />
+    <mvc:default-servlet-handler />
+
+    <!-- 开启注解 -->
     <context:annotation-config />
     <!-- 启动定时器 -->
     <task:annotation-driven />
     <!-- <task:annotation-driven scheduler="myScheduler" /> <task:scheduler id="myScheduler" pool-size="10" /> -->
-    <!-- 指定相关的包路径 -->
-    <context:component-scan base-package="cn.cerc.sample.security" />
+    <!-- 自动扫描并载入包 -->
+    <context:component-scan base-package="cn.cerc.jdb.core" />
+    <context:component-scan base-package="cn.cerc.jdb.mysql" />
+    <context:component-scan base-package="cn.cerc.jdb.queue" />
+    <context:component-scan base-package="cn.cerc.jbean.core" />
+    <context:component-scan base-package="cn.cerc.jmis.core" />
+    <context:component-scan base-package="cn.cerc.sample" />
+    <!--配置JSP 显示ViewResolver -->
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="viewClass" value="org.springframework.web.servlet.view.JstlView" />
+        <property name="prefix" value="/WEB-INF/forms/" />
+        <!-- <property name="suffix" value=".jsp" /> -->
+    </bean>
 
     <!-- 显示层配置对象 -->
     <bean id="AppConfig" class="cn.cerc.jbean.core.AppConfig">
         <property name="params">
             <map>
-                <entry key="configFile" value="classpath:application.properties" />
                 <entry key="pathForms" value="forms" />
-                <entry key="jspLoginFile" value="common/Login.jsp"/>
-                <!-- System Table -->
-                <entry key="OurInfo" value="s_BookInfo" />
-                <entry key="VineOptions" value="s_BookOptions" />
-                <entry key="SysFormDef" value="s_AppMenus" />
-                <entry key="cusmenu" value="s_CustomMenus" />
-                <entry key="UserMenu" value="s_UserMenus" />
-
-                <entry key="Account" value="s_UserInfo" />
-                <entry key="UserOptions" value="s_UserOptions" />
-                <entry key="UserRoles" value="s_UserRoles" />
-                <entry key="RoleAccess" value="s_UserAccess" />
-                <entry key="AccountVerify" value="s_DeviceVerify" />
-
-                <entry key="CurrentUser" value="s_CurrentUser" />
-                <entry key="message_temp" value="s_UserMessages" />
-                <entry key="UserLogs" value="s_UserLogs" />
-                <entry key="AppServiceLogs" value="s_AppLogs" />
-                <entry key="WebPageLogs" value="s_PageLogs" />
+                <entry key="jspLoginFile" value="common/Login.jsp" />
                 <entry key="formWelcome" value="FrmWelcome" />
                 <entry key="formDefault" value="FrmDefault" />
             </map>
         </property>
     </bean>
+    
+    <bean id="systemTable" class="cn.cerc.mis.config.SystemTableDefault"/>
 
     <!-- Handle实体 -->
     <bean id="AppHandle" class="cn.cerc.jbean.core.CustomHandle" scope="prototype">
         <property name="connections">
             <map>
                 <!-- key定义于SqlQuery -->
-                <entry key="sqlSession" value-ref="SqlConnection" />
-                <entry key="cacheSession" value-ref="CacheConnection" />
-                <entry key="aliyunQueueSession" value-ref="QueueConnection" />
+                <entry key="sqlSession" value-ref="sqlConnection" />
+                <entry key="aliyunQueueSession" value-ref="queueConnection" />
             </map>
         </property>
-    </bean>
-
-    <!-- 连接mysql -->
-    <bean id="SqlConnection" class="cn.cerc.jdb.mysql.SqlConnection">
-        <property name="config" ref="ServerConfig"></property>
-    </bean>
-    <!-- 连接缓存 -->
-    <bean id="CacheConnection" class="cn.cerc.jdb.cache.CacheConnection">
-        <property name="config" ref="ServerConfig"></property>
-    </bean>
-    <!-- 连接队列 -->
-    <bean id="QueueConnection" class="cn.cerc.jdb.queue.QueueConnection">
-        <property name="config" ref="ServerConfig"></property>
-    </bean>
-    <!-- 读取本地配置文件 -->
-    <bean id="ServerConfig" class="cn.cerc.jbean.core.ServerConfig">
-    </bean>
-
-    <!-- 权限检查 -->
-    <bean id="Passport" class="cn.cerc.sample.common.Passport" scope="prototype">
-    </bean>
-
-    <!-- 系统菜单定义表 -->
-    <bean id="AppMenus" class="cn.cerc.sample.common.MenuFactory" scope="prototype">
-    </bean>
-
-    <!-- 系统登录对象 -->
-    <bean id="AppLogin" class="cn.cerc.sample.common.AppLoginPage" scope="prototype">
-    </bean>
-
-    <!-- 其它系统级通用对象定义 -->
-    <bean id="RightMenus" class="cn.cerc.jui.parts.RightMenus" scope="prototype">
     </bean>
 </beans>

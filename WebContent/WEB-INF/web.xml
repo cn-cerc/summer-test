@@ -2,8 +2,18 @@
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee"
     xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
     id="WebApp_ID" version="3.1">
-    <display-name>app sample</display-name>
-    <!-- dos过滤器 -->
+    <display-name>summer app sample</display-name>
+    <!-- spring mvc -->
+    <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
+    <listener>
+        <listener-class>org.springframework.web.context.request.RequestContextListener</listener-class>
+    </listener>
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>classpath:application.xml</param-value>
+    </context-param>
     <filter>
         <filter-name>SecurityFilter</filter-name>
         <filter-class>cn.cerc.sample.security.SecurityFilter</filter-class>
@@ -12,7 +22,6 @@
         <filter-name>SecurityFilter</filter-name>
         <url-pattern>/*</url-pattern>
     </filter-mapping>
-
     <filter>
         <filter-name>Set Character Encoding</filter-name>
         <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
@@ -25,7 +34,6 @@
         <filter-name>Set Character Encoding</filter-name>
         <url-pattern>/forms/*</url-pattern>
     </filter-mapping>
-
     <!-- 主入口，用于宣传页展示 -->
     <filter>
         <filter-name>StartApp</filter-name>
@@ -44,6 +52,19 @@
         <filter-name>StartForms</filter-name>
         <url-pattern>/forms/*</url-pattern>
     </filter-mapping>
+    <servlet>
+        <servlet-name>springmvc</servlet-name>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        <init-param>
+            <param-name>contextConfigLocation</param-name>
+            <param-value>classpath:application.xml</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>springmvc</servlet-name>
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
     <!-- 原生客户端直接调用时使用 -->
     <servlet>
         <servlet-name>StartServices</servlet-name>
