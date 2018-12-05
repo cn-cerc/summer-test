@@ -1,4 +1,4 @@
-package cn.cerc.sample.common;
+package cn.cerc.sample.config;
 
 import java.io.IOException;
 
@@ -6,6 +6,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 
 import org.apache.log4j.Logger;
+import org.springframework.stereotype.Component;
 
 import cn.cerc.jbean.client.LocalService;
 import cn.cerc.jbean.core.AppConfig;
@@ -13,24 +14,24 @@ import cn.cerc.jbean.core.Application;
 import cn.cerc.jbean.form.IForm;
 import cn.cerc.jbean.other.BufferType;
 import cn.cerc.jbean.other.MemoryBuffer;
-import cn.cerc.jbean.tools.IAppLogin;
+import cn.cerc.jbean.tools.IAppLoginManage;
 import cn.cerc.jdb.core.IHandle;
 import cn.cerc.jdb.core.Utils;
 import cn.cerc.jmis.core.RequestData;
 import cn.cerc.jmis.form.AbstractForm;
 import cn.cerc.jmis.page.AbstractJspPage;
 
-public class AppLoginPage extends AbstractJspPage implements IAppLogin {
-    private static final Logger log = Logger.getLogger(AppLoginPage.class);
+@Component
+public class AppLoginManage extends AbstractJspPage implements IAppLoginManage {
+    private static final Logger log = Logger.getLogger(AppLoginManage.class);
 
-    public AppLoginPage() {
+    public AppLoginManage() {
         super(null);
     }
 
-    public AppLoginPage(IForm form) {
+    public AppLoginManage(IForm form) {
         super(form);
     }
-
 
     @Override
     public void init(IForm form) {
@@ -42,7 +43,7 @@ public class AppLoginPage extends AbstractJspPage implements IAppLogin {
     }
 
     @Override
-    public String checkSecurity(String token) throws IOException, ServletException {
+    public String checkToken(String token) throws IOException, ServletException {
         IForm form = this.getForm();
         String password = null;
         String userCode = null;

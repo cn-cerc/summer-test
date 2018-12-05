@@ -1,4 +1,4 @@
-package cn.cerc.sample.common;
+package cn.cerc.sample.config;
 
 import org.springframework.stereotype.Component;
 

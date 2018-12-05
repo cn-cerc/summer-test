@@ -50,7 +50,7 @@
         </plugins>
     </build>
     <properties>
-        <cn.cerc.summer.version>1.6.1</cn.cerc.summer.version>
+        <cn.cerc.summer.version>1.6.3</cn.cerc.summer.version>
         <org.springframework.version>4.2.6.RELEASE</org.springframework.version>
     </properties>
     <dependencies>
@@ -144,11 +144,6 @@
             <groupId>javax.enterprise</groupId>
             <artifactId>cdi-api</artifactId>
             <version>1.1-PFD</version>
-        </dependency>
-        <dependency>
-            <groupId>cn.cerc</groupId>
-            <artifactId>summer-db</artifactId>
-            <version>${cn.cerc.summer.version}</version>
         </dependency>
         <dependency>
             <groupId>cn.cerc</groupId>

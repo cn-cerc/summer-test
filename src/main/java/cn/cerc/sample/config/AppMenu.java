@@ -1,4 +1,4 @@
-package cn.cerc.sample.common;
+package cn.cerc.sample.config;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -10,22 +10,27 @@ import java.util.Map;
 import org.dom4j.Document;
 import org.dom4j.Element;
 import org.dom4j.io.SAXReader;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import cn.cerc.jbean.client.LocalService;
 import cn.cerc.jbean.core.Application;
 import cn.cerc.jbean.core.IPassport;
 import cn.cerc.jbean.other.BookOptions;
-import cn.cerc.jbean.other.SystemTable;
+import cn.cerc.jbean.other.ISystemTable;
 import cn.cerc.jdb.core.DataSet;
 import cn.cerc.jdb.core.IHandle;
 import cn.cerc.jdb.core.Record;
 import cn.cerc.jdb.mysql.SqlQuery;
-import cn.cerc.jmis.core.IAppMenus;
+import cn.cerc.jmis.core.IAppMenu;
 import cn.cerc.jmis.core.MenuData;
 import cn.cerc.jmis.core.MenuItem;
 
-public class MenuFactory implements IAppMenus {
+@Component
+public class AppMenu implements IAppMenu {
     // private static final Logger log = Logger.getLogger(MenuFactory.class);
+    @Autowired
+    private ISystemTable systemTable;
 
     private static final String menuFile = "app-menus.xml";
     private static final Map<String, MenuData> menus = new LinkedHashMap<>();
@@ -38,7 +43,7 @@ public class MenuFactory implements IAppMenus {
     static {
         try {
             menus.clear();
-            String filepath = MenuFactory.class.getClassLoader().getResource("").toURI().getPath() + menuFile;
+            String filepath = AppMenu.class.getClassLoader().getResource("").toURI().getPath() + menuFile;
             File f = new File(filepath);
             SAXReader reader = new SAXReader();
             Document doc = reader.read(f);
@@ -115,7 +120,7 @@ public class MenuFactory implements IAppMenus {
         if (this.passport == null)
             this.passport = Application.getPassport(handle);
 
-        Map<String, MenuData> menus = MenuFactory.getItems();
+        Map<String, MenuData> menus = AppMenu.getItems();
         List<MenuItem> result = new ArrayList<MenuItem>();
         // 初筛出符合要求的菜单项
         for (String menuId : menus.keySet()) {
@@ -166,7 +171,7 @@ public class MenuFactory implements IAppMenus {
     protected DataSet getCusMenus(IHandle handle) {
         if (cusMenus == null) {
             SqlQuery ds = new SqlQuery(handle);
-            ds.add("select Code_ from %s", SystemTable.get(SystemTable.getCustomMenus));
+            ds.add("select Code_ from %s", systemTable.getCustomMenus());
             ds.add("where CorpNo_='%s'", handle.getCorpNo());
             ds.open();
             this.cusMenus = ds;
@@ -216,7 +221,7 @@ public class MenuFactory implements IAppMenus {
      * @return
      */
     private static List<MenuData> getList(String parentMenu, boolean security, String device) {
-        Map<String, MenuData> menus = MenuFactory.getItems();
+        Map<String, MenuData> menus = AppMenu.getItems();
         List<MenuData> result = new ArrayList<MenuData>();
         for (String key : menus.keySet()) {
             MenuData item = menus.get(key);
