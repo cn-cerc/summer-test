@@ -36,7 +36,7 @@ public class FrmDataGrid extends AbstractForm {
         });
         col2.createUrl((ds, url) -> {
             url.setSite("FrmDataGrid");
-            url.addParam("name", ds.getString("Name_"));
+            url.putParam("name", ds.getString("Name_"));
         });
         new DoubleField(grid, "年龄", "Age_", 3);
 
@@ -45,7 +45,7 @@ public class FrmDataGrid extends AbstractForm {
         opera.setWidth(3);
         opera.createUrl((ds, url) -> {
             url.setSite("FrmDataGrid");
-            url.addParam("age", ds.getString("Age_"));
+            url.putParam("age", ds.getString("Age_"));
         });
         OperaField opera1 = new OperaField(grid);
         opera1.setShortName("");
@@ -54,7 +54,7 @@ public class FrmDataGrid extends AbstractForm {
         opera1.setValue("资料");
         opera1.createUrl((ds, url) -> {
             url.setSite("FrmDataGrid");
-            url.addParam("age", ds.getString("Age_"));
+            url.putParam("age", ds.getString("Age_"));
         });
         grid.getPages().setPageSize(20);
         jspPage.add("dataGrid", grid);

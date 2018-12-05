@@ -5,7 +5,6 @@ import javax.servlet.http.HttpServletRequest;
 import org.apache.log4j.Logger;
 
 import cn.cerc.jbean.form.IPage;
-import cn.cerc.jbean.other.SystemTable;
 import cn.cerc.jdb.mysql.SqlQuery;
 import cn.cerc.jmis.form.AbstractForm;
 import cn.cerc.jmis.page.JsonPage;
@@ -80,7 +79,7 @@ public class FrmErpRegister extends AbstractForm {
     // FIXME: 此处需要继续完成
     private String getCorpNo(String account, String password) {
         SqlQuery ds = new SqlQuery(this);
-        ds.add("select * from %s", SystemTable.getUserInfo);
+        ds.add("select * from %s", systemTable.getUserInfo());
         ds.add("where Code_='%s'", account);
         ds.open();
         if (ds.eof())

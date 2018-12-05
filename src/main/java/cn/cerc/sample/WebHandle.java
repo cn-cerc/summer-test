@@ -1,15 +1,15 @@
 package cn.cerc.sample;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 import org.springframework.web.context.WebApplicationContext;
 
-import lombok.extern.slf4j.Slf4j;
-
 @Component
 @Scope(WebApplicationContext.SCOPE_REQUEST)
-@Slf4j
-public class WebHandle implements AutoCloseable{
+public class WebHandle implements AutoCloseable {
+    private static final Logger log = LoggerFactory.getLogger(WebHandle.class);
 
     public WebHandle() {
         log.info("create");
