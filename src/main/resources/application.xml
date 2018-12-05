@@ -47,28 +47,8 @@
     <bean id="AppConfig" class="cn.cerc.jbean.core.AppConfig">
         <property name="params">
             <map>
-                <entry key="configFile" value="classpath:application.properties" />
                 <entry key="pathForms" value="forms" />
                 <entry key="jspLoginFile" value="common/Login.jsp" />
-                <!-- System Table -->
-                <entry key="OurInfo" value="s_BookInfo" />
-                <entry key="VineOptions" value="s_BookOptions" />
-                <entry key="SysFormDef" value="s_AppMenus" />
-                <entry key="cusmenu" value="s_CustomMenus" />
-                <entry key="UserMenu" value="s_UserMenus" />
-
-                <entry key="Account" value="s_UserInfo" />
-                <entry key="UserOptions" value="s_UserOptions" />
-                <entry key="UserRoles" value="s_UserRoles" />
-                <entry key="RoleAccess" value="s_UserAccess" />
-                <entry key="AccountVerify" value="s_DeviceVerify" />
-
-                <entry key="CurrentUser" value="s_CurrentUser" />
-                <entry key="message_temp" value="s_UserMessages" />
-                <entry key="UserLogs" value="s_UserLogs" />
-                <entry key="AppServiceLogs" value="s_AppLogs" />
-                <entry key="WebPageLogs" value="s_PageLogs" />
-                
                 <entry key="formWelcome" value="FrmWelcome" />
                 <entry key="formDefault" value="FrmDefault" />
             </map>
