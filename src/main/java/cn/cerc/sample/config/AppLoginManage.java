@@ -6,11 +6,11 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 
 import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import cn.cerc.db.core.IAppConfig;
 import cn.cerc.jbean.client.LocalService;
-import cn.cerc.jbean.core.Application;
 import cn.cerc.jbean.form.IForm;
 import cn.cerc.jbean.other.BufferType;
 import cn.cerc.jbean.other.MemoryBuffer;
@@ -24,6 +24,8 @@ import cn.cerc.jmis.page.AbstractJspPage;
 @Component
 public class AppLoginManage extends AbstractJspPage implements IAppLoginManage {
     private static final Logger log = Logger.getLogger(AppLoginManage.class);
+    @Autowired
+    private IAppConfig appConfig;
 
     public AppLoginManage() {
         super(null);
@@ -36,9 +38,8 @@ public class AppLoginManage extends AbstractJspPage implements IAppLoginManage {
     @Override
     public void init(IForm form) {
         this.setForm(form);
-        IAppConfig conf = Application.getAppConfig();
-        this.setJspFile(conf.getJspLoginFile());
-        this.add("homePage", conf.getFormWelcome());
+        this.setJspFile(appConfig.getJspLoginFile());
+        this.add("homePage", appConfig.getFormWelcome());
         this.add("needVerify", "false");
     }
 
