@@ -37,7 +37,7 @@
     <!-- 主入口，用于宣传页展示 -->
     <filter>
         <filter-name>StartApp</filter-name>
-        <filter-class>cn.cerc.jmis.core.StartApp</filter-class>
+        <filter-class>cn.cerc.mis.core.StartApp</filter-class>
     </filter>
     <filter-mapping>
         <filter-name>StartApp</filter-name>
@@ -46,7 +46,7 @@
     <!-- 系统入口，需要登录方可使用 -->
     <filter>
         <filter-name>StartForms</filter-name>
-        <filter-class>cn.cerc.jmis.core.StartForms</filter-class>
+        <filter-class>cn.cerc.mis.core.StartForms</filter-class>
     </filter>
     <filter-mapping>
         <filter-name>StartForms</filter-name>
@@ -68,7 +68,7 @@
     <!-- 原生客户端直接调用时使用 -->
     <servlet>
         <servlet-name>StartServices</servlet-name>
-        <servlet-class>cn.cerc.jbean.client.StartServices</servlet-class>
+        <servlet-class>cn.cerc.mis.client.StartServices</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>StartServices</servlet-name>
