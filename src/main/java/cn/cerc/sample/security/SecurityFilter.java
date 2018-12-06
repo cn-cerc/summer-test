@@ -18,7 +18,7 @@ import org.apache.log4j.Logger;
 import cn.cerc.core.TDateTime;
 import cn.cerc.db.cache.Buffer;
 import cn.cerc.db.mysql.SqlQuery;
-import cn.cerc.db.other.utils;
+import cn.cerc.db.other.RemoteAddress;
 
 public class SecurityFilter implements Filter {
     private Logger log = Logger.getLogger(SecurityFilter.class);
@@ -31,7 +31,7 @@ public class SecurityFilter implements Filter {
             throws IOException, ServletException {
         HttpServletRequest req = (HttpServletRequest) request;
         HttpServletResponse resp = (HttpServletResponse) response;
-        String ip = utils.getRemoteAddr(req);
+        String ip = RemoteAddress.get(req);
         if (filterIp(ip)) {
             resp.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
             return;
