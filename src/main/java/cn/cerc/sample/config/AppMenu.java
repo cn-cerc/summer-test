@@ -13,18 +13,18 @@ import org.dom4j.io.SAXReader;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import cn.cerc.jbean.client.LocalService;
-import cn.cerc.jbean.core.Application;
-import cn.cerc.jbean.core.IPassport;
-import cn.cerc.jbean.other.BookOptions;
-import cn.cerc.jbean.other.ISystemTable;
-import cn.cerc.jdb.core.DataSet;
-import cn.cerc.jdb.core.IHandle;
-import cn.cerc.jdb.core.Record;
-import cn.cerc.jdb.mysql.SqlQuery;
-import cn.cerc.jmis.core.IAppMenu;
-import cn.cerc.jmis.core.MenuData;
-import cn.cerc.jmis.core.MenuItem;
+import cn.cerc.core.DataSet;
+import cn.cerc.core.IHandle;
+import cn.cerc.core.Record;
+import cn.cerc.db.mysql.SqlQuery;
+import cn.cerc.mis.core.Application;
+import cn.cerc.mis.core.IAppMenu;
+import cn.cerc.mis.core.IPassport;
+import cn.cerc.mis.core.ISystemTable;
+import cn.cerc.mis.core.LocalService;
+import cn.cerc.mis.core.MenuData;
+import cn.cerc.mis.core.MenuItem;
+import cn.cerc.mis.other.BookOptions;
 
 @Component
 public class AppMenu implements IAppMenu {

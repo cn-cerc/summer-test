@@ -15,10 +15,10 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.apache.log4j.Logger;
 
-import cn.cerc.jdb.cache.Buffer;
-import cn.cerc.jdb.core.TDateTime;
-import cn.cerc.jdb.mysql.SqlQuery;
-import cn.cerc.jdb.other.utils;
+import cn.cerc.core.TDateTime;
+import cn.cerc.db.cache.Buffer;
+import cn.cerc.db.mysql.SqlQuery;
+import cn.cerc.db.other.utils;
 
 public class SecurityFilter implements Filter {
     private Logger log = Logger.getLogger(SecurityFilter.class);

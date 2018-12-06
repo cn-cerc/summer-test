@@ -2,11 +2,11 @@ package cn.cerc.sample.security;
 
 import org.springframework.stereotype.Component;
 
+import cn.cerc.core.IConfig;
+import cn.cerc.core.IHandle;
 import cn.cerc.db.core.MysqlConnection;
 import cn.cerc.db.core.ServerConfig;
-import cn.cerc.jdb.core.IConfig;
-import cn.cerc.jdb.core.IHandle;
-import cn.cerc.jdb.mysql.SqlSession;
+import cn.cerc.db.mysql.SqlSession;
 
 @Component
 public class QueueHandle implements IHandle, AutoCloseable {

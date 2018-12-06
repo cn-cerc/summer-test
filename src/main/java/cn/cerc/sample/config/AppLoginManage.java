@@ -9,17 +9,17 @@ import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import cn.cerc.core.IHandle;
+import cn.cerc.core.Utils;
 import cn.cerc.db.core.IAppConfig;
-import cn.cerc.jbean.client.LocalService;
-import cn.cerc.jbean.form.IForm;
-import cn.cerc.jbean.other.BufferType;
-import cn.cerc.jbean.other.MemoryBuffer;
-import cn.cerc.jbean.tools.IAppLoginManage;
-import cn.cerc.jdb.core.IHandle;
-import cn.cerc.jdb.core.Utils;
-import cn.cerc.jmis.core.RequestData;
-import cn.cerc.jmis.form.AbstractForm;
-import cn.cerc.jmis.page.AbstractJspPage;
+import cn.cerc.mis.core.AbstractForm;
+import cn.cerc.mis.core.AbstractJspPage;
+import cn.cerc.mis.core.IAppLoginManage;
+import cn.cerc.mis.core.IForm;
+import cn.cerc.mis.core.LocalService;
+import cn.cerc.mis.core.RequestData;
+import cn.cerc.mis.other.BufferType;
+import cn.cerc.mis.other.MemoryBuffer;
 
 @Component
 public class AppLoginManage extends AbstractJspPage implements IAppLoginManage {

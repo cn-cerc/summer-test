@@ -1,8 +1,8 @@
 package cn.cerc.sample.forms;
 
-import cn.cerc.jbean.form.IPage;
-import cn.cerc.jmis.form.AbstractForm;
-import cn.cerc.jmis.page.JspPage;
+import cn.cerc.mis.core.AbstractForm;
+import cn.cerc.mis.core.IPage;
+import cn.cerc.mis.page.JspPage;
 
 public class FrmClientTest extends AbstractForm {
 

@@ -2,9 +2,9 @@ package cn.cerc.sample.config;
 
 import org.springframework.stereotype.Component;
 
-import cn.cerc.jbean.core.AbstractHandle;
-import cn.cerc.jbean.core.IPassport;
-import cn.cerc.jbean.rds.PassportRecord;
+import cn.cerc.mis.core.AbstractHandle;
+import cn.cerc.mis.core.IPassport;
+import cn.cerc.mis.rds.PassportRecord;
 
 @Component
 public class Passport extends AbstractHandle implements IPassport {

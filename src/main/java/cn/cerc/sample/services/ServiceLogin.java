@@ -1,11 +1,11 @@
 package cn.cerc.sample.services;
 
-import cn.cerc.jbean.core.AbstractService;
-import cn.cerc.jbean.core.IStatus;
-import cn.cerc.jbean.core.ServiceException;
-import cn.cerc.jdb.core.DataSet;
-import cn.cerc.jdb.core.IHandle;
-import cn.cerc.jdb.core.Record;
+import cn.cerc.core.DataSet;
+import cn.cerc.core.IHandle;
+import cn.cerc.core.Record;
+import cn.cerc.mis.core.AbstractService;
+import cn.cerc.mis.core.IStatus;
+import cn.cerc.mis.core.ServiceException;
 
 public class ServiceLogin extends AbstractService {
 

@@ -2,8 +2,8 @@ package cn.cerc.sample.security;
 
 import org.springframework.stereotype.Component;
 
-import cn.cerc.jdb.cache.Buffer;
-import cn.cerc.jdb.mysql.SqlQuery;
+import cn.cerc.db.cache.Buffer;
+import cn.cerc.db.mysql.SqlQuery;
 
 @Component
 public class AutoCheckIP implements Runnable {

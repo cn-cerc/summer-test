@@ -1,9 +1,9 @@
 package cn.cerc.sample.forms;
 
-import cn.cerc.jbean.form.IPage;
-import cn.cerc.jmis.form.AbstractForm;
-import cn.cerc.jmis.page.JsonPage;
-import cn.cerc.jmis.page.JspPage;
+import cn.cerc.mis.core.AbstractForm;
+import cn.cerc.mis.core.IPage;
+import cn.cerc.mis.page.JsonPage;
+import cn.cerc.mis.page.JspPage;
 import cn.cerc.security.sapi.JayunMessage;
 import cn.cerc.security.sapi.JayunSecurity;
 import cn.cerc.security.sapi.JayunServer;

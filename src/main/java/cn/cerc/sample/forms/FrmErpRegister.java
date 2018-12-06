@@ -4,10 +4,10 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.apache.log4j.Logger;
 
-import cn.cerc.jbean.form.IPage;
-import cn.cerc.jdb.mysql.SqlQuery;
-import cn.cerc.jmis.form.AbstractForm;
-import cn.cerc.jmis.page.JsonPage;
+import cn.cerc.db.mysql.SqlQuery;
+import cn.cerc.mis.core.AbstractForm;
+import cn.cerc.mis.core.IPage;
+import cn.cerc.mis.page.JsonPage;
 
 public class FrmErpRegister extends AbstractForm {
     private static final Logger log = Logger.getLogger(FrmErpRegister.class);

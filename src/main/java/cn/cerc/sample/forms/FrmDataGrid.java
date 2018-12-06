@@ -1,17 +1,17 @@
 package cn.cerc.sample.forms;
 
-import cn.cerc.jbean.form.IPage;
-import cn.cerc.jdb.core.DataSet;
-import cn.cerc.jmis.form.AbstractForm;
-import cn.cerc.jmis.page.JspPage;
-import cn.cerc.jpage.fields.AbstractField;
-import cn.cerc.jpage.fields.DoubleField;
-import cn.cerc.jpage.fields.ItField;
-import cn.cerc.jpage.fields.OperaField;
-import cn.cerc.jpage.fields.StringField;
-import cn.cerc.jpage.grid.AbstractGrid;
-import cn.cerc.jpage.grid.DataGrid;
-import cn.cerc.jpage.other.OperaPages;
+import cn.cerc.core.DataSet;
+import cn.cerc.mis.core.AbstractForm;
+import cn.cerc.mis.core.IPage;
+import cn.cerc.mis.page.JspPage;
+import cn.cerc.ui.fields.AbstractField;
+import cn.cerc.ui.fields.DoubleField;
+import cn.cerc.ui.fields.ItField;
+import cn.cerc.ui.fields.OperaField;
+import cn.cerc.ui.fields.StringField;
+import cn.cerc.ui.grid.AbstractGrid;
+import cn.cerc.ui.grid.DataGrid;
+import cn.cerc.ui.other.OperaPages;
 
 public class FrmDataGrid extends AbstractForm {
 

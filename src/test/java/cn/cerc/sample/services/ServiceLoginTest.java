@@ -4,9 +4,9 @@ import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
-import cn.cerc.jbean.client.LocalService;
-import cn.cerc.jbean.rds.StubHandle;
-import cn.cerc.jdb.core.Record;
+import cn.cerc.core.Record;
+import cn.cerc.mis.core.LocalService;
+import cn.cerc.mis.rds.StubHandle;
 
 public class ServiceLoginTest {
 

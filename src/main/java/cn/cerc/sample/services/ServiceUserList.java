@@ -1,9 +1,9 @@
 package cn.cerc.sample.services;
 
-import cn.cerc.jbean.core.AbstractService;
-import cn.cerc.jbean.core.IStatus;
-import cn.cerc.jbean.core.ServiceException;
-import cn.cerc.jdb.core.DataSet;
+import cn.cerc.core.DataSet;
+import cn.cerc.mis.core.AbstractService;
+import cn.cerc.mis.core.IStatus;
+import cn.cerc.mis.core.ServiceException;
 
 public class ServiceUserList extends AbstractService {
 
