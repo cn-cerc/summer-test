@@ -4,13 +4,12 @@ import org.springframework.stereotype.Component;
 
 import cn.cerc.core.IConfig;
 import cn.cerc.core.IHandle;
-import cn.cerc.db.core.MysqlConnection;
 import cn.cerc.db.core.ServerConfig;
-import cn.cerc.db.mysql.SqlSession;
+import cn.cerc.db.mysql.MysqlConnection;
 
 @Component
 public class QueueHandle implements IHandle, AutoCloseable {
-    private SqlSession mysqlSession;
+    private MysqlConnection mysqlSession;
     private String corpNo;
 
     public QueueHandle() {
@@ -20,14 +19,14 @@ public class QueueHandle implements IHandle, AutoCloseable {
             @Override
             public String getProperty(String key) {
                 ServerConfig config = ServerConfig.getInstance();
-                if (key.equals(SqlSession.rds_site)) {
-                    return config.getProperty(SqlSession.rds_site);
-                } else if (key.equals(SqlSession.rds_database)) {
-                    return config.getProperty(SqlSession.rds_database);
-                } else if (key.equals(SqlSession.rds_username))
-                    return config.getProperty(SqlSession.rds_username);
-                else if (key.equals(SqlSession.rds_password))
-                    return config.getProperty(SqlSession.rds_password);
+                if (key.equals(MysqlConnection.rds_site)) {
+                    return config.getProperty(MysqlConnection.rds_site);
+                } else if (key.equals(MysqlConnection.rds_database)) {
+                    return config.getProperty(MysqlConnection.rds_database);
+                } else if (key.equals(MysqlConnection.rds_username))
+                    return config.getProperty(MysqlConnection.rds_username);
+                else if (key.equals(MysqlConnection.rds_password))
+                    return config.getProperty(MysqlConnection.rds_password);
                 else
                     return null;
             }
@@ -44,7 +43,7 @@ public class QueueHandle implements IHandle, AutoCloseable {
         // mysql
         MysqlConnection conn = new MysqlConnection();
         conn.setConfig(config);
-        mysqlSession = conn.getSession();
+        mysqlSession = conn;
     }
 
     @Override
@@ -61,7 +60,7 @@ public class QueueHandle implements IHandle, AutoCloseable {
 
     @Override
     public Object getProperty(String key) {
-        if (SqlSession.sessionId.equals(key))
+        if (MysqlConnection.sessionId.equals(key))
             return mysqlSession;
         return null;
     }
@@ -69,7 +68,11 @@ public class QueueHandle implements IHandle, AutoCloseable {
     // 关闭资源
     @Override
     public void closeConnections() {
-        mysqlSession.closeSession();
+        try {
+            mysqlSession.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
