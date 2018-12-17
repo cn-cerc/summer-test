@@ -65,19 +65,8 @@ public class QueueHandle implements IHandle, AutoCloseable {
         return null;
     }
 
-    // 关闭资源
-    @Override
-    public void closeConnections() {
-        try {
-            mysqlSession.close();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
     @Override
     public void close() {
-        closeConnections();
     }
 
     // 用户姓名

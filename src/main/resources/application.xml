@@ -19,7 +19,6 @@
 
     <!-- 包含队列服务 -->
     <!-- <import resource="classpath:app-quartz.xml" /> -->
-    <import resource="classpath:app-forms.xml" />
 
     <mvc:annotation-driven />
     <mvc:default-servlet-handler />
@@ -43,28 +42,22 @@
         <!-- <property name="suffix" value=".jsp" /> -->
     </bean>
 
-    <!-- 显示层配置对象 -->
-    <bean id="AppConfig" class="cn.cerc.jbean.core.AppConfig">
-        <property name="params">
-            <map>
-                <entry key="pathForms" value="forms" />
-                <entry key="jspLoginFile" value="common/Login.jsp" />
-                <entry key="formWelcome" value="FrmWelcome" />
-                <entry key="formDefault" value="FrmDefault" />
-            </map>
-        </property>
+    <bean id="Welcome" class="cn.cerc.sample.forms.FrmWelcome" scope="prototype">
     </bean>
-    
-    <bean id="systemTable" class="cn.cerc.mis.config.SystemTableDefault"/>
-
-    <!-- Handle实体 -->
-    <bean id="AppHandle" class="cn.cerc.jbean.core.CustomHandle" scope="prototype">
-        <property name="connections">
-            <map>
-                <!-- key定义于SqlQuery -->
-                <entry key="sqlSession" value-ref="sqlConnection" />
-                <entry key="aliyunQueueSession" value-ref="queueConnection" />
-            </map>
-        </property>
+    <bean id="FrmWelcome" class="cn.cerc.sample.forms.FrmWelcome" scope="prototype">
+    </bean>
+    <bean id="FrmDefault" class="cn.cerc.sample.forms.FrmDefault" scope="prototype">
+    </bean>
+    <bean id="FrmDataGrid" class="cn.cerc.sample.forms.FrmDataGrid" scope="prototype">
+    </bean>
+    <bean id="FrmClientTest" class="cn.cerc.sample.forms.FrmClientTest" scope="prototype">
+    </bean>
+    <bean id="FrmScanProduct" class="cn.cerc.sample.forms.FrmScanProduct" scope="prototype">
+    </bean>
+    <bean id="ErpRegister" class="cn.cerc.sample.forms.FrmErpRegister" scope="prototype">
+    </bean>
+    <bean id="FrmJayunSample" class="cn.cerc.sample.forms.FrmJayunSample" scope="prototype">
+    </bean>
+    <bean id="FrmAcceptor" class="cn.cerc.sample.forms.FrmAcceptor" scope="prototype">
     </bean>
 </beans>

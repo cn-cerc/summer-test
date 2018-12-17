@@ -50,7 +50,7 @@
         </plugins>
     </build>
     <properties>
-        <org.springframework.version>4.2.6.RELEASE</org.springframework.version>
+        <org.springframework.version>4.2.9.RELEASE</org.springframework.version>
     </properties>
     <dependencies>
         <dependency>

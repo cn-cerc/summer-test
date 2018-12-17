@@ -28,11 +28,12 @@ public class AppLoginManage extends AbstractJspPage implements IAppLoginManage {
     private IAppConfig appConfig;
 
     public AppLoginManage() {
-        super(null);
+        super();
     }
 
     public AppLoginManage(IForm form) {
-        super(form);
+        super();
+        this.setForm(form);
     }
 
     @Override
