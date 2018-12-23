@@ -14,7 +14,7 @@ import cn.cerc.core.Utils;
 import cn.cerc.db.core.IAppConfig;
 import cn.cerc.mis.core.AbstractForm;
 import cn.cerc.mis.core.AbstractJspPage;
-import cn.cerc.mis.core.IAppLoginManage;
+import cn.cerc.mis.core.IAppLogin;
 import cn.cerc.mis.core.IForm;
 import cn.cerc.mis.core.LocalService;
 import cn.cerc.mis.core.RequestData;
@@ -22,7 +22,7 @@ import cn.cerc.mis.other.BufferType;
 import cn.cerc.mis.other.MemoryBuffer;
 
 @Component
-public class AppLoginManage extends AbstractJspPage implements IAppLoginManage {
+public class AppLoginManage extends AbstractJspPage implements IAppLogin {
     private static final Logger log = Logger.getLogger(AppLoginManage.class);
     @Autowired
     private IAppConfig appConfig;
