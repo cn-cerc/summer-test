@@ -8,7 +8,7 @@ import cn.cerc.db.core.ServerConfig;
 import cn.cerc.db.mysql.MysqlConnection;
 
 @Component
-public class QueueHandle implements IHandle, AutoCloseable {
+public class QueueHandle implements IHandle {
     private MysqlConnection mysqlSession;
     private String corpNo;
 
