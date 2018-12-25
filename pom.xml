@@ -4,7 +4,7 @@
     <groupId>cn.cerc</groupId>
     <artifactId>summer-sample</artifactId>
     <url>https://github.com/cn-cerc/summer-sample</url>
-    <version>1.4.2</version>
+    <version>2.0.0</version>
     <packaging>war</packaging>
     <build>
         <plugins>
