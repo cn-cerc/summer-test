@@ -29,12 +29,12 @@
     <task:annotation-driven />
     <!-- <task:annotation-driven scheduler="myScheduler" /> <task:scheduler id="myScheduler" pool-size="10" /> -->
     <!-- 自动扫描并载入包 -->
-    <context:component-scan base-package="cn.cerc.jdb.core" />
-    <context:component-scan base-package="cn.cerc.jdb.mysql" />
-    <context:component-scan base-package="cn.cerc.jdb.queue" />
-    <context:component-scan base-package="cn.cerc.jbean.core" />
-    <context:component-scan base-package="cn.cerc.jmis.core" />
+    <context:component-scan base-package="cn.cerc.core" />
+    <context:component-scan base-package="cn.cerc.db" />
+    <context:component-scan base-package="cn.cerc.mis" />
+    <context:component-scan base-package="cn.cerc.ui" />
     <context:component-scan base-package="cn.cerc.sample" />
+    
     <!--配置JSP 显示ViewResolver -->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="viewClass" value="org.springframework.web.servlet.view.JstlView" />
