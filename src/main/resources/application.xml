@@ -17,16 +17,6 @@
       http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd
       ">
 
-    <!-- 包含队列服务 -->
-    <!-- <import resource="classpath:app-quartz.xml" /> -->
-
-    <mvc:annotation-driven />
-    <mvc:default-servlet-handler />
-
-    <!-- 开启注解 -->
-    <context:annotation-config />
-    <!-- 启动定时器 -->
-    <task:annotation-driven />
     <!-- <task:annotation-driven scheduler="myScheduler" /> <task:scheduler id="myScheduler" pool-size="10" /> -->
     <!-- 自动扫描并载入包 -->
     <context:component-scan base-package="cn.cerc.core" />
@@ -34,6 +24,13 @@
     <context:component-scan base-package="cn.cerc.mis" />
     <context:component-scan base-package="cn.cerc.ui" />
     <context:component-scan base-package="cn.cerc.sample" />
+     <!-- 启动 springmvc -->
+    <mvc:default-servlet-handler />
+    <!-- 开启注解 -->
+    <mvc:annotation-driven />
+    <context:annotation-config />
+    <!-- 启动定时器 -->
+    <task:annotation-driven />
 
     <bean id="Welcome" class="cn.cerc.sample.forms.FrmWelcome" scope="prototype">
     </bean>
