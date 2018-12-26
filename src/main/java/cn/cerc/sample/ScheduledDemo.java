@@ -10,7 +10,7 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class ScheduledDemo {
 
-    @Scheduled(fixedDelay = 1000)
+    @Scheduled(fixedDelay = 3000)
     public void run() {
         log.info("{}", "" + TDateTime.Now());
     }
