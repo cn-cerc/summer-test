@@ -1,18 +1,17 @@
 package cn.cerc.sample.forms;
 
+import org.springframework.stereotype.Component;
+
 import cn.cerc.mis.core.AbstractForm;
 import cn.cerc.mis.core.IPage;
 import cn.cerc.mis.page.JspPage;
 
-public class FrmDefault extends AbstractForm {
+@Component
+public class Welcome extends AbstractForm {
 
     @Override
     public IPage execute() {
-        return new JspPage(this, "common/FrmDefault.jsp");
-    }
-
-    public IPage hello() {
-        return new JspPage(this, "common/hello.jsp");
+        return new JspPage(this, "common/welcome.jsp");
     }
 
     @Override

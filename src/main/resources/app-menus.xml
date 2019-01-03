@@ -5,12 +5,12 @@
         <title>系统菜单定义</title>
     </head>
     <body>
-        <item code="FrmWelcome" name="欢迎页" proccode="base.product.manage" parent="TBase" hide="true" security="false">
-            <web process="release" pageno="100" class="cn.cerc.sample.forms.FrmWelcome" />
+        <item code="welcome" name="欢迎页" proccode="base.product.manage" parent="TBase" hide="true" security="false">
+            <web process="release" pageno="100"/>
             <access verlist="4,6,1,2,3,5,0," />
         </item>
-        <item code="FrmDefault" name="首页" proccode="base.default" parent="" hide="true" security="false">
-            <web process="test" pageno="101" class="cn.cerc.sample.forms.FrmDefault" />
+        <item code="default" name="首页" proccode="base.default" parent="" hide="true" security="false">
+            <web process="test" pageno="101" />
             <access verlist="4,6,1,2,3,5,0," />
         </item>
         <item code="FrmDataGrid" name="演示dataGrid表格" proccode="base.default" parent="" hide="true" security="false">

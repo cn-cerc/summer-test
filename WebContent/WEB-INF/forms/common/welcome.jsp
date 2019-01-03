@@ -40,7 +40,7 @@
     <div style="text-align: center; padding-top: 2em;">
         <div>欢迎使用summer框架！</div>
         <div style="text-align: center; padding-top: 2em;">
-            <a href="FrmDefault">进入首页</a>
+            <a href="default">进入首页</a>
         </div>
     </div>
     <div style="text-align: center; padding-top: 2em;">
