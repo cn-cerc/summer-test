@@ -23,6 +23,6 @@
         </environment>
     </environments>
     <mappers>
-        <mapper resource="cn/cerc/sample/mybatis/mapper/CountryMapper.xml"/>
+        <mapper resource="cn/cerc/sample/mybatis/mapper/CountryMapper.xml" />
     </mappers>
 </configuration>
