@@ -50,7 +50,7 @@
     </div>
     <div style="text-align: center; padding-top: 2em;">
         <div>
-            <a href="FrmClientTest">原生App功能测试</a>
+            <a href="clientTest">原生App功能测试</a>
         </div>
     </div>
     <div style="text-align: center; padding-top: 2em;">

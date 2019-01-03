@@ -17,8 +17,8 @@
             <web process="test" pageno="102"/>
             <access verlist="4,6,1,2,3,5,0," />
         </item>
-        <item code="FrmClientTest" name="终端功能测试" proccode="base.default" parent="" hide="true" security="false">
-            <web process="test" pageno="102" class="cn.cerc.sample.forms.FrmClientTest" />
+        <item code="clientTest" name="终端功能测试" proccode="base.default" parent="" hide="true" security="false">
+            <web process="test" pageno="102" />
             <access verlist="4,6,1,2,3,5,0," />
         </item>
         <item code="FrmScanProduct" name="商品批次扫描" proccode="base.default" parent="" hide="true" security="false">
