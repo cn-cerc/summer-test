@@ -1,5 +1,7 @@
 package cn.cerc.sample.forms;
 
+import org.springframework.stereotype.Component;
+
 import com.google.gson.JsonObject;
 
 import cn.cerc.mis.core.AbstractForm;
@@ -8,11 +10,12 @@ import cn.cerc.mis.page.JsonPage;
 import cn.cerc.mis.page.JspPage;
 import cn.cerc.mis.page.qrcode.WebSocket;
 
-public class FrmAcceptor extends AbstractForm {
+@Component
+public class Acceptor extends AbstractForm {
 
     @Override
     public IPage execute() throws Exception {
-        JspPage page = new JspPage(this, "common/FrmAcceptor.jsp");
+        JspPage page = new JspPage(this, "common/acceptor.jsp");
         page.add("sessionId", getRequest().getSession().getId());
         return page;
     }

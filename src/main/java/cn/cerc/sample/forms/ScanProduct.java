@@ -1,12 +1,15 @@
 package cn.cerc.sample.forms;
 
+import org.springframework.stereotype.Component;
+
 import cn.cerc.mis.core.AbstractForm;
 import cn.cerc.mis.core.IPage;
 import cn.cerc.mis.page.JsonPage;
 import cn.cerc.mis.page.JspPage;
 import cn.cerc.mis.page.ResultMessage;
 
-public class FrmScanProduct extends AbstractForm {
+@Component
+public class ScanProduct extends AbstractForm {
 
     @Override
     public IPage execute() throws Exception {
