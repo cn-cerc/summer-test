@@ -32,8 +32,4 @@
     <!-- 启动定时器 -->
     <task:annotation-driven />
 
-    <bean id="FrmScanProduct" class="cn.cerc.sample.forms.ScanProduct" scope="prototype">
-    </bean>
-    <bean id="ErpRegister" class="cn.cerc.sample.forms.FrmErpRegister" scope="prototype">
-    </bean>
 </beans>
