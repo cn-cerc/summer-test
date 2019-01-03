@@ -75,8 +75,8 @@ public class AppMenu implements IAppMenu {
                     menuItem.setWin(true);
                     Element web = item.element("web");
                     if (web != null) {
-                        menuItem.setClazz(web.attributeValue("class"));
-                        menuItem.setFormNo(web.attributeValue("pageno"));
+//                        menuItem.setClazz(web.attributeValue("class"));
+                        menuItem.setPageNo(web.attributeValue("pageno"));
                         menuItem.setImage(web.attributeValue("image"));
                         menuItem.setProcess(web.attributeValue("process"));
                         menuItem.setWeb(!"none".equals(menuItem.getProcess()));
@@ -181,7 +181,7 @@ public class AppMenu implements IAppMenu {
 
     private void copyMenuData(MenuData item, MenuItem menu) {
         menu.setParam(MenuItem.TITLE, item.getCaption());
-        menu.setParam(MenuItem.PAGENO, item.getFormNo());
+        menu.setParam(MenuItem.PAGENO, item.getPageNo());
         menu.setParam(MenuItem.SECURITY, item.isSecurity() ? "true" : "false");
         menu.setParam(MenuItem.SOFTWARE, item.getVersions());
         menu.setParam(MenuItem.PERMISSION, item.getProccode());
