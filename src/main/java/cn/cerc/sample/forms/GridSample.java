@@ -1,5 +1,7 @@
 package cn.cerc.sample.forms;
 
+import org.springframework.stereotype.Component;
+
 import cn.cerc.core.DataSet;
 import cn.cerc.mis.core.AbstractForm;
 import cn.cerc.mis.core.IPage;
@@ -13,11 +15,12 @@ import cn.cerc.ui.grid.AbstractGrid;
 import cn.cerc.ui.grid.DataGrid;
 import cn.cerc.ui.other.OperaPages;
 
-public class FrmDataGrid extends AbstractForm {
+@Component
+public class GridSample extends AbstractForm {
 
     @Override
     public IPage execute() {
-        JspPage jspPage = new JspPage(this, "common/FrmDataGrid.jsp");
+        JspPage jspPage = new JspPage(this, "common/gridSample.jsp");
         DataSet dataSet = new DataSet();
         for (int i = 1; i < 150; i++)
             dataSet.append().setField("Name_", "王五").setField("Age_", i).setField("Sex_", i % 2 == 0 ? "男" : "女");
@@ -35,7 +38,7 @@ public class FrmDataGrid extends AbstractForm {
                 html.print(ds.getString("Sex_"));
         });
         col2.createUrl((ds, url) -> {
-            url.setSite("FrmDataGrid");
+            url.setSite("gridSample");
             url.putParam("name", ds.getString("Name_"));
         });
         new DoubleField(grid, "年龄", "Age_", 3);
@@ -44,7 +47,7 @@ public class FrmDataGrid extends AbstractForm {
         opera.setShortName("");
         opera.setWidth(3);
         opera.createUrl((ds, url) -> {
-            url.setSite("FrmDataGrid");
+            url.setSite("gridSample");
             url.putParam("age", ds.getString("Age_"));
         });
         OperaField opera1 = new OperaField(grid);
@@ -53,7 +56,7 @@ public class FrmDataGrid extends AbstractForm {
         opera1.setName("查看");
         opera1.setValue("资料");
         opera1.createUrl((ds, url) -> {
-            url.setSite("FrmDataGrid");
+            url.setSite("gridSample");
             url.putParam("age", ds.getString("Age_"));
         });
         grid.getPages().setPageSize(20);

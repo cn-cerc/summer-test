@@ -7,7 +7,7 @@
 <body style="font-size: 2em;">
     <div style="text-align: center; padding-top: 2em;">
         <div>
-            <a href="FrmDataGrid">演示dataGrid表格</a>
+            <a href="gridSample">演示dataGrid表格</a>
         </div>
     </div>
     <div style="text-align: center; padding-top: 2em;">

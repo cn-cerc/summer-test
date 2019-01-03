@@ -13,8 +13,8 @@
             <web process="test" pageno="101" />
             <access verlist="4,6,1,2,3,5,0," />
         </item>
-        <item code="FrmDataGrid" name="演示dataGrid表格" proccode="base.default" parent="" hide="true" security="false">
-            <web process="test" pageno="102" class="cn.cerc.sample.forms.FrmDataGrid" />
+        <item code="gridSample" name="演示dataGrid表格" proccode="base.default" parent="" hide="true" security="false">
+            <web process="test" pageno="102"/>
             <access verlist="4,6,1,2,3,5,0," />
         </item>
         <item code="FrmClientTest" name="终端功能测试" proccode="base.default" parent="" hide="true" security="false">
