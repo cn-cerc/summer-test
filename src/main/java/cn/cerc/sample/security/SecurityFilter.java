@@ -19,6 +19,7 @@ import cn.cerc.core.TDateTime;
 import cn.cerc.db.cache.Buffer;
 import cn.cerc.db.mysql.SqlQuery;
 import cn.cerc.db.other.RemoteAddress;
+import cn.cerc.sample.config.Handle;
 
 public class SecurityFilter implements Filter {
     private Logger log = Logger.getLogger(SecurityFilter.class);
@@ -91,7 +92,7 @@ public class SecurityFilter implements Filter {
     }
 
     private void saveToMysql(String ip) {
-        QueueHandle handle = new QueueHandle();
+        Handle handle = new Handle();
         try {
             SqlQuery ds = new SqlQuery(handle);
             ds.add("select * from ip_blacklist where ip_='%s'", ip);
@@ -107,7 +108,7 @@ public class SecurityFilter implements Filter {
         } catch (Exception e) {
             log.error(String.format("ip(%s)在快速访问主机", ip));
         } finally {
-            handle = null;
+            handle.close();
         }
     }
 
