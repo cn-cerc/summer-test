@@ -1,5 +1,7 @@
 package cn.cerc.sample.forms;
 
+import org.springframework.stereotype.Component;
+
 import cn.cerc.mis.core.AbstractForm;
 import cn.cerc.mis.core.IPage;
 import cn.cerc.mis.page.JsonPage;
@@ -8,11 +10,12 @@ import cn.cerc.security.sapi.JayunMessage;
 import cn.cerc.security.sapi.JayunSecurity;
 import cn.cerc.security.sapi.JayunServer;
 
-public class FrmJayunSample extends AbstractForm {
+@Component
+public class JayunSample extends AbstractForm {
 
     @Override
     public IPage execute() {
-        JspPage page = new JspPage(this, "common/FrmJayunSample.jsp");
+        JspPage page = new JspPage(this, "common/jayunSample.jsp");
         page.add("appKey", "1r625g3wNX91");
         page.add("appSecret", "532baeaef5544a34a5336fef19bc29b1");
         page.add("mobile", "13927470636");
@@ -107,7 +110,7 @@ public class FrmJayunSample extends AbstractForm {
             jspPage.add("user", user);
             jspPage.add("deviceId", deviceId);
             jspPage.add("message", api.getMessage());
-            jspPage.setJspFile("common/FrmJayunSample_check.jsp");
+            jspPage.setJspFile("common/jayunSample_check.jsp");
             return jspPage;
         }
     }

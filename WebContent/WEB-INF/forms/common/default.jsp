@@ -16,7 +16,7 @@
         </div>
     </div> <div style="text-align: center; padding-top: 2em;">
         <div>
-            <a href="FrmJayunSample">聚安API功能演示</a>
+            <a href="jayunSample">聚安API功能演示</a>
         </div>
     </div>
 </body>

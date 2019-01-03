@@ -22,7 +22,7 @@ input {
 	function onSend() {
 		$.ajax({
 			type : 'POST',
-			url : "FrmJayunSample.requestVerify",
+			url : "jayunSample.requestVerify",
 			data : {
 				"user" : "${user}",
 				"deviceId": "${deviceId}"
@@ -47,7 +47,7 @@ input {
 	<h2>当使用环境不够安全时，会出现此画面：</h2>
 	<ul>
 		<li>当前环境发生变化，请输入检验码：
-			<form method="post" action="FrmJayunSample.check">
+			<form method="post" action="jayunSample.check">
 				<input type="hidden" name="user" value="${user}" /> 
 				<input type="hidden" name="deviceId" value="${deviceId}" /><input
 					name="securityCode" value="" /> <a href="javascript:onSend()">发送</a>
