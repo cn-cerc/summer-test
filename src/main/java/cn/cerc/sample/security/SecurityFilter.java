@@ -46,9 +46,9 @@ public class SecurityFilter implements Filter {
         buff.post();
 
         if (buff.isNull()) {
-            buff.setField("m", TDateTime.Now());
+            buff.setField("m", TDateTime.now());
             buff.setField("mc", 1);
-            buff.setField("s", TDateTime.Now());
+            buff.setField("s", TDateTime.now());
             buff.setField("sc", 1);
             buff.post();
         }
@@ -62,7 +62,7 @@ public class SecurityFilter implements Filter {
             return true;
         }
 
-        TDateTime now = TDateTime.Now();
+        TDateTime now = TDateTime.now();
         TDateTime s = buff.getDateTime("s");
         // 时差小于1秒做记录
         if (secondAllowed(now.toString(), s.toString())) {
@@ -103,7 +103,7 @@ public class SecurityFilter implements Filter {
 
             ds.append();
             ds.setField("ip_", ip);
-            ds.setField("createTime_", TDateTime.Now());
+            ds.setField("createTime_", TDateTime.now());
             ds.post();
         } catch (Exception e) {
             log.error(String.format("ip(%s)在快速访问主机", ip));
@@ -220,8 +220,8 @@ public class SecurityFilter implements Filter {
 
     public static void main(String[] args) {
         SecurityFilter filter = new SecurityFilter();
-        String startTime = TDateTime.Now().incSecond(-59).toString();
-        String endTime = TDateTime.Now().toString();
+        String startTime = TDateTime.now().incSecond(-59).toString();
+        String endTime = TDateTime.now().toString();
         System.out.println(filter.minuteAllowed(startTime, endTime));
         System.out.println(filter.secondAllowed(startTime, endTime));
     }

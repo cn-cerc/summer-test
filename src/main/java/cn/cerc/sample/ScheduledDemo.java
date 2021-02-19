@@ -12,6 +12,6 @@ public class ScheduledDemo {
 
     @Scheduled(fixedDelay = 3000)
     public void run() {
-        log.info("{}", "" + TDateTime.Now());
+        log.info("{}", "" + TDateTime.now());
     }
 }
