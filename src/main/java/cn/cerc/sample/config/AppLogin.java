@@ -101,8 +101,8 @@ public class AppLogin extends AbstractJspPage implements IAppLogin {
             String sid = app.getDataOut().getHead().getString("SessionID_");
             if (sid != null && !sid.equals("")) {
                 log.debug(String.format("认证成功，取得sid(%s)", sid));
-                req.setAttribute(RequestData.appSession_Key, sid);
-                req.getSession().setAttribute(RequestData.appSession_Key, sid);
+                req.setAttribute(RequestData.TOKEN, sid);
+                req.getSession().setAttribute(RequestData.TOKEN, sid);
             }
         } else {
             // 登录验证失败，进行判断，手机号为空，则回到登录页，手机不为空，密码为空，则跳到发送验证码页面
